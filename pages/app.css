@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  color: #2e2e2e;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --main-light-dark: #f0f0f0;
+  --primary-text: #505050;
+  --secondary-text: #8c8c8c;
+  --content: 1400px;
+  --content-padding: 3rem;
+  --buttons-padding: 0.8rem;
+  --buttons-border-radius: 0.4rem;
+  --standard-font-size: 20px;
+  --button-border: 2px;
+  --button-border-color: #B5B5B5;
+}
+
