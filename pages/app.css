@@ -12,10 +12,11 @@
   --primary-text: #505050;
   --secondary-text: #8c8c8c;
   --content: 1500px;
-  --content-padding: 3rem;
+  --content-padding: 8rem;
   --buttons-padding: 0.6rem;
   --buttons-border-radius: 0.4rem;
   --standard-font-size: 20px;
   --button-border: 2px;
   --button-border-color: #b5b5b5;
+  --main-blue: #536DFE;
 }

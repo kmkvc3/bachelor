@@ -1,8 +1,9 @@
 import Link from "next/link";
+import styles from "./Navigation.module.css"
 
 export default function Layout({ children }) {
   return (
-    <nav>
+    <nav className={styles.navigation}>
       <ul>
         <Link href="/search">
           <a>Search</a>

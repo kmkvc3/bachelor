@@ -1,0 +1,4 @@
+.navigation {
+    border-bottom: 1px solid var(--main-light-dark);
+    padding: 2rem;
+}

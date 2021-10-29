@@ -3,7 +3,7 @@
   width: 100%;
 }
 .content {
-  padding: 4.2rem var(--content-padding);
+  padding: 4.2rem var(--content-padding) 5.8rem var(--content-padding);
   display: flex;
   justify-content: space-between;
 }

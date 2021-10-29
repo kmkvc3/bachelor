@@ -14,7 +14,6 @@ export default function Search() {
       <Head>
         <title>First Post</title>
       </Head>
-      <img src="../components/assets/search.svg"></img>
       <SearchIllustration />
       <SearchSection setSearchType={setSearchType} setSearchMode={setSearchMode}/>
       <TableSection searchMode={searchMode} searchType={searchType}/>
