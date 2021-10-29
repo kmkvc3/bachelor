@@ -1,0 +1,5 @@
+.wrapper {
+  padding: 0rem var(--content-padding) 3rem var(--content-padding);
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,22 +1,21 @@
 * {
   padding: 0;
   margin: 0;
-  font-size: 20px;
-  /* color: #2e2e2e; */
-  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
 }
 
 :root {
   --main-light-dark: #f0f0f0;
-  --primary-dark-text: #2e2e2e;
+  --primary-dark-text: #353535;
   --primary-text: #505050;
   --secondary-text: #8c8c8c;
-  --content: 1400px;
+  --content: 1500px;
   --content-padding: 3rem;
   --buttons-padding: 0.6rem;
   --buttons-border-radius: 0.4rem;
   --standard-font-size: 20px;
   --button-border: 2px;
-  --button-border-color: #B5B5B5;
+  --button-border-color: #b5b5b5;
 }
-

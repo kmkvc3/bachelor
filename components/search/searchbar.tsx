@@ -4,9 +4,15 @@ import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Searchbar({ setSearchType, setSearchMode }) {
-  const [search, setSearch] = useState(false);
   const [defaultSearch, setDefaultSearch] = useState("virus");
   const [searchbarActive, setSearchbarActive] = useState(false);
+  const [searchContent, setSearchContent] = useState("");
+
+  function clearSearch() {
+    setSearchbarActive(false);
+    setSearchContent("");
+  }
+
   return (
     <div
       className={
@@ -21,26 +27,28 @@ export default function Searchbar({ setSearchType, setSearchMode }) {
         />
 
         <input
-          onClick={() => {
-            setSearch(true);
-            setSearchMode(true);
-            setSearchbarActive(true);
+          onChange={(e) => {
+            setSearchContent(e.target.value);
+            if (e.target.value != "") {
+              setSearchMode(true);
+              setSearchbarActive(true);
+            } else {
+              setSearchMode(false);
+              setSearchbarActive(false);
+            }
           }}
           type="text"
+          value={searchContent}
           placeholder={
             defaultSearch == "virus" ? "Search viruses" : "Search hosts"
           }
         ></input>
       </div>
 
-      {search ? (
+      {searchbarActive ? (
         <button
           className={styles.close}
-          onClick={() => {
-            setSearch(false);
-            setSearchMode(false);
-            setSearchbarActive(false);
-          }}
+          onClick={()=>clearSearch()}
         >
           <FontAwesomeIcon icon={faTimes} />
         </button>
@@ -50,9 +58,11 @@ export default function Searchbar({ setSearchType, setSearchMode }) {
         <div
           className={defaultSearch == "virus" ? styles.active : null}
           onClick={() => {
+            if(defaultSearch == "virus") return
             setSearchType("virus");
             setSearchMode(false);
             setDefaultSearch("virus");
+            clearSearch()
           }}
         >
           Virus
@@ -60,9 +70,11 @@ export default function Searchbar({ setSearchType, setSearchMode }) {
         <div
           className={defaultSearch == "host" ? styles.active : null}
           onClick={() => {
+            if(defaultSearch == "host") return
             setSearchType("host");
             setSearchMode(false);
             setDefaultSearch("host");
+            clearSearch()
           }}
         >
           Host

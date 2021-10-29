@@ -1,14 +1,22 @@
-import styles from "./FilterButton.module.css"
+import { useState } from "react";
+import styles from "./FilterButton.module.css";
 
-export default function FilterButton() {
+export default function FilterButton({ setVisibleFilters }) {
+  const [active, setActive] = useState(false)
   return (
-      <button className={styles.button}>
-          <div className={styles.filterIcon}>
-            <span></span>  
-            <span></span>  
-            <span></span>  
-          </div>
-          Filter
-      </button>
+    <button
+      onClick={() => {
+        setVisibleFilters();
+        setActive(!active)
+      }}
+      className={active ? `${styles.button} ${styles.active}` : styles.button }
+    >
+      <div className={styles.filterIcon}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <p> Filter</p>
+    </button>
   );
 }

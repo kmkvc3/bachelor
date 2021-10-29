@@ -1,0 +1,8 @@
+.tableHeader {
+  display: grid;
+  grid-template-columns: 5fr 7fr 7fr 4fr 1fr;
+  background-color: var(--main-light-dark);
+  padding: var(--buttons-padding);
+  border-radius: var(--buttons-border-radius);
+  border: var(--button-border) solid var(--main-light-dark);
+}

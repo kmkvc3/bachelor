@@ -2,7 +2,7 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import SearchSection from "../components/search/SearchSection";
 import { useState } from "react";
-import TableSection from "../components/table/table-section";
+import TableSection from "../components/table/TableSection";
 
 export default function Search() {
   const [searchType, setSearchType] = useState("virus");

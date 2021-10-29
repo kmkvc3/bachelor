@@ -1,0 +1,11 @@
+.content {
+  padding: 0rem var(--content-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content > p {
+  font-size: 32px;
+  padding-bottom: 1rem;
+  color: var(--primary-text-dark);
+}

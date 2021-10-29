@@ -7,6 +7,12 @@
   flex-direction: row;
   font-weight: bold;
   color: var(--primary-text);
+  cursor: pointer;
+  transition: .15s;
+}
+.button.active {
+  background-color: var(--main-light-dark);
+  border: var(--button-border) solid var(--main-light-dark);
 }
 .filterIcon {
   display: flex;
@@ -14,8 +20,11 @@
   align-content: space-between;
   justify-content: center;
   justify-items: center;
-  margin-right: 0.8rem;
-  transform: translateY(1px);
+  margin-right: 0.7rem;
+  transform: translateY(-1px);
+}
+.button p {
+  transform: translateY(2px);
 }
 .filterIcon span {
   display: block;
@@ -26,7 +35,7 @@
 }
 .filterIcon span:nth-child(2) {
   width: 16px;
-  margin-left: 3px;
+  margin: 1px 3px;
 }
 .filterIcon span:nth-child(3) {
   width: 10px;
