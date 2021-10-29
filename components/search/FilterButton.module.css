@@ -1,0 +1,34 @@
+.button {
+  border: var(--button-border) solid var(--button-border-color);
+  background-color: white;
+  border-radius: var(--buttons-border-radius);
+  padding: var(--buttons-padding) 1rem;
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  color: var(--primary-text);
+}
+.filterIcon {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: center;
+  justify-items: center;
+  margin-right: 0.8rem;
+  transform: translateY(1px);
+}
+.filterIcon span {
+  display: block;
+  background-color: var(--primary-text);
+  height: 3px;
+  margin: 2px 0;
+  width: 22px;
+}
+.filterIcon span:nth-child(2) {
+  width: 16px;
+  margin-left: 3px;
+}
+.filterIcon span:nth-child(3) {
+  width: 10px;
+  margin-left: 6px;
+}

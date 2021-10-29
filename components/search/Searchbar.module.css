@@ -1,5 +1,5 @@
 .wrapper {
-  max-width: 700px;
+  max-width: 660px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -41,7 +41,7 @@
   align-items: center;
   border-radius: 0 var(--buttons-border-radius) var(--buttons-border-radius) 0;
   padding: var(--buttons-padding) 1.2rem;
-  border: var(--button-border) solid transparent;
+  border: 1px solid var(--main-light-dark);
 }
 .buttons > div {
   color: var(--secondary-text);
@@ -67,12 +67,12 @@
   background-color: transparent;
   border: transparent;
   font-size: 24px;
-  top: 20px;
+  top: 17px;
   transform: translateY(-3px);
 }
 .searchIcon {
   font-size: 24px;
-  top: 18px;
+  top: 15px;
   left: -3px;
   margin-left: 1.2rem;
   color: var(--secondary-text);

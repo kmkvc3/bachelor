@@ -1,0 +1,11 @@
+.button {
+    border: var(--button-border) solid var(--button-border-color);
+    background-color: white;
+    border-radius: var(--buttons-border-radius);
+    padding: var(--buttons-padding);
+    display: block;
+    width: 54px;
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--primary-text);
+}
