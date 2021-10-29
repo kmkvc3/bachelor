@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 import SearchSection from "../components/search/SearchSection";
 import { useState } from "react";
 import TableSection from "../components/table/TableSection";
+import SearchIllustration from "../components/search/SearchIllustration";
 
 export default function Search() {
   const [searchType, setSearchType] = useState("virus");
@@ -13,6 +14,8 @@ export default function Search() {
       <Head>
         <title>First Post</title>
       </Head>
+      <img src="../components/assets/search.svg"></img>
+      <SearchIllustration />
       <SearchSection setSearchType={setSearchType} setSearchMode={setSearchMode}/>
       <TableSection searchMode={searchMode} searchType={searchType}/>
     </Layout>
