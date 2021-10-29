@@ -1,39 +1,47 @@
 .wrapper {
   max-width: 700px;
-  border-radius: var(--buttons-border-radius);
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--main-light-dark);
   position: relative;
+}
+.searchField {
   border: var(--button-border) solid transparent;
-  transition: .2s;
-}
-.focused {
-  background-color: white;
-  border: var(--button-border) solid var(--button-border-color);
-  box-shadow: rgb(70, 70, 70) 0px 2px 12px -6px;
-}
-.wrapper > input {
+  background-color: var(--main-light-dark);
+  border-radius: var(--buttons-border-radius) 0 0 var(--buttons-border-radius);
   width: 100%;
-  background-color: transparent;
-  border: none;
-  padding: var(--buttons-padding) 1.2rem;
-  margin-right: 2rem;
+  transition: .15s;
 }
-.wrapper > input:focus {
+.searchField:hover {
+  border: var(--button-border) solid var(--button-border-color);
+  border-radius: var(--buttons-border-radius) 0 0 var(--buttons-border-radius);
+  background-color: transparent;
+}
+.focused > .searchField {
+  border: var(--button-border) solid var(--button-border-color);
+  border-radius: var(--buttons-border-radius) 0 0 var(--buttons-border-radius);
+  background-color: transparent;
+}
+.searchField > input {
+  background-color: transparent;
+  color: var(--primary-text);
+  padding: var(--buttons-padding) 1.2rem var(--buttons-padding) 3rem;
+  width: 100%;
+  border: none;
+}
+.searchField > input:focus {
   outline: none;
 }
-.wrapper > input::placeholder {
-  color: var(--secondary-text);
-}
 .buttons {
+  background-color: var(--main-light-dark);
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0 1.2rem 0 0;
+  border-radius: 0 var(--buttons-border-radius) var(--buttons-border-radius) 0;
+  padding: var(--buttons-padding) 1.2rem;
+  border: var(--button-border) solid transparent;
 }
 .buttons > div {
   color: var(--secondary-text);
@@ -51,16 +59,22 @@
 }
 .close {
   position: absolute;
-  right: 150px;
+  right: 170px;
+  color: var(--secondary-text);
   top: var(--buttons-padding);
   padding: 0;
   margin: 0;
   background-color: transparent;
   border: transparent;
-  font-size: 26px;
+  font-size: 24px;
+  top: 20px;
   transform: translateY(-3px);
 }
 .searchIcon {
-  font-size: 26px;
+  font-size: 24px;
+  top: 18px;
+  left: -3px;
   margin-left: 1.2rem;
+  color: var(--secondary-text);
+  position: absolute;
 }

@@ -13,19 +13,25 @@ export default function Searchbar({ setSearchType, setSearchMode }) {
         searchbarActive ? `${styles.wrapper} ${styles.focused}` : styles.wrapper
       }
     >
-      <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
+      <div className={styles.searchField}>
+        <FontAwesomeIcon
+          icon={faSearch}
+          color={"#ffffff"}
+          className={styles.searchIcon}
+        />
 
-      <input
-        onClick={() => {
-          setSearch(true);
-          setSearchMode(true);
-          setSearchbarActive(true);
-        }}
-        type="text"
-        placeholder={
-          defaultSearch == "virus" ? "Search viruses" : "Search hosts"
-        }
-      ></input>
+        <input
+          onClick={() => {
+            setSearch(true);
+            setSearchMode(true);
+            setSearchbarActive(true);
+          }}
+          type="text"
+          placeholder={
+            defaultSearch == "virus" ? "Search viruses" : "Search hosts"
+          }
+        ></input>
+      </div>
 
       {search ? (
         <button
