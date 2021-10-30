@@ -16,7 +16,7 @@
     font-weight: normal;
     margin-bottom: 0.6rem;
     width: max-content;
-    border-bottom: 6px solid var(--main-blue);
+    border-bottom: 4px solid var(--main-blue);
     color: var(--primary-dark-text);
 }
 .wrapper > div p {

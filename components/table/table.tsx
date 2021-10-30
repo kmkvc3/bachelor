@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import ListElement from "./ListElement";
-import styles from "./Table.module.css"
+import styles from "./ListElement.module.css"
 
 export default function Table({ searchType }) {
   const data = {
@@ -12,7 +12,7 @@ export default function Table({ searchType }) {
   }
   return (
     <>
-      <div className={styles.tableHeader}>
+      <div className={styles.element}>
         <span>Accession</span>
         {searchType == "virus" ? <span>Virus</span> : <span>Host</span>}
         {searchType == "virus" ? <span>Host</span> : <span>Virus</span>}

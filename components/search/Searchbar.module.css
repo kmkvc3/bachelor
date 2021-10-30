@@ -12,16 +12,12 @@
   background-color: var(--main-light-dark);
   border-radius: var(--buttons-border-radius) 0 0 var(--buttons-border-radius);
   width: 100%;
+  position: relative;
   transition: 0.15s;
 }
-/* .searchField:hover {
-  border: var(--button-border) solid var(--button-border-color);
-  border-radius: var(--buttons-border-radius) 0 0 var(--buttons-border-radius);
-  background-color: transparent;
-} */
 .focused > .searchField {
   border: var(--button-border) solid var(--button-border-color);
-  border-radius: var(--buttons-border-radius) 0 0 var(--buttons-border-radius);
+  border-radius: 0 0 0 0;
   background-color: transparent;
 }
 .searchField > input {
@@ -29,8 +25,8 @@
   color: var(--primary-text);
   padding: var(--buttons-padding) 1.2rem var(--buttons-padding) 3rem;
   border-radius: var(--buttons-border-radius) 0 0 var(--buttons-border-radius);
-  width: 100%;
   border: var(--button-border) solid transparent;
+  width: 92%;
 }
 .searchField > input:focus {
   outline: none;
@@ -78,4 +74,27 @@
   margin-left: 1.2rem;
   color: var(--secondary-text);
   position: absolute;
+}
+.hintList {
+  position: absolute;
+  display: flex;
+  width: calc(100% + 4px);
+  flex-direction: column;
+  border: var(--button-border) solid var(--button-border-color);
+  z-index: 2;
+  left: -2px;
+  background-color: white;
+}
+.hintElement {
+  display: block;
+  padding: 0.7rem;
+  color: var(--primary-text);
+  border-top: 1px solid var(--main-light-dark);
+  border-bottom: 1px solid var(--main-light-dark);
+  transition: .15s;
+}
+.hintElement:hover {
+  cursor: pointer;
+  background-color: var(--main-light-dark);
+  color: var(--primary-dark-text);
 }

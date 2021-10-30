@@ -3,11 +3,14 @@
   display: grid;
   grid-template-columns: 5fr 7fr 7fr 4fr 1fr;
   padding: 1rem var(--buttons-padding);
-  border-bottom: 1px solid var(--main-light-dark);
+  border-bottom: var(--button-border) solid var(--main-light-dark);
 }
 .element span {
   color: var(--secondary-text);
 }
 .element strong {
   color: var(--primary-text);
+}
+.element span {
+  display: block;
 }
