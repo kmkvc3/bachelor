@@ -18,7 +18,7 @@ export default function Searchbar({ setSearchType, setSearchMode, requestData })
 
   async function getSearchHints() {
     try {
-      const data = await func();
+      const data:any  = await func();
       setSearchHints(data);
     } catch (error) {
       console.log(error);

@@ -19,7 +19,7 @@ export default function Search() {
         setWasDataLoaded(true);
       }
       setDataLoaded(false);
-      const results = await func2();
+      const results:any  = await func2();
       setData(results);
       setDataLoaded(true);
     } catch (error) {
