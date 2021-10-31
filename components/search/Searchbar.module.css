@@ -27,6 +27,7 @@
   border-radius: var(--buttons-border-radius) 0 0 var(--buttons-border-radius);
   border: var(--button-border) solid transparent;
   width: 92%;
+  margin-left: 6px;
 }
 .searchField > input:focus {
   outline: none;
@@ -68,9 +69,9 @@
   transform: translateY(-3px);
 }
 .searchIcon {
-  font-size: 24px;
+  font-size: 22px;
   top: 13px;
-  left: -3px;
+  left: 0px;
   margin-left: 1.2rem;
   color: var(--secondary-text);
   position: absolute;

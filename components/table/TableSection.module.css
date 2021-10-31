@@ -5,9 +5,35 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.content > p {
+.tableHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.tableHeader > p {
   font-size: 32px;
   width: max-content;
   margin-bottom: 1.9rem;
   color: var(--primary-text-dark);
+}
+.tableHeader button {
+  padding: var(--buttons-padding);
+  border: var(--button-border) solid var(--main-light-dark);
+  background-color: white;
+  border-radius: var(--buttons-border-radius);
+  padding: var(--buttons-padding) 1rem;
+  height: 50px;
+  display: flex;
+  color: var(--primary-text);
+  flex-direction: row;
+  transition: .15s;
+}
+.tableHeader button img {
+  width: 20px;
+  margin-right: 12px;
+}
+.tableHeader button:hover {
+  cursor: pointer;
+  background-color: var(--main-light-dark);
+  border: var(--button-border) solid var(--main-light-dark);
 }

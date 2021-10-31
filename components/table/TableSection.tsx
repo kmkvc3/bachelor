@@ -17,7 +17,13 @@ export default function TableSection({
           <NotFound />
         ) : (
           <>
-            <p>Results</p>
+            <div className={styles.tableHeader}>
+              <p>Results</p>
+              <button>
+                <img src="./export.svg"></img>
+                <p>Export</p>
+              </button>
+            </div>
             <Table
               searchType={searchType}
               data={data}

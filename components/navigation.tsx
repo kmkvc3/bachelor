@@ -11,9 +11,6 @@ export default function Layout({ children }) {
         <Link href="/browse">
           <a>Browse</a>
         </Link>
-        <Link href="/blast">
-          <a>Blast</a>
-        </Link>
       </ul>
     </nav>
   );

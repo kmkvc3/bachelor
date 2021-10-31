@@ -1,5 +1,14 @@
 .wrapper {
   padding: 0rem var(--content-padding) 3.9rem var(--content-padding);
   display: flex;
-  justify-content: space-between;
+}
+.wrapper button {
+  height: 50px;
+  border: var(--button-border) solid var(--main-light-dark);
+  background-color: white;
+  border-radius: var(--buttons-border-radius);
+  color: var(--primary-text);
+  padding: var(--buttons-padding) 1rem;
+  cursor: pointer;
+  margin-right: 30px;
 }

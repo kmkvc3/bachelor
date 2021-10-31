@@ -35,62 +35,125 @@ const func2 = () => {
     const myArray = [
       [
         {
-          accession: "xm1",
-          spieceA: "Woof",
-          spieceB: "mrau",
+          accession: "xm 132",
+          spieceA: "Bacillus fusiformis",
+          spieceB: "Bacillus fusiformis3",
           evidence: "rs",
           length: 120,
         },
         {
-          accession: "xm 1200",
-          spieceA: "Somebad wirus",
+          accession: "xm 1212",
+          spieceA: "Acetobacter aurantius",
           spieceB: "escherichia Coli",
-          evidence: "evidenceRS",
+          evidence: "RS",
           length: "1200",
         },
         {
-          accession: "xm 1200",
+          accession: "xm 121",
           spieceA: "escherichia Coli",
-          spieceB: "Somebad wirus",
-          evidence: "evidenceRS",
+          spieceB:  "Campylobacter fetus",
+          evidence: "RS",
           length: "1200",
         },
       ],
       [
         {
-          accession: "xm 1200",
-          spieceA: "Somebad wirus",
+          accession: "xm 1201",
+          spieceA:  "Campylobacter fetus",
           spieceB: "escherichia Coli",
-          evidence: "evidenceRS",
+          evidence: "RS",
+          length: "120",
+        },
+        {
+          accession: "xm 12033",
+          spieceA: "escherichia Coli",
+          spieceB: "Acinetobacter baumannii",
+          evidence: "RS",
           length: "1200",
         },
         {
-          accession: "xm 1200",
+          accession: "xm 1201",
+          spieceA:  "Campylobacter fetus",
+          spieceB: "escherichia Coli",
+          evidence: "RS",
+          length: "1000",
+        },
+        {
+          accession: "xm 12033",
           spieceA: "escherichia Coli",
-          spieceB: "Somebad wirus",
-          evidence: "evidenceRS",
+          spieceB: "Acinetobacter baumannii",
+          evidence: "RS",
+          length: "1200",
+        },
+        {
+          accession: "xm 1201",
+          spieceA:  "Campylobacter fetus",
+          spieceB: "escherichia Coli",
+          evidence: "RS",
+          length: "1400",
+        },
+        {
+          accession: "xm 12033",
+          spieceA: "escherichia Coli",
+          spieceB: "Acinetobacter baumannii",
+          evidence: "RS",
+          length: "1200",
+        },
+        {
+          accession: "xm 1201",
+          spieceA:  "Campylobacter fetus",
+          spieceB: "escherichia Coli",
+          evidence: "RS",
+          length: "1200",
+        },
+        {
+          accession: "xm 12033",
+          spieceA: "escherichia Coli",
+          spieceB: "Acinetobacter baumannii",
+          evidence: "RS",
           length: "1200",
         },
       ],
       [
         {
-          accession: "xm 1200",
+          accession: "xm 112",
           spieceA: "escherichia Coli",
-          spieceB: "Somebad wirus",
-          evidence: "evidenceRS",
+          spieceB: "Some bad wirus",
+          evidence: "RS",
           length: "1200",
         },
         {
-          accession: "xm 1200",
-          spieceA: "Somebad wirus",
+          accession: "xm 67",
+          spieceA: "Some bad wirus",
           spieceB: "escherichia Coli",
-          evidence: "evidenceRS",
+          evidence: "RS",
           length: "1200",
         },
         {
-          accession: "xm1",
-          spieceA: "Woof",
-          spieceB: "mrau",
+          accession: "xm223",
+          spieceA: "Haemophilus vaginalis",
+          spieceB: "Bacillus fusiformis",
+          evidence: "rs",
+          length: 120,
+        },
+        {
+          accession: "xm 112",
+          spieceA: "escherichia Coli",
+          spieceB: "Some bad wirus",
+          evidence: "RS",
+          length: "1200",
+        },
+        {
+          accession: "xm 67",
+          spieceA: "Some bad wirus",
+          spieceB: "escherichia Coli",
+          evidence: "RS",
+          length: "1200",
+        },
+        {
+          accession: "xm223",
+          spieceA: "Haemophilus vaginalis",
+          spieceB: "Bacillus fusiformis",
           evidence: "rs",
           length: 120,
         },
@@ -100,7 +163,7 @@ const func2 = () => {
     var randomItem = myArray[Math.floor(Math.random() * myArray.length)];
     setTimeout(() => {
       res(randomItem);
-    }, 1000);
+    }, 1200);
   });
   return data;
 };
