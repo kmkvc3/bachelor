@@ -4,15 +4,7 @@ import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { func } from "./Api";
 
-function HintList({ children }) {
-  return <div className={styles.hintList}>{children}</div>;
-}
-
-function HintElement({ item }) {
-  return <span className={styles.hintElement}>{item}</span>;
-}
-
-export default function Searchbar({ setSearchType, setSearchMode }) {
+export default function Searchbar({ setSearchType, setSearchMode, requestData }) {
   const [defaultSearch, setDefaultSearch] = useState("virus");
   const [searchbarActive, setSearchbarActive] = useState(false);
   const [searchContent, setSearchContent] = useState("");
@@ -21,7 +13,7 @@ export default function Searchbar({ setSearchType, setSearchMode }) {
   function clearSearch() {
     setSearchbarActive(false);
     setSearchContent("");
-    setSearchHints([])
+    setSearchHints([]);
   }
 
   async function getSearchHints() {
@@ -31,6 +23,26 @@ export default function Searchbar({ setSearchType, setSearchMode }) {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  function HintList({ children }) {
+    return <div className={styles.hintList}>{children}</div>;
+  }
+
+  function HintElement({ item }) {
+    return (
+      <span
+        onClick={() => {
+          setSearchMode(true);
+          setSearchHints([]);
+          setSearchContent(item);
+          requestData();
+        }}
+        className={styles.hintElement}
+      >
+        {item}
+      </span>
+    );
   }
 
   return (
@@ -47,15 +59,21 @@ export default function Searchbar({ setSearchType, setSearchMode }) {
         />
 
         <input
+          onKeyDown={(e)=> {
+            if(e.key === 'Enter'){
+              setSearchMode(true);
+              setSearchHints([]);
+              requestData();
+            }
+          }}
           onChange={(e) => {
             setSearchContent(e.target.value);
-            getSearchHints();
-            if (e.target.value != "") {
-              setSearchMode(true);
+            if (e.target.value !== "") {
               setSearchbarActive(true);
+              getSearchHints();
             } else {
-              setSearchMode(false);
               setSearchbarActive(false);
+              setSearchHints([]);
             }
           }}
           type="text"
@@ -65,11 +83,13 @@ export default function Searchbar({ setSearchType, setSearchMode }) {
           }
         ></input>
 
-        {searchHints.length > 0
-          ? <HintList>
-              {searchHints.map((item) => <HintElement item={item} />)}
+        {searchHints.length > 0 ? (
+          <HintList>
+            {searchHints.map((item) => (
+              <HintElement item={item} />
+            ))}
           </HintList>
-          : null}
+        ) : null}
       </div>
 
       {searchbarActive ? (

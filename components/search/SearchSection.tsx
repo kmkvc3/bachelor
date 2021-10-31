@@ -6,7 +6,7 @@ import { useState } from "react";
 import Filters from "./Filters";
 import AnimateHeight from "react-animate-height";
 
-export default function SearchSection({ setSearchType, setSearchMode }) {
+export default function SearchSection({ setSearchType, setSearchMode, requestData }) {
   const [visibleFilters, setVisibleFilters] = useState(false);
   function showFilters() {
     setVisibleFilters(!visibleFilters);
@@ -18,6 +18,7 @@ export default function SearchSection({ setSearchType, setSearchMode }) {
         <Searchbar
           setSearchType={setSearchType}
           setSearchMode={setSearchMode}
+          requestData={requestData}
         />
         <HelpButton />
       </div>

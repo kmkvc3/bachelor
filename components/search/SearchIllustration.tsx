@@ -5,7 +5,7 @@ export default function SearchIllustration() {
     <div className={styles.wrapper}>
         <div>
             <h1>Search</h1>
-            <p>thousands of our database records</p>
+            <p>Viruses or hosts among thousands of our database records.</p>
         </div>
         <img src="./search.svg"></img>
     </div>

@@ -11,11 +11,8 @@ export default function FilterButton({ setVisibleFilters }) {
       }}
       className={active ? `${styles.button} ${styles.active}` : styles.button }
     >
-      <div className={styles.filterIcon}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <img src="./filters.svg" className={styles.filterIcon}>
+      </img>
       <p> Filter</p>
     </button>
   );

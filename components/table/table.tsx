@@ -1,15 +1,8 @@
 import { useEffect } from "react";
 import ListElement from "./ListElement";
-import styles from "./ListElement.module.css"
+import styles from "./ListElement.module.css";
 
-export default function Table({ searchType }) {
-  const data = {
-    accession: "xm 1200",
-    spieceA: "escherichia Coli",
-    spieceB: "Somebad wirus",
-    evidence: "evidenceRS",
-    length: "1200"
-  }
+export default function Table({ searchType, data, isDataLoaded }) {
   return (
     <>
       <div className={styles.element}>
@@ -19,10 +12,19 @@ export default function Table({ searchType }) {
         <span>Evidence</span>
         <span>Length</span>
       </div>
-      <ListElement tableData={data}/>
-      <ListElement tableData={data}/>
-      <ListElement tableData={data}/>
-      <ListElement tableData={data}/>
+      {searchType == "virus" ? (
+        <div>
+          {data.map((data)=>
+            <ListElement tableData={data} />
+          )}
+        </div>
+      ) : (
+        <div>
+          {data.map((data)=>
+            <ListElement tableData={data} />
+          )}
+      </ div>
+      )}
     </>
   );
 }

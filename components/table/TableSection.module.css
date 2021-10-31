@@ -1,5 +1,6 @@
 .content {
   padding: 0rem var(--content-padding);
+  padding-bottom: 8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -7,8 +8,6 @@
 .content > p {
   font-size: 32px;
   width: max-content;
-  /* padding-bottom: 0.2rem; */
-  /* border-bottom: 5px solid var(--main-blue); */
   margin-bottom: 1.9rem;
   color: var(--primary-text-dark);
 }

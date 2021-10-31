@@ -16,7 +16,7 @@
   transition: 0.15s;
 }
 .focused > .searchField {
-  border: var(--button-border) solid var(--button-border-color);
+  border: var(--button-border) solid var(--main-light-dark);
   border-radius: 0 0 0 0;
   background-color: transparent;
 }
@@ -43,7 +43,6 @@
 .buttons > div {
   color: var(--secondary-text);
   border-bottom: 2px solid transparent;
-  transition: 0.1s;
   cursor: pointer;
 }
 .buttons .active {
@@ -56,6 +55,7 @@
 }
 .close {
   position: absolute;
+  cursor: pointer;
   right: 170px;
   color: var(--secondary-text);
   top: var(--buttons-padding);
@@ -80,18 +80,20 @@
   display: flex;
   width: calc(100% + 4px);
   flex-direction: column;
-  border: var(--button-border) solid var(--button-border-color);
   z-index: 2;
+  border-bottom: 1px solid var(--main-light-dark);
+  top: 49px;
   left: -2px;
+  box-shadow: 0 1px 10px 1px var(--main-light-dark);
   background-color: white;
 }
 .hintElement {
   display: block;
   padding: 0.7rem;
   color: var(--primary-text);
-  border-top: 1px solid var(--main-light-dark);
-  border-bottom: 1px solid var(--main-light-dark);
-  transition: .15s;
+  border: var(--button-border) solid var(--main-light-dark);
+  border-top: none;
+  transition: 0.15s;
 }
 .hintElement:hover {
   cursor: pointer;

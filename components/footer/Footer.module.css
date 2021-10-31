@@ -1,0 +1,21 @@
+.footer {
+    text-align: center;
+    color: var(--secondary-text);
+    border-top: 1px solid var(--main-light-dark);
+    padding: 2rem;
+}
+.footer img {
+    width: 18px;
+}
+.footer span {
+    font-size: 16px;
+}
+.footer span:nth-child(1) {
+    margin-right: 3rem;
+}
+.footer a {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 16px;
+    color: var(--main-blue)
+}

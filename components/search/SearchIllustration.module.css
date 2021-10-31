@@ -7,23 +7,23 @@
     align-items: center;
     padding-bottom: 0rem;
     padding-top: 1.8rem;
-}
-.wrapper > div {
-    margin-right: 3rem;
+    width: 100%;
 }
 .wrapper > div h1 {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: normal;
     margin-bottom: 0.6rem;
     width: max-content;
-    border-bottom: 4px solid var(--main-blue);
-    color: var(--primary-dark-text);
+    color: var(--primary-text);
 }
 .wrapper > div p {
+    font-size: 18px;
     font-weight: normal;
-    max-width: 230px;
+    max-width: 280px;
+    margin-right: 2rem;
     color: var(--secondary-text);
 }
 .wrapper img {
-    width: 215px;
+    width: 170px;
+    transform: translateX(40px);
 }
