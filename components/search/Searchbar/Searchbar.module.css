@@ -10,24 +10,25 @@
 .searchField {
   border: var(--button-border) solid var(--main-light-dark);
   background-color: var(--main-light-dark);
-  border-radius: var(--buttons-border-radius) 0 0 var(--buttons-border-radius);
+  border-radius: 100px 0 0 100px;
   width: 100%;
   position: relative;
-  transition: 0.15s;
+  height: 50px;
 }
 .focused > .searchField {
-  border: var(--button-border) solid var(--main-light-dark);
-  border-radius: 0 0 0 0;
+  border: var(--button-border) solid var(--button-border-color);
+  border-radius: 28px 0 0 0;
   background-color: transparent;
 }
 .searchField > input {
   background-color: transparent;
   color: var(--primary-text);
   padding: var(--buttons-padding) 1.2rem var(--buttons-padding) 3rem;
-  border-radius: var(--buttons-border-radius) 0 0 var(--buttons-border-radius);
+  border-radius: 5px 0 0 5px; 
   border: var(--button-border) solid transparent;
   width: 92%;
-  margin-left: 6px;
+  height: 100%;
+  margin-left: 10px;
 }
 .searchField > input:focus {
   outline: none;
@@ -37,9 +38,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-radius: 0 var(--buttons-border-radius) var(--buttons-border-radius) 0;
-  padding: var(--buttons-padding) 1.2rem;
-  border: calc(var(--button-border) + 1px) solid var(--main-light-dark);
+  height: 50px;
+  border-radius: 0 100px 100px 0;
+  padding: var(--buttons-padding) 1.5rem;
+  border: calc(var(--button-border)) solid var(--main-light-dark);
 }
 .buttons > div {
   color: var(--secondary-text);
@@ -72,29 +74,33 @@
   font-size: 22px;
   top: 13px;
   left: 0px;
-  margin-left: 1.2rem;
+  margin-left: 1.4rem;
   color: var(--secondary-text);
   position: absolute;
 }
 .hintList {
   position: absolute;
   display: flex;
-  width: calc(100% + 4px);
+  width: calc(100% + 2px);
   flex-direction: column;
   z-index: 2;
-  border-bottom: 1px solid var(--main-light-dark);
   top: 49px;
-  left: -2px;
-  box-shadow: 0 1px 10px 1px var(--main-light-dark);
+  left: -1px;
   background-color: white;
 }
 .hintElement {
   display: block;
   padding: 0.7rem;
   color: var(--primary-text);
-  border: var(--button-border) solid var(--main-light-dark);
+  border: var(--button-border) solid var(--button-border-color);
+  background-color: white;
   border-top: none;
   transition: 0.15s;
+  box-shadow: 0 1px 6px -1px var(--main-light-dark);
+}
+.hintElement:nth-last-of-type(1) {
+  border-radius: 0 0 28px 28px;
+  padding-bottom: 1rem;
 }
 .hintElement:hover {
   cursor: pointer;

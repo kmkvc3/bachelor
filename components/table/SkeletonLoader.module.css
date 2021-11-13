@@ -1,9 +1,10 @@
 .header {
-    height: 44px;
+    height: 40px;
     max-width: 124px;
     margin-bottom: 32px;
 }
 .row {
-    height: 50px;
+    height: 44px;
     margin-top: 6px;
+    border-radius: var(--buttons-border-radius);
 }

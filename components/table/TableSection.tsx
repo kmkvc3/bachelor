@@ -2,14 +2,18 @@ import Table from "./Table";
 import styles from "./TableSection.module.css";
 import SkeletonLoader from "./SkeletonLoader";
 import "react-loading-skeleton/dist/skeleton.css";
-import NotFound from "../search/NotFound";
+import NotFound from "../search/Ilustrations/NotFound";
+import { useEffect } from "react";
 
 export default function TableSection({
-  searchMode,
+  // searchMode,
   searchType,
   data,
   isDataLoaded,
 }) {
+  useEffect(()=>{
+    console.log("data table section", data)
+  }, [])
   return (
     <div className={styles.content}>
       {isDataLoaded ? (
@@ -18,16 +22,15 @@ export default function TableSection({
         ) : (
           <>
             <div className={styles.tableHeader}>
-              <p>Results</p>
+              {/* <p>Results</p>
               <button>
                 <img src="./export.svg"></img>
                 <p>Export</p>
-              </button>
+              </button> */}
             </div>
             <Table
               searchType={searchType}
               data={data}
-              isDataLoaded={isDataLoaded}
             />
           </>
         )

@@ -5,8 +5,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 export default function SkeletonLoader({}) {
   return (
     <div className={styles.wrapper}>
-      <Skeleton className={styles.header} baseColor="#f0f0f0" />
-      <Skeleton className={styles.row} count={5} />
+      <Skeleton className={styles.row} count={7} />
     </div>
   );
 }

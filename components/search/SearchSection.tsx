@@ -1,30 +1,21 @@
-import Searchbar from "./Searchbar";
-import FilterButton from "./FilterButton";
+import Searchbar from "./Searchbar/Searchbar";
 import styles from "./SearchSection.module.css";
-import HelpButton from "./HelpButton";
-import { useState } from "react";
-import Filters from "./Filters";
-import AnimateHeight from "react-animate-height";
+import Filters from "./Filters/Filters";
 
-export default function SearchSection({ setSearchType, setSearchMode, requestData }) {
-  const [visibleFilters, setVisibleFilters] = useState(false);
-  function showFilters() {
-    setVisibleFilters(!visibleFilters);
-  }
+export default function SearchSection({
+  setSearchType,
+  requestData,
+}) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
-        <FilterButton setVisibleFilters={showFilters} />
         <Searchbar
           setSearchType={setSearchType}
-          setSearchMode={setSearchMode}
           requestData={requestData}
         />
-        <HelpButton />
+        <button className={styles.help}>?</button>
       </div>
-      <AnimateHeight easing={"ease-in-out"} duration={150} height={!visibleFilters ? 0 : "auto"}>
-        <Filters />
-      </AnimateHeight>
+      <Filters />
     </div>
   );
 }

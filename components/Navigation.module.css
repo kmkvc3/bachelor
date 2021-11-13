@@ -1,7 +1,24 @@
 .navigation {
-    border-bottom: 1px solid var(--main-light-dark);
-    padding: 2rem;
+  border-bottom: 1px solid var(--main-light-dark);
 }
-.navigation a {
-    margin-right: 10px;
+.navigation ul {
+  display: flex;
+}
+.navigation ul li {
+  list-style: none;
+  text-align: center;
+  min-width: 90px;
+  cursor: pointer;
+}
+.navigation ul li p {
+  font-size: 18px;
+  padding: 1.5rem 0;
+  color: var(--secondary-text);
+}
+.active {
+  border-bottom: 2px solid var(--main-blue);
+}
+.navigation ul li.active p {
+  font-weight: bold;
+  color: var(--primary-text);
 }

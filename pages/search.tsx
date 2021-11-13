@@ -3,23 +3,23 @@ import Layout from "../components/layout";
 import SearchSection from "../components/search/SearchSection";
 import { useState } from "react";
 import TableSection from "../components/table/TableSection";
-import SearchIllustration from "../components/search/SearchIllustration";
-import { func2 } from "../components/search/Api";
+import SearchIllustration from "../components/search/Ilustrations/SearchIllustration";
+import { getInteractions } from "../Api";
 
 export default function Search() {
   const [searchType, setSearchType] = useState("virus");
-  const [searchMode, setSearchMode] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [isDataLoaded, setDataLoaded] = useState(false);
   const [wasDataLoaded, setWasDataLoaded] = useState(false);
 
-  async function requestData() {
+  async function requestData(query) {
     try {
       if (!wasDataLoaded) {
         setWasDataLoaded(true);
       }
       setDataLoaded(false);
-      const results:any  = await func2();
+      const results = await getInteractions(query)
+      console.log(results)
       setData(results);
       setDataLoaded(true);
     } catch (error) {
@@ -34,12 +34,10 @@ export default function Search() {
       </Head>
       <SearchSection
         setSearchType={setSearchType}
-        setSearchMode={setSearchMode}
         requestData={requestData}
       />
-      {wasDataLoaded ? (
+      {wasDataLoaded && data ? (
         <TableSection
-          searchMode={searchMode}
           searchType={searchType}
           isDataLoaded={isDataLoaded}
           data={data}

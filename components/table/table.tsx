@@ -1,30 +1,22 @@
-import { useEffect } from "react";
 import ListElement from "./ListElement";
 import styles from "./ListElement.module.css";
 
-export default function Table({ searchType, data, isDataLoaded }) {
+export default function Table({ data }) {
   return (
     <>
-      <div className={styles.element}>
+      <div className={`${styles.element} ${styles.header}`}>
         <span>Accession</span>
-        {searchType == "virus" ? <span>Virus</span> : <span>Host</span>}
-        {searchType == "virus" ? <span>Host</span> : <span>Virus</span>}
+        <span>Virus</span>
+        <span>Host</span>
         <span>Evidence</span>
+        <span>Genome Type</span>
         <span>Length</span>
       </div>
-      {searchType == "virus" ? (
-        <div>
-          {data.map((data)=>
-            <ListElement tableData={data} />
-          )}
-        </div>
-      ) : (
-        <div>
-          {data.map((data)=>
-            <ListElement tableData={data} />
-          )}
-      </ div>
-      )}
+      <div>
+        {data.results.map((data) => (
+          <ListElement tableData={data} />
+        ))}
+      </div>
     </>
   );
 }

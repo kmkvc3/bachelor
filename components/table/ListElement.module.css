@@ -1,16 +1,53 @@
 .element {
   width: 100%;
   display: grid;
-  grid-template-columns: 5fr 7fr 7fr 4fr 1fr;
-  padding: 1rem var(--buttons-padding);
+  grid-template-columns: 2.4fr 4.5fr 3.7fr 3fr 2.6fr 1fr;
+  align-items: center;
+  padding: 1rem 1rem;
   border-bottom: var(--button-border) solid var(--main-light-dark);
 }
+.element:hover {
+  background-color: var(--main-light-dark);
+}
 .element span {
+  font-size: 15px;
   color: var(--secondary-text);
 }
 .element strong {
+  font-size: 15px;
   color: var(--primary-text);
 }
-.element span {
-  display: block;
+.evidenceWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.element .evidence {
+  border-radius: 100%;
+  color: white;
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;
+}
+.element .evidence p {
+  width: 22px;
+  text-align: center;
+  line-height: 22px;
+  font-size: 11px;
+}
+.element .RefSeq {
+  background-color: #3d405b;
+}
+.element .UniProt {
+  background-color: #81b29a;
+}
+.element .VHDB {
+  background-color: #e07a5f;
+}
+.element .NCBI {
+  background-color: #f2cc8f;
+}
+.header {
+  background-color: var(--main-light-dark);
+  border-radius: var(--buttons-border-radius) var(--buttons-border-radius) 0 0;
 }

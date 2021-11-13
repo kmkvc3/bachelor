@@ -2,10 +2,15 @@ import { useState } from "react";
 import styles from "./Searchbar.module.css";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { func } from "./Api";
+import { func } from "../../../Api";
 
-export default function Searchbar({ setSearchType, setSearchMode, requestData }) {
-  const [defaultSearch, setDefaultSearch] = useState("virus");
+export default function Searchbar({
+  setSearchType,
+  // setSearchMode,
+  requestData,
+  // setQuery,
+}) {
+  const [defaultSearch, setDefaultSearch] = useState("Viruses");
   const [searchbarActive, setSearchbarActive] = useState(false);
   const [searchContent, setSearchContent] = useState("");
   const [searchHints, setSearchHints] = useState([]);
@@ -14,11 +19,12 @@ export default function Searchbar({ setSearchType, setSearchMode, requestData })
     setSearchbarActive(false);
     setSearchContent("");
     setSearchHints([]);
+    // setQuery("");
   }
 
   async function getSearchHints() {
     try {
-      const data:any  = await func();
+      const data: any = await func();
       setSearchHints(data);
     } catch (error) {
       console.log(error);
@@ -33,10 +39,11 @@ export default function Searchbar({ setSearchType, setSearchMode, requestData })
     return (
       <span
         onClick={() => {
-          setSearchMode(true);
+          // setSearchMode(true);
           setSearchHints([]);
           setSearchContent(item);
-          requestData();
+          // setQuery(item);
+          requestData(item);
         }}
         className={styles.hintElement}
       >
@@ -59,11 +66,11 @@ export default function Searchbar({ setSearchType, setSearchMode, requestData })
         />
 
         <input
-          onKeyDown={(e)=> {
-            if(e.key === 'Enter'){
-              setSearchMode(true);
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              // setSearchMode(true);
               setSearchHints([]);
-              requestData();
+              requestData(searchContent);
             }
           }}
           onChange={(e) => {
@@ -79,7 +86,7 @@ export default function Searchbar({ setSearchType, setSearchMode, requestData })
           type="text"
           value={searchContent}
           placeholder={
-            defaultSearch == "virus" ? "Search viruses" : "Search hosts"
+            defaultSearch == "Viruses" ? "Search viruses" : "Search hosts"
           }
         ></input>
 
@@ -100,24 +107,24 @@ export default function Searchbar({ setSearchType, setSearchMode, requestData })
 
       <div className={styles.buttons}>
         <div
-          className={defaultSearch == "virus" ? styles.active : null}
+          className={defaultSearch == "Viruses" ? styles.active : null}
           onClick={() => {
-            if (defaultSearch == "virus") return;
-            setSearchType("virus");
-            setSearchMode(false);
-            setDefaultSearch("virus");
+            if (defaultSearch == "Viruses") return;
+            setSearchType("Viruses");
+            // setSearchMode(false);
+            setDefaultSearch("Viruses");
             clearSearch();
           }}
         >
           Virus
         </div>
         <div
-          className={defaultSearch == "host" ? styles.active : null}
+          className={defaultSearch == "Hosts" ? styles.active : null}
           onClick={() => {
-            if (defaultSearch == "host") return;
-            setSearchType("host");
-            setSearchMode(false);
-            setDefaultSearch("host");
+            if (defaultSearch == "Hosts") return;
+            setSearchType("Hosts");
+            // setSearchMode(false);
+            setDefaultSearch("Hosts");
             clearSearch();
           }}
         >

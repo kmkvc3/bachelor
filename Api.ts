@@ -1,3 +1,14 @@
+const getInteractions = (query) => {
+  const data = fetch("http://afproject.org:8001/api/interaction/?page=1", {
+    method: "POST",
+    body: JSON.stringify({
+      query: query,
+      db: 'host'
+    }),
+  }).then((res) => res.json());
+  return data;
+};
+
 const func = () => {
   const data = new Promise((res, rej) => {
     const myArray = [
@@ -51,7 +62,7 @@ const func2 = () => {
         {
           accession: "xm 121",
           spieceA: "escherichia Coli",
-          spieceB:  "Campylobacter fetus",
+          spieceB: "Campylobacter fetus",
           evidence: "RS",
           length: "1200",
         },
@@ -59,7 +70,7 @@ const func2 = () => {
       [
         {
           accession: "xm 1201",
-          spieceA:  "Campylobacter fetus",
+          spieceA: "Campylobacter fetus",
           spieceB: "escherichia Coli",
           evidence: "RS",
           length: "120",
@@ -73,7 +84,7 @@ const func2 = () => {
         },
         {
           accession: "xm 1201",
-          spieceA:  "Campylobacter fetus",
+          spieceA: "Campylobacter fetus",
           spieceB: "escherichia Coli",
           evidence: "RS",
           length: "1000",
@@ -87,7 +98,7 @@ const func2 = () => {
         },
         {
           accession: "xm 1201",
-          spieceA:  "Campylobacter fetus",
+          spieceA: "Campylobacter fetus",
           spieceB: "escherichia Coli",
           evidence: "RS",
           length: "1400",
@@ -101,7 +112,7 @@ const func2 = () => {
         },
         {
           accession: "xm 1201",
-          spieceA:  "Campylobacter fetus",
+          spieceA: "Campylobacter fetus",
           spieceB: "escherichia Coli",
           evidence: "RS",
           length: "1200",
@@ -158,7 +169,7 @@ const func2 = () => {
           length: 120,
         },
       ],
-      []
+      [],
     ];
     var randomItem = myArray[Math.floor(Math.random() * myArray.length)];
     setTimeout(() => {
@@ -167,4 +178,4 @@ const func2 = () => {
   });
   return data;
 };
-export { func, func2 };
+export { func, func2, getInteractions };

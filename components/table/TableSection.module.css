@@ -1,5 +1,5 @@
 .content {
-  padding: 0rem var(--content-padding);
+  padding: 3rem var(--content-padding);
   padding-bottom: 8rem;
   display: flex;
   flex-direction: column;
