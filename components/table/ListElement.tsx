@@ -33,9 +33,6 @@ function EvidenceIcon({ evidence_name }) {
 }
 
 export default function ListElement({ tableData }) {
-  useEffect(() => {
-    console.log("data in list element: ", tableData);
-  }, []);
   return (
     <div className={styles.element}>
       <span>{tableData.virus.accession_number}</span>

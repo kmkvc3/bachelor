@@ -1,7 +1,0 @@
-.tableHeader {
-  display: grid;
-  width: 100%;
-  /* grid-template-columns: 6.4fr 5fr 4fr 3fr 2.6fr 1fr; */
-  padding: var(--buttons-padding);
-  border-bottom: calc(var(--button-border)) solid var(--main-light-dark);
-}

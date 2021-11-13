@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 0rem;
+  padding-bottom: 0.6rem;
   width: 100%;
   padding-top: 4rem;
 }
@@ -14,5 +14,5 @@
   color: var(--primary-text);
 }
 .wrapper img {
-    width: 140px;
+    width: 160px;
 }

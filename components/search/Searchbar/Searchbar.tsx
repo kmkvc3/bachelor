@@ -2,10 +2,10 @@ import { useState } from "react";
 import styles from "./Searchbar.module.css";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { func } from "../../../Api";
+import { getHints } from "../../../Api";
 
-export default function Searchbar({ setSearchType, requestData }) {
-  const [defaultSearch, setDefaultSearch] = useState("Viruses");
+export default function Searchbar({ setType, setQuery }) {
+  const [hintType, setHintsType] = useState("viral");
   const [searchbarActive, setSearchbarActive] = useState(false);
   const [searchContent, setSearchContent] = useState("");
   const [searchHints, setSearchHints] = useState([]);
@@ -13,13 +13,14 @@ export default function Searchbar({ setSearchType, requestData }) {
   function clearSearch() {
     setSearchbarActive(false);
     setSearchContent("");
+    setQuery("");
     setSearchHints([]);
   }
 
   async function getSearchHints() {
     try {
-      const data: any = await func();
-      setSearchHints(data);
+      const data: any = await getHints(searchContent, hintType);
+      setSearchHints(data.hints)
     } catch (error) {
       console.log(error);
     }
@@ -35,7 +36,7 @@ export default function Searchbar({ setSearchType, requestData }) {
         onClick={() => {
           setSearchHints([]);
           setSearchContent(item);
-          requestData(item);
+          setQuery(item);
         }}
         className={styles.hintElement}
       >
@@ -59,9 +60,10 @@ export default function Searchbar({ setSearchType, requestData }) {
 
         <input
           onKeyDown={(e) => {
-            if (e.key === "Enter") {
+            if (e.key === "Enter" && searchContent !== "") {
               setSearchHints([]);
-              requestData(searchContent);
+              setQuery(searchContent);
+              // requestData(searchContent, hintType);
             }
           }}
           onChange={(e) => {
@@ -77,7 +79,7 @@ export default function Searchbar({ setSearchType, requestData }) {
           type="text"
           value={searchContent}
           placeholder={
-            defaultSearch == "Viruses" ? "Search viruses" : "Search hosts"
+            hintType == "viral" ? "Search viruses" : "Search hosts"
           }
         ></input>
 
@@ -91,22 +93,22 @@ export default function Searchbar({ setSearchType, requestData }) {
 
         <div className={styles.buttons}>
           <div
-            className={defaultSearch == "Viruses" ? styles.active : null}
+            className={hintType == "viral" ? styles.active : null}
             onClick={() => {
-              if (defaultSearch == "Viruses") return;
-              setSearchType("Viruses");
-              setDefaultSearch("Viruses");
+              if (hintType == "viral") return;
+              setType("viral");
+              setHintsType("host")
               clearSearch();
             }}
           >
             Virus
           </div>
           <div
-            className={defaultSearch == "Hosts" ? styles.active : null}
+            className={hintType == "host" ? styles.active : null}
             onClick={() => {
-              if (defaultSearch == "Hosts") return;
-              setSearchType("Hosts");
-              setDefaultSearch("Hosts");
+              if (hintType == "host") return;
+              setType("host");
+              setHintsType("host")
               clearSearch();
             }}
           >
