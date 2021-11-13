@@ -60,7 +60,7 @@ export default function Search() {
         setAssembly={setAssembly}
         setMolecule={setMolecule}
       />
-      {wasDataLoaded && data ? (
+      {wasDataLoaded ? (
         <>
           <TableSection isDataLoaded={isDataLoaded} query={query} data={data} />
           <button

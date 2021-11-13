@@ -17,11 +17,6 @@ export default function TableSection({
         ) : (
           <>
             <div className={styles.results}>
-              {/* <p>Results</p>
-              <button>
-                <img src="./export.svg"></img>
-                <p>Export</p>
-              </button> */}
               <p>{data.count} results for  <strong>{query}</strong> </p>
             </div>
             <Table

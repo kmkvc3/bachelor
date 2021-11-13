@@ -13,7 +13,6 @@ export default function Searchbar({ setType, setQuery }) {
   function clearSearch() {
     setSearchbarActive(false);
     setSearchContent("");
-    setQuery("");
     setSearchHints([]);
   }
 
@@ -63,7 +62,6 @@ export default function Searchbar({ setType, setQuery }) {
             if (e.key === "Enter" && searchContent !== "") {
               setSearchHints([]);
               setQuery(searchContent);
-              // requestData(searchContent, hintType);
             }
           }}
           onChange={(e) => {
@@ -97,7 +95,7 @@ export default function Searchbar({ setType, setQuery }) {
             onClick={() => {
               if (hintType == "viral") return;
               setType("viral");
-              setHintsType("host")
+              setHintsType("viral")
               clearSearch();
             }}
           >

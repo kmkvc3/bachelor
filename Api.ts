@@ -22,13 +22,16 @@ const getInteractions = (
     literature: false,
   });
 
-  const data = fetch(
-    `http://afproject.org:8001/api/interaction/?page=${page}`,
-    {
+  const data = new Promise((resolve, reject) => {
+    fetch(`http://afproject.org:8001/api/interaction/?page=${page}`, {
       method: "POST",
       body: JSON.stringify(body),
-    }
-  ).then((res) => res.json());
+    }).then((res) => {
+      setTimeout(() => {
+        resolve(res.json());
+      }, 400);
+    });
+  });
   return data;
 };
 
