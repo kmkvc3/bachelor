@@ -19,6 +19,6 @@
   border-bottom: 2px solid var(--main-blue);
 }
 .navigation ul li.active p {
-  font-weight: bold;
-  color: var(--primary-text);
+  /* font-weight: bold; */
+  color: var(--main-blue);
 }

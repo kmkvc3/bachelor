@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 2.4fr 4.5fr 3.7fr 3fr 2.6fr 1fr;
   align-items: center;
-  padding: 1rem 1rem;
+  padding: 1.1rem 1rem;
   border-bottom: var(--button-border) solid var(--main-light-dark);
 }
 .element:hover {
@@ -36,7 +36,7 @@
   font-size: 11px;
 }
 .element .RefSeq {
-  background-color: #3d405b;
+  background-color: #4c5075;
 }
 .element .UniProt {
   background-color: #81b29a;

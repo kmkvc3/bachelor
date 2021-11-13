@@ -15,9 +15,10 @@
   --content: 1500px;
   --content-padding: 8rem;
   --buttons-padding: 0.6rem;
-  --buttons-border-radius: 0.3rem;
+  --buttons-border-radius: 0.2rem;
   --standard-font-size: 20px;
   --button-border: 1px;
   --button-border-color: #d3d2d2;
-  --main-blue: #536DFE;
+  --main-blue: #4c5075;
+  /* --main-blue: #536DFE; */
 }

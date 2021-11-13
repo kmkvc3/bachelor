@@ -10,23 +10,22 @@
 .searchField {
   border: var(--button-border) solid var(--main-light-dark);
   background-color: var(--main-light-dark);
-  border-radius: 100px 0 0 100px;
+  border-radius: 100px;
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: row;
   height: 50px;
 }
 .focused > .searchField {
-  border: var(--button-border) solid var(--button-border-color);
-  border-radius: 28px 0 0 0;
-  background-color: transparent;
+  border-radius: 28px 28px 0 0;
 }
 .searchField > input {
   background-color: transparent;
   color: var(--primary-text);
-  padding: var(--buttons-padding) 1.2rem var(--buttons-padding) 3rem;
-  border-radius: 5px 0 0 5px; 
+  padding: var(--buttons-padding) 2.2rem var(--buttons-padding) 3rem;
   border: var(--button-border) solid transparent;
-  width: 92%;
+  width: 80%;
   height: 100%;
   margin-left: 10px;
 }
@@ -34,14 +33,10 @@
   outline: none;
 }
 .buttons {
-  background-color: var(--main-light-dark);
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 50px;
-  border-radius: 0 100px 100px 0;
-  padding: var(--buttons-padding) 1.5rem;
-  border: calc(var(--button-border)) solid var(--main-light-dark);
+  padding: 0 1.5rem;
 }
 .buttons > div {
   color: var(--secondary-text);
@@ -59,16 +54,14 @@
 .close {
   position: absolute;
   cursor: pointer;
-  right: 170px;
+  right: 130px;
   color: var(--secondary-text);
   top: var(--buttons-padding);
-  padding: 0;
-  margin: 0;
   background-color: transparent;
   border: transparent;
-  font-size: 24px;
+  font-size: 22px;
   top: 15px;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 .searchIcon {
   font-size: 22px;
@@ -84,26 +77,28 @@
   width: calc(100% + 2px);
   flex-direction: column;
   z-index: 2;
+  background-color: var(--main-light-dark);
   top: 49px;
   left: -1px;
-  background-color: white;
+  padding: 1rem 0;
+  border-top: 1px solid rgb(209, 209, 209);
+  border-radius: 0 0 28px 28px;
+  box-shadow: 0 2px 4px -3px var(--primary-text);
 }
 .hintElement {
   display: block;
   padding: 0.7rem;
+  width: 90%;
+  margin-left: 5%;
+  border-bottom: 1px solid rgb(209, 209, 209);
   color: var(--primary-text);
-  border: var(--button-border) solid var(--button-border-color);
-  background-color: white;
-  border-top: none;
-  transition: 0.15s;
-  box-shadow: 0 1px 6px -1px var(--main-light-dark);
 }
 .hintElement:nth-last-of-type(1) {
-  border-radius: 0 0 28px 28px;
-  padding-bottom: 1rem;
+  padding-bottom: 0.7rem;
+  border: none;
 }
 .hintElement:hover {
   cursor: pointer;
-  background-color: var(--main-light-dark);
+  background-color: rgb(228, 228, 228);
   color: var(--primary-dark-text);
 }

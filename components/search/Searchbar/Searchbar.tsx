@@ -4,12 +4,7 @@ import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { func } from "../../../Api";
 
-export default function Searchbar({
-  setSearchType,
-  // setSearchMode,
-  requestData,
-  // setQuery,
-}) {
+export default function Searchbar({ setSearchType, requestData }) {
   const [defaultSearch, setDefaultSearch] = useState("Viruses");
   const [searchbarActive, setSearchbarActive] = useState(false);
   const [searchContent, setSearchContent] = useState("");
@@ -19,7 +14,6 @@ export default function Searchbar({
     setSearchbarActive(false);
     setSearchContent("");
     setSearchHints([]);
-    // setQuery("");
   }
 
   async function getSearchHints() {
@@ -39,10 +33,8 @@ export default function Searchbar({
     return (
       <span
         onClick={() => {
-          // setSearchMode(true);
           setSearchHints([]);
           setSearchContent(item);
-          // setQuery(item);
           requestData(item);
         }}
         className={styles.hintElement}
@@ -55,7 +47,7 @@ export default function Searchbar({
   return (
     <div
       className={
-        searchbarActive ? `${styles.wrapper} ${styles.focused}` : styles.wrapper
+        searchHints.length > 0 ? `${styles.wrapper} ${styles.focused}` : styles.wrapper
       }
     >
       <div className={styles.searchField}>
@@ -68,7 +60,6 @@ export default function Searchbar({
         <input
           onKeyDown={(e) => {
             if (e.key === "Enter") {
-              // setSearchMode(true);
               setSearchHints([]);
               requestData(searchContent);
             }
@@ -97,6 +88,31 @@ export default function Searchbar({
             ))}
           </HintList>
         ) : null}
+
+        <div className={styles.buttons}>
+          <div
+            className={defaultSearch == "Viruses" ? styles.active : null}
+            onClick={() => {
+              if (defaultSearch == "Viruses") return;
+              setSearchType("Viruses");
+              setDefaultSearch("Viruses");
+              clearSearch();
+            }}
+          >
+            Virus
+          </div>
+          <div
+            className={defaultSearch == "Hosts" ? styles.active : null}
+            onClick={() => {
+              if (defaultSearch == "Hosts") return;
+              setSearchType("Hosts");
+              setDefaultSearch("Hosts");
+              clearSearch();
+            }}
+          >
+            Host
+          </div>
+        </div>
       </div>
 
       {searchbarActive ? (
@@ -104,33 +120,6 @@ export default function Searchbar({
           <FontAwesomeIcon icon={faTimes} />
         </button>
       ) : null}
-
-      <div className={styles.buttons}>
-        <div
-          className={defaultSearch == "Viruses" ? styles.active : null}
-          onClick={() => {
-            if (defaultSearch == "Viruses") return;
-            setSearchType("Viruses");
-            // setSearchMode(false);
-            setDefaultSearch("Viruses");
-            clearSearch();
-          }}
-        >
-          Virus
-        </div>
-        <div
-          className={defaultSearch == "Hosts" ? styles.active : null}
-          onClick={() => {
-            if (defaultSearch == "Hosts") return;
-            setSearchType("Hosts");
-            // setSearchMode(false);
-            setDefaultSearch("Hosts");
-            clearSearch();
-          }}
-        >
-          Host
-        </div>
-      </div>
     </div>
   );
 }

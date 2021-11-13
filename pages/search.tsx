@@ -19,7 +19,6 @@ export default function Search() {
       }
       setDataLoaded(false);
       const results = await getInteractions(query)
-      console.log(results)
       setData(results);
       setDataLoaded(true);
     } catch (error) {
