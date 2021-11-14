@@ -1,4 +1,4 @@
-import Table from "./Table";
+import Table from "./table";
 import styles from "./TableSection.module.css";
 import SkeletonLoader from "./SkeletonLoader";
 import "react-loading-skeleton/dist/skeleton.css";
