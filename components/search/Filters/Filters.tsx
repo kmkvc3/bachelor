@@ -21,12 +21,13 @@ interface FiltersProps {
   setEvidence: Function;
   setAssembly: Function;
   setMolecule: Function;
+  setSort: Function
 }
 
 const customStyles = {
   container: (provided, state) => ({
     ...provided,
-    height: "36px",
+    height: "34px",
   }),
   control: (provided, state) => ({
     ...provided,
@@ -34,9 +35,8 @@ const customStyles = {
     fontSize: "12px",
     padding: "0 0.7rem",
     border: "1px solid #d3d2d2",
-    boxShadow: "none",
-    height: "36px",
-    minHeight: "36px",
+    height: "34px",
+    minHeight: "34px",
     "&:hover": {
       border: "1px solid #505050",
       cursor: "pointer",
@@ -45,7 +45,7 @@ const customStyles = {
 
   valueContainer: (provided, state) => ({
     ...provided,
-    height: "36px",
+    height: "34px",
     padding: "0 6px",
   }),
 
@@ -64,21 +64,41 @@ const customStyles = {
   }),
   indicatorsContainer: (provided, state) => ({
     ...provided,
-    height: "36px",
+    height: "34px",
   }),
 };
+
+const theme = (theme) => ({
+  ...theme,
+  borderRadius: 0,
+  colors: {
+    ...theme.colors,
+    primary25: "#f0f0f0",
+    primary50: "#f0f0f0",
+    primary: "#4c5075",
+  },
+})
 
 export default function Filters({
   availableFilters,
   setDatabase,
   setEvidence,
   setAssembly,
-  setMolecule
+  setMolecule,
+  setSort
 }: FiltersProps) {
   const [evidenceOptions, setEvidenceOptions] = useState([]);
   const [assemblyOptions, setAssemblyOptions] = useState([]);
   const [databaseOptions, setDatabaseOptions] = useState([]);
   const [genomeOptions, setGenomeOptions] = useState([]);
+  const [sortOptions, setSortOptions] = useState([
+    {value: "viruses", label: "Viruses"},
+    {value: "hosts", label: "Hosts"},
+    {value: "assembly_level", label: "Assembly level"},
+    {value: "genome_database", label: "Database"},
+    {value: "genome_length", label: "Length"},
+    {value: "molecule", label: "Molecule"},
+  ]);
 
   useEffect(() => {
     let evidenceOptions: Array<SelectOption> = availableFilters.evidence.map(
@@ -118,16 +138,7 @@ export default function Filters({
             }}
             isSearchable={false}
             styles={customStyles}
-            theme={(theme) => ({
-              ...theme,
-              borderRadius: 0,
-              colors: {
-                ...theme.colors,
-                primary25: "#f0f0f0",
-                primary50: "#f0f0f0",
-                primary: "#4c5075",
-              },
-            })}
+            theme={theme}
             placeholder={"Evidence"}
             options={evidenceOptions}
           />
@@ -143,16 +154,7 @@ export default function Filters({
               else setAssembly("");
             }}
             styles={customStyles}
-            theme={(theme) => ({
-              ...theme,
-              borderRadius: 0,
-              colors: {
-                ...theme.colors,
-                primary25: "#f0f0f0",
-                primary50: "#f0f0f0",
-                primary: "#4c5075",
-              },
-            })}
+            theme={theme}
             placeholder={"Assembly level"}
             options={assemblyOptions}
           />
@@ -168,16 +170,7 @@ export default function Filters({
               else setMolecule("");
             }}
             styles={customStyles}
-            theme={(theme) => ({
-              ...theme,
-              borderRadius: 0,
-              colors: {
-                ...theme.colors,
-                primary25: "#f0f0f0",
-                primary50: "#f0f0f0",
-                primary: "#4c5075",
-              },
-            })}
+            theme={theme}
             placeholder={"Genome type"}
             options={genomeOptions}
           />
@@ -193,24 +186,25 @@ export default function Filters({
               else setDatabase("");
             }}
             styles={customStyles}
-            theme={(theme) => ({
-              ...theme,
-              borderRadius: 0,
-              colors: {
-                ...theme.colors,
-                primary25: "#f0f0f0",
-                primary50: "#f0f0f0",
-                primary: "#4c5075",
-              },
-            })}
+            theme={theme}
             placeholder={"Database"}
             options={databaseOptions}
           />
         ) : null}
       </div>
-      <button>
-        <p>Sort by</p>
-      </button>
+      <Select
+        className={styles.select}
+        isClearable={true}
+        isSearchable={false}
+        onChange={(e) => {
+          if (e !== null) setSort(e.value);
+          else setSort("");
+        }}
+        styles={customStyles}
+        theme={theme}
+        placeholder={"Sort by"}
+        options={sortOptions}
+      />
     </div>
   );
 }

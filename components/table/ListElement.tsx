@@ -35,7 +35,7 @@ function EvidenceIcon({ evidence_name }) {
 export default function ListElement({ tableData }) {
   return (
     <div className={styles.element}>
-      <span>{tableData.virus.accession_number}</span>
+      <span className={styles.accession}>{tableData.virus.accession_number}</span>
       <span>
         <strong>{tableData.virus.organism_name}</strong>
       </span>

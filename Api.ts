@@ -5,6 +5,7 @@ const getInteractions = (
   evidence,
   assembly_level,
   molecule,
+  sort,
   page
 ) => {
   let body = {};
@@ -14,12 +15,16 @@ const getInteractions = (
   if (molecule) {
     Object.assign(body, { molecule: [`${molecule}`] });
   }
+  if (sort) {
+    Object.assign(body, { sort: sort})
+  }
   Object.assign(body, {
     query: query,
     db: type,
     genome_database: database,
     assembly_level: assembly_level,
     literature: false,
+    offset: 25
   });
 
   const data = new Promise((resolve, reject) => {

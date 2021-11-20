@@ -27,6 +27,10 @@
 }
 .select {
   margin-right: 1.4rem;
+  z-index: 1000;
+}
+.select:nth-last-of-type(1) {
+  margin: 0;
 }
 .select .react-select__indicators {
   display: none;

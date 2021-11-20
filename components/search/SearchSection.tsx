@@ -3,6 +3,7 @@ import styles from "./SearchSection.module.css";
 import Filters from "./Filters/Filters";
 import { useEffect, useState } from "react";
 import { getDbDictonary } from "../../Api";
+import Help from "./Help";
 
 export default function SearchSection({
   setType,
@@ -10,7 +11,8 @@ export default function SearchSection({
   setQuery,
   setEvidence,
   setAssembly,
-  setMolecule
+  setMolecule,
+  setSort,
 }) {
   const [availableFilters, setAvailableFilters] = useState(null);
 
@@ -26,13 +28,11 @@ export default function SearchSection({
     }
   }
   return (
-    <div className={styles.wrapper}>
+    
+    <div id="modal-wrapper" className={styles.wrapper}>
       <div className={styles.content}>
-        <Searchbar
-          setType={setType}
-          setQuery={setQuery}
-        />
-        <button className={styles.help}>?</button>
+        <Searchbar setType={setType} setQuery={setQuery} />
+        <Help />
       </div>
       {availableFilters ? (
         <Filters
@@ -41,8 +41,10 @@ export default function SearchSection({
           setEvidence={setEvidence}
           setAssembly={setAssembly}
           setMolecule={setMolecule}
+          setSort={setSort}
         />
       ) : null}
     </div>
   );
 }
+

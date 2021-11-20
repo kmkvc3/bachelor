@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --main-light-dark: #f0f0f0;
   --primary-dark-text: #353535;

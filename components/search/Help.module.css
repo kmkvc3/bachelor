@@ -1,10 +1,24 @@
+.content .help {
+  height: 36px;
+  border: var(--button-border) solid var(--button-border-color);
+  background-color: white;
+  border-radius: var(--buttons-border-radius);
+  color: var(--primary-text);
+  cursor: pointer;
+  align-items: center;
+  padding: 0 0.8rem;
+  transform: translateY(25%);
+}
+.content .help:hover {
+  background-color: var(--main-light-dark);
+}
 .wrapper {
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 8rem;
+  padding: 3.6rem;
 }
 .circle {
   display: flex;
@@ -29,11 +43,17 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: var(--third-text);
+  color: var(--secondary-text);
 }
 .step div {
   font-size: 16px;
 }
 .step .circle {
   font-size: 14px;
+}
+.closeButton {
+  cursor: pointer;
+  color: var(--secondary-text);
+  font-size: 24px;
+  float: right;
 }

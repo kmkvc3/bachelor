@@ -8,17 +8,3 @@
   width: 100%;
   justify-content: space-between;
 }
-.content .help {
-  height: 36px;
-  border: var(--button-border) solid var(--button-border-color);
-  background-color: white;
-  border-radius: var(--buttons-border-radius);
-  color: var(--primary-text);
-  cursor: pointer;
-  align-items: center;
-  padding: 0 0.8rem;
-  transform: translateY(25%);
-}
-.content .help:hover {
-  background-color: var(--main-light-dark);
-}

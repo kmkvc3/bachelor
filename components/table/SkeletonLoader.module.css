@@ -9,4 +9,5 @@
     height: 34px;
     margin-top: 16px;
     border-radius: var(--buttons-border-radius);
+    z-index: -1;
 }

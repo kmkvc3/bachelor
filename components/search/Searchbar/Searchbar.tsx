@@ -96,7 +96,6 @@ export default function Searchbar({ setType, setQuery }) {
               if (hintType == "viral") return;
               setType("viral");
               setHintsType("viral")
-              clearSearch();
             }}
           >
             Virus
@@ -107,7 +106,6 @@ export default function Searchbar({ setType, setQuery }) {
               if (hintType == "host") return;
               setType("host");
               setHintsType("host")
-              clearSearch();
             }}
           >
             Host

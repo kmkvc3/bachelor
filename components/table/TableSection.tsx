@@ -12,7 +12,7 @@ export default function TableSection({
   return (
     <div className={styles.content}>
       {isDataLoaded ? (
-        data.results.length === 0 ? (
+        (data.results.length === 0) || (!data.results.length) ? (
           <NotFound />
         ) : (
           <>
