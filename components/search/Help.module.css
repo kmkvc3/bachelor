@@ -1,16 +1,18 @@
 .content .help {
-  height: 36px;
+  height: 32px;
   border: var(--button-border) solid var(--button-border-color);
   background-color: white;
   border-radius: var(--buttons-border-radius);
   color: var(--primary-text);
   cursor: pointer;
   align-items: center;
-  padding: 0 0.8rem;
+  padding: 0 0.7rem;
   transform: translateY(25%);
+  margin-left: 1rem;
 }
 .content .help:hover {
   background-color: var(--main-light-dark);
+  border: var(--button-border) solid transparent;
 }
 .wrapper {
   text-align: center;
@@ -57,7 +59,7 @@
   font-size: 24px;
   float: right;
 }
-@media (max-width: 1000px) {
+@media (max-width: 920px) {
   .content {
     display: none;
   }

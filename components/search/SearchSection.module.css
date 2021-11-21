@@ -7,7 +7,7 @@
   width: 100%;
   justify-content: space-between;
 }
-@media (max-width: 1000px) {
+@media (max-width: 920px) {
   .content {
     padding: 2.4rem var(--content-padding-mobile) 2.4rem var(--content-padding-mobile);
     justify-content: center;

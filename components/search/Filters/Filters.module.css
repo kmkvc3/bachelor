@@ -38,14 +38,21 @@
 .select .react-select__control {
   height: 20px;
 }
-@media (max-width: 1000px) {
-  .wrapper {
+@media (max-width: 920px) {
+  /* .wrapper {
     padding: 0rem var(--content-padding-mobile) 3.9rem var(--content-padding-mobile);
   }
   .wrapper .filters {
     flex-direction: column;
+    display: none;
+  }
+  .wrapper button:nth-last-of-type(1) {
+    margin-right: 0;
   }
   .wrapper button {
     max-width: 100px;
+  } */
+  .wrapper {
+    display: none;
   }
 }

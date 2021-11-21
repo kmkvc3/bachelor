@@ -23,7 +23,7 @@
 .wrapper img {
     width: 136px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 920px) {
     .wrapper {
         flex-direction: column;
         text-align: center;

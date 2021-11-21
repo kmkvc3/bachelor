@@ -1,32 +1,32 @@
 .wrapper {
-    max-width: var(--content);
-    padding: 0 var(--content-padding);
-    margin: 0 auto 4rem 0;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  max-width: var(--content);
+  padding: 0 var(--content-padding);
+  margin: 0 auto 4rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 .wrapper button {
-    height: 34px;
-    border: 1px solid var(--third-text);
-    background-color: transparent;
-    color: var(--secondary-text);
-    padding: 0rem 0.65rem;
-    border-radius: var(--buttons-border-radius);
-    margin-right: 0.8rem;
+  height: 32px;
+  border: 1px solid var(--third-text);
+  background-color: white;
+  color: var(--secondary-text);
+  padding: 0rem 0.60rem;
+  border-radius: var(--buttons-border-radius);
+  margin-left: 1rem;
 }
 .wrapper button:hover {
-    background-color: var(--main-light-dark);
-    cursor:pointer;
+  background-color: var(--main-light-dark);
+  cursor: pointer;
+  border: var(--button-border) solid transparent;
 }
 .wrapper p {
-    color: var(--secondary-text);
-    margin-right: 0.8rem;
+  color: var(--secondary-text);
 }
 @media (max-width: 1000px) {
-    .wrapper {
-        padding: 1rem var(--content-padding-mobile);
-        padding-bottom: 0rem;
-    }
+  .wrapper {
+    padding: 1rem var(--content-padding-mobile);
+    padding-bottom: 0rem;
+  }
 }
