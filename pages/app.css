@@ -9,7 +9,10 @@
 html {
   scroll-behavior: smooth;
 }
-
+.fancy-progress-bar {
+  color: red;
+  background-color: red;
+}
 :root {
   --main-light-dark: #f0f0f0;
   --primary-dark-text: #353535;
@@ -18,6 +21,7 @@ html {
   --third-text: #adadad;
   --content: 1500px;
   --content-padding: 8rem;
+  --content-padding-mobile: 1.2rem;
   --buttons-padding: 0.6rem;
   --buttons-border-radius: 0.25rem;
   --standard-font-size: 20px;

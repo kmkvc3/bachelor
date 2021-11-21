@@ -1,7 +1,8 @@
 .element {
   width: 100%;
   display: grid;
-  grid-template-columns: 2.4fr 4.5fr 3.7fr 3fr 2.6fr 1fr;
+  grid-template-columns: 2.4fr 4.8fr 4fr 2.4fr 2fr 1.4fr 0.2fr;
+  grid-column-gap: 0.15rem;
   align-items: center;
   padding: 1.1rem 1rem;
   border-bottom: var(--button-border) solid var(--main-light-dark);
@@ -20,6 +21,7 @@
 .evidenceWrapper {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
 }
 .element .evidence {
@@ -93,4 +95,38 @@
   margin-left: 4px;
   font-size: 16px;
   cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .element {
+    grid-column-gap: 0.4rem;
+    grid-template-columns: 2.4fr 3.6fr 3.6fr 2fr 1.5fr 1.4fr 0.2fr;
+  }
+  .element .evidence {
+    border-radius: 100%;
+    color: white;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+  }
+  .evidence p {
+    line-height: 20px;
+    font-size: 11px;
+  }
+  .element span {
+    font-size: 13px;
+    color: var(--secondary-text);
+  }
+  .element strong {
+    font-size: 13px;
+    color: var(--primary-text);
+  }
+  .helpIcon {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .element {
+    overflow-x: scroll;
+  }
 }

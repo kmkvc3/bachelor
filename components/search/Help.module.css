@@ -57,3 +57,8 @@
   font-size: 24px;
   float: right;
 }
+@media (max-width: 1000px) {
+  .content {
+    display: none;
+  }
+}

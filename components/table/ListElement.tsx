@@ -1,5 +1,8 @@
-import { useEffect } from "react";
 import styles from "./ListElement.module.css";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function EvidenceIcon({ evidence_name }) {
   switch (evidence_name) {
@@ -35,7 +38,9 @@ function EvidenceIcon({ evidence_name }) {
 export default function ListElement({ tableData }) {
   return (
     <div className={styles.element}>
-      <span className={styles.accession}>{tableData.virus.accession_number}</span>
+      <span className={styles.accession}>
+        {tableData.virus.accession_number}
+      </span>
       <span>
         <strong>{tableData.virus.organism_name}</strong>
       </span>
@@ -49,6 +54,12 @@ export default function ListElement({ tableData }) {
       </span>
       <span>{tableData.virus.genome_type.genome_type}</span>
       <span>{tableData.virus.sequence_length}</span>
+      <span onClick={()=>{toast(`${tableData.virus.accession_number} added to bookmarks`, {
+        // type: "success",
+        progressClassName: 'fancy-progress-bar'
+      })}}>
+        <FontAwesomeIcon icon={faBookmark} />
+      </span>
     </div>
   );
 }

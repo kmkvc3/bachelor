@@ -24,3 +24,9 @@
     color: var(--secondary-text);
     margin-right: 0.8rem;
 }
+@media (max-width: 1000px) {
+    .wrapper {
+        padding: 1rem var(--content-padding-mobile);
+        padding-bottom: 0rem;
+    }
+}

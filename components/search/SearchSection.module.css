@@ -1,5 +1,4 @@
 .wrapper {
-  max-width: var(--content);
   width: 100%;
 }
 .content {
@@ -7,4 +6,10 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+@media (max-width: 1000px) {
+  .content {
+    padding: 2.4rem var(--content-padding-mobile) 2.4rem var(--content-padding-mobile);
+    justify-content: center;
+  }
 }

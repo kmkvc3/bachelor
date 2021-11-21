@@ -38,3 +38,14 @@
 .select .react-select__control {
   height: 20px;
 }
+@media (max-width: 1000px) {
+  .wrapper {
+    padding: 0rem var(--content-padding-mobile) 3.9rem var(--content-padding-mobile);
+  }
+  .wrapper .filters {
+    flex-direction: column;
+  }
+  .wrapper button {
+    max-width: 100px;
+  }
+}
