@@ -13,38 +13,22 @@ export default function SearchSection({
   setAssembly,
   setMolecule,
   setSort,
+  availableFilters,
 }) {
-  const [availableFilters, setAvailableFilters] = useState(null);
-
-  useEffect(() => {
-    loadFilters();
-  }, []);
-  async function loadFilters() {
-    try {
-      const data = await getDbDictonary();
-      setAvailableFilters(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
   return (
-    
     <div id="modal-wrapper" className={styles.wrapper}>
       <div className={styles.content}>
         <Searchbar setType={setType} setQuery={setQuery} />
         <Help />
       </div>
-      {availableFilters ? (
-        <Filters
-          availableFilters={availableFilters}
-          setDatabase={setDatabase}
-          setEvidence={setEvidence}
-          setAssembly={setAssembly}
-          setMolecule={setMolecule}
-          setSort={setSort}
-        />
-      ) : null}
+      <Filters
+        availableFilters={availableFilters}
+        setDatabase={setDatabase}
+        setEvidence={setEvidence}
+        setAssembly={setAssembly}
+        setMolecule={setMolecule}
+        setSort={setSort}
+      />
     </div>
   );
 }
-

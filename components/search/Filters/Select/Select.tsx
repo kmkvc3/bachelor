@@ -30,21 +30,20 @@ export default function Select({
 
   return (
     <div
+      onClick={() => {
+        setListOpen(!listOpen);
+      }}
       className={option ? `${styles.wrapper} ${styles.active}` : styles.wrapper}
     >
       {option ? (
         <div className={styles.option}>
-          <div
-            onClick={() => {
-              setListOpen(true);
-            }}
-          >
-            {option}
-          </div>
+          <div>{option}</div>
           <div
             className={styles.closeIcon}
             onClick={() => {
-              setListOpen(false);
+              setTimeout(() => {
+                setListOpen(false);
+              }, 1);
               setPickedOption(null);
               setOption(null);
             }}

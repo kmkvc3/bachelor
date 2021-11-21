@@ -10,8 +10,16 @@ import Pagination from "../components/table/Pagination";
 import Export from "../components/table/Export";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { getDbDictonary } from "../Api";
 
-export default function Search() {
+export async function getServerSideProps(context) {
+  const availableFilters = await getDbDictonary();
+  return {
+    props: { availableFilters },
+  }
+}
+
+export default function Search({ availableFilters }) {
   const [query, setQuery] = useState("");
   const [type, setType] = useState("viral");
   const [page, setPage] = useState(1);
@@ -24,6 +32,10 @@ export default function Search() {
   const [data, setData] = useState(null);
   const [isDataLoaded, setDataLoaded] = useState(false);
   const [wasDataLoaded, setWasDataLoaded] = useState(false);
+
+  useEffect(()=>{
+    console.log(availableFilters)
+  })
 
   useEffect(() => {
     if (query === "") return;
@@ -71,12 +83,12 @@ export default function Search() {
         setAssembly={setAssembly}
         setMolecule={setMolecule}
         setSort={setSort}
+        availableFilters={availableFilters}
       />
       {wasDataLoaded ? (
         <>
           <TableSection isDataLoaded={isDataLoaded} query={query} data={data} />
           <Pagination page={page} maxPage={maxPage} setPage={setPage} />
-          {/* <Export /> */}
         </>
       ) : (
         <SearchIllustration />

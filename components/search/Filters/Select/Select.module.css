@@ -1,6 +1,7 @@
 .wrapper {
   height: 32px;
   border: 1px solid var(--button-border-color);
+  cursor: pointer;
   background-color: transparent;
   color: var(--secondary-text);
   padding: 0rem 0.8rem;
