@@ -1,4 +1,4 @@
-import Table from "./table";
+import Table from "./Table";
 import styles from "./TableSection.module.css";
 import SkeletonLoader from "./SkeletonLoader";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -13,7 +13,7 @@ export default function TableSection({
     <div className={styles.content}>
       {isDataLoaded ? (
         (data.results.length === 0) || (!data.results.length) ? (
-          <NotFound />
+          <NotFound query={query} />
         ) : (
           <>
             <div className={styles.results}>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./Navigation.module.css";
 import { useRouter } from "next/router";
+import ThemeButton from "./ThemeButton"
 
 export default function Navigation() {
   const router = useRouter();
@@ -27,6 +28,9 @@ export default function Navigation() {
           </Link>
         </li>
       </ul>
+      <div>
+      <ThemeButton />
+      </div>
     </nav>
   );
 }

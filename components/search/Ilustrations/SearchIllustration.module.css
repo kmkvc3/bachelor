@@ -6,18 +6,19 @@
     height: 50vh;
     padding-bottom: 4rem;
     align-items: center;
+    text-align: center;
 }
 .wrapper > div h1 {
     font-size: 26px;
     font-weight: normal;
     margin-bottom: 0.6rem;
-    width: max-content;
+    /* width: max-content; */
     color: var(--primary-text);
 }
 .wrapper > div p {
     font-weight: normal;
     max-width: 280px;
-    margin-right: 3.6rem;
+    /* margin-right: 3.6rem; */
     color: var(--secondary-text);
 }
 .wrapper img {

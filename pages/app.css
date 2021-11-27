@@ -5,15 +5,18 @@
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  overflow: auto;
 }
-.fancy-progress-bar {
-  color: red;
-  background-color: red;
+body {
+  height: 100%;
+  background-color: white;
 }
-:root {
+body {
+  transition: .1s;
+  --background-color: white;
   --main-light-dark: #f0f0f0;
   --primary-dark-text: #353535;
   --primary-text: #505050;
@@ -28,5 +31,19 @@ html {
   --button-border: 1px;
   --button-border-color: #d3d2d2;
   --main-blue: #4c5075;
-  /* --main-blue: #536DFE; */
+  --searchbar-hover: #e4e4e4;
+}
+body.dark {
+  background-color: #1c2128;
+  --background-color: #1c2128;
+  --main-light-dark: #2d333b;
+  --button-border-color: #525a63;
+  --primary-dark-text: #adbac7;
+  --primary-text: #adbac7;
+  --secondary-text: #74818e;
+  --third-text: #7e8d9c;
+  --evidence-white-color: #adbac7;
+  --evidence-uniprot-color: #000000;
+  --main-blue: #666da8;
+  --searchbar-hover: #3d4958;
 }

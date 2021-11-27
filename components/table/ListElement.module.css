@@ -1,8 +1,8 @@
 .element {
   width: 100%;
   display: grid;
-  grid-template-columns: 2.4fr 4.8fr 4fr 2.4fr 2fr 1.4fr 0.2fr;
-  grid-column-gap: 0.15rem;
+  grid-template-columns: 2.1fr 4.7fr 4.1fr 2.5fr 2.2fr 1.4fr 0.2fr;
+  gap: 20px;
   align-items: center;
   padding: 1.1rem 1rem;
   border-bottom: var(--button-border) solid var(--main-light-dark);
@@ -27,14 +27,14 @@
 .element .evidence {
   border-radius: 100%;
   color: white;
-  width: 23px;
-  height: 23px;
+  width: 21px;
+  height: 21px;
   margin-right: 6px;
 }
 .evidence p {
   text-align: center;
-  line-height: 24px;
-  font-size: 12px;
+  line-height: 21px;
+  font-size: 10px;
 }
 .element .accession {
   border-bottom: 1px solid var(--secondary-text);
@@ -48,14 +48,27 @@
 .RefSeq {
   background-color: #4c5075;
 }
+.RefSeq p {
+  color: var(--evidence-white-color);
+}
 .UniProt {
-  background-color: #81b29a;
+  background-color: #7eb198;
+}
+.UniProt p {
+  color: var(--evidence-uniprot-color);
 }
 .VHDB {
-  background-color: #ff6582;
+  background-color: #f5607b;
+}
+.VHDB p {
+  color: var(--evidence-uniprot-color);
 }
 .NCBI {
+  color: black;
   background-color: #f2cc8f;
+}
+.NCBI p {
+  color: black;
 }
 .header {
   background-color: var(--main-light-dark);
@@ -68,7 +81,7 @@
   left: -100px;
   width: auto;
   min-width: 180px;
-  background-color: white;
+  background-color: var(--background-color);
   border: 1px solid var(--button-border-color);
   padding: 0.3rem 1rem;
   border-radius: var(--buttons-border-radius);

@@ -6,7 +6,8 @@ const getInteractions = (
   assembly_level,
   molecule,
   sort,
-  page
+  page,
+  offset
 ) => {
   let body = {};
   if (evidence) {
@@ -24,7 +25,7 @@ const getInteractions = (
     genome_database: database,
     assembly_level: assembly_level,
     literature: false,
-    offset: 25
+    offset: offset
   });
 
   const data = new Promise((resolve, reject) => {

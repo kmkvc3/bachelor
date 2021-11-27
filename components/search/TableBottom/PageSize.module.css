@@ -1,0 +1,29 @@
+.wrapper {
+  max-width: var(--content);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.wrapper button {
+  cursor: pointer;
+  height: 32px;
+  border: 1px solid var(--third-text);
+  background-color: var(--background-color);
+  color: var(--secondary-text);
+  padding: 0rem 0.5rem;
+  border-radius: var(--buttons-border-radius);
+  margin-right: 0.65rem;
+}
+.wrapper button:hover {
+  background-color: var(--main-light-dark);
+  border: var(--button-border) solid transparent;
+  font-weight: bold;
+  color: var(--primary-text);
+}
+.wrapper button.active {
+  background-color: var(--main-light-dark);
+  border: var(--button-border) solid transparent;
+  font-weight: bold;
+  color: var(--primary-text);
+  cursor: unset;
+}

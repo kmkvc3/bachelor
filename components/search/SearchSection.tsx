@@ -1,8 +1,6 @@
 import Searchbar from "./Searchbar/Searchbar";
 import styles from "./SearchSection.module.css";
 import Filters from "./Filters/Filters";
-import { useEffect, useState } from "react";
-import { getDbDictonary } from "../../Api";
 import Help from "./Help";
 
 export default function SearchSection({

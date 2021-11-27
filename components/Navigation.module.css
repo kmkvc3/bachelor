@@ -1,5 +1,9 @@
 .navigation {
   border-bottom: 1px solid var(--main-light-dark);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3.6rem;
+  align-items: center;
 }
 .navigation ul {
   display: flex;

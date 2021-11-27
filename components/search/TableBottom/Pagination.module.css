@@ -1,8 +1,6 @@
 .wrapper {
   max-width: var(--content);
-  padding: 0 var(--content-padding);
-  margin: 0 auto 4rem 0;
-  width: 100%;
+  margin: 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -10,18 +8,19 @@
 .wrapper button {
   height: 32px;
   border: 1px solid var(--third-text);
-  background-color: white;
+  background-color: var(--background-color);
   color: var(--secondary-text);
   padding: 0rem 0.60rem;
   border-radius: var(--buttons-border-radius);
-  margin-left: 1rem;
 }
 .wrapper button:hover {
   background-color: var(--main-light-dark);
   cursor: pointer;
+  color: var(--primary-text);
   border: var(--button-border) solid transparent;
 }
 .wrapper p {
+  margin: 0 0.8rem;
   color: var(--secondary-text);
 }
 @media (max-width: 1000px) {

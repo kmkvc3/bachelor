@@ -1,0 +1,31 @@
+.wrapper {
+  width: 60px;
+  height: 28px;
+  padding: 0.3rem;
+  position: relative;
+  background-color: var(--main-light-dark);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper svg {
+  margin: 0.1rem; 
+  color: var(--primary-text);
+}
+.wrapper .circle {
+  transition: 0.15s;
+  height: 20px;
+  width: 20px;
+  background-color: var(--primary-text);
+  left: 0;
+  margin: 0.3rem;
+  border-radius: 100%;
+  top: 0;
+  position: absolute;
+}
+.wrapper .circle.active {
+  right: 0;
+  left: unset;
+}

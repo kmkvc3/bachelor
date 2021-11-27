@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/search/searchbar.js"  ],
+, "components/search/searchbar.js", "ThemeContext.js", "components/ThemeButton.js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,7 +1,7 @@
 .content .help {
   height: 32px;
   border: var(--button-border) solid var(--button-border-color);
-  background-color: white;
+  background-color: var(--background-color);
   border-radius: var(--buttons-border-radius);
   color: var(--primary-text);
   cursor: pointer;

@@ -1,18 +1,25 @@
 .wrapper {
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 0.6rem;
+  flex-direction: row;
+  justify-content: center;
   width: 100%;
-  padding-top: 4rem;
+  height: 50vh;
+  padding-bottom: 4rem;
+  align-items: center;
+  text-align: center;
 }
 .wrapper > h3 {
-  font-size: 26px;
+  font-size: 18px;
   font-weight: normal;
-  margin-bottom: 2.2rem;
+  /* margin-bottom: 2.2rem; */
   width: max-content;
+  color: var(--secondary-text);
+}
+.wrapper > h3 strong {
+  font-size: 18px;
   color: var(--primary-text);
 }
 .wrapper img {
-    width: 160px;
+  width: 130px;
 }

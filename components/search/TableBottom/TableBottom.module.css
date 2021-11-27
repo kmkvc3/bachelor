@@ -1,0 +1,9 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  padding: 4rem var(--content-padding) 4rem var(--content-padding);
+  justify-content: space-between;
+}
+.wrapper div {
+    width: 160px;
+}

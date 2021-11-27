@@ -1,0 +1,9 @@
+.button {
+  cursor: pointer;
+  height: 32px;
+  border: 1px solid var(--third-text);
+  background-color: var(--background-color);
+  color: var(--secondary-text);
+  padding: 0rem 2rem;
+  border-radius: var(--buttons-border-radius);
+}

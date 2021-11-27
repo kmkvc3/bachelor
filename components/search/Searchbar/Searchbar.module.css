@@ -32,6 +32,13 @@
 .searchField > input:focus {
   outline: none;
 }
+.searchField > input::placeholder {
+  color: var(--secondary-text);
+  opacity: 1;
+}
+.searchField > input::-ms-input-placeholder {
+  color: var(--secondary-text);
+}
 .buttons {
   display: flex;
   flex-direction: row;
@@ -81,7 +88,7 @@
   top: 49px;
   left: -1px;
   padding: 0.5rem 0;
-  border-top: 1px solid rgb(209, 209, 209);
+  border-top: 1px solid var(--button-border-color);
   border-radius: 0 0 28px 28px;
   box-shadow: 0 2px 4px -3px var(--primary-text);
 }
@@ -99,6 +106,6 @@
 }
 .hintElement:hover {
   cursor: pointer;
-  background-color: rgb(228, 228, 228);
+  background-color: var(--searchbar-hover);
   color: var(--primary-dark-text);
 }

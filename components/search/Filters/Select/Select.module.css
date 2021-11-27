@@ -30,11 +30,11 @@
 .wrapper .optionList {
   position: absolute;
   left: -1px;
-  background-color: white;
+  background-color: var(--background-color);
   z-index: 1000;
   top: 42px;
   padding: 0.3rem 0;
-  border: 1px solid var(--third-text);
+  border: 1px solid var(--button-border-color);
   border-radius: var(--buttons-border-radius);
   box-sizing: border-box;
   width: calc(100% + 2px);
