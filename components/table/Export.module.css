@@ -4,6 +4,14 @@
   border: 1px solid var(--third-text);
   background-color: var(--background-color);
   color: var(--secondary-text);
-  padding: 0rem 2rem;
+  padding: 0rem var(--buttons-padding);
   border-radius: var(--buttons-border-radius);
+}
+.button svg {
+  margin-left: 0.3rem;
+}
+.button:hover {
+  color: var(--primary-text);
+  background-color: var(--main-light-dark);
+  border: 1px solid transparent;
 }

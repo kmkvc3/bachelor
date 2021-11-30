@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import SearchSection from "../components/search/SearchSection";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import TableSection from "../components/table/TableSection";
 import SearchIllustration from "../components/search/Ilustrations/SearchIllustration";
 import { getInteractions } from "../Api";
@@ -10,7 +10,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getDbDictonary } from "../Api";
 import TableBottom from "../components/search/TableBottom/TableBottom";
-import { ThemeContext } from "../ThemeContext";
 
 export async function getServerSideProps(context) {
   const availableFilters = await getDbDictonary();
@@ -40,7 +39,6 @@ export default function Search({ availableFilters }) {
   }, [
     genome_database,
     query,
-    type,
     evidence,
     assembly_level,
     molecule,

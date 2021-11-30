@@ -30,7 +30,8 @@ body {
   --standard-font-size: 20px;
   --button-border: 1px;
   --button-border-color: #d3d2d2;
-  --main-blue: #4c5075;
+  /* --main-blue: #4c5075; */
+  --main-blue: #567af1;
   --searchbar-hover: #e4e4e4;
 }
 body.dark {
@@ -42,8 +43,8 @@ body.dark {
   --primary-text: #adbac7;
   --secondary-text: #74818e;
   --third-text: #7e8d9c;
-  --evidence-white-color: #adbac7;
+  --evidence-white-color: #becedb;
   --evidence-uniprot-color: #000000;
-  --main-blue: #666da8;
+  --main-blue: #567af1;
   --searchbar-hover: #3d4958;
 }
