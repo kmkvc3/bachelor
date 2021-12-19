@@ -1,0 +1,45 @@
+.wrapper {
+  height: 32px;
+  border: 1px solid var(--button-border-color);
+  background-color: transparent;
+  color: var(--secondary-text);
+  padding: 0rem 0.8rem;
+  min-width: 100px;
+  border-radius: var(--buttons-border-radius);
+  margin-right: 0.8rem;
+  margin-top: 0.8rem;
+  box-sizing: border-box;
+  line-height: 32px;
+  position: relative;
+}
+.wrapper:nth-last-of-type(1) {
+  margin-right: 0;
+}
+.wrapper.active {
+  background-color: var(--main-light-dark);
+  color: var(--primary-text);
+  font-weight: bold;
+  border: 1px solid transparent;
+}
+.option {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.wrapper .optionList {
+  position: absolute;
+  left: -1px;
+  background-color: var(--background-color);
+  z-index: 1000;
+  top: 42px;
+  padding: 0.3rem 0;
+  border: 1px solid var(--button-border-color);
+  border-radius: var(--buttons-border-radius);
+  box-sizing: border-box;
+  width: calc(100% + 2px);
+  box-shadow: 0 2px 4px -3px var(--primary-text);
+}
+.wrapper .closeIcon {
+  margin-left: 0.7rem;
+  cursor: pointer;
+}

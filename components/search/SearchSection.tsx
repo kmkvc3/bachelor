@@ -11,12 +11,13 @@ export default function SearchSection({
   setAssembly,
   setMolecule,
   setSort,
+  setPage,
   availableFilters,
 }) {
   return (
     <div id="modal-wrapper" className={styles.wrapper}>
       <div className={styles.content}>
-        <Searchbar setType={setType} setQuery={setQuery} />
+        <Searchbar setType={setType} setQuery={setQuery} setPage={setPage}/>
         <Help />
       </div>
       <Filters
@@ -26,6 +27,7 @@ export default function SearchSection({
         setAssembly={setAssembly}
         setMolecule={setMolecule}
         setSort={setSort}
+        setPage={setPage}
       />
     </div>
   );

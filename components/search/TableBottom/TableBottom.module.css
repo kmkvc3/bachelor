@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   width: 100%;
-  padding: 3.5rem var(--content-padding) 6.3rem var(--content-padding);
+  padding: 3rem var(--content-padding) 10.5rem var(--content-padding);
   justify-content: space-between;
 }
 .wrapper div {

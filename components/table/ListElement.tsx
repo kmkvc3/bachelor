@@ -1,8 +1,11 @@
 import styles from "./ListElement.module.css";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark as farBookmark } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast from "react-hot-toast";
+import BookmarkHandler from "../../BookmarksHandler";
+import { useEffect, useState } from "react";
+import EventBus from "../../EventBus";
 
 function EvidenceIcon({ evidence_name }) {
   switch (evidence_name) {
@@ -36,6 +39,17 @@ function EvidenceIcon({ evidence_name }) {
 }
 
 export default function ListElement({ tableData }) {
+  const accession = tableData.virus.accession_number;
+  const [bookmark, setBookmark] = useState(null);
+  useEffect(() => {
+    loadBookmark();
+  }, []);
+
+  function loadBookmark() {
+    const localBookmark = BookmarkHandler.getBookmark(accession);
+    if (localBookmark) setBookmark(localBookmark);
+  }
+
   return (
     <div className={styles.element}>
       <span className={styles.accession}>
@@ -54,11 +68,38 @@ export default function ListElement({ tableData }) {
       </span>
       <span>{tableData.virus.genome_type.genome_type}</span>
       <span>{tableData.virus.sequence_length}</span>
-      <span onClick={()=>{toast(`${tableData.virus.accession_number} added to bookmarks`, {
-        // type: "success",
-        progressClassName: 'fancy-progress-bar'
-      })}}>
-        <FontAwesomeIcon icon={faBookmark} />
+      <span
+        className={styles.bookmark}
+        onClick={() => {
+          if(bookmark) {
+            BookmarkHandler.removeBookmark(accession)
+            toast.success(
+              <div>
+                <strong>{accession}</strong> removed from bookmarks
+              </div>
+            );
+            setBookmark(null);
+          } else {
+            toast.success(
+              <div>
+                <strong>{accession}</strong> added to bookmarks
+              </div>
+            );
+            BookmarkHandler.setBookmark({
+              accession: accession,
+              virus: tableData.virus.organism_name,
+              host: tableData.host.organism_name,
+            });
+            loadBookmark();
+          }
+          EventBus.emit("add-bookmark")
+        }}
+      >
+        {bookmark ? (
+          <FontAwesomeIcon icon={faBookmark} />
+        ) : (
+          <FontAwesomeIcon icon={farBookmark} />
+        )}
       </span>
     </div>
   );

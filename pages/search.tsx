@@ -78,7 +78,7 @@ export default function Search({ availableFilters }) {
   return (
     <Layout>
       <Head>
-        <title>First Post</title>
+        <title>Search</title>
       </Head>
       <ToastContainer />
       <SearchSection
@@ -89,6 +89,7 @@ export default function Search({ availableFilters }) {
         setAssembly={setAssembly}
         setMolecule={setMolecule}
         setSort={setSort}
+        setPage={setPage}
         availableFilters={availableFilters}
       />
       {wasDataLoaded ? (

@@ -25,6 +25,12 @@
 .navigation ul li.active p {
   color: var(--main-blue);
 }
+.sidebar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+}
 @media (max-width: 1540px) {
   .navigation {
     padding: 0 1.8rem;

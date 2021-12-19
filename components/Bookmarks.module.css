@@ -1,0 +1,9 @@
+.wrapper {
+    margin-right: 3rem;
+}
+.wrapper svg {
+    height: 100%;
+    font-size: 20px;
+    color: var(--primary-text);
+    cursor: pointer;
+}

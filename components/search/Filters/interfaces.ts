@@ -17,4 +17,5 @@ export interface FiltersProps {
   setAssembly: Function;
   setMolecule: Function;
   setSort: Function;
+  setPage: Function;
 }

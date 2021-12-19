@@ -46,22 +46,22 @@
   border-bottom: 1px solid var(--main-blue);
 }
 .RefSeq {
-  background-color: #4c5075;
+  background-color: #3d405b;
 }
 .RefSeq p {
-  color: var(--evidence-white-color);
+  color: white;
 }
 .UniProt {
-  background-color: #7eb198;
+  background-color: #81b29a;
 }
 .UniProt p {
-  color: var(--evidence-uniprot-color);
+  color: black;
 }
 .VHDB {
-  background-color: #f5607b;
+  background-color: #e07a5f;
 }
 .VHDB p {
-  color: var(--evidence-uniprot-color);
+  color: white;
 }
 .NCBI {
   color: black;
@@ -107,6 +107,9 @@
   transform: translateY(1px);
   margin-left: 4px;
   font-size: 16px;
+  cursor: pointer;
+}
+.bookmark {
   cursor: pointer;
 }
 @media (max-width: 920px)  {

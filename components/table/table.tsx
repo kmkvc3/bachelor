@@ -2,8 +2,14 @@ import ListElement from "./ListElement";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./ListElement.module.css";
+import { Toaster } from "react-hot-toast";
+import { ThemeContext } from "../../ThemeContext";
+import { useContext } from "react";
 
 export default function Table({ data }) {
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
+
   return (
     <>
       <div className={`${styles.element} ${styles.header}`}>
@@ -48,6 +54,47 @@ export default function Table({ data }) {
         <span>Genome Type</span>
         <span>Length</span>
       </div>
+
+      {darkMode ? (
+        <Toaster
+          toastOptions={{
+            className: "",
+            style: {
+              border: "1px solid #525a63",
+              backgroundColor: "#1c2128",
+              padding: "0.2rem 0.6rem",
+              color: "#adbac7",
+            },
+            success: {
+              iconTheme: {
+                primary: "#81b29a",
+                secondary: "black",
+              },
+            },
+          }}
+        />
+      ) : (
+        <Toaster
+          toastOptions={{
+            className: "",
+            style: {
+              border: "1px solid #d3d2d2",
+              backgroundColor: "white",
+              padding: "0.2rem 0.6rem",
+              color: "#505050",
+              boxShadow: "none"
+            },
+            success: {
+              iconTheme: {
+                primary: "#81b29a",
+                secondary: "#505050",
+              },
+            },
+            duration: 3400,
+          }}
+        />
+      )}
+
       <div>
         {data.results.map((data) => (
           <ListElement tableData={data} />

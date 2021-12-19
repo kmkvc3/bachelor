@@ -9,30 +9,30 @@
 }
 .footer img {
   width: 14px;
+  transform: translateY(1px);
   margin: 0 3px;
   color: #ff6582;
 }
-.footer span:nth-child(1) {
+.footer span {
   color: var(--secondary-text);
 }
-.footer span {
+.footer div span {
   font-size: 15px;
   margin-right: 3.2rem;
   color: var(--main-blue);
   cursor: pointer;
 }
-.footer div:nth-of-type(2) span:nth-last-child(1) {
-  color: var(--secondary-text);
+.footer span:nth-last-child(1) {
   margin-right: 0;
 }
 .footer strong {
   color: var(--primary-text);
-  font-weight: normal;
+  font-weight: bold;
   font-size: 15px;
 }
 .footer a {
   text-decoration: none;
   font-weight: normal;
-  font-size: 15px;
   color: var(--secondary-text);
+  margin-right: 2.7rem;
 }

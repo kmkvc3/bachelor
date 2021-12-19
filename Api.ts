@@ -1,3 +1,5 @@
+const BASE_URL = "http://150.254.120.100:8001"
+
 const getInteractions = (
   query,
   type,
@@ -11,10 +13,10 @@ const getInteractions = (
 ) => {
   let body = {};
   if (evidence) {
-    Object.assign(body, { evidence: [`${evidence}`] });
+    Object.assign(body, { evidence: evidence });
   }
   if (molecule) {
-    Object.assign(body, { molecule: [`${molecule}`] });
+    Object.assign(body, { molecule: molecule });
   }
   if (sort) {
     Object.assign(body, { sort: sort})
@@ -29,7 +31,7 @@ const getInteractions = (
   });
 
   const data = new Promise((resolve, reject) => {
-    fetch(`http://afproject.org:8001/api/interaction/?page=${page}`, {
+    fetch(`${BASE_URL}/api/interaction/?page=${page}`, {
       method: "POST",
       body: JSON.stringify(body),
     }).then((res) => {
@@ -42,7 +44,7 @@ const getInteractions = (
 };
 
 const getHints = (query, type) => {
-  const data = fetch("http://afproject.org:8001/api/hints/", {
+  const data = fetch(`${BASE_URL}/api/hints/`, {
     method: "POST",
     body: JSON.stringify({
       query: query,
@@ -53,7 +55,7 @@ const getHints = (query, type) => {
 };
 
 const getDbDictonary = () => {
-  const data = fetch("http://afproject.org:8001/api/values/", {
+  const data = fetch(`${BASE_URL}/api/values/`, {
     method: "POST",
     body: JSON.stringify({
       assembly_level: true,

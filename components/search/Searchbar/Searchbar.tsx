@@ -4,7 +4,7 @@ import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getHints } from "../../../Api";
 
-export default function Searchbar({ setType, setQuery }) {
+export default function Searchbar({ setType, setQuery, setPage }) {
   const [hintType, setHintsType] = useState("viral");
   const [searchbarActive, setSearchbarActive] = useState(false);
   const [searchContent, setSearchContent] = useState("");
@@ -36,6 +36,7 @@ export default function Searchbar({ setType, setQuery }) {
           setSearchHints([]);
           setSearchContent(item);
           setQuery(item);
+          setPage(1)
         }}
         className={styles.hintElement}
       >
@@ -62,6 +63,7 @@ export default function Searchbar({ setType, setQuery }) {
             if (e.key === "Enter" && searchContent !== "") {
               setSearchHints([]);
               setQuery(searchContent);
+              setPage(1)
             }
           }}
           onChange={(e) => {

@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 0rem var(--content-padding) 3.9rem var(--content-padding);
+  padding: 0rem var(--content-padding) 0.2rem var(--content-padding);
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -24,6 +24,12 @@
 .wrapper p {
   line-height: 100%;
   padding: 0 1.4rem;
+}
+.displayedFilters {
+  padding: 0rem var(--content-padding) 1rem var(--content-padding);
+  display: flex;
+  min-height: 60px;
+  flex-wrap: wrap;
 }
 .select {
   margin-right: 1.4rem;
