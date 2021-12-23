@@ -6,7 +6,7 @@ interface Bookmark {
 
 class BookmarksHandler {
   private accessions: Array<Bookmark> = [];
-  
+
   private saveAccessions(): void {
     localStorage.setItem("accessions", JSON.stringify(this.accessions));
   }
@@ -14,12 +14,12 @@ class BookmarksHandler {
     this.accessions = JSON.parse(localStorage.getItem("accessions"));
   }
   public getAccessions(): Array<Bookmark> {
-    return this.accessions
+    return this.accessions;
   }
   public getBookmark(accession: string): Bookmark {
     return this.accessions.find(
       (bookmark: Bookmark) => bookmark.accession === accession
-    ) ?? null;
+    );
   }
   public setBookmark(payload: Bookmark): void {
     this.accessions.push(payload);

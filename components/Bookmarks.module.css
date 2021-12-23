@@ -7,6 +7,7 @@
   display: grid;
   grid-template-columns: 0.4fr 0.8fr 0.8fr 0.1fr 0.1fr;
   column-gap: 1.2rem;
+  width: 790px;
   padding: 1rem;
   color: var(--secondary-text);
   border-bottom: var(--button-border) solid var(--main-light-dark);

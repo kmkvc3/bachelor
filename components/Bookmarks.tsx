@@ -20,7 +20,9 @@ export default function Bookmarks() {
 
   useEffect(() => {
     const storedBookmarks = getBookmarksFromStorage();
-    setBookmarks(storedBookmarks);
+    if(storedBookmarks) {
+      setBookmarks(storedBookmarks);
+    }
     BookmarksHandler.setAccessions(storedBookmarks);
   }, []);
 

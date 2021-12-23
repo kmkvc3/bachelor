@@ -4,13 +4,13 @@
   text-align: center;
 }
 .desc {
-  margin-bottom: 2.6rem;
+  margin-bottom: 3.2rem;
 }
 .line {
-  height: 24px;
+  height: 23px;
   background-color: var(--main-light-dark);
   width: 2px;
-  margin: 0.4rem auto;
+  margin: 0.65rem auto;
 }
 .circle {
   display: flex;
@@ -38,7 +38,5 @@
 }
 .sample {
   margin-top: 2.6rem;
-}
-.sample strong {
   color: var(--main-blue);  
 }
