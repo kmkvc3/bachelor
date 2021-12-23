@@ -1,38 +1,58 @@
 import styles from "./Bookmarks.module.css";
-import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Modal from "./Modal";
 import { useEffect, useState } from "react";
 import BookmarksHandler from "../BookmarksHandler";
 import EventBus from "../EventBus";
+import NoBookmarks from "./NoBookmarks";
 
 export default function Bookmarks() {
-  const [open, setOpen] = useState(false)
-  const [bookmarks, setBookmarks] = useState([])
+  const [bookmarks, setBookmarks] = useState([]);
 
   function getBookmarksFromStorage() {
-    return JSON.parse(localStorage.getItem("accessions"))
+    return JSON.parse(localStorage.getItem("accessions"));
   }
 
   function updateBookmarks() {
-    const storedBookmarks = getBookmarksFromStorage()
-    setBookmarks(storedBookmarks)
+    const storedBookmarks = getBookmarksFromStorage();
+    setBookmarks(storedBookmarks);
   }
 
-  useEffect(()=>{
-    const storedBookmarks = getBookmarksFromStorage()
-    setBookmarks(storedBookmarks)
-    BookmarksHandler.setAccessions(storedBookmarks)
-    EventBus.on("add-bookmark", updateBookmarks)
-  }, [])
+  useEffect(() => {
+    const storedBookmarks = getBookmarksFromStorage();
+    setBookmarks(storedBookmarks);
+    BookmarksHandler.setAccessions(storedBookmarks);
+  }, []);
 
   return (
-    <div onClick={()=>{
-      setOpen(true)
-    }} className={styles.wrapper}>
-      <Modal opened={open} setClose={setOpen}><div>x</div></Modal>
-      <strong>{bookmarks.length}</strong>
-      <FontAwesomeIcon icon={faBookmark} />
+    <div className={styles.wrapper}>
+      {bookmarks.length ? (
+        <div className={`${styles.row} ${styles.mainRow}`}>
+          <p>Accession</p>
+          <p>Virus</p>
+          <p>Host</p>
+        </div>
+      ) : <NoBookmarks />}
+      {bookmarks.map((bookmark) => (
+        <div className={styles.row}>
+          <p>{bookmark.accession}</p>
+          <p>{bookmark.virus}</p>
+          <p>{bookmark.host}</p>
+          <div
+            className={styles.button}
+            onClick={() => {
+              BookmarksHandler.removeBookmark(bookmark.accession);
+              updateBookmarks();
+              EventBus.emit("remove-bookmark");
+            }}
+          >
+            <FontAwesomeIcon icon={faTimes} className={styles.searchIcon} />
+          </div>
+          <div className={styles.button} onClick={() => {}}>
+            <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

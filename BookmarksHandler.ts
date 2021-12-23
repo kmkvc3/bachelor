@@ -17,10 +17,9 @@ class BookmarksHandler {
     return this.accessions
   }
   public getBookmark(accession: string): Bookmark {
-    console.log(accession, this.accessions)
     return this.accessions.find(
       (bookmark: Bookmark) => bookmark.accession === accession
-    );
+    ) ?? null;
   }
   public setBookmark(payload: Bookmark): void {
     this.accessions.push(payload);

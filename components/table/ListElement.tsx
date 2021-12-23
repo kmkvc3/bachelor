@@ -43,6 +43,12 @@ export default function ListElement({ tableData }) {
   const [bookmark, setBookmark] = useState(null);
   useEffect(() => {
     loadBookmark();
+    EventBus.on("remove-bookmark", ()=>{
+      if(!BookmarkHandler.getBookmark(accession)){
+        BookmarkHandler.removeBookmark(accession)
+        setBookmark(null);
+      }
+    })
   }, []);
 
   function loadBookmark() {

@@ -1,9 +1,38 @@
 .wrapper {
-    margin-right: 3rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
-.wrapper svg {
-    height: 100%;
-    font-size: 20px;
-    color: var(--primary-text);
-    cursor: pointer;
+.wrapper .row {
+  display: grid;
+  grid-template-columns: 0.4fr 0.8fr 0.8fr 0.1fr 0.1fr;
+  column-gap: 1.2rem;
+  padding: 1rem;
+  color: var(--secondary-text);
+  border-bottom: var(--button-border) solid var(--main-light-dark);
+  align-items: center;
+}
+.wrapper .mainRow {
+  font-weight: bold;
+  padding: 0rem 1rem;
+  padding-bottom: 1rem;
+  color: var(--primary-text);
+}
+.wrapper .button {
+  border: var(--button-border) solid var(--button-border-color);
+  background-color: var(--background-color);
+  border-radius: var(--buttons-border-radius);
+  color: var(--primary-text);
+  cursor: pointer;
+  align-items: center;
+  padding: var(--buttons-padding);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+}
+.wrapper .button:hover {
+  background-color: var(--main-light-dark);
+  border: var(--button-border) solid transparent;
 }
