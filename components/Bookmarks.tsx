@@ -23,7 +23,6 @@ export default function Bookmarks() {
     if(storedBookmarks) {
       setBookmarks(storedBookmarks);
     }
-    BookmarksHandler.setAccessions(storedBookmarks);
   }, []);
 
   return (

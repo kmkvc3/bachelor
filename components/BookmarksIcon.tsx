@@ -17,14 +17,23 @@ export default function Bookmarks() {
 
   function updateBookmarks() {
     const storedBookmarks = getBookmarksFromStorage();
-    setBookmarks(storedBookmarks);
+    if(storedBookmarks) {
+      setBookmarks(storedBookmarks);
+    } else {
+      setBookmarks([])
+    }
   }
 
   useEffect(() => {
+    BookmarksHandler.setAccessions();
     const storedBookmarks = getBookmarksFromStorage();
-    setBookmarks(storedBookmarks);
-    BookmarksHandler.setAccessions(storedBookmarks);
+    if(storedBookmarks) {
+      setBookmarks(storedBookmarks);
+    } else {
+      setBookmarks([])
+    }
     EventBus.on("add-bookmark", updateBookmarks);
+    EventBus.on("remove-bookmark", updateBookmarks)
   }, []);
 
   return (
@@ -36,6 +45,7 @@ export default function Bookmarks() {
         className={styles.wrapper}
       >
         <FontAwesomeIcon icon={faBookmark} />
+        <div className={styles.count}>{bookmarks.length}</div>
       </div>
       {open ? (
         <Modal title="Bookmarks" opened={open} setClose={setOpen}>

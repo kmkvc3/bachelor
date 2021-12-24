@@ -9,13 +9,33 @@
   height: 100vh;
   z-index: 10000;
 }
+@keyframes backgroundEntry {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+@keyframes modalEntry {
+  from {
+    opacity: 0.3;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 .modal {
   position: absolute;
   max-width: 860px;
   min-height: 440px;
+  padding-bottom: 1rem;
   z-index: 100;
   border-radius: var(--buttons-border-radius);
   background-color: var(--background-color);
+  animation: modalEntry .3s;
 }
 .header {
   height: 50px;
@@ -32,6 +52,7 @@
   height: 100%;
   background-color: black;
   opacity: 0.4;
+  animation: backgroundEntry .3s;
 }
 .close {
   font-size: 1.4rem;

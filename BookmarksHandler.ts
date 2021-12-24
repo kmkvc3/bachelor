@@ -10,8 +10,10 @@ class BookmarksHandler {
   private saveAccessions(): void {
     localStorage.setItem("accessions", JSON.stringify(this.accessions));
   }
-  public setAccessions(payload: Array<Bookmark>) {
-    this.accessions = JSON.parse(localStorage.getItem("accessions"));
+  public setAccessions() {
+    const localAcessions = JSON.parse(localStorage.getItem("accessions"));
+    localAcessions ? this.accessions = localAcessions : this.accessions = []
+    
   }
   public getAccessions(): Array<Bookmark> {
     return this.accessions;
