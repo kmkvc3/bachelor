@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0rem 1rem;
 }
 .wrapper .row {
   display: grid;
@@ -32,6 +32,9 @@
   align-items: center;
   width: 32px;
   height: 32px;
+}
+.wrapper .button a {
+  color: var(--primary-text);
 }
 .wrapper .button:hover {
   background-color: var(--main-light-dark);

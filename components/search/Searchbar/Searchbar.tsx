@@ -1,14 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Searchbar.module.css";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getHints } from "../../../Api";
+import { useRouter } from 'next/router'
 
 export default function Searchbar({ setType, setQuery, setPage }) {
   const [hintType, setHintsType] = useState("viral");
   const [searchbarActive, setSearchbarActive] = useState(false);
   const [searchContent, setSearchContent] = useState("");
   const [searchHints, setSearchHints] = useState([]);
+  const router = useRouter()
+
+  useEffect(()=>{
+    const { query, type } = router.query
+    if(query) {
+      setQuery(query)
+      setSearchContent(query as string)
+      setSearchbarActive(true)
+    }
+    if(type) {
+      setHintsType(type as string)
+      setType(type)
+    }
+  }, [])
 
   function clearSearch() {
     setSearchbarActive(false);

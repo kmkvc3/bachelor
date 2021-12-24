@@ -1,23 +1,23 @@
 .wrapper {
-    margin-right: 3rem;
-    position: relative;
+  margin-right: 3rem;
+  position: relative;
 }
 .wrapper svg {
-    height: 100%;
-    font-size: 22px;
-    color: var(--primary-text);
-    cursor: pointer;
+  height: 100%;
+  font-size: 22px;
+  color: var(--primary-text);
+  cursor: pointer;
 }
 .count {
-    position: absolute;
-    top: -7px;
-    left: 8px;
-    background-color: var(--main-blue);
-    border-radius: 50%;
-    height: 17px;
-    width: 17px;
-    color: white;
-    font-size: 13px;
-    text-align: center;
-    line-height: 17px;
+  position: absolute;
+  top: -7px;
+  left: 8px;
+  background-color: var(--main-blue);
+  border-radius: 50%;
+  height: 17px;
+  width: 17px;
+  color: white;
+  font-size: 13px;
+  text-align: center;
+  line-height: 17px;
 }

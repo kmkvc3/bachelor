@@ -5,9 +5,11 @@ import { useEffect, useState } from "react";
 import BookmarksHandler from "../BookmarksHandler";
 import EventBus from "../EventBus";
 import NoBookmarks from "./NoBookmarks";
+import { useRouter } from "next/router";
 
 export default function Bookmarks() {
   const [bookmarks, setBookmarks] = useState([]);
+  const router = useRouter();
 
   function getBookmarksFromStorage() {
     return JSON.parse(localStorage.getItem("accessions"));
@@ -20,7 +22,7 @@ export default function Bookmarks() {
 
   useEffect(() => {
     const storedBookmarks = getBookmarksFromStorage();
-    if(storedBookmarks) {
+    if (storedBookmarks) {
       setBookmarks(storedBookmarks);
     }
   }, []);
@@ -33,7 +35,9 @@ export default function Bookmarks() {
           <p>Virus</p>
           <p>Host</p>
         </div>
-      ) : <NoBookmarks />}
+      ) : (
+        <NoBookmarks />
+      )}
       {bookmarks.map((bookmark) => (
         <div className={styles.row}>
           <p>{bookmark.accession}</p>
@@ -49,8 +53,10 @@ export default function Bookmarks() {
           >
             <FontAwesomeIcon icon={faTimes} className={styles.searchIcon} />
           </div>
-          <div className={styles.button} onClick={() => {}}>
-            <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
+          <div className={styles.button}>
+            <a target="_blank" href={`${router.basePath}?query=${bookmark.virus}`}>
+              <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
+            </a>
           </div>
         </div>
       ))}

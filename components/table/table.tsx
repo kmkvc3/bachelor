@@ -64,6 +64,7 @@ export default function Table({ data }) {
               backgroundColor: "#1c2128",
               padding: "0.2rem 0.6rem",
               color: "#adbac7",
+              borderRadius: "0.25rem"
             },
             success: {
               iconTheme: {
@@ -82,6 +83,7 @@ export default function Table({ data }) {
               backgroundColor: "white",
               padding: "0.2rem 0.6rem",
               color: "#505050",
+              borderRadius: "0.25rem",
               boxShadow: "none"
             },
             success: {
