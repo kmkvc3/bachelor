@@ -23,8 +23,8 @@ export default function Navigation() {
             <p>Browse</p>
           </Link>
         </li>
-        <li className={router.pathname == "/browse" ? styles.active : ""}>
-          <Link href="/browse">
+        <li className={router.pathname == "/blast" ? styles.active : ""}>
+          <Link href="/blast">
             <p>Blast</p>
           </Link>
         </li>

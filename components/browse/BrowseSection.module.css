@@ -1,0 +1,73 @@
+.wrapper {
+    width: 100%;
+    max-width: var(--content);
+    padding: 0 var(--content-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.description {
+    color: var(--primary-text);
+    max-width: 100%;
+    text-align: center;
+    margin: 4.5rem auto;
+}
+.description h3 {
+    font-size: 26px;
+    margin-bottom: 0.6rem;
+    font-weight: normal;
+}
+.description p {
+    color: var(--secondary-text);
+    max-width: 420px;
+    margin: 0 auto;
+    line-height: 22px;
+}
+.selection {
+    color: var(--primary-text);
+    display: flex;
+    flex-direction: row;
+}
+.selection p {
+    margin: 0 0.3rem;
+    color: var(--secondary-text);
+    cursor: pointer;
+}
+.selection p.active {
+    color: var(--primary-text);
+    font-weight: bold;
+    border-bottom: 2px solid var(--primary-text);
+}
+.selection p:nth-child(1) {
+    margin: 0 0.4rem 0 0;
+    color: var(--primary-text);
+    cursor: auto;
+}
+.data {
+    color: var(--primary-text);
+}
+.data p {
+    line-height: 46px;
+    padding: 0 1rem;
+    border-bottom: 1px solid var(--main-light-dark);
+}
+.data p:hover {
+    color: var(--main-blue);
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: var(--main-light-dark);;
+}
+.stack {
+    margin: 1.25rem 0 0 0;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--main-light-dark);
+    border-radius: var(--buttons-border-radius) var(--buttons-border-radius) 0 0;
+    padding: 1rem;
+    color: var(--primary-text);
+}
+.stack p {
+    margin-right: 0.25rem;
+    cursor: pointer;
+    font-weight: bold;
+}

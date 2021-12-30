@@ -1,13 +1,14 @@
-import Head from 'next/head'
-import Layout from '../components/layout'
+import Head from "next/head";
+import Layout from "../components/layout";
+import BrowseSection from "../components/browse/BrowseSection";
 
-export default function Search() {
+export default function Browse() {
   return (
     <Layout>
       <Head>
-        <title>First Post</title>
+        <title>Browse</title>
       </Head>
-      Browse
+      <BrowseSection />
     </Layout>
-  )
+  );
 }

@@ -66,4 +66,15 @@ const getDbDictonary = () => {
   }).then((res) => res.json());
   return data;
 };
-export { getInteractions, getHints, getDbDictonary };
+
+const getBrowseData = (org: string, db: "viral" | "host") => {
+  const data = fetch(`${BASE_URL}/api/browse/`, {
+    method: "POST",
+    body: JSON.stringify({
+      org: org,
+      db: db
+    }),
+  }).then((res) => res.json());
+  return data;
+}
+export { getInteractions, getHints, getDbDictonary, getBrowseData };
