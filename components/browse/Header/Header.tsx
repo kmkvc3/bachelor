@@ -5,5 +5,6 @@ export default function Header() {
       <span>Tax name</span>
       <span>Tax rank</span>
       <span>Interactions</span>
+      <span>Tax id</span>
   </div>;
 }

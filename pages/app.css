@@ -15,7 +15,6 @@ body {
   background-color: white;
 }
 body {
-  transition: .1s;
   --background-color: white;
   --main-light-dark: #f0f0f0;
   --primary-dark-text: #353535;

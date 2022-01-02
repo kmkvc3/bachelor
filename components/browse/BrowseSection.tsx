@@ -1,101 +1,59 @@
 import { useEffect, useState } from "react";
-import { getBrowseData } from "../../Api";
-import { toast } from "react-toastify";
-import BrowseElement from "./BrowseElement/BrowseElement";
 import Header from "./Header/Header";
+import Navigation from "./Navigation/Navigation";
 import styles from "./BrowseSection.module.css";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/router";
+import Link from "next/dist/client/link";
 
-export default function BrowseSection({ taxData }) {
+export default function BrowseSection({ taxData, params }) {
   const [data, setData] = useState(taxData);
-  // const [db, setDb] = useState("viral");
-  // const [isDataLoaded, setDataLoaded] = useState(false);
-  // const [wasDataLoaded, setWasDataLoaded] = useState(false);
-  const [stack, setStack] = useState(["Viruses"]);
+  const [path, setPath] = useState("");
+  const router = useRouter();
+  const { tax } = router.query as any;
 
-  const notify = () => toast("Something went wrong!");
-
-  // async function requestData(taxonomy: string, db: string) {
-  //   try {
-  //     if (!wasDataLoaded) {
-  //       setWasDataLoaded(true);
-  //     }
-  //     setDataLoaded(false);
-  //     const results: any = await getBrowseData(taxonomy, db);
-  //     setData(results);
-  //     setDataLoaded(true);
-  //   } catch (error) {
-  //     notify();
-  //   }
-  // }
+  useEffect(() => {
+    setData(taxData);
+    console.log(taxData)
+    setPath(tax.join("/"));
+  }, [taxData]);
 
   return (
     <div>
       <div className={styles.description}>
         <h3>Browse</h3>
         <p>
-          All of our database records filtered by hosts and viruses Click to
-          expand
+          All of our database records filtered by hosts and viruses. Discover the taxonomy by clicking on <strong> Tax name</strong>.
         </p>
       </div>
       <div className={styles.wrapper}>
         <div className={styles.selection}>
           <p>Search by: </p>
-          <p
-            // onClick={() => {
-            //   setDb("viral");
-            //   requestData("Viruses", "viral");
-            // }}
-            // className={db === "viral" ? styles.active : null}
-          >
-            Viruses
-          </p>
-          <p
-            // onClick={() => {
-            //   setDb("host");
-            //   requestData("Bacteria", "host");
-            // }}
-            // className={db === "host" ? styles.active : null}
-          >
-            Hosts
-          </p>
+          <Link href={`/browse/Viruses`}>
+            <a className={tax[0] === "Viruses" ? styles.active : null}>
+              Viruses
+            </a>
+          </Link>
+          <Link href={`/browse/Bacteria`}>
+            <a className={tax[0] === "Bacteria" ? styles.active : null}>
+              Hosts
+            </a>
+          </Link>
         </div>
-        {stack.length === 1 ? <Header /> : null}
-        {/* <div className={styles.stack}>
-          <div
-            onClick={() => {
-              if (stack.length === 0) return;
-              requestData(stack[stack.length - 1], db);
-              if (stack.length === 1) return;
-              setStack(stack.slice(0, stack.length - 1));
-            }}
-          ></div>
-          {stack.map((stack_tax, index) => (
-            <p
-              onClick={() => {
-                requestData(stack_tax, db);
-                setStack(stack.slice(0, index + 1));
-              }}
-            >
-              {stack_tax}
-            </p>
-          ))}
-        </div> */}
+        {tax.length === 1 ? <Header /> : <Navigation taxData={tax} />}
 
         <div className={styles.data}>
           {data.map((tax) => (
             <div className={styles.element}>
-              <span
-                onClick={() => {
-                  // requestData(tax.tax_name, db);
-                  setStack([...stack, tax.tax_name]);
-                }}
-              >
-                {tax.tax_name}
+              <span>
+                <Link href={`/browse/${path}/${tax.tax_name}/`}>
+                  <a> {tax.tax_name}</a>
+                </Link>
               </span>
               <span>{tax.tax_rank}</span>
               <span>{tax.interactions}</span>
+              <span>{tax.tax_id}</span>
               <button className={styles.searchButton}>
                 <a target="_blank" href={`search?query=${tax.tax_name}`}>
                   <FontAwesomeIcon icon={faSearch} />

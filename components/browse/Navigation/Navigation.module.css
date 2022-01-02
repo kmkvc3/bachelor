@@ -1,0 +1,34 @@
+.header {
+    margin: 1.25rem 0 0 0;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--main-light-dark);
+    border-radius: var(--buttons-border-radius) var(--buttons-border-radius) 0 0;
+    padding: 1rem 0 1rem 1rem;
+    color: var(--primary-text);
+}
+.header .back {
+    margin-right: 1.25rem;
+}
+.header a {
+    color: var(--main-blue);
+    text-decoration: none;
+}
+.header a:hover {
+    color: var(--main-blue);
+    font-weight: normal;
+    text-decoration: underline;
+}
+.header a:nth-last-child(1) {
+    color: var(--primary-text);
+    font-weight: normal;
+}
+.header a:nth-last-child(1):hover {
+    color: var(--primary-text);
+    font-weight: normal;
+    text-decoration: none;
+}
+.header span {
+    margin: 0 0.2rem;
+    color: var(--secondary-text);
+}

@@ -18,7 +18,7 @@ export default function SearchSection({
     <div className={styles.wrapper}>
       <div className={styles.content}>
         <Searchbar setType={setType} setQuery={setQuery} setPage={setPage}/>
-        <Help />
+        {/* <Help /> */}
       </div>
       <Filters
         availableFilters={availableFilters}

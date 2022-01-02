@@ -19,7 +19,7 @@ export default function Navigation() {
           </Link>
         </li>
         <li className={router.pathname == "/browse" ? styles.active : ""}>
-          <Link href="/browse">
+          <Link href="/browse/Viruses">
             <p>Browse</p>
           </Link>
         </li>

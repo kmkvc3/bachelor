@@ -1,10 +1,10 @@
 .wrapper {
   width: 100%;
   max-width: var(--content);
-  padding: 0 var(--content-padding);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 1rem var(--content-padding) 10rem var(--content-padding);
 }
 .description {
   color: var(--primary-text);
@@ -28,17 +28,18 @@
   display: flex;
   flex-direction: row;
 }
-.selection p {
+.selection a {
   margin: 0 0.3rem;
+  text-decoration: none;
   color: var(--secondary-text);
   cursor: pointer;
 }
-.selection p.active {
+.selection a.active {
   color: var(--primary-text);
   font-weight: bold;
   border-bottom: 2px solid var(--primary-text);
 }
-.selection p:nth-child(1) {
+.selection p {
   margin: 0 0.4rem 0 0;
   color: var(--primary-text);
   cursor: auto;
@@ -47,14 +48,15 @@
   line-height: 54px;
   color: var(--secondary-text);
 }
-.data span:nth-child(1) {
-  color: var(--primary-text);
-  font-weight: bold;
-}
-.data span:nth-child(1):hover {
+.data a:hover {
   color: var(--main-blue);
   cursor: pointer;
   text-decoration: underline;
+}
+.data a {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--primary-text);
 }
 .stack {
   margin: 1.25rem 0 0 0;
@@ -71,7 +73,7 @@
 }
 .element {
   display: grid;
-  grid-template-columns: 1fr 0.7fr 0.7fr 0.1fr;
+  grid-template-columns: 1.85fr 0.75fr 0.75fr 0.75fr 0.2fr;
   align-items: center;
   border-bottom: 1px solid var(--main-light-dark);
   padding-left: 1rem;
