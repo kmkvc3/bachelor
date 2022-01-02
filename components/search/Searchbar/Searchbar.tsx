@@ -101,7 +101,7 @@ export default function Searchbar({ setType, setQuery, setPage }) {
         {searchHints.length > 0 ? (
           <HintList>
             {searchHints.map((item) => (
-              <HintElement item={item} />
+              <HintElement key={item} item={item} />
             ))}
           </HintList>
         ) : null}

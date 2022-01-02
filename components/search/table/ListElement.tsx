@@ -69,7 +69,7 @@ export default function ListElement({ tableData, type }) {
       </span>
       <span className={styles.evidenceWrapper}>
         {tableData.evidence.map((evidence) => (
-          <EvidenceIcon type={type} evidence_name={evidence.name} />
+          <EvidenceIcon key={evidence.name} type={type} evidence_name={evidence.name} />
         ))}
       </span>
       <span>{tableData.virus.genome_type.genome_type}</span>

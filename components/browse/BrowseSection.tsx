@@ -55,9 +55,9 @@ export default function BrowseSection({ taxData }) {
         {taxData.length ? (
           <div className={styles.data}>
             {data.map((tax) => (
-              <div className={styles.element}>
+              <div key={tax.tax_id} className={styles.element}>
                 <span>
-                  <Link href={`/browse/${path}/${tax.tax_name}/`}>
+                  <Link href={`/browse/${path}/${tax.tax_name}`}>
                     <a> {tax.tax_name}</a>
                   </Link>
                 </span>
