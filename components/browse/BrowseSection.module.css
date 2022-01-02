@@ -83,6 +83,8 @@
   grid-template-columns: 1.85fr 0.75fr 0.75fr 0.75fr 0.2fr;
   align-items: center;
   border-bottom: 1px solid var(--main-light-dark);
+  border-left: 1px solid var(--main-light-dark);
+  border-right: 1px solid var(--main-light-dark);
   padding-left: 1rem;
 }
 .searchButton {

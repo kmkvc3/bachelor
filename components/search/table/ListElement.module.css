@@ -6,6 +6,8 @@
   align-items: center;
   padding: 1.1rem 1rem;
   border-bottom: var(--button-border) solid var(--main-light-dark);
+  border-left: var(--button-border) solid var(--main-light-dark);
+  border-right: var(--button-border) solid var(--main-light-dark);
 }
 .element:hover {
   background-color: var(--main-light-dark);
