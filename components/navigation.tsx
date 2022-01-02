@@ -18,12 +18,12 @@ export default function Navigation() {
             <p>Search</p>
           </Link>
         </li>
-        <li className={router.pathname == "/browse" ? styles.active : ""}>
+        <li className={router.pathname.includes("/browse") ? styles.active : ""}>
           <Link href="/browse/Viruses">
             <p>Browse</p>
           </Link>
         </li>
-        <li className={router.pathname == "/blast" ? styles.active : ""}>
+        <li className={router.pathname.includes("/blast") ? styles.active : ""}>
           <Link href="/blast">
             <p>Blast</p>
           </Link>

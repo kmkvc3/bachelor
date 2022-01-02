@@ -30,8 +30,6 @@
 .modal {
   position: absolute;
   max-width: 860px;
-  min-height: 440px;
-  padding-bottom: 1rem;
   z-index: 100;
   border-radius: var(--buttons-border-radius);
   background-color: var(--background-color);
@@ -62,11 +60,10 @@
   position: absolute;
 }
 .content {
-  padding: 1.6rem 1.4rem;
+  padding: 0rem 1.4rem;
   display: flex;
-  min-height: 0px;
+  min-height: 400px;
   justify-content: center;
   max-height: 450px;
   overflow-y: scroll;
-  overflow-x: hidden;
 }

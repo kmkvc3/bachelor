@@ -16,7 +16,7 @@
 }
 .navigation ul li p {
   font-size: 18px;
-  padding: 1.5rem 0;
+  padding: 1.2rem 0;
   color: var(--secondary-text);
 }
 .active {

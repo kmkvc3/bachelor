@@ -9,19 +9,26 @@
 .description {
   color: var(--primary-text);
   max-width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 4.5rem auto;
 }
-.description h3 {
+.description div h3 {
   font-size: 26px;
   margin-bottom: 0.6rem;
   font-weight: normal;
+  text-align: center;
 }
-.description p {
+.description div p {
   color: var(--secondary-text);
+  text-align: center;
   max-width: 420px;
   margin: 0 auto;
   line-height: 22px;
+}
+.description img {
+  width: 126px;
 }
 .selection {
   color: var(--primary-text);
@@ -94,4 +101,9 @@
 .searchButton:hover {
   background-color: var(--main-light-dark);
   border: var(--button-border) solid transparent;
+}
+.notFound {
+  text-align: center;
+  margin: 8rem auto;
+  color: var(--secondary-text);
 }

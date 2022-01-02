@@ -1,23 +1,33 @@
 .wrapper {
   color: var(--secondary-text);
-  line-height: 26px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* padding: 2.2rem 0; */
+}
+.wrapper .steps {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.4rem;
 }
 .desc {
-  margin-bottom: 3.2rem;
+  max-width: 420px;
+  text-align: center;
+  margin: 0 auto;
 }
 .line {
   height: 23px;
   background-color: var(--main-light-dark);
   width: 2px;
-  margin: 0.65rem auto;
+  margin: 0.65rem 13px;
 }
 .circle {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 27px;
-  height: 27px;
+  width: 28px;
+  height: 28px;
   color: var(--third-text);
   font-weight: bold;
   background-color: var(--main-light-dark);
@@ -27,7 +37,6 @@
 .step {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
 }
 .step div {
@@ -38,5 +47,13 @@
 }
 .sample {
   margin-top: 2.6rem;
-  color: var(--main-blue);  
+  color: var(--main-blue);
+  cursor: pointer;
+}
+.sample:hover {
+  text-decoration: underline;
+}
+.wrapper img {
+  width: 240px;
+  object-fit: cover;
 }

@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  padding: 0rem 1rem;
+  padding: 2rem 1rem;
 }
 .wrapper .row {
   display: grid;

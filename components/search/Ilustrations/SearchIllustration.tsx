@@ -8,7 +8,7 @@ export default function SearchIllustration() {
           <h1>Search</h1>
           <p>Viruses or hosts among thousands of our database records.</p>
         </div>
-        {/* <img src="./search.svg"></img> */}
+        <img src="../search-rafiki.svg"></img>
       </div>
     </div>
   );

@@ -15,17 +15,17 @@ export async function getServerSideProps(context) {
     }
   }
   return {
-    props: { taxData, params },
+    props: { taxData },
   };
 }
 
-export default function Browse({ taxData, params }) {
+export default function Browse({ taxData }) {
   return (
     <Layout>
       <Head>
         <title>Browse</title>
       </Head>
-      <BrowseSection taxData={taxData} params={params} />
+      <BrowseSection taxData={taxData} />
     </Layout>
   );
 }

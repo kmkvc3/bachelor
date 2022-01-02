@@ -1,11 +1,13 @@
 import styles from "./Footer.module.css";
+import { useRouter } from "next/router";
 
 export default function Footer() {
+  const router = useRouter();
+
   return (
     <footer className={styles.footer}>
-      {/* <div> */}
       <span>
-        With <img src="./heart.svg" alt="" /> from{" "}
+        With <img src={router.pathname.includes("/browse") ? "../heart.svg" : "./heart.svg"} alt="" /> from{" "}
         <a target="_blank" href="http://www.combio.pl">
           combio.pl
         </a>
@@ -15,13 +17,9 @@ export default function Footer() {
         <span>Publication</span>
         <span>Contact</span>
       </div>
-
-      {/* </div>
-      <div> */}
       <span>
         Data last updated: <strong>10.12.2021</strong>
       </span>
-      {/* </div> */}
     </footer>
   );
 }

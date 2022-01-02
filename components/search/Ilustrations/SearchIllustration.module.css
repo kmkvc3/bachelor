@@ -20,7 +20,7 @@
     color: var(--secondary-text);
 }
 .wrapper img {
-    width: 136px;
+    width: 150px;
 }
 @media (max-width: 920px) {
     .wrapper {
