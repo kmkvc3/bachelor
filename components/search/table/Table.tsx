@@ -3,10 +3,10 @@ import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./ListElement.module.css";
 import { Toaster } from "react-hot-toast";
-import { ThemeContext } from "../../ThemeContext";
+import { ThemeContext } from "../../../ThemeContext";
 import { useContext } from "react";
 
-export default function Table({ data }) {
+export default function Table({ data, type }) {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
 
@@ -64,7 +64,7 @@ export default function Table({ data }) {
               backgroundColor: "#1c2128",
               padding: "0.2rem 0.6rem",
               color: "#adbac7",
-              borderRadius: "0.25rem"
+              borderRadius: "0.25rem",
             },
             success: {
               iconTheme: {
@@ -84,7 +84,7 @@ export default function Table({ data }) {
               padding: "0.2rem 0.6rem",
               color: "#505050",
               borderRadius: "0.25rem",
-              boxShadow: "none"
+              boxShadow: "none",
             },
             success: {
               iconTheme: {
@@ -99,7 +99,7 @@ export default function Table({ data }) {
 
       <div>
         {data.results.map((data) => (
-          <ListElement tableData={data} />
+          <ListElement type={type} tableData={data} />
         ))}
       </div>
     </>

@@ -94,7 +94,7 @@ export default function Searchbar({ setType, setQuery, setPage }) {
           type="text"
           value={searchContent}
           placeholder={
-            hintType == "viral" ? "Search viruses" : "Search hosts"
+            hintType == "viral" ? "Search viruses by name or taxonomy" : "Search hosts by name or taxonomy"
           }
         ></input>
 

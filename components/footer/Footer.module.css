@@ -2,7 +2,7 @@
   text-align: left;
   color: var(--secondary-text);
   border-top: 1px solid var(--main-light-dark);
-  padding: 2rem var(--content-padding);
+  padding: 1.5rem var(--content-padding);
   display: flex;
   flex-direction: row;
   justify-content: space-between;

@@ -1,7 +1,7 @@
 import styles from "./TableBottom.module.css";
 import Pagination from "./Pagination";
 import PageSize from "./PageSize";
-import Export from "../../table/Export";
+import Export from "../table/Export";
 
 export default function TableBottom({
   page,

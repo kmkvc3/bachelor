@@ -2,9 +2,10 @@ import Table from "./Table";
 import styles from "./TableSection.module.css";
 import SkeletonLoader from "./SkeletonLoader";
 import "react-loading-skeleton/dist/skeleton.css";
-import NotFound from "../search/Ilustrations/NotFound";
+import NotFound from "../Ilustrations/NotFound";
 
 export default function TableSection({
+  type,
   data,
   query,
   isDataLoaded,
@@ -20,6 +21,7 @@ export default function TableSection({
               <p>{data.count} results for  <strong>{query}</strong> </p>
             </div>
             <Table
+              type={type}
               data={data}
             />
           </>

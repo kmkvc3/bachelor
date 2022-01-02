@@ -2,7 +2,7 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import SearchSection from "../components/search/SearchSection";
 import { useState } from "react";
-import TableSection from "../components/table/TableSection";
+import TableSection from "../components/search/table/TableSection";
 import SearchIllustration from "../components/search/Ilustrations/SearchIllustration";
 import { getInteractions } from "../Api";
 import { useEffect } from "react";
@@ -94,7 +94,12 @@ export default function Search({ availableFilters }) {
       />
       {wasDataLoaded ? (
         <>
-          <TableSection isDataLoaded={isDataLoaded} query={query} data={data} />
+          <TableSection
+            type={type}
+            isDataLoaded={isDataLoaded}
+            query={query}
+            data={data}
+          />
           <TableBottom
             page={page}
             maxPage={maxPage}

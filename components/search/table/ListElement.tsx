@@ -3,11 +3,11 @@ import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark as farBookmark } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import toast from "react-hot-toast";
-import BookmarkHandler from "../../BookmarksHandler";
+import BookmarkHandler from "../../bookmarks/BookmarksHandler";
 import { useEffect, useState } from "react";
-import EventBus from "../../EventBus";
+import EventBus from "../../../EventBus";
 
-function EvidenceIcon({ evidence_name }) {
+function EvidenceIcon({ evidence_name, type }) {
   switch (evidence_name) {
     case "RefSeq":
       return (
@@ -38,7 +38,7 @@ function EvidenceIcon({ evidence_name }) {
   }
 }
 
-export default function ListElement({ tableData }) {
+export default function ListElement({ tableData, type }) {
   const accession = tableData.virus.accession_number;
   const [bookmark, setBookmark] = useState(null);
   useEffect(() => {
@@ -69,7 +69,7 @@ export default function ListElement({ tableData }) {
       </span>
       <span className={styles.evidenceWrapper}>
         {tableData.evidence.map((evidence) => (
-          <EvidenceIcon evidence_name={evidence.name} />
+          <EvidenceIcon type={type} evidence_name={evidence.name} />
         ))}
       </span>
       <span>{tableData.virus.genome_type.genome_type}</span>
@@ -95,6 +95,7 @@ export default function ListElement({ tableData }) {
               accession: accession,
               virus: tableData.virus.organism_name,
               host: tableData.host.organism_name,
+              type: type
             });
             loadBookmark();
           }

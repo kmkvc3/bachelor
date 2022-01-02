@@ -2,7 +2,7 @@
   color: var(--secondary-text);
   display: flex;
   flex-direction: column;
-  /* padding: 2.2rem 0; */
+  padding: 2rem 3rem;
 }
 .wrapper .steps {
   display: flex;
@@ -12,9 +12,17 @@
   margin-top: 1.4rem;
 }
 .desc {
-  max-width: 420px;
+  max-width: 450px;
   text-align: center;
   margin: 0 auto;
+}
+.desc a {
+  color: var(--main-blue);
+  cursor: pointer;
+  text-decoration: none;
+}
+.desc a:hover {
+  text-decoration: underline;
 }
 .line {
   height: 23px;
@@ -44,14 +52,6 @@
 }
 .step .circle {
   font-size: 14px;
-}
-.sample {
-  margin-top: 2.6rem;
-  color: var(--main-blue);
-  cursor: pointer;
-}
-.sample:hover {
-  text-decoration: underline;
 }
 .wrapper img {
   width: 240px;

@@ -60,10 +60,7 @@
   position: absolute;
 }
 .content {
-  padding: 0rem 1.4rem;
+  overflow-x:hidden;
   display: flex;
-  min-height: 400px;
   justify-content: center;
-  max-height: 450px;
-  overflow-y: scroll;
 }

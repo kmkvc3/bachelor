@@ -1,11 +1,11 @@
 import styles from "./BookmarksIcon.module.css";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Modal from "./Modal";
+import Modal from "../modal/Modal";
 import { useEffect, useState } from "react";
-import BookmarksHandler from "../BookmarksHandler";
-import BookmarksContent from "./Bookmarks";
-import EventBus from "../EventBus";
+import BookmarksHandler from "../bookmarks/BookmarksHandler";
+import BookmarksContent from "../bookmarks/Bookmarks";
+import EventBus from "../../EventBus";
 
 export default function Bookmarks() {
   const [open, setOpen] = useState(false);

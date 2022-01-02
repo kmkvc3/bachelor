@@ -1,7 +1,7 @@
 import styles from "./SkeletonLoader.module.css";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { ThemeContext } from "../../ThemeContext";
+import { ThemeContext } from "../../../ThemeContext";
 import { useContext } from "react";
 
 export default function SkeletonLoader({}) {

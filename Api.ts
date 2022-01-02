@@ -37,7 +37,7 @@ const getInteractions = (
     }).then((res) => {
       setTimeout(() => {
         resolve(res.json());
-      }, 400);
+      }, 300);
     });
   });
   return data;

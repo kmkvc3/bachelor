@@ -1,8 +1,11 @@
 import styles from "./Modal.module.css";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
 export default function Modal({ children, opened, setClose, title }) {
+  const child = React.cloneElement(children, {setClose: setClose})
+
   return (
     <>
       {opened ? (
@@ -15,7 +18,7 @@ export default function Modal({ children, opened, setClose, title }) {
               </div>
             </div>
             <div className={styles.content}>
-              {children}
+              {child }
             </div>
           </div>
           <div className={styles.background}></div>

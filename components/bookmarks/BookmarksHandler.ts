@@ -2,6 +2,7 @@ interface Bookmark {
   accession: string;
   virus: string;
   host: string;
+  type: "viral" | "host"
 }
 
 class BookmarksHandler {

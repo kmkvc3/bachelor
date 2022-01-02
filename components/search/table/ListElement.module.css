@@ -73,6 +73,9 @@
 .header {
   background-color: var(--main-light-dark);
   border-radius: var(--buttons-border-radius) var(--buttons-border-radius) 0 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
 }
 .helpDialog {
   display: none;
@@ -112,7 +115,7 @@
 .bookmark {
   cursor: pointer;
 }
-@media (max-width: 920px)  {
+@media (max-width: 920px) {
   .element {
     grid-column-gap: 0.4rem;
     grid-template-columns: 2.4fr 3.6fr 3.6fr 2fr 1.5fr 1.4fr 0.2fr;

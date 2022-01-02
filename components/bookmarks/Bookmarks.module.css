@@ -1,7 +1,13 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
+  overflow-x:hidden;
+  overflow-y: scroll;
+  height: 400px;
+}
+.wrapper strong {
+  color: var(--primary-text);
 }
 .wrapper .row {
   display: grid;
