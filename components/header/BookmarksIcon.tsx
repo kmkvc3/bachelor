@@ -49,7 +49,7 @@ export default function Bookmarks() {
       </div>
       {open ? (
         <Modal title="Bookmarks" opened={open} setClose={setOpen}>
-          <BookmarksContent />
+          <BookmarksContent setClose={setOpen} />
         </Modal>
       ) : null}
     </div>

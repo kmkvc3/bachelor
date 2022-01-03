@@ -34,7 +34,6 @@ export default function BrowseSection({ taxData }) {
             the taxonomy by clicking on <strong> Tax name</strong>.
           </p>
         </div>
-        <img src="../../browse-rafiki.svg" alt="" />
       </div>
       <div className={styles.wrapper}>
         <div className={styles.selection}>

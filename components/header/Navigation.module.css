@@ -1,8 +1,12 @@
 .navigation {
   border-bottom: 1px solid var(--main-light-dark);
+  background-color: var(--main-light-dark);
+}
+.navigation > div {
+  padding: 0 2.2rem;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0 3.6rem;
   align-items: center;
 }
 .navigation ul {
@@ -11,19 +15,20 @@
 .navigation ul li {
   list-style: none;
   text-align: center;
-  min-width: 90px;
   cursor: pointer;
+  margin-right: 2rem;
 }
 .navigation ul li p {
   font-size: 18px;
-  padding: 1.2rem 0;
-  color: var(--secondary-text);
+  padding: 1.3rem 0;
+  color: var(--primary-text);
 }
-.active {
+/* .active {
   border-bottom: 2px solid var(--main-blue);
-}
+} */
 .navigation ul li.active p {
   color: var(--main-blue);
+  font-weight: 500;
 }
 .sidebar {
   display: flex;
@@ -32,7 +37,7 @@
   justify-items: center;
 }
 @media (max-width: 1540px) {
-  .navigation {
+  /* .navigation {
     padding: 0 1.8rem;
-  }
+  } */
 }

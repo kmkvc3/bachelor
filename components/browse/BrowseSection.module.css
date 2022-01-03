@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1rem var(--content-padding) 10rem var(--content-padding);
+  padding: 0rem var(--content-padding) 10rem var(--content-padding);
 }
 .description {
   color: var(--primary-text);
@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4.5rem auto;
+  margin: 4.7rem auto;
 }
 .description div h3 {
   font-size: 26px;
@@ -82,10 +82,13 @@
   display: grid;
   grid-template-columns: 1.85fr 0.75fr 0.75fr 0.75fr 0.2fr;
   align-items: center;
-  border-bottom: 1px solid var(--main-light-dark);
-  border-left: 1px solid var(--main-light-dark);
-  border-right: 1px solid var(--main-light-dark);
+  border-bottom: var(--button-border) solid var(--main-light-dark);
+  border-left: var(--button-border) solid var(--main-light-dark);
+  border-right: var(--button-border) solid var(--main-light-dark);
   padding-left: 1rem;
+}
+.element:hover {
+  background-color: var(--main-light-dark);
 }
 .searchButton {
   height: 32px;
@@ -99,6 +102,9 @@
 .searchButton a {
   color: var(--primary-text);
   display: block;
+}
+.searchButton a:hover {
+  color: var(--primary-text);
 }
 .searchButton:hover {
   background-color: var(--main-light-dark);

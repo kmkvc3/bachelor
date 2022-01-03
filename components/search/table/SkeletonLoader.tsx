@@ -11,8 +11,8 @@ export default function SkeletonLoader({}) {
   return (
     <div className={styles.wrapper}>
       <SkeletonTheme
-        baseColor={darkMode ? "#2d333b" : "#f0f0f0"}
-        highlightColor={darkMode ? "#3d4958" : "#f7f7f7"}
+        baseColor={darkMode ? "#2d333b" : "#f0f3f6"}
+        highlightColor={darkMode ? "#3d4958" : "#dee4eb"}
       >
         <Skeleton className={styles.header} count={1} />
         <Skeleton className={styles.row} count={13} />

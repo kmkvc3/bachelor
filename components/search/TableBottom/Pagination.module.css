@@ -7,7 +7,7 @@
 }
 .wrapper button {
   height: 32px;
-  border: 1px solid var(--third-text);
+  border: 1px solid var(--button-border-color);
   background-color: var(--background-color);
   color: var(--secondary-text);
   padding: 0rem 0.60rem;

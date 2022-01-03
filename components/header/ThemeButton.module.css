@@ -3,7 +3,7 @@
   height: 28px;
   padding: 4px;
   position: relative;
-  background-color: var(--main-light-dark);
+  background-color: var(--background-color);
   border: none;
   border-radius: 50px;
   cursor: pointer;

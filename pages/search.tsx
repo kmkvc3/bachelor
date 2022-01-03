@@ -6,8 +6,6 @@ import TableSection from "../components/search/table/TableSection";
 import SearchIllustration from "../components/search/Ilustrations/SearchIllustration";
 import { getInteractions } from "../Api";
 import { useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { getDbDictonary } from "../Api";
 import TableBottom from "../components/search/TableBottom/TableBottom";
 
@@ -47,8 +45,6 @@ export default function Search({ availableFilters }) {
     offset,
   ]);
 
-  const notify = () => toast("Something went wrong!");
-
   async function requestData(query, type) {
     setQuery(query);
     try {
@@ -71,7 +67,7 @@ export default function Search({ availableFilters }) {
       setMaxPage(Math.floor(results.count / offset) + 1);
       setDataLoaded(true);
     } catch (error) {
-      notify();
+      console.log(error)
     }
   }
 
@@ -80,7 +76,6 @@ export default function Search({ availableFilters }) {
       <Head>
         <title>Search</title>
       </Head>
-      <ToastContainer />
       <SearchSection
         setDatabase={setDatabase}
         setType={setType}
