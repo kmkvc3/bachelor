@@ -4,7 +4,7 @@
     flex-direction: row;
     background-color: var(--main-light-dark);
     border-radius: var(--buttons-border-radius) var(--buttons-border-radius) 0 0;
-    padding: 1rem 0 1rem 1rem;
+    padding: 1.2rem 0 1rem 1rem;
     color: var(--primary-text);
     position: -webkit-sticky;
     position: sticky;

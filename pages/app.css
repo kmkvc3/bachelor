@@ -25,24 +25,25 @@ body {
   --content-padding: 6.8rem;
   --content-padding-mobile: 1.2rem;
   --buttons-padding: 0.6rem;
-  --buttons-border-radius: 0.40rem;
+  --buttons-border-radius: 0.48rem;
   --standard-font-size: 20px;
   --button-border: 1px;
   --button-border-color: #bdbdbd;
-  --main-blue: #4d97f4;
+  --main-blue: #1192e9;
   --searchbar-hover: #dee4eb;
+  --button-height: 34px
 }
 body.dark {
-  background-color: #1c2128;
-  --background-color: #1c2128;
-  --main-light-dark: #2d333b;
-  --button-border-color: #525a63;
-  --primary-dark-text: #adbac7;
-  --primary-text: #b2c0ce;
-  --secondary-text: #8391a0;
+  background-color: rgb(24, 24, 25);
+  --background-color: rgb(24, 24, 24);
+  --main-light-dark: #272727;
+  --button-border-color: #313131;
+  --primary-dark-text: #cdd9e6;
+  --primary-text: #b4c1cf;
+  --secondary-text: #7f8994;
   --third-text: #7e8d9c;
   --evidence-white-color: #becedb;
   --evidence-uniprot-color: #000000;
-  --main-blue: #4d97f4;
-  --searchbar-hover: #3d4958;
+  --main-blue: #1f96e6;
+  --searchbar-hover: #313131;
 }

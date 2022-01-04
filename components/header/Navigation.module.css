@@ -1,6 +1,5 @@
 .navigation {
   border-bottom: 1px solid var(--main-light-dark);
-  background-color: var(--main-light-dark);
 }
 .navigation > div {
   padding: 0 2.2rem;
@@ -20,15 +19,16 @@
 }
 .navigation ul li p {
   font-size: 18px;
-  padding: 1.3rem 0;
+  padding: 0.55rem 0.8rem;
   color: var(--primary-text);
+  margin: 1.1rem 0;
+  border-radius: var(--buttons-border-radius);
 }
-/* .active {
-  border-bottom: 2px solid var(--main-blue);
-} */
+.navigation ul li p:hover {
+  background-color: var(--main-light-dark);
+}
 .navigation ul li.active p {
   color: var(--main-blue);
-  font-weight: 500;
 }
 .sidebar {
   display: flex;
@@ -37,7 +37,4 @@
   justify-items: center;
 }
 @media (max-width: 1540px) {
-  /* .navigation {
-    padding: 0 1.8rem;
-  } */
 }

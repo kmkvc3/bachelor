@@ -8,7 +8,7 @@ export default function WorldLeading() {
       <div className={styles.card}>
         <div className={styles.text}>
           <div>
-            <h1>World leading virus-host interactions database</h1>
+            <h1>World leading <br/> <span>virus-host interactions</span>  database</h1>
             <p>
               Complex and intuitive tool for discovering interactions between
               viruses and bacterias

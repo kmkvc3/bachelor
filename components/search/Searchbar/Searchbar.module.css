@@ -15,7 +15,7 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  height: 50px;
+  height: 52px;
 }
 .focused > .searchField {
   border-radius: 28px 28px 0 0;
@@ -90,7 +90,6 @@
   padding: 0.5rem 0;
   border-top: 1px solid var(--button-border-color);
   border-radius: 0 0 28px 28px;
-  box-shadow: 0 2px 4px -3px var(--primary-text);
 }
 .hintElement {
   display: block;
