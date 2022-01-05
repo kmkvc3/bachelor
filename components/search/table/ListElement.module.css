@@ -4,7 +4,7 @@
   grid-template-columns: 2.1fr 4.7fr 4.1fr 2.5fr 2.2fr 1.4fr 0.2fr;
   gap: 20px;
   align-items: center;
-  padding: 1.2rem 1rem;
+  padding: 1rem;
   border-bottom: var(--button-border) solid var(--main-light-dark);
   border-left: var(--button-border) solid var(--main-light-dark);
   border-right: var(--button-border) solid var(--main-light-dark);
@@ -90,7 +90,6 @@
   border: 1px solid var(--button-border-color);
   padding: 0.3rem 1rem;
   border-radius: var(--buttons-border-radius);
-  box-shadow: 0 2px 4px -3px var(--primary-text);
 }
 .helpIconWrapper {
   position: relative;

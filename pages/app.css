@@ -34,10 +34,10 @@ body {
   --button-height: 34px
 }
 body.dark {
-  background-color: rgb(24, 24, 25);
-  --background-color: rgb(24, 24, 24);
-  --main-light-dark: #272727;
-  --button-border-color: #313131;
+  background-color: #1c2128;
+  --background-color: #1c2128;
+  --main-light-dark: #2d333b;
+  --button-border-color: #3f4c5e;
   --primary-dark-text: #cdd9e6;
   --primary-text: #b4c1cf;
   --secondary-text: #7f8994;
@@ -45,5 +45,5 @@ body.dark {
   --evidence-white-color: #becedb;
   --evidence-uniprot-color: #000000;
   --main-blue: #1f96e6;
-  --searchbar-hover: #313131;
+  --searchbar-hover: #373f4b;
 }
