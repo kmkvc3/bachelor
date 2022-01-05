@@ -3,7 +3,6 @@
 }
 .card {
     background-color: #edf6f9;
-    box-shadow: 0px 2px 10px -3px rgb(170, 170, 170);
     border-radius: 28px;
     padding: 0.6rem 2.8rem;
     display: flex;
@@ -11,7 +10,7 @@
     align-items: center;
 }
 .card h1, .card span {
-    font-size: 50px;
+    font-size: 52px;
     font-weight: 500;
     margin-bottom: 1.8rem;
     color: #263238;

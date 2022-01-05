@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 import WorldLeading from "../components/home/WorldLeading/WorldLeading"
 import Stats from "../components/home/Stats/Stats"
 import ForScientists from "../components/home/ForScientists/ForScientists"
+import Video from "../components/home/Video/Video"
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <WorldLeading />
       <Stats />
       <ForScientists />
+      <Video />
     </Layout>
   );
 }

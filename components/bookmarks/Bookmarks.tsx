@@ -61,7 +61,11 @@ export default function Bookmarks({ setClose }) {
               <div className={styles.button}>
                 <a
                   target="_blank"
-                  href={`${router.basePath}?query=${bookmark.virus}&type=${bookmark.type}`}
+                  href={
+                    bookmark.type === "viral"
+                      ? `/search?query=${bookmark.virus}&type=${bookmark.type}`
+                      : `/search?query=${bookmark.host}&type=${bookmark.type}`
+                  }
                 >
                   <FontAwesomeIcon
                     icon={faSearch}
