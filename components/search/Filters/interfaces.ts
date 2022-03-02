@@ -4,15 +4,24 @@ export interface SelectOption {
 }
 
 export interface AvailableFilters {
-  assembly_level: Array<string>;
-  evidence: Array<string>;
-  genome_database: Array<string>;
-  genome_type: Array<string>;
+  assembly_level: {
+    name: string
+    values: Array<string>
+  }
+  evidence: {
+    name: string
+    values: Array<string>
+  }
+  // genome_database: Array<string>;
+  genome_type: {
+    name: string
+    values: Array<string>
+  }
 }
 
 export interface FiltersProps {
   availableFilters: AvailableFilters;
-  setDatabase: Function;
+  // setDatabase: Function;
   setEvidence: Function;
   setAssembly: Function;
   setMolecule: Function;

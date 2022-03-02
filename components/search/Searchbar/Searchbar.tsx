@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getHints } from "../../../Api";
 import { useRouter } from 'next/router'
 
-export default function Searchbar({ setType, setQuery, setPage }) {
-  const [hintType, setHintsType] = useState("viral");
+export default function Searchbar({ setType, setTaxonId, setPage }) {
+  const [hintType, setHintsType] = useState("virus");
   const [searchbarActive, setSearchbarActive] = useState(false);
   const [searchContent, setSearchContent] = useState("");
   const [searchHints, setSearchHints] = useState([]);
@@ -15,7 +15,7 @@ export default function Searchbar({ setType, setQuery, setPage }) {
   useEffect(()=>{
     const { query, type } = router.query
     if(query) {
-      setQuery(query)
+      setTaxonId(query)
       setSearchContent(query as string)
       setSearchbarActive(true)
     }
@@ -33,8 +33,8 @@ export default function Searchbar({ setType, setQuery, setPage }) {
 
   async function getSearchHints() {
     try {
-      const data: any = await getHints(searchContent, hintType);
-      setSearchHints(data.hints)
+      const hints: any = await getHints(searchContent, hintType);
+      setSearchHints(hints)
     } catch (error) {
       console.log(error);
     }
@@ -49,13 +49,13 @@ export default function Searchbar({ setType, setQuery, setPage }) {
       <span
         onClick={() => {
           setSearchHints([]);
-          setSearchContent(item);
-          setQuery(item);
+          setSearchContent(item.name);
+          setTaxonId(item.taxon_id);
           setPage(1)
         }}
         className={styles.hintElement}
       >
-        {item}
+        {item.name}
       </span>
     );
   }
@@ -77,7 +77,7 @@ export default function Searchbar({ setType, setQuery, setPage }) {
           onKeyDown={(e) => {
             if (e.key === "Enter" && searchContent !== "") {
               setSearchHints([]);
-              setQuery(searchContent);
+              setTaxonId(searchContent);
               setPage(1)
             }
           }}
@@ -94,7 +94,7 @@ export default function Searchbar({ setType, setQuery, setPage }) {
           type="text"
           value={searchContent}
           placeholder={
-            hintType == "viral" ? "Search viruses by name or taxonomy" : "Search hosts by name or taxonomy"
+            hintType == "virus" ? "Search viruses by name or taxonomy" : "Search hosts by name or taxonomy"
           }
         ></input>
 
@@ -108,11 +108,11 @@ export default function Searchbar({ setType, setQuery, setPage }) {
 
         <div className={styles.buttons}>
           <div
-            className={hintType == "viral" ? styles.active : null}
+            className={hintType == "virus" ? styles.active : null}
             onClick={() => {
-              if (hintType == "viral") return;
-              setType("viral");
-              setHintsType("viral")
+              if (hintType == "virus") return;
+              setType("virus");
+              setHintsType("virus")
             }}
           >
             Virus

@@ -1,9 +1,7 @@
-const BASE_URL = "http://150.254.120.100:8001"
+const BASE_URL = "http://afproject.org:8002"
 
 const getInteractions = (
-  query,
-  type,
-  database,
+  taxon_id,
   evidence,
   assembly_level,
   molecule,
@@ -13,25 +11,29 @@ const getInteractions = (
 ) => {
   let body = {};
   if (evidence) {
-    Object.assign(body, { evidence: evidence });
+    if(evidence.length) {
+      Object.assign(body, { evidence: evidence });
+    }
   }
   if (molecule) {
-    Object.assign(body, { molecule: molecule });
+    if(molecule.length) {
+      Object.assign(body, { molecule: molecule });
+    }
+  }
+  if (assembly_level) {
+    if(assembly_level.length) {
+      Object.assign(body, { assembly_level: assembly_level });
+    }
   }
   if (sort) {
     Object.assign(body, { sort: sort})
   }
   Object.assign(body, {
-    query: query,
-    db: type,
-    genome_database: database,
-    assembly_level: assembly_level,
-    literature: false,
-    offset: offset
+    taxon_id: taxon_id
   });
 
   const data = new Promise((resolve, reject) => {
-    fetch(`${BASE_URL}/api/interaction/?page=${page}`, {
+    fetch(`${BASE_URL}/api/search/interactions/?page=${page}&page_size=${offset}`, {
       method: "POST",
       body: JSON.stringify(body),
     }).then((res) => {
@@ -44,25 +46,22 @@ const getInteractions = (
 };
 
 const getHints = (query, type) => {
-  const data = fetch(`${BASE_URL}/api/hints/`, {
-    method: "POST",
-    body: JSON.stringify({
-      query: query,
-      db: type,
-    }),
+  const data = fetch(`${BASE_URL}/api/search/hints/${type}?query=${query}`, {
+    method: "GET"
   }).then((res) => res.json());
   return data;
 };
 
 const getDbDictonary = () => {
-  const data = fetch(`${BASE_URL}/api/values/`, {
-    method: "POST",
-    body: JSON.stringify({
-      assembly_level: true,
-      genome_database: true,
-      evidence: true,
-      genome_type: true,
-    }),
+  const data = fetch(`${BASE_URL}/api/search/filters/`, {
+    method: "GET"
+  }).then((res) => res.json());
+  return data;
+};
+
+const getUpdateStats = () => {
+  const data = fetch(`${BASE_URL}/api/db/info/`, {
+    method: "GET"
   }).then((res) => res.json());
   return data;
 };
@@ -77,4 +76,4 @@ const getBrowseData = (org: string, db: "viral" | "host") => {
   }).then((res) => res.json());
   return data;
 }
-export { getInteractions, getHints, getDbDictonary, getBrowseData };
+export { getInteractions, getHints, getDbDictonary, getBrowseData, getUpdateStats };

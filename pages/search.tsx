@@ -17,12 +17,12 @@ export async function getServerSideProps(context) {
 }
 
 export default function Search({ availableFilters }) {
-  const [query, setQuery] = useState("");
+  const [taxonId, setTaxonId] = useState("");
   const [type, setType] = useState("viral");
   const [page, setPage] = useState(1);
   const [maxPage, setMaxPage] = useState(1);
   const [offset, setOffset] = useState(25);
-  const [genome_database, setDatabase] = useState(null);
+  // const [genome_database, setDatabase] = useState(null);
   const [evidence, setEvidence] = useState(null);
   const [assembly_level, setAssembly] = useState(null);
   const [molecule, setMolecule] = useState(null);
@@ -32,11 +32,11 @@ export default function Search({ availableFilters }) {
   const [wasDataLoaded, setWasDataLoaded] = useState(false);
 
   useEffect(() => {
-    if (query === "") return;
-    requestData(query, type);
+    if (taxonId === "") return;
+    requestData(taxonId, type);
   }, [
-    genome_database,
-    query,
+    // genome_database,
+    taxonId,
     evidence,
     assembly_level,
     molecule,
@@ -45,17 +45,15 @@ export default function Search({ availableFilters }) {
     offset,
   ]);
 
-  async function requestData(query, type) {
-    setQuery(query);
+  async function requestData(taxon_id, type) {
+    setTaxonId(taxon_id);
     try {
       if (!wasDataLoaded) {
         setWasDataLoaded(true);
       }
       setDataLoaded(false);
       const results: any = await getInteractions(
-        query,
-        type,
-        genome_database,
+        taxon_id,
         evidence,
         assembly_level,
         molecule,
@@ -77,9 +75,9 @@ export default function Search({ availableFilters }) {
         <title>Search</title>
       </Head>
       <SearchSection
-        setDatabase={setDatabase}
+        // setDatabase={setDatabase}
         setType={setType}
-        setQuery={setQuery}
+        setTaxonId={setTaxonId}
         setEvidence={setEvidence}
         setAssembly={setAssembly}
         setMolecule={setMolecule}
@@ -92,7 +90,7 @@ export default function Search({ availableFilters }) {
           <TableSection
             type={type}
             isDataLoaded={isDataLoaded}
-            query={query}
+            query={taxonId}
             data={data}
           />
           <TableBottom

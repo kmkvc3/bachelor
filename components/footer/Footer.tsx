@@ -1,9 +1,24 @@
 import styles from "./Footer.module.css";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { getUpdateStats } from "../../Api";
 
 export default function Footer() {
   const router = useRouter();
+  const [lastUpdatedDate, setLastUpdatedDate] = useState("")
 
+  async function getStats() {
+    try {
+      const data: any = await getUpdateStats();
+      setLastUpdatedDate(data.date.update)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(()=>{
+    getStats()  
+  })
   return (
     <footer className={styles.footer}>
       <span>
@@ -18,7 +33,7 @@ export default function Footer() {
         <span>Contact</span>
       </div>
       <span>
-        Data last updated: <strong>10.12.2021</strong>
+        Data last updated: <strong>{lastUpdatedDate}</strong>
       </span>
     </footer>
   );

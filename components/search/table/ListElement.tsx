@@ -7,7 +7,7 @@ import BookmarkHandler from "../../bookmarks/BookmarksHandler";
 import { useEffect, useState } from "react";
 import EventBus from "../../../EventBus";
 
-function EvidenceIcon({ evidence_name, type }) {
+function EvidenceIcon({ evidence_name }) {
   switch (evidence_name) {
     case "RefSeq":
       return (
@@ -43,12 +43,12 @@ export default function ListElement({ tableData, type }) {
   const [bookmark, setBookmark] = useState(null);
   useEffect(() => {
     loadBookmark();
-    EventBus.on("remove-bookmark", ()=>{
-      if(!BookmarkHandler.getBookmark(accession)){
-        BookmarkHandler.removeBookmark(accession)
+    EventBus.on("remove-bookmark", () => {
+      if (!BookmarkHandler.getBookmark(accession)) {
+        BookmarkHandler.removeBookmark(accession);
         setBookmark(null);
       }
-    })
+    });
   }, []);
 
   function loadBookmark() {
@@ -59,26 +59,31 @@ export default function ListElement({ tableData, type }) {
   return (
     <div className={styles.element}>
       <span className={styles.accession}>
-        {tableData.virus.accession_number}
+        {type === "host" ? tableData.host.host_id : tableData.virus.virus_id}
       </span>
       <span>
-        <strong>{tableData.virus.organism_name}</strong>
+        <strong>{tableData.virus.name}</strong>
       </span>
       <span>
-        <strong>{tableData.host.organism_name}</strong>
+        <strong>{tableData.host.name}</strong>
       </span>
       <span className={styles.evidenceWrapper}>
         {tableData.evidence.map((evidence) => (
-          <EvidenceIcon key={evidence.name} type={type} evidence_name={evidence.name} />
+          <EvidenceIcon
+            key={evidence}
+            evidence_name={evidence}
+          />
         ))}
       </span>
-      <span>{tableData.virus.genome_type.genome_type}</span>
+      <span>
+        {type === "host" ? tableData.host.genome_type : tableData.virus.genome_type}
+      </span>
       <span>{tableData.virus.sequence_length}</span>
       <span
         className={styles.bookmark}
         onClick={() => {
-          if(bookmark) {
-            BookmarkHandler.removeBookmark(accession)
+          if (bookmark) {
+            BookmarkHandler.removeBookmark(accession);
             toast.success(
               <div>
                 <strong>{accession}</strong> removed from bookmarks
@@ -95,11 +100,11 @@ export default function ListElement({ tableData, type }) {
               accession: accession,
               virus: tableData.virus.organism_name,
               host: tableData.host.organism_name,
-              type: type
+              type: type,
             });
             loadBookmark();
           }
-          EventBus.emit("add-bookmark")
+          EventBus.emit("add-bookmark");
         }}
       >
         {bookmark ? (

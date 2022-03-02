@@ -18,7 +18,7 @@ export default function TableSection({
         ) : (
           <>
             <div className={styles.results}>
-              <p>{data.count} results for  <strong>{query}</strong> </p>
+              <p>{data.count} results</p>
             </div>
             <Table
               type={type}

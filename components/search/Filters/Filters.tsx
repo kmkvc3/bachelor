@@ -7,7 +7,7 @@ import { FiltersProps, SelectOption } from "./interfaces";
 
 export default function Filters({
   availableFilters,
-  setDatabase,
+  // setDatabase,
   setEvidence,
   setAssembly,
   setMolecule,
@@ -16,20 +16,23 @@ export default function Filters({
 }: FiltersProps) {
   const [evidenceOptions, setEvidenceOptions] = useState([]);
   const [assemblyOptions, setAssemblyOptions] = useState([]);
-  const [databaseOptions, setDatabaseOptions] = useState([]);
+  // const [databaseOptions, setDatabaseOptions] = useState([]);
   const [genomeOptions, setGenomeOptions] = useState([]);
+  const [evidenceName, setEvidenceName] = useState("");
+  const [assemblyName, setAssemblyName] = useState("");
+  const [genomeName, setGenomeName] = useState("");
   const [sortOptions, setSortOptions] = useState([
     { value: "virus", label: "Viruses" },
     { value: "host", label: "Hosts" },
     { value: "assembly_level", label: "Assembly level" },
-    { value: "genome_database", label: "Database" },
+    // { value: "genome_database", label: "Database" },
     { value: "genome_length", label: "Length" },
     { value: "molecule", label: "Molecule" },
   ]);
 
   const [evidenceFilters, setEvidenceFilters] = useState([]);
   const [assemblyFilters, setAssemblyFilters] = useState([]);
-  const [databaseFilters, setDatabaseFilters] = useState([]);
+  // const [databaseFilters, setDatabaseFilters] = useState([]);
   const [genomeFilters, setGenomeFilters] = useState([]);
   const [filtersToDisplay, setFiltersToDisplay] = useState([]);
 
@@ -89,33 +92,33 @@ export default function Filters({
     ]);
   }
 
-  function addDatabaseFilter(filterToAdd: string) {
-    if (databaseFilters.includes(filterToAdd)) return;
+  // function addDatabaseFilter(filterToAdd: string) {
+  //   if (databaseFilters.includes(filterToAdd)) return;
 
-    databaseFilters.push(filterToAdd);
-    filtersToDisplay.push({
-      filter: filterToAdd,
-      type: "database",
-    });
+  //   databaseFilters.push(filterToAdd);
+  //   filtersToDisplay.push({
+  //     filter: filterToAdd,
+  //     type: "database",
+  //   });
 
-    setDatabase([...databaseFilters]);
-    setDatabaseFilters([...databaseFilters]);
-    setFiltersToDisplay([...filtersToDisplay]);
-  }
+  //   setDatabase([...databaseFilters]);
+  //   setDatabaseFilters([...databaseFilters]);
+  //   setFiltersToDisplay([...filtersToDisplay]);
+  // }
 
-  function removeDatabaseFilter(filterToRemove: string) {
-    setDatabase([
-      ...databaseFilters.filter((filter) => filter !== filterToRemove),
-    ]);
-    setDatabaseFilters([
-      ...databaseFilters.filter((filter) => filter !== filterToRemove),
-    ]);
-    setFiltersToDisplay([
-      ...filtersToDisplay.filter(
-        (displayFiler) => displayFiler.filter !== filterToRemove
-      ),
-    ]);
-  }
+  // function removeDatabaseFilter(filterToRemove: string) {
+  //   setDatabase([
+  //     ...databaseFilters.filter((filter) => filter !== filterToRemove),
+  //   ]);
+  //   setDatabaseFilters([
+  //     ...databaseFilters.filter((filter) => filter !== filterToRemove),
+  //   ]);
+  //   setFiltersToDisplay([
+  //     ...filtersToDisplay.filter(
+  //       (displayFiler) => displayFiler.filter !== filterToRemove
+  //     ),
+  //   ]);
+  // }
 
   function addGenomeFilter(filterToAdd: string) {
     if (genomeFilters.includes(filterToAdd)) return;
@@ -151,35 +154,38 @@ export default function Filters({
         return removeEvidenceFilter;
       case "assembly":
         return removeAssemblyFilter;
-      case "database":
-        return removeDatabaseFilter;
+      // case "database":
+      //   return removeDatabaseFilter;
       case "genome":
         return removeGenomeFilter;
     }
   }
 
   useEffect(() => {
-    let evidenceOptions: Array<SelectOption> = availableFilters.evidence.map(
+    let evidenceOptions: Array<SelectOption> = availableFilters.evidence.values.map(
       (filter) => {
         return { value: filter, label: filter };
       }
     );
+    setEvidenceName(availableFilters.evidence.name)
     setEvidenceOptions(evidenceOptions);
     let assemblyOptions: Array<SelectOption> =
-      availableFilters.assembly_level.map((filter) => {
+      availableFilters.assembly_level.values.map((filter) => {
         return { value: filter, label: filter };
       });
+    setAssemblyName(availableFilters.assembly_level.name)
     setAssemblyOptions(assemblyOptions);
-    let databaseOptions: Array<SelectOption> =
-      availableFilters.genome_database.map((filter) => {
-        return { value: filter, label: filter };
-      });
-    setDatabaseOptions(databaseOptions);
-    let genomeOptions: Array<SelectOption> = availableFilters.genome_type.map(
+    // let databaseOptions: Array<SelectOption> =
+    //   availableFilters.genome_database.map((filter) => {
+    //     return { value: filter, label: filter };
+    //   });
+    // setDatabaseOptions(databaseOptions);
+    let genomeOptions: Array<SelectOption> = availableFilters.genome_type.values.map(
       (filter) => {
         return { value: filter, label: filter };
       }
     );
+    setGenomeName(availableFilters.genome_type.name)
     setGenomeOptions(genomeOptions);
   }, []);
 
@@ -189,7 +195,7 @@ export default function Filters({
         <div className={styles.filters}>
           {evidenceOptions ? (
             <Select
-              placeholder={"Evidence"}
+              placeholder={evidenceName}
               setPickedOption={addEvidenceFilter}
               setPage={setPage}
               options={evidenceOptions}
@@ -197,7 +203,7 @@ export default function Filters({
           ) : null}
           {assemblyOptions ? (
             <Select
-              placeholder={"Assembly"}
+              placeholder={assemblyName}
               setPickedOption={addAssemblyFilter}
               setPage={setPage}
               options={assemblyOptions}
@@ -205,20 +211,20 @@ export default function Filters({
           ) : null}
           {genomeOptions ? (
             <Select
-              placeholder={"Genome type"}
+              placeholder={genomeName}
               setPickedOption={addGenomeFilter}
               setPage={setPage}
               options={genomeOptions}
             />
           ) : null}
-          {databaseOptions ? (
+          {/* {databaseOptions ? (
             <Select
               placeholder={"Database"}
               setPickedOption={addDatabaseFilter}
               setPage={setPage}
               options={databaseOptions}
             />
-          ) : null}
+          ) : null} */}
         </div>
         <SortSelect
           placeholder={"Sort by"}

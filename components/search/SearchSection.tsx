@@ -4,8 +4,8 @@ import Filters from "./Filters/Filters";
 
 export default function SearchSection({
   setType,
-  setDatabase,
-  setQuery,
+  // setDatabase,
+  setTaxonId,
   setEvidence,
   setAssembly,
   setMolecule,
@@ -16,11 +16,11 @@ export default function SearchSection({
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
-        <Searchbar setType={setType} setQuery={setQuery} setPage={setPage}/>
+        <Searchbar setType={setType} setTaxonId={setTaxonId} setPage={setPage}/>
       </div>
       <Filters
         availableFilters={availableFilters}
-        setDatabase={setDatabase}
+        // setDatabase={setDatabase}
         setEvidence={setEvidence}
         setAssembly={setAssembly}
         setMolecule={setMolecule}
