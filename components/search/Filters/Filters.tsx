@@ -7,7 +7,6 @@ import { FiltersProps, SelectOption } from "./interfaces";
 
 export default function Filters({
   availableFilters,
-  // setDatabase,
   setEvidence,
   setAssembly,
   setMolecule,
@@ -16,7 +15,6 @@ export default function Filters({
 }: FiltersProps) {
   const [evidenceOptions, setEvidenceOptions] = useState([]);
   const [assemblyOptions, setAssemblyOptions] = useState([]);
-  // const [databaseOptions, setDatabaseOptions] = useState([]);
   const [genomeOptions, setGenomeOptions] = useState([]);
   const [evidenceName, setEvidenceName] = useState("");
   const [assemblyName, setAssemblyName] = useState("");
@@ -25,7 +23,6 @@ export default function Filters({
     { value: "virus", label: "Viruses" },
     { value: "host", label: "Hosts" },
     { value: "assembly_level", label: "Assembly level" },
-    // { value: "genome_database", label: "Database" },
     { value: "genome_length", label: "Length" },
     { value: "molecule", label: "Molecule" },
   ]);

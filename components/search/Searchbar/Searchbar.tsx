@@ -13,10 +13,10 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
   const router = useRouter()
 
   useEffect(()=>{
-    const { query, type } = router.query
-    if(query) {
-      setTaxonId(query)
-      setSearchContent(query as string)
+    const { taxon_id, type } = router.query
+    if(taxon_id) {
+      setTaxonId(taxon_id)
+      setSearchContent("")
       setSearchbarActive(true)
     }
     if(type) {
@@ -74,13 +74,6 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
         />
 
         <input
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && searchContent !== "") {
-              setSearchHints([]);
-              setTaxonId(searchContent);
-              setPage(1)
-            }
-          }}
           onChange={(e) => {
             setSearchContent(e.target.value);
             if (e.target.value !== "") {

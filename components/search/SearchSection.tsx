@@ -4,7 +4,6 @@ import Filters from "./Filters/Filters";
 
 export default function SearchSection({
   setType,
-  // setDatabase,
   setTaxonId,
   setEvidence,
   setAssembly,
@@ -20,7 +19,6 @@ export default function SearchSection({
       </div>
       <Filters
         availableFilters={availableFilters}
-        // setDatabase={setDatabase}
         setEvidence={setEvidence}
         setAssembly={setAssembly}
         setMolecule={setMolecule}

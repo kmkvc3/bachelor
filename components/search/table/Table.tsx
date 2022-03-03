@@ -13,7 +13,7 @@ export default function Table({ data, type }) {
   return (
     <>
       <div className={`${styles.element} ${styles.header}`}>
-        <span>Accession</span>
+        {/* <span>Accession</span> */}
         <span>Virus</span>
         <span>Host</span>
         <span>
@@ -52,7 +52,7 @@ export default function Table({ data, type }) {
           </span>
         </span>
         <span>Genome Type</span>
-        <span>Length</span>
+        <span>Assembly Level</span>
       </div>
 
       {darkMode ? (

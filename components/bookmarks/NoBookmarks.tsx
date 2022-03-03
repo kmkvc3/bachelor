@@ -17,7 +17,7 @@ export default function NoBookmarks({ setClose }) {
           }}
           className={styles.sample}
         >
-          <Link href={`/search?query=Escherichia coli&type=host`}>
+          <Link href={`/search?taxon_id=19193`}>
              run sample query
           </Link>
         </strong>
@@ -31,7 +31,12 @@ export default function NoBookmarks({ setClose }) {
           <div className={styles.line}></div>
           <div className={styles.step}>
             <div className={styles.circle}>2</div>
-            <div>Find the desired results</div>
+            <div>Type in searchbar</div>
+          </div>
+          <div className={styles.line}></div>
+          <div className={styles.step}>
+            <div className={styles.circle}>3</div>
+            <div>Click the desired result from hints</div>
           </div>
           <div className={styles.line}></div>
           <div className={styles.step}>

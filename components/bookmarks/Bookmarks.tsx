@@ -5,11 +5,9 @@ import { useEffect, useState } from "react";
 import BookmarksHandler from "./BookmarksHandler";
 import EventBus from "../../EventBus";
 import NoBookmarks from "./NoBookmarks";
-import { useRouter } from "next/router";
 
 export default function Bookmarks({ setClose }) {
   const [bookmarks, setBookmarks] = useState([]);
-  const router = useRouter();
 
   function getBookmarksFromStorage() {
     return JSON.parse(localStorage.getItem("accessions"));
@@ -31,13 +29,11 @@ export default function Bookmarks({ setClose }) {
       {bookmarks.length ? (
         <div className={styles.wrapper}>
           <div className={`${styles.row} ${styles.mainRow}`}>
-            <p>Accession</p>
             <p>Virus</p>
             <p>Host</p>
           </div>
           {bookmarks.map((bookmark) => (
             <div className={styles.row}>
-              <p>{bookmark.accession}</p>
               {bookmark.type === "viral" ? (
                 <strong>{bookmark.virus}</strong>
               ) : (

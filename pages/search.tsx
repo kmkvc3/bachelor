@@ -22,7 +22,6 @@ export default function Search({ availableFilters }) {
   const [page, setPage] = useState(1);
   const [maxPage, setMaxPage] = useState(1);
   const [offset, setOffset] = useState(25);
-  // const [genome_database, setDatabase] = useState(null);
   const [evidence, setEvidence] = useState(null);
   const [assembly_level, setAssembly] = useState(null);
   const [molecule, setMolecule] = useState(null);
@@ -33,9 +32,8 @@ export default function Search({ availableFilters }) {
 
   useEffect(() => {
     if (taxonId === "") return;
-    requestData(taxonId, type);
+    requestData(taxonId);
   }, [
-    // genome_database,
     taxonId,
     evidence,
     assembly_level,
@@ -45,7 +43,7 @@ export default function Search({ availableFilters }) {
     offset,
   ]);
 
-  async function requestData(taxon_id, type) {
+  async function requestData(taxon_id) {
     setTaxonId(taxon_id);
     try {
       if (!wasDataLoaded) {
@@ -75,7 +73,6 @@ export default function Search({ availableFilters }) {
         <title>Search</title>
       </Head>
       <SearchSection
-        // setDatabase={setDatabase}
         setType={setType}
         setTaxonId={setTaxonId}
         setEvidence={setEvidence}

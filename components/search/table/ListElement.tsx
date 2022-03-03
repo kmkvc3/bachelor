@@ -15,10 +15,34 @@ function EvidenceIcon({ evidence_name }) {
           <p>RS</p>
         </span>
       );
-    case "UniProt":
+    case "MVP":
       return (
-        <span className={`${styles.UniProt} ${styles.evidence}`}>
-          <p>UP</p>
+        <span className={`${styles.MVP} ${styles.evidence}`}>
+          <p>MV</p>
+        </span>
+      );
+    case "GenBank":
+      return (
+        <span className={`${styles.GenBank} ${styles.evidence}`}>
+          <p>GB</p>
+        </span>
+      );
+    case "UniProt-SwissProt":
+      return (
+        <span className={`${styles.UniProtSwissProt} ${styles.evidence}`}>
+          <p>US</p>
+        </span>
+      );
+    case "UniProtKB":
+      return (
+        <span className={`${styles.UniProtKB} ${styles.evidence}`}>
+          <p>UK</p>
+        </span>
+      );
+    case "IntAct":
+      return (
+        <span className={`${styles.IntAct} ${styles.evidence}`}>
+          <p>IA</p>
         </span>
       );
     case "Virus-Host DB":
@@ -27,7 +51,7 @@ function EvidenceIcon({ evidence_name }) {
           <p>VH</p>
         </span>
       );
-    case "NCBIVirus":
+    case "NCBI Virus":
       return (
         <span className={`${styles.NCBI} ${styles.evidence}`}>
           <p>NV</p>
@@ -58,9 +82,6 @@ export default function ListElement({ tableData, type }) {
 
   return (
     <div className={styles.element}>
-      <span className={styles.accession}>
-        {type === "host" ? tableData.host.host_id : tableData.virus.virus_id}
-      </span>
       <span>
         <strong>{tableData.virus.name}</strong>
       </span>
@@ -76,9 +97,9 @@ export default function ListElement({ tableData, type }) {
         ))}
       </span>
       <span>
-        {type === "host" ? tableData.host.genome_type : tableData.virus.genome_type}
+        { tableData.virus.genome_type}
       </span>
-      <span>{tableData.virus.sequence_length}</span>
+      <span>{tableData.virus.assembly_level}</span>
       <span
         className={styles.bookmark}
         onClick={() => {
@@ -98,8 +119,8 @@ export default function ListElement({ tableData, type }) {
             );
             BookmarkHandler.setBookmark({
               accession: accession,
-              virus: tableData.virus.organism_name,
-              host: tableData.host.organism_name,
+              virus: tableData.virus.name,
+              host: tableData.host.name,
               type: type,
             });
             loadBookmark();

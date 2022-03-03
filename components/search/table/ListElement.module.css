@@ -1,7 +1,7 @@
 .element {
   width: 100%;
   display: grid;
-  grid-template-columns: 2.1fr 4.7fr 4.1fr 2.5fr 2.2fr 1.4fr 0.2fr;
+  grid-template-columns: 3.36fr 3.36fr 2.5fr 1.75fr 2.45fr 0.2fr;
   gap: 20px;
   align-items: center;
   padding: 1rem;
@@ -29,14 +29,17 @@
 .element .evidence {
   border-radius: 100%;
   color: white;
-  width: 21px;
-  height: 21px;
-  margin-right: 6px;
+  width: 23px;
+  height: 23px;
+  margin-right: 7px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 .evidence p {
   text-align: center;
-  line-height: 21px;
-  font-size: 10px;
+  line-height: 23px;
+  font-size: 11px;
+  font-weight: bold;
 }
 .element .accession {
   border-bottom: 1px solid var(--secondary-text);
@@ -53,10 +56,34 @@
 .RefSeq p {
   color: white;
 }
-.UniProt {
+.MVP {
+  background-color: #5a724a;
+}
+.MVP p {
+  color: white;
+}
+.GenBank {
   background-color: #81b29a;
 }
-.UniProt p {
+.GenBank p {
+  color: black;
+}
+.IntAct {
+  background-color: #b281b0;
+}
+.IntAct p {
+  color: white;
+}
+.UniProtSwissProt {
+  background-color: #ac5353;
+}
+.UniProtSwissProt p {
+  color: white;
+}
+.UniProtKB {
+  background-color: #53a9ac;
+}
+.UniProtKB p {
   color: black;
 }
 .VHDB {

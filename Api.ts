@@ -17,7 +17,7 @@ const getInteractions = (
   }
   if (molecule) {
     if(molecule.length) {
-      Object.assign(body, { molecule: molecule });
+      Object.assign(body, { genome_type: molecule });
     }
   }
   if (assembly_level) {
@@ -25,6 +25,11 @@ const getInteractions = (
       Object.assign(body, { assembly_level: assembly_level });
     }
   }
+  // if (genome_type) {
+  //   if(genome_type.length) {
+  //     Object.assign(body, { genome_type: genome_type });
+  //   }
+  // }
   if (sort) {
     Object.assign(body, { sort: sort})
   }
