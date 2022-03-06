@@ -11,14 +11,22 @@ export default function BrowseSection({ taxData }) {
   const [data, setData] = useState(taxData);
   const [path, setPath] = useState("");
   const [type, setType] = useState("");
+  const [taxon, setTaxon] = useState("");
   const router = useRouter();
   const { tax } = router.query as any;
 
   useEffect(() => {
-    if (tax[0] === "Viruses") {
-      setType("viral");
+    if (tax[0] === "virus") {
+      setType("virus");
     } else {
       setType("host");
+    }
+    if (tax[1] === "ictv") {
+      setTaxon("ictv");
+    } else if (tax[1] === "gtdb") {
+      setTaxon("gtdb");
+    } else {
+      setTaxon("ncbi");
     }
     setData(taxData);
     setPath(tax.join("/"));
@@ -38,26 +46,33 @@ export default function BrowseSection({ taxData }) {
       <div className={styles.wrapper}>
         <div className={styles.selection}>
           <p>Search by: </p>
-          <Link href={`/browse/Viruses`}>
-            <a className={tax[0] === "Viruses" ? styles.active : null}>
-              Viruses
-            </a>
+          <Link href={`/browse/virus/${taxon}`}>
+            <a className={tax[0] === "virus" ? styles.active : null}>Viruses</a>
           </Link>
-          <Link href={`/browse/Bacteria`}>
-            <a className={tax[0] === "Bacteria" ? styles.active : null}>
-              Hosts
-            </a>
+          <Link href={`/browse/host/${taxon}`}>
+            <a className={tax[0] === "host" ? styles.active : null}>Hosts</a>
+          </Link>
+          <p>Taxonomy: </p>
+          <Link href={`/browse/${type}/ictv`}>
+            <a className={tax[1] === "ictv" ? styles.active : null}>ICTV</a>
+          </Link>
+          <Link href={`/browse/${type}/ncbi`}>
+            <a className={tax[1] === "ncbi" ? styles.active : null}>NCBI</a>
           </Link>
         </div>
-        {tax.length === 1 ? <Header /> : <Navigation taxData={tax} />}
+        {tax.length === 1 || tax.length === 2 ? (
+          <Header />
+        ) : (
+          <Navigation taxData={tax} type={tax[0]} taxo={tax[1]} />
+        )}
 
         {taxData.length ? (
           <div className={styles.data}>
             {data.map((tax) => (
-              <div key={tax.tax_id} className={styles.element}>
+              <div key={tax.taxon_id} className={styles.element}>
                 <span>
-                  <Link href={`/browse/${path}/${tax.tax_name}`}>
-                    <a> {tax.tax_name}</a>
+                  <Link href={`/browse/${path}/${tax.taxon_id}&${tax.name}`}>
+                    <a> {tax.name}</a>
                   </Link>
                 </span>
                 <span>{tax.tax_rank}</span>
@@ -74,7 +89,9 @@ export default function BrowseSection({ taxData }) {
               </div>
             ))}
           </div>
-        ) : <p className={styles.notFound}>No more records</p>}
+        ) : (
+          <p className={styles.notFound}>No more records</p>
+        )}
       </div>
     </div>
   );

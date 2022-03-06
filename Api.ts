@@ -71,13 +71,9 @@ const getUpdateStats = () => {
   return data;
 };
 
-const getBrowseData = (org: string, db: "viral" | "host") => {
-  const data = fetch(`${BASE_URL}/api/browse/`, {
-    method: "POST",
-    body: JSON.stringify({
-      org: org,
-      db: db
-    }),
+const getBrowseData = (taxon_id: string, db: "virus" | "host", tax: "ictv" | "ncbi") => {
+  const data = fetch(`${BASE_URL}/api/browse/${db}/${tax}?taxon_id=${taxon_id}`, {
+    method: "GET"
   }).then((res) => res.json());
   return data;
 }

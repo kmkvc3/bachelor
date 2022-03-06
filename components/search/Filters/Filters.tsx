@@ -29,7 +29,6 @@ export default function Filters({
 
   const [evidenceFilters, setEvidenceFilters] = useState([]);
   const [assemblyFilters, setAssemblyFilters] = useState([]);
-  // const [databaseFilters, setDatabaseFilters] = useState([]);
   const [genomeFilters, setGenomeFilters] = useState([]);
   const [filtersToDisplay, setFiltersToDisplay] = useState([]);
 

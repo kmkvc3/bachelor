@@ -6,12 +6,21 @@ import { getBrowseData } from "../../Api";
 export async function getServerSideProps(context) {
   const { params } = context
   const taxs = params.tax
-  let taxData = null
+  let taxData = []
+  const taxonId = taxs.length >= 3 ? taxs[taxs.length-1].split("&")[0] : ""
   if(taxs) {
-    if(taxs[0] === "Viruses") {
-      taxData = await getBrowseData(taxs[taxs.length-1], 'viral');
+    if(taxs[0] === "virus") {
+      if(taxs[1] === "ictv") {
+        taxData = await getBrowseData(taxonId, 'virus', 'ictv');
+      } else {
+        taxData = await getBrowseData(taxonId, 'virus', 'ncbi');
+      }
     } else {
-      taxData = await getBrowseData(taxs[taxs.length-1], 'host');
+      if(taxs[1] === "ictv") {
+        taxData = await getBrowseData(taxonId, 'host', 'ictv');
+      } else {
+        taxData = await getBrowseData(taxonId, 'host', 'ncbi');
+      }
     }
   }
   return {
