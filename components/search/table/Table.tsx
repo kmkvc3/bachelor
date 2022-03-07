@@ -31,6 +31,36 @@ export default function Table({ data, type }) {
                 <p>RefSeq</p>
               </div>
               <div>
+                <span className={`${styles.MVP} ${styles.evidence}`}>
+                  <p>MV</p>
+                </span>
+                <p>MVP</p>
+              </div>
+              <div>
+                <span className={`${styles.GenBank} ${styles.evidence}`}>
+                  <p>GB</p>
+                </span>
+                <p>GenBank</p>
+              </div>
+              <div>
+                <span className={`${styles.IntAct} ${styles.evidence}`}>
+                  <p>IA</p>
+                </span>
+                <p>IntAct</p>
+              </div>
+              <div>
+                <span className={`${styles.UniProtSwissProt} ${styles.evidence}`}>
+                  <p>US</p>
+                </span>
+                <p>UniProt - SwissProt</p>
+              </div>
+              <div>
+                <span className={`${styles.UniProtSwissProt} ${styles.evidence}`}>
+                  <p>UK</p>
+                </span>
+                <p>UniProtKB</p>
+              </div>
+              <div>
                 <span className={`${styles.UniProt} ${styles.evidence}`}>
                   <p>UP</p>
                 </span>

@@ -1,7 +1,7 @@
 .header {
     margin: 1.25rem 0 0 0;
     display: grid;
-    grid-template-columns: 1.85fr 0.75fr 0.75fr 0.75fr 0.2fr;
+    grid-template-columns: 1.5fr 0.75fr 0.75fr 0.2fr;
     background-color: var(--main-light-dark);
     border-radius: var(--buttons-border-radius) var(--buttons-border-radius) 0 0;
     padding: 1.2rem 0 1rem 1rem;

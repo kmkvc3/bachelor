@@ -16,7 +16,8 @@
 }
 .wrapper > p {
     font-weight: normal;
-    max-width: 280px;
+    max-width: 340px;
+    line-height: 21px;
     color: var(--secondary-text);
 }
 @media (max-width: 920px) {

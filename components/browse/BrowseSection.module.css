@@ -35,6 +35,11 @@
   display: flex;
   flex-direction: row;
 }
+.selection div {
+  display: flex;
+  flex-direction: row;
+  margin-right: 2.8rem;
+}
 .selection a {
   margin: 0 0.3rem;
   text-decoration: none;
@@ -47,7 +52,7 @@
   border-bottom: 2px solid var(--primary-text);
 }
 .selection p {
-  margin: 0 0.4rem 0 0;
+  margin: 0 0.3rem 0 0;
   color: var(--primary-text);
   cursor: auto;
 }
@@ -62,12 +67,12 @@
 }
 .data a {
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: underline;
   color: var(--primary-text);
 }
 .element {
   display: grid;
-  grid-template-columns: 1.85fr 0.75fr 0.75fr 0.75fr 0.2fr;
+  grid-template-columns: 1.5fr 0.75fr 0.75fr 0.2fr;
   align-items: center;
   border-bottom: var(--button-border) solid var(--main-light-dark);
   border-left: var(--button-border) solid var(--main-light-dark);

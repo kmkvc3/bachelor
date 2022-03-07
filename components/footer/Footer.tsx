@@ -6,11 +6,13 @@ import { getUpdateStats } from "../../Api";
 export default function Footer() {
   const router = useRouter();
   const [lastUpdatedDate, setLastUpdatedDate] = useState("")
+  const [version, setVersion] = useState("")
 
   async function getStats() {
     try {
       const data: any = await getUpdateStats();
-      setLastUpdatedDate(data.date.update)
+      setLastUpdatedDate(data.date.update_since)
+      setVersion(data.version)
     } catch (error) {
       console.log(error);
     }
@@ -21,20 +23,27 @@ export default function Footer() {
   })
   return (
     <footer className={styles.footer}>
-      <span>
-        With <img src={router.pathname.includes("/browse") ? "../heart.svg" : "./heart.svg"} alt="" /> from{" "}
-        <a target="_blank" href="http://www.combio.pl">
-          combio.pl
-        </a>
-      </span>
-      <div>
-        <span>Team</span>
-        <span>Publication</span>
-        <span>Contact</span>
+      <div className={styles.combio}>
+        <span>
+          With <img src={router.pathname.includes("/browse") ? "../heart.svg" : "./heart.svg"} alt="" /> from{" "}
+          <a target="_blank" href="http://www.combio.pl">
+            combio.pl
+          </a>
+        </span>
+        <div>
+          <span>Team</span>
+          <span>Publication</span>
+          <span>Contact</span>
+        </div>
       </div>
-      <span>
-        Data last updated: <strong>{lastUpdatedDate}</strong>
-      </span>
+      <div className={styles.data}>
+        <span>
+          Data last updated: <strong>{lastUpdatedDate}</strong>
+        </span>
+        <span>
+          Version: <strong>{version}</strong>
+        </span>
+      </div>
     </footer>
   );
 }

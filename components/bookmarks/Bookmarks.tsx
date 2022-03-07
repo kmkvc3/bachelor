@@ -23,6 +23,7 @@ export default function Bookmarks({ setClose }) {
     if (storedBookmarks) {
       setBookmarks(storedBookmarks);
     }
+    console.log(storedBookmarks)
   }, []);
   return (
     <>

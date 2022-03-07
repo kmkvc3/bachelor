@@ -24,7 +24,7 @@ export default function Navigation() {
           <li
             className={router.pathname.includes("/browse") ? styles.active : ""}
           >
-            <Link href="/browse/Viruses">
+            <Link href="/browse/host/ncbi">
               <p>Browse</p>
             </Link>
           </li>
