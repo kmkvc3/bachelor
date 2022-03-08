@@ -1,8 +1,9 @@
 interface Bookmark {
-  accession: string;
   virus: string;
   host: string;
-  type: "viral" | "host"
+  virus_id: string;
+  host_id: string;
+  type: "virus" | "host"
 }
 
 class BookmarksHandler {
@@ -21,7 +22,7 @@ class BookmarksHandler {
   }
   public getBookmark(accession: string): Bookmark {
     return this.accessions.find(
-      (bookmark: Bookmark) => bookmark.accession === accession
+      (bookmark: Bookmark) => bookmark.virus_id === accession
     );
   }
   public setBookmark(payload: Bookmark): void {
@@ -30,7 +31,7 @@ class BookmarksHandler {
   }
   public removeBookmark(accession: string): void {
     this.accessions = this.accessions.filter(
-      (bookmark: Bookmark) => bookmark.accession !== accession
+      (bookmark: Bookmark) => bookmark.virus_id !== accession
     );
     this.saveAccessions();
   }

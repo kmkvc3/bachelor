@@ -60,33 +60,16 @@ export default function BrowseSection({ taxData }) {
           </div>
           <div>
             <p>Taxonomy: </p>
-            {type === "host" ? (
-              <>
-                <Link href={`/browse/${type}/gtdb`}>
-                  <a className={tax[1] === "gtdb" ? styles.active : null}>
-                    GTDB
-                  </a>
-                </Link>
-                <Link href={`/browse/${type}/ncbi`}>
-                  <a className={tax[1] === "ncbi" ? styles.active : null}>
-                    NCBI
-                  </a>
-                </Link>
-              </>
-            ) : (
-              <>
-                <Link href={`/browse/${type}/ncbi`}>
-                  <a className={tax[1] === "ncbi" ? styles.active : null}>
-                    NCBI
-                  </a>
-                </Link>
-                <Link href={`/browse/${type}/ictv`}>
-                  <a className={tax[1] === "ictv" ? styles.active : null}>
-                    ICTV
-                  </a>
-                </Link>
-              </>
-            )}
+            <Link href={`/browse/${type}/alt`}>
+              <a className={tax[1] === "alt" ? styles.active : null}>
+               {type === "host" ? "GTDB" : "ICTV"} 
+              </a>
+            </Link>
+            <Link href={`/browse/${type}/ncbi`}>
+              <a className={tax[1] === "ncbi" ? styles.active : null}>
+                NCBI
+              </a>
+            </Link>
           </div>
         </div>
         {tax.length === 1 || tax.length === 2 ? (

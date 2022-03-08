@@ -8,6 +8,7 @@ import { getInteractions } from "../Api";
 import { useEffect } from "react";
 import { getDbDictonary } from "../Api";
 import TableBottom from "../components/search/TableBottom/TableBottom";
+import { useRouter } from 'next/router'
 
 export async function getServerSideProps(context) {
   const availableFilters = await getDbDictonary();
@@ -18,7 +19,7 @@ export async function getServerSideProps(context) {
 
 export default function Search({ availableFilters }) {
   const [taxonId, setTaxonId] = useState("");
-  const [type, setType] = useState("viral");
+  const [type, setType] = useState("");
   const [page, setPage] = useState(1);
   const [maxPage, setMaxPage] = useState(1);
   const [offset, setOffset] = useState(25);
@@ -29,6 +30,15 @@ export default function Search({ availableFilters }) {
   const [data, setData] = useState(null);
   const [isDataLoaded, setDataLoaded] = useState(false);
   const [wasDataLoaded, setWasDataLoaded] = useState(false);
+  const router = useRouter()
+
+  useEffect(()=>{
+    const { type } = router.query
+    if(type) {
+      setType(type as string)
+    }
+    console.log(type)
+  }, [])
 
   useEffect(() => {
     if (taxonId === "") return;

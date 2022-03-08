@@ -46,7 +46,7 @@ export default function NoBookmarks({ setClose }) {
         </div>
         <img
           src={
-            router.pathname.includes("/browse")
+            router.pathname.includes("/browse/")
               ? "../bookmarks-rafiki.svg"
               : "./bookmarks-rafiki.svg"
           }

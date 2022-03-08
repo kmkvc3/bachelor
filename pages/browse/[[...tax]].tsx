@@ -16,8 +16,8 @@ export async function getServerSideProps(context) {
         taxData = await getBrowseData(taxonId, 'virus', 'ncbi');
       }
     } else {
-      if(taxs[1] === "ictv") {
-        taxData = await getBrowseData(taxonId, 'host', 'ictv');
+      if(taxs[1] === "alt") {
+        taxData = await getBrowseData(taxonId, 'host', 'alt');
       } else {
         taxData = await getBrowseData(taxonId, 'host', 'ncbi');
       }

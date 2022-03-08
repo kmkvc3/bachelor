@@ -25,11 +25,6 @@ const getInteractions = (
       Object.assign(body, { assembly_level: assembly_level });
     }
   }
-  // if (genome_type) {
-  //   if(genome_type.length) {
-  //     Object.assign(body, { genome_type: genome_type });
-  //   }
-  // }
   if (sort) {
     Object.assign(body, { sort: sort})
   }
@@ -71,7 +66,7 @@ const getUpdateStats = () => {
   return data;
 };
 
-const getBrowseData = (taxon_id: string, db: "virus" | "host", tax: "ictv" | "ncbi") => {
+const getBrowseData = (taxon_id: string, db: "virus" | "host", tax: "alt" | "ncbi") => {
   const data = fetch(`${BASE_URL}/api/browse/${db}/${tax}?taxon_id=${taxon_id}`, {
     method: "GET"
   }).then((res) => res.json());

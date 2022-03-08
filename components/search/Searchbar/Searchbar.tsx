@@ -21,7 +21,6 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
     }
     if(type) {
       setHintsType(type as string)
-      setType(type)
     }
   }, [])
 
@@ -45,6 +44,7 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
   }
 
   function HintElement({ item }) {
+    console.log(item)
     return (
       <span
         onClick={() => {

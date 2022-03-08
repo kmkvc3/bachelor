@@ -35,7 +35,7 @@ export default function Bookmarks({ setClose }) {
           </div>
           {bookmarks.map((bookmark) => (
             <div className={styles.row}>
-              {bookmark.type === "viral" ? (
+              {bookmark.type === "virus" ? (
                 <strong>{bookmark.virus}</strong>
               ) : (
                 <p>{bookmark.virus}</p>
@@ -48,7 +48,7 @@ export default function Bookmarks({ setClose }) {
               <div
                 className={styles.button}
                 onClick={() => {
-                  BookmarksHandler.removeBookmark(bookmark.accession);
+                  BookmarksHandler.removeBookmark(bookmark.virus_id);
                   updateBookmarks();
                   EventBus.emit("remove-bookmark");
                 }}
@@ -59,9 +59,9 @@ export default function Bookmarks({ setClose }) {
                 <a
                   target="_blank"
                   href={
-                    bookmark.type === "viral"
-                      ? `/search?query=${bookmark.virus}&type=${bookmark.type}`
-                      : `/search?query=${bookmark.host}&type=${bookmark.type}`
+                    bookmark.type === "virus"
+                      ? `/search?taxon_id=${bookmark.virus_id}&type=${bookmark.type}`
+                      : `/search?taxon_id=${bookmark.host_id}&type=${bookmark.type}`
                   }
                 >
                   <FontAwesomeIcon

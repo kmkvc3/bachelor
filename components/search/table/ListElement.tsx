@@ -63,7 +63,8 @@ function EvidenceIcon({ evidence_name }) {
 }
 
 export default function ListElement({ tableData, type }) {
-  const accession = tableData.virus.accession_number;
+  console.log(tableData)
+  const accession = tableData.virus.virus_id;
   const [bookmark, setBookmark] = useState(null);
   useEffect(() => {
     loadBookmark();
@@ -118,9 +119,10 @@ export default function ListElement({ tableData, type }) {
               </div>
             );
             BookmarkHandler.setBookmark({
-              accession: accession,
               virus: tableData.virus.name,
+              virus_id: tableData.virus.virus_id,
               host: tableData.host.name,
+              host_id: tableData.host.host_id,
               type: type,
             });
             loadBookmark();
