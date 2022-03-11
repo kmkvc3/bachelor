@@ -63,7 +63,6 @@ function EvidenceIcon({ evidence_name }) {
 }
 
 export default function ListElement({ tableData, type }) {
-  console.log(tableData)
   const accession = tableData.virus.virus_id;
   const [bookmark, setBookmark] = useState(null);
   useEffect(() => {
