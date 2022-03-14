@@ -66,10 +66,17 @@ const getUpdateStats = () => {
   return data;
 };
 
+const getVirusRecord = (virus_id: string) => {
+  const data = fetch(`${BASE_URL}/api/record/virus/?virus_id=${virus_id}`, {
+    method: "GET"
+  }).then((res) => res.json());
+  return data;
+};
+
 const getBrowseData = (taxon_id: string, db: "virus" | "host", tax: "alt" | "ncbi") => {
   const data = fetch(`${BASE_URL}/api/browse/${db}/${tax}?taxon_id=${taxon_id}`, {
     method: "GET"
   }).then((res) => res.json());
   return data;
 }
-export { getInteractions, getHints, getDbDictonary, getBrowseData, getUpdateStats };
+export { getInteractions, getHints, getDbDictonary, getBrowseData, getUpdateStats, getVirusRecord };

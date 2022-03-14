@@ -1,10 +1,10 @@
 .element {
   width: 100%;
   display: grid;
-  grid-template-columns: 3.36fr 3.36fr 2.5fr 1.75fr 2.45fr 0.2fr;
-  gap: 20px;
+  grid-template-columns: 3.58fr 3.58fr 2.7fr 1.75fr 1.6fr;
+  /* gap: 20px; */
   align-items: center;
-  padding: 1rem;
+  padding: 0.94rem;
   border-bottom: var(--button-border) solid var(--main-light-dark);
   border-left: var(--button-border) solid var(--main-light-dark);
   border-right: var(--button-border) solid var(--main-light-dark);
@@ -142,6 +142,13 @@
 }
 .bookmark {
   cursor: pointer;
+}
+.virus_link {
+  border-bottom: 1px solid;
+}
+.virus_link:hover {
+  cursor: pointer;
+  color: var(--main-blue);
 }
 @media (max-width: 920px) {
   .element {

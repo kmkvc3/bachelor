@@ -1,9 +1,9 @@
 interface Bookmark {
   virus: string;
-  host: string;
+  // host: string;
   virus_id: string;
-  host_id: string;
-  type: "virus" | "host"
+  // host_id: string;
+  // type: "virus" | "host"
 }
 
 class BookmarksHandler {

@@ -1,0 +1,8 @@
+.wrapper {
+    width: 100%;
+    max-width: var(--content);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0rem var(--content-padding) 10rem var(--content-padding);
+}
