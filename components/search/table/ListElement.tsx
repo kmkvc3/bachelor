@@ -1,6 +1,10 @@
 import styles from "./ListElement.module.css";
-import { useEffect } from "react";
 import Link from "next/dist/client/link";
+import { faCodeBranch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Modal from "../../modal/Modal";
+import LineageContent from "./LineageContent";
+import { useState } from "react";
 
 function EvidenceIcon({ evidence_name }) {
     switch (evidence_name) {
@@ -59,22 +63,8 @@ function EvidenceIcon({ evidence_name }) {
     }
 }
 
-export default function ListElement({ tableData, type }) {
-    // const [bookmark, setBookmark] = useState(null);
-    useEffect(() => {
-        // loadBookmark();
-        // EventBus.on("remove-bookmark", () => {
-        //   if (!BookmarkHandler.getBookmark(accession)) {
-        //     BookmarkHandler.removeBookmark(accession);
-        //     setBookmark(null);
-        //   }
-        // });
-    }, []);
-
-    // function loadBookmark() {
-    //   const localBookmark = BookmarkHandler.getBookmark(accession);
-    //   if (localBookmark) setBookmark(localBookmark);
-    // }
+export default function ListElement({ tableData }) {
+    const [open, setOpen] = useState(false);
 
     return (
         <div className={styles.element}>
@@ -85,8 +75,14 @@ export default function ListElement({ tableData, type }) {
                     </strong>
                 </Link>
             </span>
-            <span>
+            <span
+                onClick={() => {
+                    setOpen(true);
+                }}
+                className={styles.branch}
+            >
                 <strong>{tableData.host.name}</strong>
+                <FontAwesomeIcon icon={faCodeBranch} />
             </span>
             <span className={styles.evidenceWrapper}>
                 {tableData.evidence.map((evidence) => (
@@ -95,41 +91,13 @@ export default function ListElement({ tableData, type }) {
             </span>
             <span>{tableData.virus.genome_type}</span>
             <span>{tableData.virus.assembly_level}</span>
-            <span
-                className={styles.bookmark}
-                // onClick={() => {
-                //   if (bookmark) {
-                //     BookmarkHandler.removeBookmark(accession);
-                //     toast.success(
-                //       <div>
-                //         <strong>{accession}</strong> removed from bookmarks
-                //       </div>
-                //     );
-                //     setBookmark(null);
-                //   } else {
-                //     toast.success(
-                //       <div>
-                //         <strong>{accession}</strong> added to bookmarks
-                //       </div>
-                //     );
-                // BookmarkHandler.setBookmark({
-                //   virus: tableData.virus.name,
-                //   virus_id: tableData.virus.virus_id,
-                //   host: tableData.host.name,
-                //   host_id: tableData.host.host_id,
-                //   type: type,
-                // });
-                // loadBookmark();
-                // }
-                // EventBus.emit("add-bookmark");
-                // }}
-            >
-                {/* {bookmark ? (
-          <FontAwesomeIcon icon={faBookmark} />
-        ) : (
-          <FontAwesomeIcon icon={farBookmark} />
-        )} */}
-            </span>
+            <span className={styles.bookmark}></span>
+
+            {open ? (
+                <Modal title="Lineage" opened={open} setClose={setOpen}>
+                    <LineageContent host_id={tableData.host.host_id} setClose={setOpen} />
+                </Modal>
+            ) : null}
         </div>
     );
 }

@@ -16,10 +16,3 @@
   width: max-content;
   color: var(--secondary-text);
 }
-.wrapper > h3 strong {
-  font-size: 18px;
-  color: var(--primary-text);
-}
-.wrapper img {
-  width: 130px;
-}

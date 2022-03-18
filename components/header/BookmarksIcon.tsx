@@ -8,50 +8,50 @@ import BookmarksContent from "../bookmarks/Bookmarks";
 import EventBus from "../../EventBus";
 
 export default function Bookmarks() {
-  const [open, setOpen] = useState(false);
-  const [bookmarks, setBookmarks] = useState([]);
+    const [open, setOpen] = useState(false);
+    const [bookmarks, setBookmarks] = useState([]);
 
-  function getBookmarksFromStorage() {
-    return JSON.parse(localStorage.getItem("accessions"));
-  }
-
-  function updateBookmarks() {
-    const storedBookmarks = getBookmarksFromStorage();
-    if(storedBookmarks) {
-      setBookmarks(storedBookmarks);
-    } else {
-      setBookmarks([])
+    function getBookmarksFromStorage() {
+        return JSON.parse(localStorage.getItem("accessions"));
     }
-  }
 
-  useEffect(() => {
-    BookmarksHandler.setAccessions();
-    const storedBookmarks = getBookmarksFromStorage();
-    if(storedBookmarks) {
-      setBookmarks(storedBookmarks);
-    } else {
-      setBookmarks([])
+    function updateBookmarks() {
+        const storedBookmarks = getBookmarksFromStorage();
+        if (storedBookmarks) {
+            setBookmarks(storedBookmarks);
+        } else {
+            setBookmarks([]);
+        }
     }
-    EventBus.on("add-bookmark", updateBookmarks);
-    EventBus.on("remove-bookmark", updateBookmarks)
-  }, []);
 
-  return (
-    <div>
-      <div
-        onClick={() => {
-          setOpen(true);
-        }}
-        className={styles.wrapper}
-      >
-        <FontAwesomeIcon icon={faBookmark} />
-        <div className={styles.count}>{bookmarks.length}</div>
-      </div>
-      {open ? (
-        <Modal title="Bookmarks" opened={open} setClose={setOpen}>
-          <BookmarksContent setClose={setOpen} />
-        </Modal>
-      ) : null}
-    </div>
-  );
+    useEffect(() => {
+        BookmarksHandler.setAccessions();
+        const storedBookmarks = getBookmarksFromStorage();
+        if (storedBookmarks) {
+            setBookmarks(storedBookmarks);
+        } else {
+            setBookmarks([]);
+        }
+        EventBus.on("add-bookmark", updateBookmarks);
+        EventBus.on("remove-bookmark", updateBookmarks);
+    }, []);
+
+    return (
+        <div>
+            <div
+                onClick={() => {
+                    setOpen(true);
+                }}
+                className={styles.wrapper}
+            >
+                <FontAwesomeIcon icon={faBookmark} />
+                <div className={styles.count}>{bookmarks.length}</div>
+            </div>
+            {open ? (
+                <Modal title="Bookmarks" opened={open} setClose={setOpen}>
+                    <BookmarksContent setClose={setOpen} />
+                </Modal>
+            ) : null}
+        </div>
+    );
 }

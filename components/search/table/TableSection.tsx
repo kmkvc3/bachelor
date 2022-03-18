@@ -7,14 +7,13 @@ import NotFound from "../Ilustrations/NotFound";
 export default function TableSection({
   type,
   data,
-  query,
   isDataLoaded,
 }) {
   return (
     <div className={styles.content}>
       {isDataLoaded ? (
         (data.results.length === 0) || (!data.results.length) ? (
-          <NotFound query={query} />
+          <NotFound />
         ) : (
           <>
             <div className={styles.results}>

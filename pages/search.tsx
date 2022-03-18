@@ -37,7 +37,6 @@ export default function Search({ availableFilters }) {
     if(type) {
       setType(type as string)
     }
-    console.log(type)
   }, [])
 
   useEffect(() => {
@@ -97,7 +96,6 @@ export default function Search({ availableFilters }) {
           <TableSection
             type={type}
             isDataLoaded={isDataLoaded}
-            query={taxonId}
             data={data}
           />
           <TableBottom

@@ -40,18 +40,15 @@ export default function NoBookmarks({ setClose }) {
           </div>
           <div className={styles.line}></div>
           <div className={styles.step}>
-            <div className={styles.circle}>3</div>
-            <div>Save it for later by clicking on bookmark icon</div>
+            <div className={styles.circle}>4</div>
+            <div>Pick record by clicking in the virus name</div>
+          </div>
+          <div className={styles.line}></div>
+          <div className={styles.step}>
+            <div className={styles.circle}>5</div>
+            <div>Click bookmarks icon</div>
           </div>
         </div>
-        <img
-          src={
-            router.pathname.includes("/browse/")
-              ? "../bookmarks-rafiki.svg"
-              : "./bookmarks-rafiki.svg"
-          }
-          alt=""
-        />
       </div>
     </div>
   );

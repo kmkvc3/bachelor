@@ -39,7 +39,7 @@ const getInteractions = (
     }).then((res) => {
       setTimeout(() => {
         resolve(res.json());
-      }, 300);
+      }, 0);
     });
   });
   return data;
@@ -73,10 +73,23 @@ const getVirusRecord = (virus_id: string) => {
   return data;
 };
 
+const getHostRecord = (host_id: string) => {
+  const data = new Promise((resolve, reject)=>{
+    fetch(`${BASE_URL}/api/taxonomy/host/?host_id=${host_id}`, {
+      method: "GET"
+    }).then((res) => {
+      setTimeout(() => {
+        resolve(res.json());
+      }, 3000);
+    });
+  }) 
+  return data;
+};
+
 const getBrowseData = (taxon_id: string, db: "virus" | "host", tax: "alt" | "ncbi") => {
   const data = fetch(`${BASE_URL}/api/browse/${db}/${tax}?taxon_id=${taxon_id}`, {
     method: "GET"
   }).then((res) => res.json());
   return data;
 }
-export { getInteractions, getHints, getDbDictonary, getBrowseData, getUpdateStats, getVirusRecord };
+export { getInteractions, getHints, getDbDictonary, getBrowseData, getUpdateStats, getVirusRecord, getHostRecord };

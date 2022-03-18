@@ -14,7 +14,6 @@
 .navigation ul li {
   list-style: none;
   text-align: center;
-  cursor: pointer;
   margin-right: 2rem;
 }
 .navigation ul li p {
@@ -25,6 +24,7 @@
   border-radius: var(--buttons-border-radius);
 }
 .navigation ul li p:hover {
+  cursor: pointer;
   background-color: var(--main-light-dark);
 }
 .navigation ul li.active p {

@@ -129,7 +129,7 @@ export default function Table({ data, type }) {
 
       <div>
         {data.results.map((data) => (
-          <ListElement key={data.virus.accession_number} type={type} tableData={data} />
+          <ListElement key={data.virus.accession_number} tableData={data} />
         ))}
       </div>
     </>

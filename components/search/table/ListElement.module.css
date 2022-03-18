@@ -134,13 +134,18 @@
   display: block;
   margin: 0.4rem 1rem 0.4rem 0;
 }
-.helpIcon {
-  transform: translateY(1px);
-  margin-left: 4px;
-  font-size: 16px;
+.branch svg {
+  margin-left: 0.7rem;
+  font-size: 1.04rem;
   cursor: pointer;
 }
-.bookmark {
+.branch svg:hover {
+  color: var(--main-blue);
+}
+.helpIcon {
+  transform: translateY(1px);
+  margin-left: 5px;
+  font-size: 16px;
   cursor: pointer;
 }
 .virus_link {
