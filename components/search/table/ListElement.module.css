@@ -19,6 +19,7 @@
 .element strong {
   font-size: 15px;
   color: var(--primary-text);
+  line-height: 23px;
 }
 .evidenceWrapper {
   display: flex;

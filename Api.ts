@@ -80,7 +80,7 @@ const getHostRecord = (host_id: string) => {
     }).then((res) => {
       setTimeout(() => {
         resolve(res.json());
-      }, 3000);
+      }, 200);
     });
   }) 
   return data;

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getHints } from "../../../Api";
 import { useRouter } from "next/router";
 import Link from "next/dist/client/link";
+import { generateUrl } from "../../../urlGenerator";
 
 export default function Searchbar({ setType, setTaxonId, setPage }) {
     const [hintType, setHintsType] = useState("virus");
@@ -45,10 +46,15 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
     }
 
     function HintElement({ item }) {
+        const newUrl = generateUrl({
+            taxon_id: item.taxon_id
+        })
         return (
-            <Link href={`search?taxon_id=${item.taxon_id}`}>
+            // { shallow: true }
+            // <Link href={`search${newUrl}`}>
                 <span
                     onClick={() => {
+                        router.push(newUrl, undefined, { shallow: true })
                         setSearchHints([]);
                         setSearchContent(item.name);
                         setTaxonId(item.taxon_id);
@@ -58,7 +64,7 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
                 >
                 {item.name}
                 </span>
-            </Link>
+            // </Link>
         );
     }
 
