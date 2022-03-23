@@ -24,14 +24,11 @@ export default function Export({ setClose, host_id }) {
         <div className={styles.wrapper}>
             {data ? (
                 <>
-                    {data.gtdb.length > 0 ? (
+                    {data.ncbi.length > 0 ? (
                         <div className={styles.representative}>
-                            <h2>GTDB</h2>
-                            {data.gtdb.map((host, index) => (
-                                <p
-                                    className={`${styles.lineage} ${styles.lineageICTV}`}
-                                >
-                                    <div></div>
+                            <h2>NCBI</h2>
+                            {data.ncbi.map((host, index) => (
+                                <p className={styles.lineage}>
                                     <span
                                         style={{
                                             marginLeft: `${
@@ -50,12 +47,15 @@ export default function Export({ setClose, host_id }) {
                             ))}
                         </div>
                     ) : null}
-
-                    {data.ncbi.length > 0 ? (
+                    
+                    {data.gtdb.length > 0 ? (
                         <div className={styles.representative}>
-                            <h2>NCBI</h2>
-                            {data.ncbi.map((host, index) => (
-                                <p className={styles.lineage}>
+                            <h2>GTDB</h2>
+                            {data.gtdb.map((host, index) => (
+                                <p
+                                    className={`${styles.lineage} ${styles.lineageICTV}`}
+                                >
+                                    <div></div>
                                     <span
                                         style={{
                                             marginLeft: `${

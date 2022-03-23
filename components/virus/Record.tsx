@@ -3,18 +3,29 @@ import { useEffect, useState } from "react";
 import EventBus from "../../EventBus";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark as farBookmark } from "@fortawesome/free-regular-svg-icons";
-import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import {
+    faSearch,
+    faCodeBranch,
+    faCheckCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import toast from "react-hot-toast";
 import BookmarkHandler from "../bookmarks/BookmarksHandler";
 import Link from "next/dist/client/link";
+import { ThemeContext } from "../../ThemeContext";
+import { useContext } from "react";
+import LineageContent from "../search/table/LineageContent";
+import Modal from "../modal/Modal";
 
 export default function Record({ data }) {
     const accession = data.virus_id;
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
+    const [open, setOpen] = useState(false);
     const [bookmark, setBookmark] = useState(null);
     useEffect(() => {
         loadBookmark();
+        console.log(data);
         EventBus.on("remove-bookmark", () => {
             if (!BookmarkHandler.getBookmark(accession)) {
                 BookmarkHandler.removeBookmark(accession);
@@ -30,7 +41,14 @@ export default function Record({ data }) {
         <div className={styles.wrapper}>
             <div className={styles.header}>
                 <div className={styles.content}>
-                    <img src="../virus2.svg" alt="" />
+                    <img
+                        src={`${
+                            darkMode
+                                ? "../virus-secondary-dark.svg"
+                                : "../virus-secondary-light.svg"
+                        }`}
+                        alt=""
+                    />
                     <div className={styles.names}>
                         <h1>
                             {data.name} <span>{data.genome_type}</span>
@@ -75,108 +93,12 @@ export default function Record({ data }) {
                     )}
                 </span>
             </div>
-            <div className={styles.representative}>
-                <h2>
-                    Representative assembly{" "}
-                    <FontAwesomeIcon icon={faCheckCircle} />
-                </h2>
-                <p>Name: {data.genome_assemblies.representative.name}</p>
-                <p>Length: {data.genome_assemblies.representative.length}</p>
-                <p>
-                    Assembly level:{" "}
-                    {data.genome_assemblies.representative.assembly_level}
-                </p>
-
-                <h3>Sequences</h3>
-                {data.genome_assemblies.representative.sequences.map((seq) => (
-                    <div className={styles.sequence}>
-                        <p>Name: {seq.name}</p>
-                        <p>Length: {seq.length}</p>
-                        <p>
-                            Url:{" "}
-                            <a
-                                className={styles.url}
-                                target="_blank"
-                                href={seq.url}
-                            >
-                                {seq.url}
-                            </a>
-                        </p>
-                    </div>
-                ))}
-            </div>
-            {data.genome_assemblies.others ? (
-                <div className={styles.representative}>
-                    <h2>Others assembly</h2>
-
-                    {data.genome_assemblies.other.map((other) => (
-                        <div>
-                            <p>Name: {other.name}</p>
-                            <p>Length: {other.length}</p>
-                            <p>Assembly level: {other.assembly_level}</p>
-                            <h3>Sequences</h3>
-
-                            {data.genome_assemblies.representative.sequences.map(
-                                (seq) => (
-                                    <div>
-                                        <p>Name: {seq.name}</p>
-                                        <p>Length: {seq.length}</p>
-                                        <p>
-                                            Url:{" "}
-                                            <a
-                                                className={styles.url}
-                                                target="_blank"
-                                                href={seq.url}
-                                            >
-                                                {seq.url}
-                                            </a>
-                                        </p>
-                                    </div>
-                                )
-                            )}
-                        </div>
-                    ))}
-                </div>
-            ) : null}
-            <div className={styles.representative}>
-                <h2>Hosts </h2>
-                {data.hosts.map((host) => (
-                    <p>{host.name}</p>
-                ))}
-            </div>
-
-            {data.lineage_ictv.length > 0 ? (
-                <div className={styles.representative}>
-                    <h2>Lineage ICTV</h2>
-                    {data.lineage_ictv.map((host, index) => (
-                        <p
-                            className={`${styles.lineage} ${styles.lineageICTV}`}
-                        >
-                            <div></div>
-                            <span
-                                style={{
-                                    marginLeft: `${
-                                        index > 1 ? (index - 1) * 22 : 0
-                                    }px`,
-                                }}
-                            >
-                                {index > 0 ? (
-                                    <span className={styles.taxonTree}></span>
-                                ) : null}
-                            </span>
-                            <span>{host.rank}</span>
-                            <span>{host.name}</span>
-                        </p>
-                    ))}
-                </div>
-            ) : null}
 
             {data.lineage_ncbi.length > 0 ? (
                 <div className={styles.representative}>
                     <h2>Lineage NCBI</h2>
                     {data.lineage_ncbi.map((host, index) => (
                         <p className={styles.lineage}>
-                            <div></div>
                             <span
                                 style={{
                                     marginLeft: `${
@@ -189,22 +111,154 @@ export default function Record({ data }) {
                                 ) : null}
                             </span>
                             <span>{host.rank}</span>
-                            <span>{host.name}</span>
+                            <span
+                                style={{
+                                    left: `${
+                                        data.lineage_ncbi.length * 22 +
+                                        data.lineage_ncbi[
+                                            data.lineage_ncbi.length - 1
+                                        ].name.length +
+                                        50
+                                    }px`,
+                                }}
+                            >
+                                <Link
+                                    href={`/search?taxon_id=${host.taxon_id}`}
+                                >
+                                    {host.name}
+                                </Link>
+                            </span>
                         </p>
                     ))}
                 </div>
             ) : null}
 
-            <Link href={`/search?taxon_id=${data.taxon_id}`}>
-                <button className={styles.searchBy}>
-                    Search by its taxon{" "}
-                    <FontAwesomeIcon
-                        icon={faSearch}
-                        color={"#ffffff"}
-                        className={styles.searchIcon}
-                    />
-                </button>
-            </Link>
+            {data.lineage_ictv.length > 0 ? (
+                <div className={styles.representative}>
+                    <h2>Lineage ICTV</h2>
+                    {data.lineage_ictv.map((host, index) => (
+                        <p className={styles.lineage}>
+                            <span
+                                style={{
+                                    marginLeft: `${
+                                        index > 1 ? (index - 1) * 22 : 0
+                                    }px`,
+                                }}
+                            >
+                                {index > 0 ? (
+                                    <span className={styles.taxonTree}></span>
+                                ) : null}
+                            </span>
+                            <span>{host.rank}</span>
+                            <span
+                                style={{
+                                    left: `${
+                                        data.lineage_ictv.length * 22 +
+                                        data.lineage_ictv[
+                                            data.lineage_ictv.length - 1
+                                        ].name.length +
+                                        50
+                                    }px`,
+                                }}
+                            >
+                                <Link
+                                    href={`/search?taxon_id=${host.taxon_id}`}
+                                >
+                                    {host.name}
+                                </Link>
+                            </span>
+                        </p>
+                    ))}
+                </div>
+            ) : null}
+
+            <div className={styles.representative}>
+                <h2 className={styles.genome}>Genome assemblies</h2>
+                <div className={styles.tableHeader}>
+                    <p>Assembly accession</p>
+                    <p>Assembly level</p>
+                    <p>Genome length</p>
+                    <p>Sequence accessions</p>
+                    <p>Representative</p>
+                </div>
+                <div className={styles.row}>
+                    <p>
+                        <a
+                            target="_blank"
+                            href={data.genome_assemblies.representative.url}
+                        >
+                            {data.genome_assemblies.representative.name}
+                        </a>
+                    </p>
+                    <p>{data.genome_assemblies.representative.length}</p>
+                    <p>
+                        {data.genome_assemblies.representative.assembly_level}
+                    </p>
+                    <p>
+                        {data.genome_assemblies.representative.sequences.map(
+                            (seq) => (
+                                <p className={styles.sequence}>
+                                    <a target="_blank" href={seq.url}>
+                                        {seq.name}
+                                    </a>
+                                </p>
+                            )
+                        )}
+                    </p>
+                    <div className={styles.representativeIcon}>
+                        <FontAwesomeIcon icon={faCheckCircle} />
+                    </div>
+                </div>
+                {data.genome_assemblies.other.map((other) => (
+                    <div className={styles.row}>
+                        <p>
+                            <a target="_blank" href={other.url}>
+                                {other.name}
+                            </a>
+                        </p>
+                        <p>{other.length}</p>
+                        <p>{other.assembly_level}</p>
+                        <p>
+                            {other.sequences.map((seq) => (
+                                <p className={styles.sequence}>
+                                    <a href={seq.url}>{seq.name}</a>
+                                </p>
+                            ))}
+                        </p>
+                        <p className={styles.none}>-</p>
+                    </div>
+                ))}
+            </div>
+            <div className={styles.representative}>
+                <h2>Hosts </h2>
+                {data.hosts.map((host) => (
+                    <>
+                        {open ? (
+                            <Modal
+                                title="Host lineage"
+                                opened={open}
+                                setClose={setOpen}
+                            >
+                                <LineageContent
+                                    host_id={host.host_id}
+                                    setClose={setOpen}
+                                />
+                            </Modal>
+                        ) : null}
+                        <p className={styles.host}>
+                            <span
+                                onClick={() => {
+                                    setOpen(true);
+                                }}
+                                className={styles.branch}
+                            >
+                                {host.name}
+                                <FontAwesomeIcon icon={faCodeBranch} />
+                            </span>
+                        </p>
+                    </>
+                ))}
+            </div>
         </div>
     );
 }

@@ -22,11 +22,11 @@
     cursor: pointer;
 }
 .header img {
-    width: 90px;
+    width: 96px;
     background-size: contain;
-    height: 90px;
+    height: 96px;
     border-radius: 50%;
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 .header h1 {
     color: var(--primary-dark-text);
@@ -67,9 +67,6 @@
     justify-content: space-between;
     margin-bottom: 1rem;
 }
-.representative h2 svg {
-    color: #81b29a;
-}
 .representative h3 {
     color: var(--primary-text);
     font-size: 18px;
@@ -88,7 +85,7 @@
 .taxonTree {
     width: 18px;
     display: inline-block;
-    border-left: 1px solid var(--third-text);;
+    border-left: 1px solid var(--third-text);
     border-bottom: 1px solid var(--third-text);
     padding: 0.34rem 0;
     margin-right: 0.5rem;
@@ -106,28 +103,58 @@
     position: absolute;
     left: 230px;
 }
-.lineageICTV span:nth-of-type(3) {
-    left: 270px;
-}
-.searchBy {
-    height: 36px;
-    width: max-content;
-    margin-top: 6rem;
-    padding: 0 1rem;
-    border: var(--button-border) solid var(--button-border-color);
-    background-color: var(--background-color);
-    border-radius: var(--buttons-border-radius);
+.lineage span:nth-of-type(3) a {
     color: var(--primary-text);
-    cursor: pointer;
-    margin-right: 30px;
+    display: block;
+}
+.lineage span:nth-of-type(3) a:hover {
+    color: var(--main-blue);
+}
+.tableHeader {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr) 0.8fr;
+    background-color: var(--main-light-dark);
+    padding: 0.76rem;
+    width: 100%;
+    border-radius: var(--buttons-border-radius) var(--buttons-border-radius) 0 0;
+}
+.row {
+    display: grid;
+    border-top: unset;
+    grid-template-columns: repeat(4, 2fr) 0.8fr;
+    padding: 0.76rem;
+    border-bottom: var(--button-border) solid var(--main-light-dark);
+    border-left: var(--button-border) solid var(--main-light-dark);
+    border-right: var(--button-border) solid var(--main-light-dark);
+}
+.row a {
+    color: var(--main-blue);
+}
+.row a:hover {
+    color: var(--main-blue);
+}
+.row svg {
+    color: #81b29a;
+    text-align: center;
+    margin-left: 0 auto;
+}
+.row .representativeIcon {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
-.searchBy svg {
-    color: var(--primary-text);
-    margin-left: 0.8rem;
+.representative .genome {
+    border: unset;
+    margin-bottom: 0.4rem;
 }
-.searchBy:hover {
-    background-color: var(--main-light-dark);
-    border: var(--button-border) solid transparent;
+.none {
+    text-align: center;
+}
+.host svg {
+    color: var(--primary-text);
+    margin-left: 1rem;
+    cursor: pointer;
+}
+.host svg:hover {
+    color: var(--main-blue);
 }
