@@ -1,177 +1,233 @@
 .wrapper {
-    width: 100%;
-    max-width: var(--content);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0rem var(--content-padding) 7rem var(--content-padding);
+  width: 100%;
+  max-width: var(--content);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0rem var(--content-padding) 7rem var(--content-padding);
 }
 .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2.2rem;
 }
 .bookmark {
-    color: var(--primary-text);
-    display: flex;
-    font-size: 22px;
-    align-items: center;
-    cursor: pointer;
+  color: var(--primary-text);
+  display: flex;
+  font-size: 22px;
+  align-items: center;
+  cursor: pointer;
 }
 .header img {
-    width: 96px;
-    background-size: contain;
-    height: 96px;
-    border-radius: 50%;
-    margin-right: 1rem;
+  width: 96px;
+  background-size: contain;
+  height: 96px;
+  border-radius: 50%;
+  margin-right: 1rem;
 }
 .header h1 {
-    color: var(--primary-dark-text);
-    font-size: 28px;
+  color: var(--primary-dark-text);
+  font-size: 28px;
 }
 .header h1 span {
-    margin-left: 0.4rem;
+  margin-left: 0.4rem;
 }
 .header .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header .names {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .header .names span {
-    color: var(--secondary-text);
-    margin-top: 0.5rem;
+  color: var(--secondary-text);
+  margin-top: 0.5rem;
 }
 .row .none {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--secondary-text);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary-text);
 }
 .representative {
-    margin-top: 4.8rem;
+  margin-top: 4.8rem;
 }
 .representative h2 {
-    color: var(--primary-text);
-    font-size: 22px;
-    display: flex;
-    padding-bottom: 0.6rem;
-    flex-direction: row;
-    justify-content: space-between;
+  color: var(--primary-text);
+  font-size: 22px;
+  display: flex;
+  padding-bottom: 0.6rem;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--secondary-text);
+  margin-bottom: 1rem;
 }
 .representative h3 {
-    color: var(--primary-text);
-    font-size: 18px;
-    margin: 1.55rem 0 0.6rem 0;
+  color: var(--primary-text);
+  font-size: 18px;
+  margin: 1.55rem 0 0.6rem 0;
 }
 .representative p {
-    color: var(--secondary-text);
-    line-height: 1.7rem;
-}
-.logoHeader {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--secondary-text);
-    margin-bottom: 1rem;
-}
-.logoHeader img {
-    border-radius: 20px;
-    width: 60px;
-    height: 24px;
+  color: var(--secondary-text);
+  line-height: 1.7rem;
 }
 .url {
-    color: var(--main-blue);
+  color: var(--main-blue);
 }
 .sequence {
-    margin-bottom: 0.2rem;
+  margin-bottom: 0.2rem;
+  margin-right: 0.2rem;
+  display: inline-block;
 }
 .taxonTree {
-    width: 18px;
-    display: inline-block;
-    border-left: 1px solid var(--third-text);
-    border-bottom: 1px solid var(--third-text);
-    padding: 0.34rem 0;
-    margin-right: 0.5rem;
-    margin-left: 0.8rem;
+  width: 18px;
+  display: inline-block;
+  border-left: 1px solid var(--third-text);
+  border-bottom: 1px solid var(--third-text);
+  padding: 0.34rem 0;
+  margin-right: 0.5rem;
+  margin-left: 0.8rem;
 }
 .lineage {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-top: 0.22rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.22rem;
 }
 .lineage span:nth-of-type(3) {
-    color: var(--primary-text);
-    font-weight: bold;
-    position: absolute;
-    left: 230px;
+  color: var(--primary-text);
+  /* font-weight: bold; */
+  position: absolute;
+  left: 230px;
 }
 .lineage span:nth-of-type(3) a {
-    color: var(--primary-text);
-    display: block;
+  color: var(--primary-text);
+  display: block;
 }
 .lineage span:nth-of-type(3) a:hover {
-    color: var(--main-blue);
+  color: var(--main-blue);
 }
 .tableHeader {
-    display: grid;
-    grid-template-columns: repeat(4, 2fr) 0.8fr;
-    background-color: var(--main-light-dark);
-    padding: 0.76rem;
-    width: 100%;
-    border-radius: var(--buttons-border-radius) var(--buttons-border-radius) 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 2fr) 0.8fr;
+  background-color: var(--main-light-dark);
+  padding: 0.76rem;
+  width: 100%;
+  border-radius: var(--buttons-border-radius) var(--buttons-border-radius) 0 0;
 }
 .row {
-    display: grid;
-    border-top: unset;
-    grid-template-columns: repeat(4, 2fr) 0.8fr;
-    padding: 0.76rem;
-    border-bottom: var(--button-border) solid var(--main-light-dark);
-    border-left: var(--button-border) solid var(--main-light-dark);
-    border-right: var(--button-border) solid var(--main-light-dark);
+  display: grid;
+  border-top: unset;
+  grid-template-columns: repeat(4, 2fr) 0.8fr;
+  padding: 0.76rem;
+  border-bottom: var(--button-border) solid var(--main-light-dark);
+  border-left: var(--button-border) solid var(--main-light-dark);
+  border-right: var(--button-border) solid var(--main-light-dark);
 }
 .row a {
-    color: var(--main-blue);
+  color: var(--main-blue);
 }
 .row:hover {
-    background-color: var(--main-light-dark);
+  background-color: var(--main-light-dark);
 }
 .row svg {
-    color: #81b29a;
-    text-align: center;
-    margin-left: 0 auto;
+  color: #81b29a;
+  text-align: center;
+  margin-left: 0 auto;
 }
 .row .representativeIcon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .representative .genome {
-    border: unset;
-    margin-bottom: 0.4rem;
+  border: unset;
+  margin-bottom: 0.4rem;
 }
 .host svg {
-    color: var(--primary-text);
-    margin-left: 1rem;
-    cursor: pointer;
+  color: var(--primary-text);
+  margin-left: 1rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.host > span {
+  color: var(--primary-text);
 }
 .host svg:hover {
-    color: var(--main-blue);
+  color: var(--main-blue);
 }
 .notFoundICTV {
-    color: var(--secondary-text);
-    text-align: center;
-    margin: 2rem 0 1.8rem 0;
+  color: var(--secondary-text);
+  text-align: center;
+  margin: 2.4rem 0 1.8rem 0;
 }
 .notFoundICTV svg {
-    color: #ac5353;
-    margin-left: 0.5rem;
+  color: #ac5353;
+  margin-left: 0.5rem;
+}
+.evidence {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  margin-bottom: 0.6rem;
+  margin-right: 0.8rem;
+  border-radius: 0.5rem;
+  background-color: red;
+}
+.evidence p {
+  line-height: 21px;
+}
+.RefSeq {
+  background-color: #3d405b;
+}
+.RefSeq p {
+  color: white;
+}
+.MVP {
+  background-color: #5a724a;
+}
+.MVP p {
+  color: white;
+}
+.GenBank {
+  background-color: #81b29a;
+}
+.GenBank p {
+  color: black;
+}
+.IntAct {
+  background-color: #b281b0;
+}
+.IntAct p {
+  color: white;
+}
+.UniProtSwissProt {
+  background-color: #ac5353;
+}
+.UniProtSwissProt p {
+  color: white;
+}
+.UniProtKB {
+  background-color: #53a9ac;
+}
+.UniProtKB p {
+  color: black;
+}
+.VHDB {
+  background-color: #e07a5f;
+}
+.VHDB p {
+  color: white;
+}
+.NCBI {
+  color: black;
+  background-color: #f2cc8f;
+}
+.NCBI p {
+  color: black;
 }

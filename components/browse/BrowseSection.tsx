@@ -48,7 +48,7 @@ export default function BrowseSection({ taxData }) {
       <div className={styles.wrapper}>
         <div className={styles.selection}>
           <div>
-            <p>Search by: </p>
+            <p>Browse by: </p>
             <Link href={`/browse/virus/${taxon}`}>
               <a className={tax[0] === "virus" ? styles.active : null}>
                 Viruses
@@ -60,23 +60,20 @@ export default function BrowseSection({ taxData }) {
           </div>
           <div>
             <p>Taxonomy: </p>
+            <Link href={`/browse/${type}/ncbi`}>
+              <a className={tax[1] === "ncbi" ? styles.active : null}>NCBI</a>
+            </Link>
             <Link href={`/browse/${type}/alt`}>
               <a className={tax[1] === "alt" ? styles.active : null}>
-               {type === "host" ? "GTDB" : "ICTV"} 
-              </a>
-            </Link>
-            <Link href={`/browse/${type}/ncbi`}>
-              <a className={tax[1] === "ncbi" ? styles.active : null}>
-                NCBI
+                {type === "host" ? "GtDB" : "ICTV"}
               </a>
             </Link>
           </div>
         </div>
-        {tax.length === 1 || tax.length === 2 ? (
-          <Header />
-        ) : (
+        {tax.length > 2 ? (
           <Navigation taxData={tax} type={tax[0]} taxo={tax[1]} />
-        )}
+        ) : null}
+        <Header />
 
         {taxData.length ? (
           <div className={styles.data}>

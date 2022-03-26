@@ -17,7 +17,7 @@ export default function TableSection({
         ) : (
           <>
             <div className={styles.results}>
-              <p>{data.count} results</p>
+              <p>{data.count} virus-host interactions for <span>{data.query.name}</span></p>
             </div>
             <Table
               type={type}

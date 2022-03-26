@@ -17,14 +17,6 @@
   margin: 0 auto;
   line-height: 26px;
 }
-.desc a {
-  color: var(--main-blue);
-  cursor: pointer;
-  text-decoration: none;
-}
-.desc a:hover {
-  text-decoration: underline;
-}
 .line {
   height: 15px;
   background-color: var(--main-light-dark);

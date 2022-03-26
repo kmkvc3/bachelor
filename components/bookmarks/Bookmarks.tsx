@@ -30,7 +30,7 @@ export default function Bookmarks({ setClose }) {
             {bookmarks.length ? (
                 <div className={styles.wrapper}>
                     <div className={`${styles.row} ${styles.mainRow}`}>
-                        <p>Virus</p>
+                        <p>Virus species</p>
                     </div>
                     {bookmarks.map((bookmark) => (
                         <div className={styles.row}>

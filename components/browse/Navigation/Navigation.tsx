@@ -12,7 +12,7 @@ export default function Navigation({ taxData, type, taxo }) {
 
   return (
     <div className={styles.header}>
-      <Link href={`/browse/${type}/${taxo}`}>Back</Link>
+      <Link href={`/browse/${type}/${taxo}`}>Root</Link>
       <span>/</span>
       {mapNames().map((tax, index) => {
         if (index === taxData.length - 1 || taxData.length === 3 ) {

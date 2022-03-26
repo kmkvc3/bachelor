@@ -9,18 +9,6 @@ export default function NoBookmarks({ setClose }) {
     <div className={styles.wrapper}>
       <div className={styles.desc}>
         Currently you have no bookmarks. To create bookmark, follow steps below
-        or{" "}
-        <strong
-          onClick={() => {
-            setClose();
-            router.reload();
-          }}
-          className={styles.sample}
-        >
-          <Link href={`/search?taxon_id=19193`}>
-             run sample query
-          </Link>
-        </strong>
       </div>
       <div className={styles.steps}>
         <div>

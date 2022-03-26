@@ -31,6 +31,7 @@ export default function Search({ availableFilters }) {
   const [isDataLoaded, setDataLoaded] = useState(false);
   const [wasDataLoaded, setWasDataLoaded] = useState(false);
   const router = useRouter()
+  const { taxon_id } = router.query as any;
 
   useEffect(()=>{
     const { type } = router.query
@@ -91,7 +92,7 @@ export default function Search({ availableFilters }) {
         setPage={setPage}
         availableFilters={availableFilters}
       />
-      {wasDataLoaded ? (
+      {(wasDataLoaded && taxon_id) ? (
         <>
           <TableSection
             type={type}

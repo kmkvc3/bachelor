@@ -17,9 +17,9 @@ export default function TableBottom({
         <PageSize offset={offset} setOffset={setOffset} />
       )}
       <Pagination page={page} maxPage={maxPage} setPage={setPage} />
-      {data ? (
+      {/* {data ? (
         data.results.length ? <Export /> : null
-      ): null}
+      ): null} */}
     </div>
   );
 }

@@ -2,8 +2,8 @@ import styles from "./Header.module.css";
 
 export default function Header() {
   return <div className={styles.header}>
-      <span>Name</span>
-      <span>Rank</span>
-      <span>Interactions</span>
+      <span>Taxonomic unit</span>
+      <span>Taxonomic rank</span>
+      <span>Virus-host interactions</span>
   </div>;
 }

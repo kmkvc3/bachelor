@@ -1,5 +1,4 @@
 .wrapper {
-  max-width: 660px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -12,6 +11,7 @@
   background-color: var(--main-light-dark);
   border-radius: 100px;
   width: 100%;
+  max-width: 660px;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -107,4 +107,29 @@
   cursor: pointer;
   background-color: var(--searchbar-hover);
   color: var(--primary-dark-text);
+}
+.clearAll {
+  height: var(--button-height);
+  border: var(--button-border) solid var(--button-border-color);
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--secondary-text);
+  padding: 0rem 0.8rem;
+  margin-left: 2rem;
+  border-radius: var(--buttons-border-radius);
+  box-sizing: border-box;
+  line-height: 34px;
+  position: relative;
+}
+.clearAll:hover {
+  background-color: #ac5353;
+  color: white;
+  border: var(--button-border) solid #ac5353;
+}
+.clearAll svg {
+  margin-left: 0.2rem;
+}
+.clearAll a {
+  text-decoration: none;
+  color: var(--secondary-text);
 }

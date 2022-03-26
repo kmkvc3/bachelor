@@ -13,9 +13,8 @@ export default function Table({ data, type }) {
   return (
     <>
       <div className={`${styles.element} ${styles.header}`}>
-        {/* <span>Accession</span> */}
-        <span>Virus</span>
-        <span>Host</span>
+        <span>Virus species</span>
+        <span>Host species</span>
         <span>
           Evidence
           <span className={styles.helpIconWrapper}>
@@ -61,12 +60,6 @@ export default function Table({ data, type }) {
                 <p>UniProtKB</p>
               </div>
               <div>
-                <span className={`${styles.UniProt} ${styles.evidence}`}>
-                  <p>UP</p>
-                </span>
-                <p>UniProt</p>
-              </div>
-              <div>
                 <span className={`${styles.VHDB} ${styles.evidence}`}>
                   <p>VH</p>
                 </span>
@@ -81,8 +74,8 @@ export default function Table({ data, type }) {
             </div>
           </span>
         </span>
-        <span>Genome Type</span>
-        <span>Assembly Level</span>
+        <span>Virus genome type</span>
+        <span>Virus assembly level</span>
       </div>
 
       {darkMode ? (
