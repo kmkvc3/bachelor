@@ -48,11 +48,12 @@
     color: var(--secondary-text);
     margin-top: 0.5rem;
 }
-.sequence {
-    padding-bottom: 1rem;
-}
-.sequence:nth-last-of-type(1) {
-    padding-bottom: 0rem;
+.row .none {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-text);
 }
 .representative {
     margin-top: 4.8rem;
@@ -60,12 +61,10 @@
 .representative h2 {
     color: var(--primary-text);
     font-size: 22px;
-    padding-bottom: 0.6rem;
-    border-bottom: 1px solid var(--secondary-text);
     display: flex;
+    padding-bottom: 0.6rem;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 1rem;
 }
 .representative h3 {
     color: var(--primary-text);
@@ -75,6 +74,18 @@
 .representative p {
     color: var(--secondary-text);
     line-height: 1.7rem;
+}
+.logoHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--secondary-text);
+    margin-bottom: 1rem;
+}
+.logoHeader img {
+    border-radius: 20px;
+    width: 60px;
+    height: 24px;
 }
 .url {
     color: var(--main-blue);
@@ -130,8 +141,8 @@
 .row a {
     color: var(--main-blue);
 }
-.row a:hover {
-    color: var(--main-blue);
+.row:hover {
+    background-color: var(--main-light-dark);
 }
 .row svg {
     color: #81b29a;
@@ -147,9 +158,6 @@
     border: unset;
     margin-bottom: 0.4rem;
 }
-.none {
-    text-align: center;
-}
 .host svg {
     color: var(--primary-text);
     margin-left: 1rem;
@@ -157,4 +165,13 @@
 }
 .host svg:hover {
     color: var(--main-blue);
+}
+.notFoundICTV {
+    color: var(--secondary-text);
+    text-align: center;
+    margin: 2rem 0 1.8rem 0;
+}
+.notFoundICTV svg {
+    color: #ac5353;
+    margin-left: 0.5rem;
 }

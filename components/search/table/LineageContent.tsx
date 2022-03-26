@@ -13,7 +13,7 @@ export default function Export({ setClose, host_id }) {
 
     useEffect(() => {
         fetchData();
-    });
+    }, []);
 
     async function fetchData() {
         const taxonomy = await getHostRecord(host_id);

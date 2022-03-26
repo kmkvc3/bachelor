@@ -62,14 +62,10 @@
 }
 .data a:hover {
   color: var(--main-blue);
-  /* border-bottom: 1px solid; */
 }
 .data a {
-  font-weight: bold;
   margin-bottom: 2px;
-  display: block;
-  /* border-bottom: 1px solid; */
-  color: var(--primary-text);
+  color: var(--main-blue);
 }
 .element {
   display: grid;

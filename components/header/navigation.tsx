@@ -3,17 +3,20 @@ import styles from "./Navigation.module.css";
 import { useRouter } from "next/router";
 import ThemeButton from "./ThemeButton";
 import BookmarksIcon from "./BookmarksIcon";
+import { ThemeContext } from "../../ThemeContext";
+import { useContext } from "react";
 
 export default function Navigation() {
   const router = useRouter();
-
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
   return (
     <nav className={styles.navigation}>
       <div>
         <ul>
-          <li>
+          <li className={styles.logo}>
             <Link href="/">
-              <p>Logo</p>
+              <img src={darkMode ? "/logo-dark-color.svg" : "/logo-light-sharp-color.svg"} alt="" />
             </Link>
           </li>
           <li className={router.pathname == "/search" ? styles.active : ""}>

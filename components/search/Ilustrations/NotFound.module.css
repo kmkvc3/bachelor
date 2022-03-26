@@ -1,18 +1,21 @@
 .wrapper {
   margin: 0 auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
   height: 50vh;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
   align-items: center;
   text-align: center;
 }
+.wrapper > img {
+  width: 220px;
+}
 .wrapper > h3 {
+  margin-top: 2.6rem;
   font-size: 18px;
   font-weight: normal;
-  /* margin-bottom: 2.2rem; */
   width: max-content;
   color: var(--secondary-text);
 }

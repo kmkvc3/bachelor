@@ -32,7 +32,7 @@ export default function Footer() {
         </span>
         <div>
           <span>Team</span>
-          <span>Publication</span>
+          <span>Citations</span>
           <span>Contact</span>
         </div>
       </div>

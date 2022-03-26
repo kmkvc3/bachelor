@@ -17,6 +17,7 @@
   color: var(--secondary-text);
 }
 .element strong {
+  font-weight: normal;
   font-size: 15px;
   color: var(--primary-text);
   line-height: 23px;
@@ -149,12 +150,13 @@
   font-size: 16px;
   cursor: pointer;
 }
-.virus_link {
+.element .virus_link {
   border-bottom: 1px solid;
+  font-weight: normal;
+  color: var(--main-blue);
 }
 .virus_link:hover {
   cursor: pointer;
-  color: var(--main-blue);
 }
 @media (max-width: 920px) {
   .element {

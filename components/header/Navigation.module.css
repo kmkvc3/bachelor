@@ -1,6 +1,12 @@
 .navigation {
   border-bottom: 1px solid var(--main-light-dark);
 }
+.logo {
+  display: flex;
+  justify-content: center;
+  width: 140px;
+  cursor: pointer;
+}
 .navigation > div {
   padding: 0 2.2rem;
   width: 100%;
@@ -35,6 +41,4 @@
   flex-direction: row;
   align-items: center;
   justify-items: center;
-}
-@media (max-width: 1540px) {
 }

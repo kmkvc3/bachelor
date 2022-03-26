@@ -4,9 +4,9 @@ import EventBus from "../../EventBus";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark as farBookmark } from "@fortawesome/free-regular-svg-icons";
 import {
-    faSearch,
     faCodeBranch,
     faCheckCircle,
+    faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import toast from "react-hot-toast";
@@ -25,7 +25,6 @@ export default function Record({ data }) {
     const [bookmark, setBookmark] = useState(null);
     useEffect(() => {
         loadBookmark();
-        console.log(data);
         EventBus.on("remove-bookmark", () => {
             if (!BookmarkHandler.getBookmark(accession)) {
                 BookmarkHandler.removeBookmark(accession);
@@ -96,7 +95,10 @@ export default function Record({ data }) {
 
             {data.lineage_ncbi.length > 0 ? (
                 <div className={styles.representative}>
-                    <h2>Lineage NCBI</h2>
+                    <div className={styles.logoHeader}>
+                        <h2>Lineage NCBI</h2>
+                        <img src="../ncbilogo.png" />
+                    </div>
                     {data.lineage_ncbi.map((host, index) => (
                         <p className={styles.lineage}>
                             <span
@@ -135,7 +137,10 @@ export default function Record({ data }) {
 
             {data.lineage_ictv.length > 0 ? (
                 <div className={styles.representative}>
-                    <h2>Lineage ICTV</h2>
+                    <div className={styles.logoHeader}>
+                        <h2>Lineage ICTV</h2>
+                        <img src="../ictvlogo.png" />
+                    </div>
                     {data.lineage_ictv.map((host, index) => (
                         <p className={styles.lineage}>
                             <span
@@ -170,7 +175,18 @@ export default function Record({ data }) {
                         </p>
                     ))}
                 </div>
-            ) : null}
+            ) : (
+                <div className={styles.representative}>
+                    <div className={styles.logoHeader}>
+                        <h2>Lineage ICTV</h2>
+                        <img src="../ictvlogo.png" />
+                    </div>
+                    <div className={styles.notFoundICTV}>
+                        Virus species has not yet been classified by the ICTV
+                        Committee <FontAwesomeIcon icon={faTimesCircle} />
+                    </div>
+                </div>
+            )}
 
             <div className={styles.representative}>
                 <h2 className={styles.genome}>Genome assemblies</h2>
@@ -190,10 +206,10 @@ export default function Record({ data }) {
                             {data.genome_assemblies.representative.name}
                         </a>
                     </p>
-                    <p>{data.genome_assemblies.representative.length}</p>
                     <p>
                         {data.genome_assemblies.representative.assembly_level}
                     </p>
+                    <p>{data.genome_assemblies.representative.length}</p>
                     <p>
                         {data.genome_assemblies.representative.sequences.map(
                             (seq) => (
@@ -216,8 +232,8 @@ export default function Record({ data }) {
                                 {other.name}
                             </a>
                         </p>
-                        <p>{other.length}</p>
                         <p>{other.assembly_level}</p>
+                        <p>{other.length}</p>
                         <p>
                             {other.sequences.map((seq) => (
                                 <p className={styles.sequence}>
@@ -225,7 +241,7 @@ export default function Record({ data }) {
                                 </p>
                             ))}
                         </p>
-                        <p className={styles.none}>-</p>
+                        <div className={styles.none}>-</div>
                     </div>
                 ))}
             </div>
