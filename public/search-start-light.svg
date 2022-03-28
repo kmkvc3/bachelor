@@ -127,7 +127,7 @@
        id="rect51939" />
   </defs>
   <g
-     id="g62065">
+     id="g5473">
     <path
        style="fill:#dbdbdb;fill-opacity:1;stroke:#dbdbdb;stroke-width:0.806;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path42971"
@@ -670,7 +670,7 @@
          ry="1.3464948" />
     </g>
     <path
-       style="fill:none;stroke:#dbdbdb;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.2, 1.2;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#Arrow2Mstart)"
+       style="fill:none;stroke:#dbdbdb;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.2, 1.2;stroke-dashoffset:0;stroke-opacity:1;marker-start:"
        d="m 28.940305,30.586079 6.489016,5.801034"
        id="path49230" />
     <path
@@ -678,7 +678,7 @@
        id="path1583"
        d="M 60.464136,31.580447 A 16.300486,16.300619 0 0 1 66.372835,47.8146" />
     <path
-       style="fill:none;stroke:#dbdbdb;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.2, 1.2;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#Arrow2Mstart)"
+       style="fill:none;stroke:#dbdbdb;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.2, 1.2;stroke-dashoffset:0;stroke-opacity:1;marker-start:"
        d="m 72.198518,30.586079 -6.489016,5.801034"
        id="path55896" />
     <path
@@ -689,5 +689,15 @@
        style="fill:none;stroke:#dbdbdb;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.2, 1.2;stroke-dashoffset:0;stroke-opacity:1"
        d="m 64.081765,37.936394 -4.806942,4.287657"
        id="path55990" />
+    <path
+       style="fill:#dbdbdb;fill-opacity:1;stroke:none;stroke-width:2.26772;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.53543, 4.53543;stroke-dashoffset:0;stroke-opacity:1"
+       id="path2066"
+       transform="matrix(0.26274134,-0.03116614,0.03116614,0.26274134,-2.6082261,-7.3487959)"
+       d="m 98.507259,151.61636 6.823011,2.77489 6.82301,2.77489 -5.81463,4.52146 -5.81463,4.52146 -1.008379,-7.29635 z" />
+    <path
+       style="fill:#dbdbdb;fill-opacity:1;stroke:none;stroke-width:2.26772;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.53543, 4.53543;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4141"
+       transform="matrix(-0.26274134,-0.03116614,-0.03116614,0.26274134,103.86833,-7.3487959)"
+       d="m 98.507259,151.61636 6.823011,2.77489 6.82301,2.77489 -5.81463,4.52146 -5.81463,4.52146 -1.008379,-7.29635 z" />
   </g>
 </svg>

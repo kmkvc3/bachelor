@@ -2,9 +2,21 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: relative;
+}
+.wrapper.left {
+  transition: 2s;
+  justify-content: space-between;
+}
+@keyframes anim {
+  from {
+    left: calc(50% - 330px)
+  }
+  to {
+    left: 0;
+  }
 }
 .searchField {
   border: var(--button-border) solid var(--main-light-dark);
@@ -17,7 +29,10 @@
   flex-direction: row;
   height: 50px;
 }
-.focused > .searchField {
+.left > .searchField { 
+    animation: anim 0.4s;
+}
+.searchField.focused {
   border-radius: 28px 28px 0 0;
 }
 .searchField > input {

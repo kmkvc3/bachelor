@@ -4,8 +4,10 @@
 .logo {
   display: flex;
   justify-content: center;
-  width: 144px;
   cursor: pointer;
+}
+.logo img {
+  width: 144px;
 }
 .navigation > div {
   padding: 0 2.2rem;

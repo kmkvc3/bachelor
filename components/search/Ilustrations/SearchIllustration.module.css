@@ -1,6 +1,6 @@
 .wrapper {
   margin: 0rem auto;
-  height: 50vh;
+  height: 33vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,7 +9,7 @@
 }
 .wrapper img {
   margin-right: 3rem;
-  width: 200px;
+  width: 198px;
 }
 .wrapper p {
   font-weight: normal;

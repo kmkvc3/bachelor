@@ -1,7 +1,7 @@
 .element {
   width: 100%;
   display: grid;
-  grid-template-columns: 3.58fr 3.58fr 2.7fr 1.92fr 1.6fr;
+  grid-template-columns: 3.42fr 3.42fr 2.7fr 1.92fr 1.80fr;
   align-items: center;
   padding: 0.94rem;
   border-bottom: var(--button-border) solid var(--main-light-dark);

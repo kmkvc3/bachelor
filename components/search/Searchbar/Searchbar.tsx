@@ -50,8 +50,6 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
       taxon_id: item.taxon_id,
     });
     return (
-      // { shallow: true }
-      // <Link href={`search${newUrl}`}>
       <span
         onClick={() => {
           router.push(newUrl, undefined, { shallow: true });
@@ -70,12 +68,18 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
   return (
     <div
       className={
-        searchHints.length > 0
-          ? `${styles.wrapper} ${styles.focused}`
+        taxon_id
+          ? `${styles.wrapper} ${styles.left}`
           : styles.wrapper
       }
     >
-      <div className={styles.searchField}>
+      <div
+        className={
+          searchHints.length > 0
+            ? `${styles.searchField} ${styles.focused}`
+            : styles.searchField
+        }
+      >
         <FontAwesomeIcon
           icon={faSearch}
           color={"#ffffff"}

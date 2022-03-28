@@ -6,8 +6,12 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/router";
 import Link from "next/dist/client/link";
+import { ThemeContext } from "../../ThemeContext";
+import { useContext } from "react";
 
 export default function BrowseSection({ taxData }) {
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
   const [data, setData] = useState(taxData);
   const [path, setPath] = useState("");
   const [type, setType] = useState("");
@@ -37,8 +41,22 @@ export default function BrowseSection({ taxData }) {
   return (
     <div>
       <div className={styles.description}>
-        <div>
-          <h3>Browse</h3>
+        <div className={styles.welcome}>
+          {tax[0] === "virus" ? (
+            <img
+              src={
+                darkMode ? "/browse-virus-dark.svg" : "/browse-virus-light.svg"
+              }
+              alt=""
+            />
+          ) : (
+            <img
+              src={
+                darkMode ? "/browse-host-dark.svg" : "/browse-host-light.svg"
+              }
+              alt=""
+            />
+          )}
           <p>
             All of our database records filtered by hosts and viruses. Discover
             the taxonomy by clicking on <strong> Tax name</strong>.

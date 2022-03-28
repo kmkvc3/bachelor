@@ -30,6 +30,16 @@
 .description img {
   width: 126px;
 }
+.welcome {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.welcome img {
+  margin-right: 1rem;
+  width: 146px;
+}
 .selection {
   color: var(--primary-text);
   display: flex;
