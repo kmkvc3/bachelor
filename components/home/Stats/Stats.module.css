@@ -1,11 +1,32 @@
 .wrapper {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+.wrapper .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 1.4rem auto 8rem auto;
-    max-width: 600px;
-    padding: 1.4rem 0;
+    max-width: 680px;
+    padding: 1rem 0;
     border-bottom: 1px solid var(--main-light-dark);
+    border-radius: 30px;
+    border: 1px solid var(--main-light-dark);
+}
+.wrapper > div {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.wrapper .interactions {
+    display: flex;
+    flex-direction: row;
+}
+.grid div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    margin: 2rem 0;    
 }
 .wrapper > div p:nth-child(1) {
     color: var(--primary-text);
@@ -13,6 +34,17 @@
 }
 .wrapper > div p:nth-child(2) {
     color: var(--secondary-text);
-    margin-top: 0.25rem;
+    margin-top: 0.33rem;
     font-size: 14px;
+}
+.wrapper > div.interactions p:nth-child(1) {
+    font-size: 1.46rem;
+    margin-right: 1rem;
+    font-weight: bold;
+    color: var(--main-blue);
+}
+.wrapper > div.interactions p:nth-child(2) {
+    font-size: 1.46rem;
+    color: var(--primary-text);
+    margin: 0;
 }

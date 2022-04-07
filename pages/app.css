@@ -36,7 +36,7 @@ body {
 body.dark {
   background-color: #1c2128;
   --background-color: #1d2229;
-  --main-light-dark: #30373f;
+  --main-light-dark: #38414b;
   --button-border-color: #3f4c5e;
   --primary-dark-text: #cdd9e6;
   --primary-text: #b4c1cf;

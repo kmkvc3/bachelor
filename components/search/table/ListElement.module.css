@@ -52,53 +52,43 @@
   border-bottom: 1px solid var(--main-blue);
 }
 .RefSeq {
-  background-color: #3d405b;
+  background-color: #51b27e;
 }
 .RefSeq p {
   color: white;
 }
 .MVP {
-  background-color: #5a724a;
+  background-color: #67809F;
 }
 .MVP p {
   color: white;
 }
 .GenBank {
-  background-color: #81b29a;
-}
-.GenBank p {
-  color: black;
+  background-color: #009ff7;
 }
 .IntAct {
-  background-color: #b281b0;
+  background-color: #7236eb;
 }
 .IntAct p {
   color: white;
 }
 .UniProtSwissProt {
-  background-color: #ac5353;
+  background-color: #F3C200;
 }
 .UniProtSwissProt p {
   color: white;
 }
 .UniProtKB {
-  background-color: #53a9ac;
-}
-.UniProtKB p {
-  color: black;
+  background-color: #F3C200;
 }
 .VHDB {
-  background-color: #e07a5f;
+  background-color: #f23f6c;
 }
 .VHDB p {
   color: white;
 }
 .NCBI {
-  color: black;
-  background-color: #f2cc8f;
-}
-.NCBI p {
-  color: black;
+  background-color: #2AB4C0;
 }
 .header {
   background-color: var(--main-light-dark);

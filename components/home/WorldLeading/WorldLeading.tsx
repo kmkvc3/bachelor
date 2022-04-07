@@ -5,35 +5,31 @@ import Link from "next/dist/client/link";
 export default function WorldLeading() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.card}>
+      <div className={styles.welcome}>
         <div className={styles.text}>
-          <div>
-            <h1>World leading <br/> <span>virus-host interactions</span>  database</h1>
-            <p>
-              Complex and intuitive tool for discovering interactions between
-              viruses and bacterias
-            </p>
-            <p>
-              Thousands records of high quality data <br /> Just for your
-              research
-            </p>
-          </div>
-          <span className={styles.line}></span>
-          <div className={styles.buttons}>
-            <button>
-              <Link href={`/search?query=Escherichia coli&type=host`}>
-                Run sample query
-              </Link>
-            </button>
-            <button>
-              <Link href={`/browse/Viruses`}>
-                Browse records
-              </Link>
-            </button>
-          </div>
+          <h1>Phage & Host</h1>
+          <h2>Daily updated database</h2>
+          <span></span>
+          <p>
+            Top quality data, all in one place. <br /> Start discovery of
+            interactions between phage & hosts. <br />
+            Just for your research
+          </p>
         </div>
         <div className={styles.image}>
-          <img src="./bloodtest-bro.svg" alt="" />
+          <img src="./cover.jpg" alt="" />
+        </div>
+      </div>
+      <div className={styles.extras}>
+        <p>More data on our database</p>
+        <span></span>
+        <div>
+          <button>
+            <Link href={"/search"}>Search</Link>
+          </button>
+          <button>
+            <Link href={"/browse/host/ncbi"}>Browse</Link>
+          </button>
         </div>
       </div>
     </div>
