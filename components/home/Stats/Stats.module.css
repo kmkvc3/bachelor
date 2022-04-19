@@ -6,12 +6,13 @@
 .wrapper .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 1.4rem auto 8rem auto;
+    margin: 1.4rem auto 6.5rem auto;
     max-width: 680px;
-    padding: 1rem 0;
+    padding: 0.9rem 1.8rem;
     border-bottom: 1px solid var(--main-light-dark);
     border-radius: 30px;
-    border: 1px solid var(--main-light-dark);
+    border: 2px solid var(--main-light-dark);
+    /* background-color: var(--main-light-dark); */
 }
 .wrapper > div {
     text-align: center;
@@ -26,7 +27,8 @@
     flex-direction: column;
     text-align: center;
     align-content: center;
-    margin: 2rem 0;    
+    margin: 2rem 1.6rem;    
+    max-width: 120px;
 }
 .wrapper > div p:nth-child(1) {
     color: var(--primary-text);
@@ -42,9 +44,16 @@
     margin-right: 1rem;
     font-weight: bold;
     color: var(--main-blue);
+    line-height: 18px;
 }
 .wrapper > div.interactions p:nth-child(2) {
     font-size: 1.46rem;
     color: var(--primary-text);
+    line-height: 18px;
     margin: 0;
+}
+.wrapper > span {
+    color: var(--secondary-text);
+    line-height: 0;
+    margin-bottom: 1.2rem;
 }

@@ -33,7 +33,6 @@ export default function Footer() {
         <div>
           <span>Team</span>
           <span>Citations</span>
-          <span>Contact</span>
         </div>
       </div>
       <div className={styles.data}>

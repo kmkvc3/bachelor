@@ -16,7 +16,7 @@ export default function Navigation() {
         <ul>
           <li className={styles.logo}>
             <Link href="/">
-              <img src={darkMode ? "/logo-dark-color.svg" : "/logo-light-sharp-color.svg"} alt="" />
+              <img src={darkMode ? "/logo-dark.svg" : "/logo-light.svg"} alt="" />
             </Link>
           </li>
           <li className={router.pathname == "/search" ? styles.active : ""}>

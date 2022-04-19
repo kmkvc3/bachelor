@@ -2,16 +2,18 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import WorldLeading from "../components/home/WorldLeading/WorldLeading"
 import Stats from "../components/home/Stats/Stats"
-import ForScientists from "../components/home/ForScientists/ForScientists"
-import Video from "../components/home/Video/Video"
+import DailyRecord from "../components/home/DailyRecord/DailyRecord"
+import BackedUp from "../components/home/BackedUp/BackedUp"
+import Feedback from "../components/home/Feedback/Feedback"
 
 export default function Home() {
   return (
     <Layout>
       <WorldLeading />
       <Stats />
-      <ForScientists />
-      <Video />
+      <DailyRecord />
+      <BackedUp />
+      <Feedback />
     </Layout>
   );
 }

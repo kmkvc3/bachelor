@@ -49,6 +49,7 @@ export default function Stats() {
         <p>{stats.interactions.count}</p>
         <p>{stats.interactions.name}</p>
       </div>
+      <span>...and growing everyday</span>
       <div className={styles.grid}>
         <div>
           <p>{stats.virus_species.count}</p>

@@ -22,13 +22,12 @@ export default function WorldLeading() {
       </div>
       <div className={styles.extras}>
         <p>More data on our database</p>
-        <span></span>
         <div>
           <button>
-            <Link href={"/search"}>Search</Link>
+            <Link href={"/search"}>Search records</Link>
           </button>
           <button>
-            <Link href={"/browse/host/ncbi"}>Browse</Link>
+            <Link href={"/browse/host/ncbi"}>Browse taxons</Link>
           </button>
         </div>
       </div>
