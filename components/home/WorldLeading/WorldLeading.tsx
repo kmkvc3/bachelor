@@ -9,7 +9,7 @@ export default function WorldLeading() {
         <div className={styles.text}>
           <h1>Phage & Host</h1>
           <h2>Daily updated database</h2>
-          <span></span>
+          {/* <span></span> */}
           <p>
             Top quality data, all in one place. <br /> Start discovery of
             interactions between phage & hosts. <br />
@@ -17,7 +17,7 @@ export default function WorldLeading() {
           </p>
         </div>
         <div className={styles.image}>
-          <img src="./cover.jpg" alt="" />
+          <img src="MicrosoftTeams-image.png" alt="" />
         </div>
       </div>
       <div className={styles.extras}>

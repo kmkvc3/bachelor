@@ -1,6 +1,6 @@
 .wrapper {
   width: 58px;
-  height: 28px;
+  height: 30px;
   padding: 6px;
   position: relative;
   background-color: var(--main-light-dark);
@@ -16,8 +16,8 @@
 }
 .wrapper .circle {
   transition: 0.15s;
-  height: 20px;
-  width: 20px;
+  height: 22px;
+  width: 22px;
   background-color: var(--primary-text);
   left: 5px;
   border-radius: 100%;

@@ -1,6 +1,6 @@
 .wrapper {
     padding: 4.7rem var(--content-padding) 4.4rem var(--content-padding);
-    max-width: 1280px;
+    max-width: 1420px;
     margin: 0 auto;
 }
 .welcome {
@@ -17,12 +17,13 @@
     font-size: 1.46rem;
     margin-top: 0.3rem;
     font-weight: normal;
+    margin-bottom: 1.8rem;
     color: var(--primary-text);
 }
 .text p {
     font-size: 1rem;
     color: var(--secondary-text);
-    max-width: 400px;
+    max-width: 460px;
     line-height: 1.3rem;
 }
 .text span {
@@ -34,11 +35,11 @@
 }
 .image {
     width: 100%;
-    max-width: 420px;
+    max-width: 440px;
     object-fit: cover;
 }
 .image img {
-    max-width: 420px;
+    max-width: 440px;
     min-width: 320px;
     border-radius: 30px;
 }
@@ -64,7 +65,7 @@
     display: block;
     color: var(--primary-text);
     text-decoration: none;
-    border: 1px solid var(--secondary-text);
+    border: 2px solid var(--main-light-dark);
     border-radius: var(--buttons-border-radius);
     padding: 0.54rem 1.3rem;
     margin: 1rem;
@@ -77,5 +78,5 @@
     background-color: var(--main-light-dark);
     color: var(--primary-text);
     cursor: pointer;
-    border: 1px solid var(--main-light-dark);
+    border: 2px solid var(--main-light-dark);
 }

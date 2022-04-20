@@ -35,7 +35,7 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
   async function getSearchHints() {
     try {
       const hints: any = await getHints(searchContent, hintType);
-      setSearchHints(hints);
+      setSearchHints(hints.results);
     } catch (error) {
       console.log(error);
     }

@@ -7,7 +7,7 @@
   cursor: pointer;
 }
 .logo img {
-  width: 144px;
+  width: 164px;
 }
 .navigation > div {
   padding: 0 2.2rem;
@@ -25,7 +25,6 @@
   margin-right: 2rem;
 }
 .navigation ul li p {
-  font-size: 16px;
   padding: 0.4rem 0.75rem;
   color: var(--primary-text);
   margin: 1.1rem 0;

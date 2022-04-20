@@ -153,7 +153,7 @@ export default function Record({ data }) {
             <p className={styles.lineage}>
               <span
                 style={{
-                  marginLeft: `${index > 1 ? (index - 1) * 22 : 0}px`,
+                  marginLeft: `${index > 1 ? (index - 1) * 20 : 0}px`,
                 }}
               >
                 {index > 0 ? <span className={styles.taxonTree}></span> : null}
@@ -162,7 +162,7 @@ export default function Record({ data }) {
               <span
                 style={{
                   left: `${
-                    data.lineage_ncbi.length * 22 +
+                    data.lineage_ncbi.length * 23 +
                     data.lineage_ncbi[data.lineage_ncbi.length - 1].name
                       .length +
                     50
@@ -185,7 +185,7 @@ export default function Record({ data }) {
             <p className={styles.lineage}>
               <span
                 style={{
-                  marginLeft: `${index > 1 ? (index - 1) * 22 : 0}px`,
+                  marginLeft: `${index > 1 ? (index - 1) * 20 : 0}px`,
                 }}
               >
                 {index > 0 ? <span className={styles.taxonTree}></span> : null}
@@ -194,7 +194,7 @@ export default function Record({ data }) {
               <span
                 style={{
                   left: `${
-                    data.lineage_ictv.length * 22 +
+                    data.lineage_ictv.length * 23 +
                     data.lineage_ictv[data.lineage_ictv.length - 1].name
                       .length +
                     50

@@ -1,37 +1,47 @@
 import { useEffect, useState } from "react";
 import { getBasicStats } from "../../../Api";
 import styles from "./Stats.module.css";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+import { ThemeContext } from "../../../ThemeContext";
+import { useContext } from "react";
 
 export default function Stats() {
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
+  const { ref, inView } = useInView({
+    threshold: 0.01,
+    triggerOnce: true,
+  });
   const [stats, setStats] = useState({
     virus_species: {
       name: "Virus species",
-      count: 13780,
+      count: 0,
     },
     virus_genomes: {
       name: "Virus genome assemblies",
-      count: 19295,
+      count: 0,
     },
     virus_sequences: {
       name: "Virus sequence accessions",
-      count: 23663,
+      count: 0,
     },
     host_species: {
       name: "Host species",
-      count: 990,
+      count: 0,
     },
     interactions: {
       name: "Virus-host interactions",
-      count: 14341,
+      count: 0,
     },
     ictv_support: {
       name: "Virus species supported by ICTV Taxonomy",
-      count: 2812,
+      count: 0,
       count_percent: 20.406386066763424,
     },
     gtdb_support: {
       name: "Host species supported by GtDB Taxonomy",
-      count: 786,
+      count: 0,
       count_percent: 79.39393939393939,
     },
   });
@@ -44,35 +54,58 @@ export default function Stats() {
     setStats(res);
   }
   return (
-    <div className={styles.wrapper}>
+    <div ref={ref} className={styles.wrapper}>
       <div className={styles.interactions}>
-        <p>{stats.interactions.count}</p>
+        <p>
+          {inView ? (
+            <CountUp
+              useEasing={true}
+              duration={3}
+              separator=","
+              end={stats.interactions.count}
+            ></CountUp>
+          ) : (
+            <p>0</p>
+          )}
+        </p>
         <p>{stats.interactions.name}</p>
       </div>
       <span>...and growing everyday</span>
       <div className={styles.grid}>
+        <div className={styles.patternLeft}>
+          <img
+            src={darkMode ? "pattern1-dark.svg" : "pattern1-light.svg"}
+            alt=""
+          />
+        </div>
+        <div className={styles.patternRight}>
+          <img
+            src={darkMode ? "pattern1-dark.svg" : "pattern1-light.svg"}
+            alt=""
+          />
+        </div>
         <div>
-          <p>{stats.virus_species.count}</p>
+          <p>{stats.virus_species.count.toLocaleString("en")}</p>
           <p>{stats.virus_species.name}</p>
         </div>
         <div>
-          <p>{stats.virus_genomes.count}</p>
+          <p>{stats.virus_genomes.count.toLocaleString("en")}</p>
           <p>{stats.virus_genomes.name}</p>
         </div>
         <div>
-          <p>{stats.virus_sequences.count}</p>
+          <p>{stats.virus_sequences.count.toLocaleString("en")}</p>
           <p>{stats.virus_sequences.name}</p>
         </div>
         <div>
-          <p>{stats.host_species.count}</p>
+          <p>{stats.host_species.count.toLocaleString("en")}</p>
           <p>{stats.host_species.name}</p>
         </div>
         <div>
-          <p>{stats.ictv_support.count}</p>
+          <p>{stats.ictv_support.count.toLocaleString("en")}</p>
           <p>{stats.ictv_support.name}</p>
         </div>
         <div>
-          <p>{stats.gtdb_support.count}</p>
+          <p>{stats.gtdb_support.count.toLocaleString("en")}</p>
           <p>{stats.gtdb_support.name}</p>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "./DailyRecord.module.css";
+import styles from "./DailyRaport.module.css";
 import Link from "next/dist/client/link";
 
 export default function DailyRecord() {

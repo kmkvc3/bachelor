@@ -12,12 +12,12 @@
   background-color: var(--main-light-dark);
 }
 .element span {
-  font-size: 15px;
+  font-size: 0.94rem;
   color: var(--secondary-text);
 }
 .element strong {
   font-weight: normal;
-  font-size: 15px;
+  font-size: 0.94rem;
   color: var(--primary-text);
   line-height: 23px;
 }
@@ -142,6 +142,8 @@
 .element .virus_link {
   border-bottom: 1px solid;
   font-weight: normal;
+}
+.element .virus_link:hover {
   color: var(--main-blue);
 }
 .virus_link:hover {
