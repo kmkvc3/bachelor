@@ -42,15 +42,6 @@
   font-size: 11px;
   font-weight: bold;
 }
-.element .accession {
-  border-bottom: 1px solid var(--secondary-text);
-  width: max-content;
-  cursor: pointer;
-}
-.element .accession:hover {
-  color: var(--main-blue);
-  border-bottom: 1px solid var(--main-blue);
-}
 .RefSeq {
   background-color: #51b27e;
 }
@@ -142,8 +133,6 @@
 .element .virus_link {
   border-bottom: 1px solid;
   font-weight: normal;
-}
-.element .virus_link:hover {
   color: var(--main-blue);
 }
 .virus_link:hover {

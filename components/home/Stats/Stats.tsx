@@ -10,7 +10,7 @@ export default function Stats() {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
   const { ref, inView } = useInView({
-    threshold: 0.01,
+    threshold: 0.02,
     triggerOnce: true,
   });
   const [stats, setStats] = useState({
@@ -74,13 +74,19 @@ export default function Stats() {
       <div className={styles.grid}>
         <div className={styles.patternLeft}>
           <img
-            src={darkMode ? "pattern1-dark.svg" : "pattern1-light.svg"}
+            src={darkMode ? "p1-dark.svg" : "p1-light.svg"}
             alt=""
           />
         </div>
         <div className={styles.patternRight}>
           <img
-            src={darkMode ? "pattern1-dark.svg" : "pattern1-light.svg"}
+            src={darkMode ? "p1-dark.svg" : "p1-light.svg"}
+            alt=""
+          />
+        </div>
+        <div className={styles.patternBottom}>
+          <img
+            src={darkMode ? "p3-dark.svg" : "p3-light.svg"}
             alt=""
           />
         </div>

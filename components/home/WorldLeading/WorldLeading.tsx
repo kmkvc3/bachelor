@@ -1,8 +1,12 @@
 import Head from "next/head";
 import styles from "./WorldLeading.module.css";
 import Link from "next/dist/client/link";
+import { ThemeContext } from "../../../ThemeContext";
+import { useContext } from "react";
 
 export default function WorldLeading() {
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
   return (
     <div className={styles.wrapper}>
       <div className={styles.welcome}>
@@ -17,7 +21,9 @@ export default function WorldLeading() {
           </p>
         </div>
         <div className={styles.image}>
-          <img src="MicrosoftTeams-image.png" alt="" />
+          <img 
+            src={darkMode ? "cover-dark.svg" : "cover-light.svg"} 
+            alt="" />
         </div>
       </div>
       <div className={styles.extras}>

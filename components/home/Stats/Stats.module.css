@@ -71,3 +71,10 @@
     bottom: -90px;
     width: 4.8rem;
 }
+.wrapper .patternBottom {
+    position: absolute;
+    left: -96px;
+    transform: rotate(170deg);
+    bottom: -86px;
+    width: 4.8rem;
+}

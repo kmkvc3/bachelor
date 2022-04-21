@@ -1,6 +1,6 @@
 .wrapper {
-    padding: 4.7rem var(--content-padding) 4.4rem var(--content-padding);
-    max-width: 1420px;
+    padding: 4.7rem var(--content-padding) 4.5rem var(--content-padding);
+    max-width: 1440px;
     margin: 0 auto;
 }
 .welcome {
@@ -35,12 +35,13 @@
 }
 .image {
     width: 100%;
-    max-width: 440px;
+    max-width: 480px;
     object-fit: cover;
 }
 .image img {
-    max-width: 440px;
+    max-width: 480px;
     min-width: 320px;
+    width: 100%;
     border-radius: 30px;
 }
 .extras {

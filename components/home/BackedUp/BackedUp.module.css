@@ -19,18 +19,10 @@
   line-height: 1.3rem;
   text-align: center;
 }
-.logoWrapper {
-  background-color: var(--main-light-dark);
-  width: max-content;
-  display: flex;
-  justify-content: space-around;
-  max-height: 100px;
-  padding: 1rem;
-  border-radius: 14px;
-  margin: 1.2rem 0.7rem;
-}
 .logoWrapper img {
-  width: 190px;
+  width: 210px;
+  border-radius: 14px;
+  margin: 1.1rem 0.6rem;
   max-height: 80px;
 }
 .logoHolder {

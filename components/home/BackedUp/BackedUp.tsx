@@ -10,22 +10,31 @@ export default function DailyRecord() {
       </div>
       <div className={styles.logoHolder}>
         <div className={styles.logoWrapper}>
-          <img src="./logo/ncbi-virus-logo.png" alt="" />
+          <img src="./logo/uniprot.svg" alt="" />
         </div>
         <div className={styles.logoWrapper}>
-          <img src="./logo/refseq-logo.png" alt="" />
+          <img src="./logo/refseq.svg" alt="" />
         </div>
         <div className={styles.logoWrapper}>
-          <img src="./logo/virus-host-db.png" alt="" />
+          <img src="./logo/vhdb.svg" alt="" />
         </div>
         <div className={styles.logoWrapper}>
-          <img src="./logo/swissprot.png" alt="" />
+          <img src="./logo/ncbi-virus.svg" alt="" />
         </div>
         <div className={styles.logoWrapper}>
-          <img src="./logo/uniprot-2.png" alt="" />
+          <img src="./logo/mvp.svg" alt="" />
         </div>
         <div className={styles.logoWrapper}>
-          <img src="./logo/intact-logo.svg" alt="" />
+          <img src="./logo/intact.svg" alt="" />
+        </div>
+        <div className={styles.logoWrapper}>
+          <img src="./logo/gtdb.svg" alt="" />
+        </div>
+        <div className={styles.logoWrapper}>
+          <img src="./logo/ictv.svg" alt="" />
+        </div>
+        <div className={styles.logoWrapper}>
+          <img src="./logo/ncbi-taxonomy.svg" alt="" />
         </div>
       </div>
     </div>
