@@ -7,11 +7,8 @@
 }
 html {
   scroll-behavior: smooth;
-  height: 100%;
-  overflow: auto;
 }
 body {
-  height: 100%;
   background-color: white;
 }
 body {

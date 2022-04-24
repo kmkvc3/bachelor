@@ -109,6 +109,27 @@ const getBasicStats = () => {
   }).then((res) => res.json());
   return data;
 };
+
+export const getVirusStatsNCBI = () => {
+  const data = fetch(`${BASE_URL}/api/stats/taxonomy/virus/`, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
+
+export const getVirusStatsICTV = () => {
+  const data = fetch(`${BASE_URL}/api/stats/taxonomy/virus/ictv`, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
+
+export const getTopVirusStats = () => {
+  const data = fetch(`${BASE_URL}/api/stats/taxonomy/top/virus/`, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
 export {
   getInteractions,
   getHints,

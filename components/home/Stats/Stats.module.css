@@ -6,7 +6,7 @@
 .wrapper .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 1.4rem auto 6.5rem auto;
+    margin: 1.4rem auto 7.7rem auto;
     max-width: 680px;
     padding: 0.9rem 1.8rem;
     border-bottom: 1px solid var(--main-light-dark);

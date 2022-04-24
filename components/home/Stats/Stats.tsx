@@ -47,7 +47,7 @@ export default function Stats() {
   });
   useEffect(() => {
     getStats();
-  });
+  }, []);
 
   async function getStats() {
     const res = await getBasicStats();

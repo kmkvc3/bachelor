@@ -81,6 +81,9 @@
 .NCBI {
   background-color: #2AB4C0;
 }
+.NCBI {
+  background-color: #2ac0c0;
+}
 .header {
   background-color: var(--main-light-dark);
   border-radius: var(--buttons-border-radius) var(--buttons-border-radius) 0 0;
