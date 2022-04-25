@@ -1,6 +1,5 @@
 .wrapper {
-    padding: 4.7rem var(--content-padding) 4.5rem var(--content-padding);
-    max-width: 1440px;
+    padding: 4rem var(--content-padding) 4.5rem var(--content-padding);
     margin: 0 auto;
 }
 .welcome {

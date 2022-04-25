@@ -130,6 +130,13 @@ export const getTopVirusStats = () => {
   }).then((res) => res.json());
   return data;
 };
+
+export const getVirusGenomeStats = () => {
+  const data = fetch(`${BASE_URL}/api/stats/virus/genome/type/`, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
 export {
   getInteractions,
   getHints,

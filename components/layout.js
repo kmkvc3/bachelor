@@ -8,7 +8,7 @@ export default function Layout({ children }) {
       <div
         style={{
           minHeight: "90vh",
-          maxWidth: 1640,
+          maxWidth: 1500,
           margin: "0 auto"
         }}
       >

@@ -1,17 +1,17 @@
 import styles from "./Chart.module.css";
 import { useEffect, useState } from "react";
-import { getTopVirusStats } from "../../../Api";
+import { getVirusGenomeStats } from "../../../Api";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { ThemeContext } from "../../../ThemeContext";
 import { useContext } from "react";
 
-export default function MostRepresentativeVirus() {
+export default function VirusGenomeType() {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
   const [options, setOptions] = useState({});
   async function getStats() {
-    const res = await getTopVirusStats();
+    const res = await getVirusGenomeStats();
     setOptions({
       chart: {
         backgroundColor: "transparent",
@@ -52,7 +52,7 @@ export default function MostRepresentativeVirus() {
 
   return (
     <div className={styles.wrapper}>
-      <h4> Top 10 most representative virus families</h4>
+      <h4> Genome composition</h4>
       <p>Longer description</p>
       <div>
         <HighchartsReact highcharts={Highcharts} options={options} />

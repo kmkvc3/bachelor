@@ -1,50 +1,62 @@
 .wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 0rem var(--content-padding) 0rem var(--content-padding);
-    width: 100%;
-    max-width: var(--content);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0rem var(--content-padding);
 }
 .sidebar {
-    width: 400px;
-    height: 100vh;
-    background-color: var(--main-light-dark);
-    position: sticky;
-    position: -webkit-sticky; /* Safari */
-    top: 0;
-    padding: 3rem 1rem;
+  height: 100vh;
+  border-left: 1px solid var(--main-light-dark);
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  top: 0;
+  padding: 1rem 0;
+  padding-left: 2rem;
 }
 .charts {
-    padding-right: 7rem;
-    max-width: 730px;
-    width: 100%;
+    padding-right: 2rem;
+}
+.sidebar a {
+  line-height: 1.1rem;
+}
+.sidebar p {
+    line-height: 1.15rem;
 }
 .wrapper h1 {
-    color: var(--primary-text);
-    padding-top: 3rem;
-    font-size: 1.84rem;
+  color: var(--primary-text);
+  padding-top: 3rem;
+  font-size: 1.84rem;
 }
 .wrapper .sidebar a {
-    margin-left: 1.2rem;
-    text-decoration: none;
-    cursor: pointer;
-    display: block;
-    font-weight: normal;
-    margin-bottom: 0.6rem;
-    color: var(--secondary-text);
+  margin-left: 1.2rem;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  font-weight: normal;
+  margin-bottom: 0.6rem;
+  color: var(--secondary-text);
 }
-.wrapper .sidebar a:hover {
-    color: var(--main-blue);
-
+.wrapper .sidebar .active {
+  font-weight: bold;
+  margin-top: 1.3rem;
+  margin-left: 0;
+  font-weight: bold;
+  color: var(--main-blue);
 }
 .wrapper .sidebar .main {
-    margin-left: 0;
-    color: var(--main-blue);
+  font-weight: bold;
+  margin-top: 1.3rem;
+  margin-left: 0;
+  color: var(--primary-text);
 }
+.wrapper .sidebar a:hover {
+  color: var(--main-blue);
+}
+
 .wrapper span {
-    display: block;
-    border-bottom: 1px solid var(--main-light-dark);
-    width: 100%;
-    margin: 0.4rem 0 1.8rem 0;
+  display: block;
+  border-bottom: 1px solid var(--main-light-dark);
+  width: 100%;
+  margin: 0.4rem 0rem 0;
 }

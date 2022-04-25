@@ -1,4 +1,4 @@
-import styles from "./VirusTaxonomy.module.css";
+import styles from "./Chart.module.css";
 import { useEffect, useState } from "react";
 import { getVirusStatsNCBI, getVirusStatsICTV } from "../../../Api";
 
