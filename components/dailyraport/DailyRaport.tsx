@@ -2,6 +2,7 @@ import styles from "./DailyRaport.module.css";
 import VirusTaxonomy from "./plots/VirusTaxonomy";
 import MostRepresentativeVirus from "./plots/MostRepresentativeVirus";
 import VirusGenomeType from "./plots/VirusGenomeType";
+import AssemblyLevel from "./plots/AssemblyLevel";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -42,7 +43,12 @@ export default function DailyRaport() {
           Genomic diversity of viruses{" "}
         </h1>
         <span></span>
+        <div id="VGT"></div>
         <VirusGenomeType />
+
+        <div id="AL"></div>
+        <AssemblyLevel />
+        
       </div>
       <aside className={styles.sidebar}>
         <a
@@ -52,14 +58,15 @@ export default function DailyRaport() {
           Taxonomic diversity of viruses
         </a>
         <a href="#VT"> Number of taxonomic units of viruses</a>
-        <a href="#MRV"> Top 10 most representative virus families</a>
+        <a href="#MRV"> Top 10 most representative virus</a>
         <a
           href="#GenDiversity"
           className={id === "GenDiversity" ? styles.active : styles.main}
         >
           Genomic diversity of viruses
         </a>
-        <a href="#VT">Genome composition</a>
+        <a href="#VGT">Genome composition</a>
+        <a href="#VGT">Genome assembly level</a>
       </aside>
     </div>
   );

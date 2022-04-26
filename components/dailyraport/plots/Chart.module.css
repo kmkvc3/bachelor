@@ -15,7 +15,7 @@
     color: var(--primary-text);
     font-size: 1.1rem;
     margin-bottom: 0.2rem;
-    padding-top: 2.5rem;
+    padding-top: 1.7rem;
 }
 .wrapper p {
     color: var(--secondary-text);
@@ -25,4 +25,13 @@
 .wrapper div {
     display: flex;
     justify-content: left;
+}
+.wrapper .select {
+    margin: 0;
+}
+.wrapper {
+    padding-bottom: 1.1rem;
+}
+.wrapper span {
+    font-size: 2rem;
 }

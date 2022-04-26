@@ -1,41 +1,58 @@
 import styles from "./Chart.module.css";
 import { useEffect, useState } from "react";
-import { getVirusGenomeStats } from "../../../Api";
+import { getAssemblyLevel } from "../../../Api";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { ThemeContext } from "../../../ThemeContext";
 import { useContext } from "react";
 import Spinner from "../components/Spinner";
 
-export default function VirusGenomeType() {
+export default function AssemblyLevel() {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
   const [options, setOptions] = useState(null);
   async function getStats() {
-    const res = await getVirusGenomeStats();
+    const res = await getAssemblyLevel();
     setOptions({
       chart: {
         backgroundColor: "transparent",
         borderColor: "transparent",
+        type: "column",
+      },
+      plotOptions: {
+        column: {
+          pointPadding: 0.2,
+          borderWidth: 0,
+        },
+        bar: {
+          dataLabels: {
+            enabled: true,
+          },
+        },
       },
       title: {
         text: "",
       },
-      tooltip: {
-        formatter: function () {
-          return (
-            '<span style="color:' +
-            this.point.color +
-            '">\u25CF</span> <b>' +
-            this.point.name +
-            `</b><br>virus count: ${this.point.y} <b style="font-size: 13px"> (${
-              Math.round(this.point.percentage * 100) / 100
-            } %) </b>`
-          );
+      yAxis: {
+        title: {
+          text: "Virus spieces",
+        },
+        labels: {
+          overflow: "justify",
         },
       },
-      series: [
-        {
+      legend: {
+        layout: "vertical",
+        align: "right",
+        verticalAlign: "top",
+        x: -40,
+        y: 80,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor: '#fff',
+      },
+      series: res.map((data) => {
+        return {
           dataLabels: {
             enabled: true,
             color: darkMode ? "#7f8994" : "#818181",
@@ -43,17 +60,11 @@ export default function VirusGenomeType() {
               textOutline: false,
             },
           },
-          backgroundColor: "transparent",
-          borderColor: "transparent",
-          type: "pie",
-          data: res.map((data) => {
-            return {
-              name: data.name,
-              y: data.count,
-            };
-          }),
-        },
-      ],
+          name: data.name,
+          data: [data.count],
+        };
+      }),
+
       credits: {
         enabled: false,
       },
@@ -69,7 +80,7 @@ export default function VirusGenomeType() {
 
   return (
     <div className={styles.wrapper}>
-      <h4> Genome composition</h4>
+      <h4> Genome assembly level</h4>
       <p>Longer description</p>
       {options ? (
         <HighchartsReact highcharts={Highcharts} options={options} />

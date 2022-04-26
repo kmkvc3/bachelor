@@ -124,8 +124,8 @@ export const getVirusStatsICTV = () => {
   return data;
 };
 
-export const getTopVirusStats = () => {
-  const data = fetch(`${BASE_URL}/api/stats/taxonomy/top/virus/`, {
+export const getTopVirusStats = (rank) => {
+  const data = fetch(`${BASE_URL}/api/stats/taxonomy/top/virus/?rank=${rank}`, {
     method: "GET",
   }).then((res) => res.json());
   return data;
@@ -133,6 +133,13 @@ export const getTopVirusStats = () => {
 
 export const getVirusGenomeStats = () => {
   const data = fetch(`${BASE_URL}/api/stats/virus/genome/type/`, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
+
+export const getAssemblyLevel = () => {
+  const data = fetch(`${BASE_URL}/api/stats/virus/genome/assembly_level/  `, {
     method: "GET",
   }).then((res) => res.json());
   return data;

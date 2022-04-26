@@ -15,13 +15,7 @@
   padding-left: 2rem;
 }
 .charts {
-    padding-right: 2rem;
-}
-.sidebar a {
-  line-height: 1.1rem;
-}
-.sidebar p {
-    line-height: 1.15rem;
+  padding-right: 2rem;
 }
 .wrapper h1 {
   color: var(--primary-text);
