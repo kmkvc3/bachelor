@@ -139,7 +139,35 @@ export const getVirusGenomeStats = () => {
 };
 
 export const getAssemblyLevel = () => {
-  const data = fetch(`${BASE_URL}/api/stats/virus/genome/assembly_level/  `, {
+  const data = fetch(`${BASE_URL}/api/stats/virus/genome/assembly_level/`, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
+
+export const getVirusGenomeDistro = (database) => {
+  const data = fetch(`${BASE_URL}/api/stats/virus/genome/size/histogram/?database=${database}`, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
+
+export const getVirusGenomeSource = () => {
+  const data = fetch(`${BASE_URL}/api/stats/virus/genome/source/`, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
+
+export const getVirusGenomeSummary = () => {
+  const data = fetch(`${BASE_URL}/api/stats/virus/genome/size/summary/`, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
+
+export const getTopHostStats = (rank) => {
+  const data = fetch(`${BASE_URL}/api/stats/taxonomy/top/interactions/?rank=${rank}`, {
     method: "GET",
   }).then((res) => res.json());
   return data;

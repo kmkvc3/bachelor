@@ -7,7 +7,6 @@ import { ThemeContext } from "../../../ThemeContext";
 import { useContext } from "react";
 import Select from "../components/Select";
 import Spinner from "../components/Spinner";
-import { useRouter } from "next/router";
 
 export default function MostRepresentativeVirus() {
   const theme = useContext(ThemeContext);

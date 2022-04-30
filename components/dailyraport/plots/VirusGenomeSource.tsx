@@ -1,59 +1,48 @@
 import styles from "./Chart.module.css";
 import { useEffect, useState } from "react";
-import { getAssemblyLevel } from "../../../Api";
+import { getVirusGenomeSource } from "../../../Api";
 import Highcharts from "highcharts";
+import highchartsBellcurve from "highcharts/modules/histogram-bellcurve";
 import HighchartsReact from "highcharts-react-official";
 import { ThemeContext } from "../../../ThemeContext";
 import { useContext } from "react";
 import Spinner from "../components/Spinner";
 
-export default function AssemblyLevel() {
+export default function VirusGenomeSource() {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
   const [options, setOptions] = useState(null);
+
+  useEffect(() => {
+    highchartsBellcurve(Highcharts);
+  }, []);
   async function getStats() {
-    const res = await getAssemblyLevel();
+    const res = await getVirusGenomeSource();
     setOptions({
       chart: {
         backgroundColor: "transparent",
         borderColor: "transparent",
-        type: "column",
-      },
-      plotOptions: {
-        column: {
-          pointPadding: 0.2,
-          borderWidth: 0,
-        },
-        bar: {
-          dataLabels: {
-            enabled: true,
-          },
-        },
       },
       title: {
         text: "",
       },
-      yAxis: {
-        title: {
-          text: "Virus spieces",
-          style: { color: darkMode ? "#7f8994" : "#818181" },
-        },
-        labels: {
-          overflow: "justify",
+      tooltip: {
+        formatter: function () {
+          return (
+            '<span style="color:' +
+            this.point.color +
+            '">\u25CF</span> <b>' +
+            this.point.name +
+            `</b><br>virus count: ${
+              this.point.y
+            } <b style="font-size: 13px"> (${
+              Math.round(this.point.percentage * 100) / 100
+            } %) </b>`
+          );
         },
       },
-      legend: {
-        layout: "vertical",
-        align: "right",
-        verticalAlign: "top",
-        x: -40,
-        y: 80,
-        floating: true,
-        borderWidth: 1,
-        backgroundColor: '#fff',
-      },
-      series: res.map((data) => {
-        return {
+      series: [
+        {
           dataLabels: {
             enabled: true,
             color: darkMode ? "#7f8994" : "#818181",
@@ -61,11 +50,17 @@ export default function AssemblyLevel() {
               textOutline: false,
             },
           },
-          name: data.name,
-          data: [data.count],
-        };
-      }),
-
+          backgroundColor: "transparent",
+          borderColor: "transparent",
+          type: "pie",
+          data: res.map((data) => {
+            return {
+              name: data.name,
+              y: data.count,
+            };
+          }),
+        },
+      ],
       credits: {
         enabled: false,
       },
@@ -81,7 +76,7 @@ export default function AssemblyLevel() {
 
   return (
     <div className={styles.wrapper}>
-      <h4> Genome assembly level</h4>
+      <h4>Virus genome source</h4>
       <p>Longer description</p>
       {options ? (
         <HighchartsReact highcharts={Highcharts} options={options} />

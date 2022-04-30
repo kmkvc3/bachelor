@@ -3,6 +3,8 @@ import VirusTaxonomy from "./plots/VirusTaxonomy";
 import MostRepresentativeVirus from "./plots/MostRepresentativeVirus";
 import VirusGenomeType from "./plots/VirusGenomeType";
 import AssemblyLevel from "./plots/AssemblyLevel";
+import VirusGenomeDistro from "./plots/VirusGenomeDistro";
+import VirusGenomeSource from "./plots/VirusGenomeSource";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -48,7 +50,17 @@ export default function DailyRaport() {
 
         <div id="AL"></div>
         <AssemblyLevel />
-        
+
+        <div id="VG"></div>
+        <VirusGenomeDistro />
+
+        <div id="VGS"></div>
+        <VirusGenomeSource />
+
+        <h1 className="targetSelector" id="TaxaInteractions">
+          Taxonomic diversity of hosts
+        </h1>
+        <span></span>
       </div>
       <aside className={styles.sidebar}>
         <a
@@ -65,8 +77,18 @@ export default function DailyRaport() {
         >
           Genomic diversity of viruses
         </a>
+
         <a href="#VGT">Genome composition</a>
-        <a href="#VGT">Genome assembly level</a>
+        <a href="#AL">Genome assembly level</a>
+        <a href="#VG">Size of complete virus genomes</a>
+        <a href="#VGS">Virus genome source</a>
+
+        <a
+          href="#TaxaInteractions"
+          className={id === "TaxaInteractions" ? styles.active : styles.main}
+        >
+          Taxonomic diversity of hosts
+        </a>
       </aside>
     </div>
   );
