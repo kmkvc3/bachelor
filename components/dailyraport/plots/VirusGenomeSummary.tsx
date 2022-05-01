@@ -83,11 +83,13 @@ export default function AssemblyLevel() {
     <div className={styles.wrapper}>
       <h4> Genome assembly level</h4>
       <p>Longer description</p>
-      {options ? (
-        <HighchartsReact highcharts={Highcharts} options={options} />
-      ) : (
-        <Spinner />
-      )}
+      <div>
+        {options ? (
+          <HighchartsReact highcharts={Highcharts} options={options} />
+        ) : (
+          <Spinner />
+        )}
+      </div>
     </div>
   );
 }

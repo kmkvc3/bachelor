@@ -4,7 +4,11 @@ import MostRepresentativeVirus from "./plots/MostRepresentativeVirus";
 import VirusGenomeType from "./plots/VirusGenomeType";
 import AssemblyLevel from "./plots/AssemblyLevel";
 import VirusGenomeDistro from "./plots/VirusGenomeDistro";
+import HostHighestNumber from "./plots/HostHighestNumber";
 import VirusGenomeSource from "./plots/VirusGenomeSource";
+import MostRepresentativeHost from "./plots/MostRepresentativeHost";
+import HostPerVirus from "./plots/HostPerVirus";
+import InteractionsEvidence from "./plots/InteractionsEvidence";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -28,6 +32,8 @@ export default function DailyRaport() {
 
     observer.observe(document.getElementById("TaxDiversity"));
     observer.observe(document.getElementById("GenDiversity"));
+    observer.observe(document.getElementById("TaxaInteractions"));
+    observer.observe(document.getElementById("HostVirus"));
   }, []);
   return (
     <div className={styles.wrapper}>
@@ -60,7 +66,23 @@ export default function DailyRaport() {
         <h1 className="targetSelector" id="TaxaInteractions">
           Taxonomic diversity of hosts
         </h1>
+
+        <div id="HHN"></div>
+        <HostHighestNumber />
+
+        <div id="MRH"></div>
+        <MostRepresentativeHost />
+
+        <h1 className="targetSelector" id="HostVirus">
+          Virus-host interactions
+        </h1>
         <span></span>
+
+        <div id="HPV"></div>
+        <HostPerVirus />
+
+        <div id="IE"></div>
+        <InteractionsEvidence />
       </div>
       <aside className={styles.sidebar}>
         <a
@@ -89,6 +111,19 @@ export default function DailyRaport() {
         >
           Taxonomic diversity of hosts
         </a>
+
+        <a href="#HHN">Host taxa with the highest number of interactions</a>
+        <a href="#MRH"> Top 10 most representative host classes </a>
+
+        <a
+          href="#HostVirus"
+          className={id === "HostVirus" ? styles.active : styles.main}
+        >
+          Virus-host interactions
+        </a>
+
+        <a href="#HPV">Host species per virus species</a>
+        <a href="#IE">Number of interactions covered by source databases</a>
       </aside>
     </div>
   );

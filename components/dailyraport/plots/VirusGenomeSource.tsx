@@ -2,7 +2,6 @@ import styles from "./Chart.module.css";
 import { useEffect, useState } from "react";
 import { getVirusGenomeSource } from "../../../Api";
 import Highcharts from "highcharts";
-import highchartsBellcurve from "highcharts/modules/histogram-bellcurve";
 import HighchartsReact from "highcharts-react-official";
 import { ThemeContext } from "../../../ThemeContext";
 import { useContext } from "react";
@@ -13,9 +12,6 @@ export default function VirusGenomeSource() {
   const darkMode = theme.state.darkMode;
   const [options, setOptions] = useState(null);
 
-  useEffect(() => {
-    highchartsBellcurve(Highcharts);
-  }, []);
   async function getStats() {
     const res = await getVirusGenomeSource();
     setOptions({
@@ -78,11 +74,13 @@ export default function VirusGenomeSource() {
     <div className={styles.wrapper}>
       <h4>Virus genome source</h4>
       <p>Longer description</p>
-      {options ? (
-        <HighchartsReact highcharts={Highcharts} options={options} />
-      ) : (
-        <Spinner />
-      )}
+      <div>
+        {options ? (
+          <HighchartsReact highcharts={Highcharts} options={options} />
+        ) : (
+          <Spinner />
+        )}
+      </div>
     </div>
   );
 }

@@ -13,6 +13,7 @@ export default function MostRepresentativeVirus() {
   const darkMode = theme.state.darkMode;
   const [pickedOption, setPickedOption] = useState("family");
   const [options, setOptions] = useState(null);
+  const [range, setRange] = useState(10);
 
   async function getStats(rank) {
     const res = await getTopVirusStats(rank);
@@ -31,11 +32,17 @@ export default function MostRepresentativeVirus() {
             this.point.color +
             '">\u25CF</span> <b>' +
             this.point.name +
-            `</b><br>virus count: ${this.point.y} <b style="font-size: 13px"> (${
+            `</b><br>virus count: ${
+              this.point.y
+            } <b style="font-size: 13px"> (${
               Math.round(this.point.percentage * 100) / 100
             } %) </b>`
           );
         },
+      },
+      subtitle: {
+        text: "Click on chart to use search",
+        style: { color: darkMode ? "#7f8994" : "#818181" },
       },
       series: [
         {
@@ -78,11 +85,11 @@ export default function MostRepresentativeVirus() {
   }
   useEffect(() => {
     getStats(pickedOption);
-  }, [pickedOption]);
+  }, [pickedOption, range]);
 
   return (
     <div className={styles.wrapper}>
-      <h4> Top 10 most representative virus {pickedOption}</h4>
+      <h4> Top {range} most representative virus {pickedOption}</h4>
       <p>Longer description</p>
       <div className={styles.select}>
         <Select
@@ -90,12 +97,19 @@ export default function MostRepresentativeVirus() {
           placeholder={pickedOption}
           setPickedOption={setPickedOption}
         />
+        <Select
+          options={[10, 20, 30, 40, 50, 60]}
+          placeholder={range}
+          setPickedOption={setRange}
+        />
       </div>
-      {options ? (
-        <HighchartsReact highcharts={Highcharts} options={options} />
-      ) : (
-        <Spinner />
-      )}
+      <div>
+        {options ? (
+          <HighchartsReact highcharts={Highcharts} options={options} />
+        ) : (
+          <Spinner />
+        )}
+      </div>
     </div>
   );
 }

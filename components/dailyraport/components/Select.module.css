@@ -4,7 +4,7 @@
   background-color: transparent;
   color: var(--secondary-text);
   padding: 0rem 0.8rem;
-  min-width: 100px;
+  min-width: 34px;
   border-radius: var(--buttons-border-radius);
   margin-right: 1.2rem;
   box-sizing: border-box;

@@ -30,7 +30,10 @@
     margin: 0 0 1.4rem 0;
 }
 .wrapper {
-    padding-bottom: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-bottom: 4.2rem;
 }
 .wrapper span {
     font-size: 2rem;

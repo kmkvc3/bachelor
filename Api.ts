@@ -172,6 +172,27 @@ export const getTopHostStats = (rank) => {
   }).then((res) => res.json());
   return data;
 };
+
+export const getMostRepresentativeHost = (rank, range) => {
+  const data = fetch(`${BASE_URL}/api/stats/taxonomy/top/host/?rank=${rank}&limit=${range}`, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
+
+export const getHostPerVirus = () => {
+  const data = fetch(`${BASE_URL}/api/stats/interaction/hosts/`, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
+
+export const getVirusHostDB = () => {
+  const data = fetch(`${BASE_URL}/api/stats/interaction/evidence/ `, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
 export {
   getInteractions,
   getHints,
