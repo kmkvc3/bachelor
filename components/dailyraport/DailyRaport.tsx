@@ -6,15 +6,41 @@ import AssemblyLevel from "./plots/AssemblyLevel";
 import VirusGenomeDistro from "./plots/VirusGenomeDistro";
 import HostHighestNumber from "./plots/HostHighestNumber";
 import VirusGenomeSource from "./plots/VirusGenomeSource";
+import Summary from "./plots/Summary";
 import MostRepresentativeHost from "./plots/MostRepresentativeHost";
 import HostPerVirus from "./plots/HostPerVirus";
 import InteractionsEvidence from "./plots/InteractionsEvidence";
 import { useEffect } from "react";
 import { useState } from "react";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
 
 export default function DailyRaport() {
   const [id, setId] = useState("TaxDiversity");
   useEffect(() => {
+    Highcharts.setOptions({
+      colors: [
+        "#41a6f6",
+        "#f23f6c",
+        "#f3c200",
+        "#38b764",
+        "#7236eb",
+        "#67809f",
+        "#3b5dc9",
+        "#ff78aa",
+        "#ef7d57",
+        "#2ac0c0",
+        "#785681",
+        "#94b0c2",
+        "#83e9e8",
+        "#ffc0d7",
+        "#ffd097",
+        "#a7f070",
+        "#9a8faf",
+        "#d5e0e7",
+      ],
+    });
+
     let observerOptions = {
       rootMargin: "0px",
       threshold: 0.2,
@@ -38,8 +64,13 @@ export default function DailyRaport() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.charts}>
+        <h1 className="targetSelector" id="Summary">
+          Summary
+        </h1>
+        <span></span>
+        <Summary />
         <h1 className="targetSelector" id="TaxDiversity">
-          Taxonomic diversity of viruses{" "}
+          Taxonomic diversity of viruses
         </h1>
         <span></span>
         <div id="VT"></div>
@@ -48,7 +79,7 @@ export default function DailyRaport() {
         <MostRepresentativeVirus />
 
         <h1 className="targetSelector" id="GenDiversity">
-          Genomic diversity of viruses{" "}
+          Genomic diversity of viruses
         </h1>
         <span></span>
         <div id="VGT"></div>
@@ -86,13 +117,19 @@ export default function DailyRaport() {
       </div>
       <aside className={styles.sidebar}>
         <a
+          className={id === "Summary" ? styles.active : styles.main}
+          href="#Summary"
+        >
+          Summary
+        </a>
+        <a
           className={id === "TaxDiversity" ? styles.active : styles.main}
           href="#TaxDiversity"
         >
           Taxonomic diversity of viruses
         </a>
-        <a href="#VT"> Number of taxonomic units of viruses</a>
-        <a href="#MRV"> Top 10 most representative virus</a>
+        <a href="#VT"> Virus taxa in NCBI and ICTV</a>
+        <a href="#MRV"> Most abundant virus taxa</a>
         <a
           href="#GenDiversity"
           className={id === "GenDiversity" ? styles.active : styles.main}

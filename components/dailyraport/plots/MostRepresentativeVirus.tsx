@@ -16,7 +16,7 @@ export default function MostRepresentativeVirus() {
   const [range, setRange] = useState(10);
 
   async function getStats(rank) {
-    const res = await getTopVirusStats(rank);
+    const res = await getTopVirusStats(rank, range);
     setOptions({
       chart: {
         backgroundColor: "transparent",
@@ -34,14 +34,14 @@ export default function MostRepresentativeVirus() {
             this.point.name +
             `</b><br>virus count: ${
               this.point.y
-            } <b style="font-size: 13px"> (${
+            }<b style="font-size: 13px"> (${
               Math.round(this.point.percentage * 100) / 100
-            } %) </b>`
+            }%) </b>`
           );
         },
       },
       subtitle: {
-        text: "Click on chart to use search",
+        text: "Click on pie slice to see virus-host interactions",
         style: { color: darkMode ? "#7f8994" : "#818181" },
       },
       series: [
@@ -89,8 +89,8 @@ export default function MostRepresentativeVirus() {
 
   return (
     <div className={styles.wrapper}>
-      <h4> Top {range} most representative virus {pickedOption}</h4>
-      <p>Longer description</p>
+      <h4> Most abundant virus taxa</h4>
+      <p>Ten most abundant virus taxonomic units (represented by the highest number of virus species) at the {pickedOption} level.</p>
       <div className={styles.select}>
         <Select
           options={["phylum", "class", "order", "family"]}
@@ -98,7 +98,7 @@ export default function MostRepresentativeVirus() {
           setPickedOption={setPickedOption}
         />
         <Select
-          options={[10, 20, 30, 40, 50, 60]}
+          options={[3, 5, 10, 15]}
           placeholder={range}
           setPickedOption={setRange}
         />

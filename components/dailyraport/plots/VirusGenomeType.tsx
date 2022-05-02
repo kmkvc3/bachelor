@@ -30,7 +30,7 @@ export default function VirusGenomeType() {
             this.point.name +
             `</b><br>virus count: ${this.point.y} <b style="font-size: 13px"> (${
               Math.round(this.point.percentage * 100) / 100
-            } %) </b>`
+            }%) </b>`
           );
         },
       },
@@ -70,7 +70,7 @@ export default function VirusGenomeType() {
   return (
     <div className={styles.wrapper}>
       <h4> Genome composition</h4>
-      <p>Longer description</p>
+      <p>Number of viral genomes stratified by genome composition. Only representative genomes (for virus species) are shown.</p>
       <div>
         {options ? (
           <HighchartsReact highcharts={Highcharts} options={options} />

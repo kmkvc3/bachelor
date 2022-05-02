@@ -17,7 +17,7 @@ export default function AssemblyLevel() {
       chart: {
         backgroundColor: "transparent",
         borderColor: "transparent",
-        type: "column",
+        type: 'bar',
       },
       plotOptions: {
         column: {
@@ -33,6 +33,12 @@ export default function AssemblyLevel() {
       title: {
         text: "",
       },
+      tooltip: {
+        formatter: function() {
+            var percent = this.point.x
+            return 'Genomes count: <b style="font-size: 13px">' + Highcharts.numberFormat(this.point.y, 0) +'</b>';
+        } 
+    },
       xAxis: {
         visible: false,
       },
@@ -50,7 +56,7 @@ export default function AssemblyLevel() {
         align: "right",
         verticalAlign: "top",
         x: -40,
-        y: 80,
+        y: 200,
         floating: true,
         borderWidth: 1,
         backgroundColor: '#fff',
@@ -85,7 +91,7 @@ export default function AssemblyLevel() {
   return (
     <div className={styles.wrapper}>
       <h4> Genome assembly level</h4>
-      <p>Longer description</p>
+      <p>Number of viral genomes stratified by assembly level. Only representative genomes (for virus species) are shown.</p>
       <div>
         {options ? (
           <HighchartsReact highcharts={Highcharts} options={options} />
