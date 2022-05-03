@@ -16,7 +16,7 @@ export default function DailyRecord() {
             alt="" />
         </div>
         <div className={styles.text}>
-          <h1>Daily Raport</h1>
+          <h1>Daily Report</h1>
           <p>
             Top quality data, all in one place. <br /> Start discovery of
             interactions between phage & hosts. <br />
@@ -24,7 +24,7 @@ export default function DailyRecord() {
           </p>
           <div className={styles.extras}>
             <button>
-              <Link href={"/search"}>Browse raport</Link>
+              <Link href={"/dailyreport"}>Browse report</Link>
             </button>
           </div>
         </div>

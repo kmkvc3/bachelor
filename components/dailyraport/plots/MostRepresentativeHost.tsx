@@ -36,12 +36,12 @@ export default function MostRepresentativeHost() {
               this.point.y
             } <b style="font-size: 13px"> (${
               Math.round(this.point.percentage * 100) / 100
-            } %) </b>`
+            }%) </b>`
           );
         },
       },
       subtitle: {
-        text: "Click on chart to use search",
+        text: "Click on pie slice to see virus-host interactions",
         style: { color: darkMode ? "#7f8994" : "#818181" },
       },
       series: [
@@ -89,8 +89,11 @@ export default function MostRepresentativeHost() {
 
   return (
     <div className={styles.wrapper}>
-      <h4> Top {range} most representative host {pickedOption}</h4>
-      <p>Longer description</p>
+      <h4> Most abundant host taxa</h4>
+      <p>
+        Ten most abundant host classes (represented by the highest number of
+        known host species) at the class level.
+      </p>
       <div className={styles.select}>
         <Select
           options={["class", "phylum", "order", "family"]}
@@ -98,7 +101,7 @@ export default function MostRepresentativeHost() {
           setPickedOption={setPickedOption}
         />
         <Select
-          options={[10, 20, 30, 40, 50, 60]}
+          options={[3, 5, 10, 15]}
           placeholder={range}
           setPickedOption={setRange}
         />

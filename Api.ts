@@ -125,9 +125,12 @@ export const getVirusStatsICTV = () => {
 };
 
 export const getTopVirusStats = (rank, range) => {
-  const data = fetch(`${BASE_URL}/api/stats/taxonomy/top/virus/?rank=${rank}&limit=${range}`, {
-    method: "GET",
-  }).then((res) => res.json());
+  const data = fetch(
+    `${BASE_URL}/api/stats/taxonomy/top/virus/?rank=${rank}&limit=${range}`,
+    {
+      method: "GET",
+    }
+  ).then((res) => res.json());
   return data;
 };
 
@@ -146,16 +149,22 @@ export const getAssemblyLevel = () => {
 };
 
 export const getVirusGenomeDistro = (database) => {
-  const data = fetch(`${BASE_URL}/api/stats/virus/genome/size/histogram/?database=${database}`, {
-    method: "GET",
-  }).then((res) => res.json());
+  const data = fetch(
+    `${BASE_URL}/api/stats/virus/genome/size/histogram/?database=${database}`,
+    {
+      method: "GET",
+    }
+  ).then((res) => res.json());
   return data;
 };
 
-export const getVirusGenomeSource = () => {
-  const data = fetch(`${BASE_URL}/api/stats/virus/genome/source/`, {
-    method: "GET",
-  }).then((res) => res.json());
+export const getVirusGenomeSource = (representative) => {
+  const data = fetch(
+    `${BASE_URL}/api/stats/virus/genome/source/?representative_only=${representative}`,
+    {
+      method: "GET",
+    }
+  ).then((res) => res.json());
   return data;
 };
 
@@ -167,16 +176,22 @@ export const getVirusGenomeSummary = () => {
 };
 
 export const getTopHostStats = (rank) => {
-  const data = fetch(`${BASE_URL}/api/stats/taxonomy/top/interactions/?rank=${rank}`, {
-    method: "GET",
-  }).then((res) => res.json());
+  const data = fetch(
+    `${BASE_URL}/api/stats/taxonomy/top/interactions/?rank=${rank}`,
+    {
+      method: "GET",
+    }
+  ).then((res) => res.json());
   return data;
 };
 
 export const getMostRepresentativeHost = (rank, range) => {
-  const data = fetch(`${BASE_URL}/api/stats/taxonomy/top/host/?rank=${rank}&limit=${range}`, {
-    method: "GET",
-  }).then((res) => res.json());
+  const data = fetch(
+    `${BASE_URL}/api/stats/taxonomy/top/host/?rank=${rank}&limit=${range}`,
+    {
+      method: "GET",
+    }
+  ).then((res) => res.json());
   return data;
 };
 
@@ -200,6 +215,30 @@ export const getSummary = () => {
   }).then((res) => res.json());
   return data;
 };
+
+export const getDistroSummary = (option) => {
+  const data = fetch(
+    `${BASE_URL}/api/stats/virus/genome/size/summary/?database=${option} `,
+    {
+      method: "GET",
+    }
+  ).then((res) => res.json());
+  return data;
+};
+
+export const getBacteria = () => {
+  const data = fetch(`${BASE_URL}/api/stats/taxonomy/host/bacteria/`, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
+
+export const getArchea = () => {
+  const data = fetch(`${BASE_URL}/api/stats/taxonomy/host/archaea/ `, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
 export {
   getInteractions,
   getHints,
@@ -208,5 +247,5 @@ export {
   getUpdateStats,
   getVirusRecord,
   getHostRecord,
-  getBasicStats
+  getBasicStats,
 };

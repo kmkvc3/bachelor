@@ -31,7 +31,7 @@ export default function HostHighestNumber() {
         text: "",
       },
       subtitle: {
-        text: "Click on chart to use search",
+        text: "Click on pie slice to see virus-host interactions",
         style: { color: darkMode ? "#7f8994" : "#818181" },
       },
       tooltip: {
@@ -91,7 +91,7 @@ export default function HostHighestNumber() {
             return {
               name: data.name,
               y: data.count,
-              taxon_id: data.taxon_id
+              taxon_id: data.taxon_id,
             };
           }),
         },
@@ -108,8 +108,11 @@ export default function HostHighestNumber() {
 
   return (
     <div className={styles.wrapper}>
-      <h4> Size of complete virus genomes (distribution) {pickedOption}</h4>
-      <p>Longer description</p>
+      <h4> Host taxa with the highest number of interactions</h4>
+      <p>
+        Proportion of viruses isolated on the top 15 most abundant host genera
+        <br />(i.e. host genera infected by the highest number of viruses).
+      </p>
       <div className={styles.select}>
         <Select
           options={["genus", "species", "family", "order", "class", "phylum"]}

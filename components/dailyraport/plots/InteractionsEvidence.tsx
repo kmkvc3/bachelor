@@ -34,7 +34,7 @@ export default function InteractionsEvidence() {
         },
       },
       xAxis: {
-          visible: false
+        visible: false,
       },
       tooltip: {
         formatter: function () {
@@ -53,7 +53,7 @@ export default function InteractionsEvidence() {
       },
       plotOptions: {
         series: {
-            showInLegend: false, 
+          showInLegend: false,
           dataLabels: {
             enabled: true,
             backgroundColor: "transparent",
@@ -61,8 +61,8 @@ export default function InteractionsEvidence() {
             color: darkMode ? "#b4c1cf" : "#818181",
             format: "{point.name}",
             style: {
-                textOutline: "none"
-            }
+              textOutline: "none",
+            },
           },
         },
       },
@@ -90,8 +90,11 @@ export default function InteractionsEvidence() {
 
   return (
     <div className={styles.wrapper}>
-      <h4>Number of interactions covered by source databases</h4>
-      <p>Longer description</p>
+      <h4> Virus-host interactions in source databases</h4>
+      <p>
+        Comparison of the number of pairwise interactions between virus and host
+        species in different databases.
+      </p>
       <div>
         {options ? (
           <HighchartsReact highcharts={Highcharts} options={options} />

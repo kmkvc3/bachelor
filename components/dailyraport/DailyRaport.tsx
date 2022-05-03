@@ -13,10 +13,12 @@ import InteractionsEvidence from "./plots/InteractionsEvidence";
 import { useEffect } from "react";
 import { useState } from "react";
 import Highcharts from "highcharts";
-import HighchartsReact from "highcharts-react-official";
+import Archea from "./plots/Archea";
+import Bacteria from "./plots/Bacteria";
 
 export default function DailyRaport() {
   const [id, setId] = useState("TaxDiversity");
+
   useEffect(() => {
     Highcharts.setOptions({
       colors: [
@@ -69,51 +71,58 @@ export default function DailyRaport() {
         </h1>
         <span></span>
         <Summary />
-        <h1 className="targetSelector" id="TaxDiversity">
-          Taxonomic diversity of viruses
-        </h1>
-        <span></span>
-        <div id="VT"></div>
-        <VirusTaxonomy />
-        <div id="MRV"></div>
-        <MostRepresentativeVirus />
 
-        <h1 className="targetSelector" id="GenDiversity">
-          Genomic diversity of viruses
-        </h1>
-        <span></span>
-        <div id="VGT"></div>
-        <VirusGenomeType />
+        <div className="targetSelector" id="TaxDiversity">
+          <h1>Taxonomic diversity of viruses</h1>
+          <span></span>
+          <div id="VT"></div>
+          <VirusTaxonomy />
+          <div id="MRV"></div>
+          <MostRepresentativeVirus />
+        </div>
 
-        <div id="AL"></div>
-        <AssemblyLevel />
+        <div className="targetSelector" id="GenDiversity">
+          <h1>Genomic diversity of viruses</h1>
+          <span></span>
+          <div id="VGT"></div>
+          <VirusGenomeType />
 
-        <div id="VG"></div>
-        <VirusGenomeDistro />
+          <div id="AL"></div>
+          <AssemblyLevel />
 
-        <div id="VGS"></div>
-        <VirusGenomeSource />
+          <div id="VG"></div>
+          <VirusGenomeDistro />
 
-        <h1 className="targetSelector" id="TaxaInteractions">
-          Taxonomic diversity of hosts
-        </h1>
+          <div id="VGS"></div>
+          <VirusGenomeSource />
+        </div>
 
-        <div id="HHN"></div>
-        <HostHighestNumber />
+        <div className="targetSelector" id="TaxaInteractions">
+          <h1>Taxonomic diversity of hosts</h1>
 
-        <div id="MRH"></div>
-        <MostRepresentativeHost />
+          <div id="B"></div>
+          <Bacteria />
 
-        <h1 className="targetSelector" id="HostVirus">
-          Virus-host interactions
-        </h1>
-        <span></span>
+          <div id="A"></div>
+          <Archea />
 
-        <div id="HPV"></div>
-        <HostPerVirus />
+          <div id="MRH"></div>
+          <MostRepresentativeHost />
+        </div>
 
-        <div id="IE"></div>
-        <InteractionsEvidence />
+        <div className="targetSelector" id="HostVirus">
+          <h1>Virus-host interactions</h1>
+          <span></span>
+
+          <div id="HHN"></div>
+          <HostHighestNumber />
+
+          <div id="HPV"></div>
+          <HostPerVirus />
+
+          <div id="IE"></div>
+          <InteractionsEvidence />
+        </div>
       </div>
       <aside className={styles.sidebar}>
         <a
@@ -149,8 +158,9 @@ export default function DailyRaport() {
           Taxonomic diversity of hosts
         </a>
 
-        <a href="#HHN">Host taxa with the highest number of interactions</a>
-        <a href="#MRH"> Top 10 most representative host classes </a>
+        <a href="#B">Bateria</a>
+        <a href="#A">Archea</a>
+        <a href="#MRH"> Most abundant host taxa </a>
 
         <a
           href="#HostVirus"
@@ -159,8 +169,9 @@ export default function DailyRaport() {
           Virus-host interactions
         </a>
 
-        <a href="#HPV">Host species per virus species</a>
-        <a href="#IE">Number of interactions covered by source databases</a>
+        <a href="#HHN">Host taxa with the highest number of interactions</a>
+        <a href="#HPV">Number of host species per virus species</a>
+        <a href="#IE">Virus-host interactions in source databases</a>
       </aside>
     </div>
   );

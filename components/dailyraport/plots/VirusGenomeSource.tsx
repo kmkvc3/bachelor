@@ -6,14 +6,26 @@ import HighchartsReact from "highcharts-react-official";
 import { ThemeContext } from "../../../ThemeContext";
 import { useContext } from "react";
 import Spinner from "../components/Spinner";
+import Select from "../components/Select";
 
 export default function VirusGenomeSource() {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
+  const [pickedOption, setPickedOption] = useState("Representative genomes");
+  const [option, setOption] = useState(1);
   const [options, setOptions] = useState(null);
 
+  function set(pickedOption) {
+    setPickedOption(pickedOption)
+    if (pickedOption === "Representative genomes") {
+      setOption(1);
+    } else {
+      setOption(0);
+    }
+  }
+
   async function getStats() {
-    const res = await getVirusGenomeSource();
+    const res = await getVirusGenomeSource(option);
     setOptions({
       chart: {
         backgroundColor: "transparent",
@@ -29,11 +41,11 @@ export default function VirusGenomeSource() {
             this.point.color +
             '">\u25CF</span> <b>' +
             this.point.name +
-            `</b><br>virus count: ${
+            `</b><br>genome count: ${
               this.point.y
             } <b style="font-size: 13px"> (${
               Math.round(this.point.percentage * 100) / 100
-            } %) </b>`
+            }%) </b>`
           );
         },
       },
@@ -64,7 +76,7 @@ export default function VirusGenomeSource() {
   }
   useEffect(() => {
     getStats();
-  }, []);
+  }, [option, pickedOption]);
 
   if (!options) {
     return <></>;
@@ -73,7 +85,14 @@ export default function VirusGenomeSource() {
   return (
     <div className={styles.wrapper}>
       <h4>Virus genome source</h4>
-      <p>Longer description</p>
+      <p>Number of viral genomes from RefSeq and GenBank.</p>
+      <div className={styles.select}>
+        <Select
+          options={["Representative genomes", "All genomes"]}
+          placeholder={pickedOption}
+          setPickedOption={set}
+        />
+      </div>
       <div>
         {options ? (
           <HighchartsReact highcharts={Highcharts} options={options} />

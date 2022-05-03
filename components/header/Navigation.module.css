@@ -1,5 +1,7 @@
 .navigation {
   border-bottom: 1px solid var(--main-light-dark);
+  max-width: 1800px;
+  margin: 0 auto;
 }
 .logo {
   display: flex;
@@ -7,7 +9,7 @@
   cursor: pointer;
 }
 .logo img {
-  width: 164px;
+  width: 148px;
 }
 .navigation > div {
   padding: 0 2.2rem;

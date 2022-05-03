@@ -1,6 +1,6 @@
 import styles from "./Chart.module.css";
 import { useEffect, useState } from "react";
-import { getVirusGenomeDistro } from "../../../Api";
+import { getVirusGenomeDistro, getDistroSummary } from "../../../Api";
 import Highcharts from "highcharts";
 import highchartsBellcurve from "highcharts/modules/histogram-bellcurve";
 import HighchartsReact from "highcharts-react-official";
@@ -13,6 +13,7 @@ export default function VirusGenomeDistro() {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
   const [options, setOptions] = useState(null);
+  const [stats, setStats] = useState(null);
   const [pickedOption, setPickedOption] = useState("RefSeq");
 
   useEffect(() => {
@@ -20,6 +21,9 @@ export default function VirusGenomeDistro() {
   }, []);
   async function getStats() {
     const res = await getVirusGenomeDistro(pickedOption);
+    const stats = await getDistroSummary(pickedOption);
+    setStats(stats);
+
     setOptions({
       chart: {
         type: "column",
@@ -38,7 +42,6 @@ export default function VirusGenomeDistro() {
         style: { color: darkMode ? "#7f8994" : "#818181" },
       },
       xAxis: {
-        tickWidth: 0,
         title: {
           text: "Genome size (kb)",
           style: { color: darkMode ? "#7f8994" : "#818181" },
@@ -89,15 +92,43 @@ export default function VirusGenomeDistro() {
 
   return (
     <div className={styles.wrapper}>
-      <h4> Size of complete virus genomes (distribution) {pickedOption}</h4>
-      <p>Longer description</p>
+      <h4> Size of complete virus genomes</h4>
+      <p>
+        Size distribution of completely sequenced virus genomes. Only
+        representative genomes (for virus species) are shown.
+      </p>
       <div className={styles.select}>
         <Select
-          options={["RefSeq", "GenBank"]}
+          options={["RefSeq", "GenBank", "RefSeq + GenBank"]}
           placeholder={pickedOption}
           setPickedOption={setPickedOption}
         />
       </div>
+      {stats ? (
+        <div className={styles.table}>
+          <table className={styles.tg}>
+            <thead>
+              <tr>
+                <th>Min</th>
+                <th>1st quartile</th>
+                <th>Median</th>
+                <th>3rd quartile</th>
+                <th>Max </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{stats.min} bp</td>
+                <td>{stats.q1} bp</td>
+                <td>{stats.median} bp</td>
+                <td>{stats.q3} bp</td>
+                <td>{stats.max} bp</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      ) : null}
+
       <div>
         {options ? (
           <HighchartsReact highcharts={Highcharts} options={options} />

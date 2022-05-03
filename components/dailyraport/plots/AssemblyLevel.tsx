@@ -35,7 +35,6 @@ export default function AssemblyLevel() {
       },
       tooltip: {
         formatter: function() {
-            var percent = this.point.x
             return 'Genomes count: <b style="font-size: 13px">' + Highcharts.numberFormat(this.point.y, 0) +'</b>';
         } 
     },

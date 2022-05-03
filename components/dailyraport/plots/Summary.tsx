@@ -9,7 +9,6 @@ export default function Summary() {
   async function getStats() {
     const summary = await getSummary();
     const stats = await getUpdateStats();
-    console.log(stats)
     setSummary(summary);
     setStats(stats);
   }

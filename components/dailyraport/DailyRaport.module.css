@@ -12,7 +12,7 @@
   position: -webkit-sticky; /* Safari */
   top: 0;
   padding: 1rem 0;
-  padding-left: 2rem;
+  padding-left: 1.8rem;
 }
 .charts {
   padding-right: 2rem;
@@ -28,12 +28,13 @@
   cursor: pointer;
   display: block;
   font-weight: normal;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.26rem;
+  max-width: 380px;
   color: var(--secondary-text);
 }
 .wrapper .sidebar .active {
   font-weight: bold;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.28rem;
   margin-top: 1rem;
   margin-left: 0;
   font-weight: bold;
@@ -41,7 +42,7 @@
 }
 .wrapper .sidebar .main {
   font-weight: bold;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.28rem;
   margin-top: 1rem;
   margin-left: 0;
   color: var(--primary-text);
