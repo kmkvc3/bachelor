@@ -234,7 +234,14 @@ export const getBacteria = () => {
 };
 
 export const getArchea = () => {
-  const data = fetch(`${BASE_URL}/api/stats/taxonomy/host/archaea/ `, {
+  const data = fetch(`${BASE_URL}/api/stats/taxonomy/host/archaea/`, {
+    method: "GET",
+  }).then((res) => res.json());
+  return data;
+};
+
+export const getTopSize = (param) => {
+  const data = fetch(`${BASE_URL}/api/stats/virus/genome/size/top/?reverse=${param}`, {
     method: "GET",
   }).then((res) => res.json());
   return data;

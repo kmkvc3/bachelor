@@ -1,6 +1,5 @@
 .navigation {
   border-bottom: 1px solid var(--main-light-dark);
-  max-width: 1800px;
   margin: 0 auto;
 }
 .logo {
@@ -9,13 +8,15 @@
   cursor: pointer;
 }
 .logo img {
-  width: 148px;
+  width: 152px;
 }
 .navigation > div {
   padding: 0 2.2rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1800px;
   align-items: center;
 }
 .navigation ul {

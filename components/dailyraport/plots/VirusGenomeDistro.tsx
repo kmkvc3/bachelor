@@ -24,6 +24,15 @@ export default function VirusGenomeDistro() {
     const stats = await getDistroSummary(pickedOption);
     setStats(stats);
 
+    var categories = [
+      1, 6, 12, 17, 23, 28, 34, 39, 45, 50, 56, 61, 67, 72, 78, 83, 89, 94, 100,
+      105, 111, 116, 122, 127, 133, 138, 144, 149, 155, 160, 166, 171, 177, 182,
+      188, 193, 199, 204, 210, 215, 221, 227, 232, 238, 243, 249, 254, 260, 265,
+      271, 276, 282, 287, 293, 298, 304, 309, 315, 320, 326, 331, 337, 342, 348,
+      353, 359, 364, 370, 375, 381, 386, 392, 397, 403, 408, 414, 419, 425, 430,
+      436, 441, 447, 452, 458, 463, 469, 474, 480, 485, 491, 496, 502, 507, 513,
+      518, 524, 529, 535, 540, 546, 551,
+    ];
     setOptions({
       chart: {
         type: "column",
@@ -42,6 +51,7 @@ export default function VirusGenomeDistro() {
         style: { color: darkMode ? "#7f8994" : "#818181" },
       },
       xAxis: {
+        categories,
         title: {
           text: "Genome size (kb)",
           style: { color: darkMode ? "#7f8994" : "#818181" },
@@ -58,7 +68,18 @@ export default function VirusGenomeDistro() {
       },
       tooltip: {
         formatter: function () {
-          return "Virus species: " + "<b>" + this.point.y + "</b>";
+          return (
+            "Virus species: " +
+            "<b>" +
+            this.point.y +
+            "</b>" +
+            "<br/>" +
+            "Genome size: " +
+            "<b>" +
+            this.point.x +
+            " kb</b>" +
+            "</b>"
+          );
         },
       },
       legend: {
@@ -92,7 +113,7 @@ export default function VirusGenomeDistro() {
 
   return (
     <div className={styles.wrapper}>
-      <h4> Size of complete virus genomes</h4>
+      <h4> Size of complete genomes</h4>
       <p>
         Size distribution of completely sequenced virus genomes. Only
         representative genomes (for virus species) are shown.
@@ -118,11 +139,11 @@ export default function VirusGenomeDistro() {
             </thead>
             <tbody>
               <tr>
-                <td>{stats.min} bp</td>
-                <td>{stats.q1} bp</td>
-                <td>{stats.median} bp</td>
-                <td>{stats.q3} bp</td>
-                <td>{stats.max} bp</td>
+                <td>{stats.min.toLocaleString("en")} bp</td>
+                <td>{stats.q1.toLocaleString("en")} bp</td>
+                <td>{stats.median.toLocaleString("en")} bp</td>
+                <td>{stats.q3.toLocaleString("en")} bp</td>
+                <td>{stats.max.toLocaleString("en")} bp</td>
               </tr>
             </tbody>
           </table>

@@ -15,7 +15,7 @@ export default function VirusTaxonomy() {
 
   return (
     <div className={styles.wrapper}>
-      <h4>Number of host species per virus species</h4>
+      <h4>Host species per virus species</h4>
       <p>Number of virus species isolated on a different number of host species.</p>
       {stats ? (
         <div className={styles.table}>
@@ -31,7 +31,7 @@ export default function VirusTaxonomy() {
                   <tr>
                     <td>{data.hosts_count.toLocaleString("en")}</td>
                     <td>{data.virus_count.toLocaleString("en")}</td>
-                    <td>{data.virus_count_percent.toFixed(3)}</td>
+                    <td>{data.virus_count_percent.toFixed(2)}%</td>
                   </tr>
                 );
               })}

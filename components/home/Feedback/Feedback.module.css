@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 6rem var(--content-padding) 9rem var(--content-padding);
+  padding: 6rem var(--content-padding) 14rem var(--content-padding);
 }
 .welcome {
   justify-content: space-around;

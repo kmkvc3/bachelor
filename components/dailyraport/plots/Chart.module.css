@@ -13,6 +13,9 @@
     text-align: center;
     color: var(--secondary-text);
 }
+.table a {
+    color: var(--main-blue);
+}
 .wrapper h4 {
     color: var(--primary-text);
     font-size: 1.16rem;

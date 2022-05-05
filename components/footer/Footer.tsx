@@ -1,10 +1,8 @@
 import styles from "./Footer.module.css";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { getUpdateStats } from "../../Api";
 
 export default function Footer() {
-  const router = useRouter();
   const [lastUpdatedDate, setLastUpdatedDate] = useState("")
   const [version, setVersion] = useState("")
 
@@ -25,7 +23,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.combio}>
         <span>
-          With <img src={router.pathname.includes("/search") ? "./heart.svg" : "../heart.svg"} alt="" /> from{" "}
+          With <img src={"heart.svg"} alt="" /> from
           <a target="_blank" href="http://www.combio.pl">
             combio.pl
           </a>

@@ -11,30 +11,23 @@ export default function WorldLeading() {
     <div className={styles.wrapper}>
       <div className={styles.welcome}>
         <div className={styles.text}>
-          <h1>Phage & Host</h1>
-          <h2>Daily updated database</h2>
-          {/* <span></span> */}
+          <h1>Phage & Host Daily</h1>
           <p>
-            Top quality data, all in one place. <br /> Start discovery of
-            interactions between phage & hosts. <br />
-            Just for your research
+            PHD provides a daily updated catalog of known interactions between
+            viruses and prokaryotic host species, allowing users to select
+            viruses targeting specific bacterial and archaeal taxa of interest.
           </p>
+          <div className={styles.extras}>
+            <button>
+              <Link href={"/search"}>Search</Link>
+            </button>
+            <button>
+              <Link href={"/browse/host/ncbi"}>Browse</Link>
+            </button>{" "}
+          </div>
         </div>
         <div className={styles.image}>
-          <img 
-            src={darkMode ? "cover-dark.svg" : "cover-light.svg"} 
-            alt="" />
-        </div>
-      </div>
-      <div className={styles.extras}>
-        <p>More data on our database</p>
-        <div>
-          <button>
-            <Link href={"/search"}>Search records</Link>
-          </button>
-          <button>
-            <Link href={"/browse/host/ncbi"}>Browse taxons</Link>
-          </button>
+          <img src={darkMode ? "cover-light.svg" : "cover-light.svg"} alt="" />
         </div>
       </div>
     </div>

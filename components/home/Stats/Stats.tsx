@@ -70,7 +70,7 @@ export default function Stats() {
         </p>
         <p>{stats.interactions.name}</p>
       </div>
-      <span>...and growing everyday</span>
+      <span>...from various sources</span>
       <div className={styles.grid}>
         <div className={styles.patternLeft}>
           <img

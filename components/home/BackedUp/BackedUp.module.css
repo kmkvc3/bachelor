@@ -1,5 +1,6 @@
 .wrapper {
   padding: 6rem var(--content-padding) 4.8rem var(--content-padding);
+  margin: 3.2rem auto;
 }
 .welcome {
   justify-content: space-around;
@@ -15,7 +16,7 @@
 .welcome p {
   font-size: 1rem;
   color: var(--secondary-text);
-  max-width: 400px;
+  max-width: 560px;
   line-height: 1.3rem;
   text-align: center;
 }
@@ -33,7 +34,7 @@
   display: block;
 }
 .logoHolder {
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: grid;
   justify-items: center;
   align-items: center;

@@ -24,8 +24,8 @@ export default function VirusTaxonomy() {
           <p>
             Number of virus taxonomic units across six taxonomic ranks (from
             species to phylum) according to NCBI Taxonomy and International
-            Committee on Taxonomy of Viruses (ICTV).{" "}
-            {(statsICTV.species / statsNCBI.species).toFixed(4) * 100}% of virus
+            Committee on Taxonomy of Viruses (ICTV). 
+            <br></br>Thus far {(statsICTV.species / statsNCBI.species).toFixed(4) * 100}% of virus
             species present in NCBI has been classified by ICTV.
           </p>
           <div className={styles.table}>
@@ -33,7 +33,7 @@ export default function VirusTaxonomy() {
               <thead>
                 <tr>
                   <th rowspan="2">Taxon rank</th>
-                  <th colspan="2">Virus tax(count)</th>
+                  <th colspan="2">Virus taxa (count)</th>
                 </tr>
                 <tr>
                   <th>NCBI</th>
@@ -43,33 +43,33 @@ export default function VirusTaxonomy() {
               <tbody>
                 <tr>
                   <td>Phylum</td>
-                  <td>{statsNCBI.phylum}</td>
-                  <td>{statsICTV.phylum}</td>
+                  <td>{statsNCBI.phylum.toLocaleString("en")}</td>
+                  <td>{statsICTV.phylum.toLocaleString("en")}</td>
                 </tr>
                 <tr>
                   <td>Class</td>
-                  <td>{statsNCBI.class}</td>
-                  <td>{statsICTV.class}</td>
+                  <td>{statsNCBI.class.toLocaleString("en")}</td>
+                  <td>{statsICTV.class.toLocaleString("en")}</td>
                 </tr>
                 <tr>
                   <td>Order</td>
-                  <td>{statsNCBI.order}</td>
-                  <td>{statsICTV.order}</td>
+                  <td>{statsNCBI.order.toLocaleString("en")}</td>
+                  <td>{statsICTV.order.toLocaleString("en")}</td>
                 </tr>
                 <tr>
                   <td>Family</td>
-                  <td>{statsNCBI.family}</td>
-                  <td>{statsICTV.family}</td>
+                  <td>{statsNCBI.family.toLocaleString("en")}</td>
+                  <td>{statsICTV.family.toLocaleString("en")}</td>
                 </tr>
                 <tr>
                   <td>Genus</td>
-                  <td>{statsNCBI.genus}</td>
-                  <td>{statsICTV.genus}</td>
+                  <td>{statsNCBI.genus.toLocaleString("en")}</td>
+                  <td>{statsICTV.genus.toLocaleString("en")}</td>
                 </tr>
                 <tr>
                   <td>Species</td>
-                  <td>{statsNCBI.species}</td>
-                  <td>{statsICTV.species}</td>
+                  <td>{statsNCBI.species.toLocaleString("en")}</td>
+                  <td>{statsICTV.species.toLocaleString("en")}</td>
                 </tr>
               </tbody>
             </table>

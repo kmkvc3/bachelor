@@ -5,8 +5,13 @@ export default function DailyRecord() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.welcome}>
-        <h1>Top quality data</h1>
-        <p>Everything in one place. We are backed up by the best providers.</p>
+        <h1>Credits</h1>
+        <p>
+          PHD combines the latest information on virus-host interactions from
+          seven source databases with current taxonomic classification retrieved
+          from NCBI Taxonomy, Genome Taxonomy Database (GTDB), and International
+          Committee on Taxonomy of Viruses (ICTV).
+        </p>
       </div>
       <div className={styles.logoHolder}>
         <div className={styles.logoWrapper}>

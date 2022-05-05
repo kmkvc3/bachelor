@@ -90,7 +90,7 @@ export default function InteractionsEvidence() {
 
   return (
     <div className={styles.wrapper}>
-      <h4> Virus-host interactions in source databases</h4>
+      <h4> Source databases</h4>
       <p>
         Comparison of the number of pairwise interactions between virus and host
         species in different databases.
