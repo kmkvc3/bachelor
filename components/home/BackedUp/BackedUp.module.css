@@ -1,6 +1,6 @@
 .wrapper {
   padding: 6rem var(--content-padding) 4.8rem var(--content-padding);
-  margin: 3.2rem auto;
+  margin: 2.5rem auto;
 }
 .welcome {
   justify-content: space-around;
@@ -25,9 +25,11 @@
   width: 210px;
   border-radius: 14px;
   max-height: 80px;
+  border: 1px solid transparent;
 }
 .logoWrapper img:hover {
-  box-shadow: 0px 1px 12px -1px var(--secondary-text);
+  border: 1px solid var(--secondary-text);
+  box-shadow: 0px 0px 10px -2px var(--secondary-text);
 }
 .logoWrapper a {
   margin: 1.1rem 0.6rem;

@@ -1,4 +1,3 @@
-import Head from "next/head";
 import styles from "./Feedback.module.css";
 
 export default function Feedback() {
@@ -6,21 +5,42 @@ export default function Feedback() {
     <div className={styles.wrapper}>
       <div className={styles.welcome}>
         <h1>Feedback & Contact</h1>
-        <p>How can we improve your experience?</p>
+        <p>
+          We appreciate all feedback regarding PHD. Let us know what you think.
+        </p>
       </div>
       <div className={styles.contact}>
-        <div>
+        <div className={styles.person}>
           <div>
-            <img src="" alt="" />
+            <img src="andrzej_zielezinski.jpg" alt="" />
           </div>
-          <p>sample@email.com</p>
+          <div>
+            <p>Andrzej Zielezinski</p>
+            <p className={styles.email}>andrzej.zielezinski@amu.edu.pl</p>
+          </div>
+          <div className={styles.icons}>
+            <a target="_blank" href="https://twitter.com/a_zielezinski">
+              <img src="twitter.svg" alt="" />
+            </a>
+            <a href="mailto:andrzej.zielezinski@amu.edu.pl">
+              <img src="email.svg" alt="" />
+            </a>
+          </div>
         </div>
 
-        <div>
+        <div className={styles.person}>
+          {/* <div>
+            <img src="andrzej_zielezinski.jpg" alt="" />
+          </div> */}
           <div>
-            <img src="" alt="" />
+            <p>Jakub Barylski </p>
+            <p className={styles.email}>jakub.barylski@amu.edu.pl</p>
           </div>
-          <p>sample2another@email.com</p>
+          <div className={styles.icons}>
+            <a href="mailto:jakub.barylski@amu.edu.pl">
+              <img src="email.svg" alt="" />
+            </a>
+          </div>
         </div>
       </div>
     </div>

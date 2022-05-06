@@ -32,10 +32,17 @@ export default function Navigation() {
             </Link>
           </li>
           <li
-            className={router.pathname.includes("/blast") ? styles.active : ""}
+            className={router.pathname.includes("/report") ? styles.active : ""}
           >
             <Link href="/report">
               <p>Daily Report</p>
+            </Link>
+          </li>
+          <li
+            className={router.pathname.includes("/blast") ? styles.active : ""}
+          >
+            <Link href="/report">
+              <p>Help</p>
             </Link>
           </li>
         </ul>

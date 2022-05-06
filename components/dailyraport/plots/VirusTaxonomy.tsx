@@ -25,15 +25,15 @@ export default function VirusTaxonomy() {
             Number of virus taxonomic units across six taxonomic ranks (from
             species to phylum) according to NCBI Taxonomy and International
             Committee on Taxonomy of Viruses (ICTV). 
-            <br></br>Thus far {(statsICTV.species / statsNCBI.species).toFixed(4) * 100}% of virus
+            <br></br>Thus far {(statsICTV.species as any) / statsNCBI.species.toFixed(4) * 100}% of virus
             species present in NCBI has been classified by ICTV.
           </p>
           <div className={styles.table}>
             <table className={styles.tg}>
               <thead>
                 <tr>
-                  <th rowspan="2">Taxon rank</th>
-                  <th colspan="2">Virus taxa (count)</th>
+                  <th rowSpan={ 2 as any}>Taxon rank</th>
+                  <th colSpan={ 2 as any}>Virus taxa (count)</th>
                 </tr>
                 <tr>
                   <th>NCBI</th>
