@@ -88,7 +88,7 @@ export default function BrowseSection({ taxData }) {
             </Link>
           </div>
         </div>
-        {tax.length > 2 ? (
+        {tax.length > 1 ? (
           <Navigation taxData={tax} type={tax[0]} taxo={tax[1]} />
         ) : null}
         <Header />

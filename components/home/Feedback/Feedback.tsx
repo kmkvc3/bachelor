@@ -29,9 +29,6 @@ export default function Feedback() {
         </div>
 
         <div className={styles.person}>
-          {/* <div>
-            <img src="andrzej_zielezinski.jpg" alt="" />
-          </div> */}
           <div>
             <p>Jakub Barylski </p>
             <p className={styles.email}>jakub.barylski@amu.edu.pl</p>

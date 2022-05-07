@@ -1,10 +1,13 @@
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import Layout from "../components/layout";
 import WorldLeading from "../components/home/WorldLeading/WorldLeading";
-import Stats from "../components/home/Stats/Stats";
-import DailyRaport from "../components/home/DailyRaport/DailyRaport";
-import BackedUp from "../components/home/BackedUp/BackedUp";
-import Feedback from "../components/home/Feedback/Feedback";
+const Stats = dynamic(() => import("../components/home/Stats/Stats"));
+const DailyRaport = dynamic(() =>
+  import("../components/home/DailyRaport/DailyRaport")
+);
+const BackedUp = dynamic(() => import("../components/home/BackedUp/BackedUp"));
+const Feedback = dynamic(() => import("../components/home/Feedback/Feedback"));
 
 export default function Home() {
   return (

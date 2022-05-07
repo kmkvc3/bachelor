@@ -25,7 +25,7 @@ export default function VirusTaxonomy() {
             Number of virus taxonomic units across six taxonomic ranks (from
             species to phylum) according to NCBI Taxonomy and International
             Committee on Taxonomy of Viruses (ICTV). 
-            <br></br>Thus far {(statsICTV.species as any) / statsNCBI.species.toFixed(4) * 100}% of virus
+            <br></br>Thus far {((statsICTV.species as any) / statsNCBI.species * 100).toFixed(2)}% of virus
             species present in NCBI has been classified by ICTV.
           </p>
           <div className={styles.table}>

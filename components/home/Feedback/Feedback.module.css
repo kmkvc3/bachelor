@@ -49,7 +49,7 @@
   font-weight: normal;
 }
 .contact .icons * {
-  width: 32px;
+  width: 29px;
   cursor: pointer;
   margin-top: 0.6rem;
   filter: brightness(0) saturate(100%) invert(60%) sepia(40%) saturate(4482%) hue-rotate(177deg) brightness(90%) contrast(102%);

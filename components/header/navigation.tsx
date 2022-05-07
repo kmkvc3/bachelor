@@ -41,7 +41,7 @@ export default function Navigation() {
           <li
             className={router.pathname.includes("/blast") ? styles.active : ""}
           >
-            <Link href="/report">
+            <Link href="/help">
               <p>Help</p>
             </Link>
           </li>

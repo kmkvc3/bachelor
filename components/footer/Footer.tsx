@@ -23,7 +23,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.combio}>
         <span>
-          With <img src={"heart.svg"} alt="" /> from
+          With <img src="heart.svg" alt="" /> from {" "}
           <a target="_blank" href="http://www.combio.pl">
             combio.pl
           </a>

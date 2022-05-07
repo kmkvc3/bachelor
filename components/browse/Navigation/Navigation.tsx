@@ -12,15 +12,28 @@ export default function Navigation({ taxData, type, taxo }) {
 
   return (
     <div className={styles.header}>
-      <Link href={`/browse/${type}/${taxo}`}>Root</Link>
-      <span>/</span>
+      {taxData.length === 2 ? (
+        <>
+          <span>Root</span>
+          <span>/</span>
+        </>
+      ) : (
+        <>
+          <Link href={`/browse/${type}/${taxo}`}>Root</Link>
+          <span>/</span>
+        </>
+      )}
+
       {mapNames().map((tax, index) => {
-        if (index === taxData.length - 1 || taxData.length === 3 ) {
+        if (index === taxData.length - 1 || taxData.length === 2) {
           return <a key={index}>{tax}</a>;
         } else {
           return (
             <>
-              <Link key={index} href={`/browse/${type}/${taxo}/${generatePath(index)}/`}>
+              <Link
+                key={index}
+                href={`/browse/${type}/${taxo}/${generatePath(index)}/`}
+              >
                 <a>{tax}</a>
               </Link>
               {tax ? <span>/</span> : null}

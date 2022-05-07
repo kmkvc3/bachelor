@@ -1,0 +1,29 @@
+.wrapper {
+    margin: 4.4rem auto 10rem auto;
+    padding: 0 var(--content-padding);
+}
+.wrapper h1 {
+  color: var(--primary-text);
+  font-size: 2.2rem;
+  margin-bottom: 0.4rem;
+  margin-top: 4.4rem;
+}
+.wrapper * {
+  color: var(--secondary-text);
+  font-size: 1rem;
+}
+.wrapper a {
+  color: var(--main-blue);
+  font-size: 1rem;
+  line-height: 134%;
+}
+.wrapper img {
+    margin: 2.5rem auto 5rem auto;
+    width: 100%;
+}
+.dots {
+    margin-left: 2rem;
+}
+.points li {
+    margin-top: 0.24rem;
+}
