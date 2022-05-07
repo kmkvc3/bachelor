@@ -12,6 +12,9 @@
   color: var(--secondary-text);
   font-size: 1rem;
 }
+.wrapper p {
+    margin: 0.8rem auto;
+}
 .wrapper a {
   color: var(--main-blue);
   font-size: 1rem;
@@ -26,4 +29,7 @@
 }
 .points li {
     margin-top: 0.24rem;
+}
+.wrapper span {
+    color: #d63384;
 }

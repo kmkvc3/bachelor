@@ -76,7 +76,7 @@ export default function Help() {
           <a target="_blank" href="https://github.com/RyanCook94/inphared">
             INPHARED
           </a>{" "}
-          database of complete phage genomes
+          database of complete phage genomes.
         </p>
         <p>
           PHD also publishes daily reports on the current catalog of phage-host
@@ -86,7 +86,7 @@ export default function Help() {
         <p>
           PHD integrates information from several data sources to collect data
           related to virus genomic sequences, host information, and taxonomic
-          classification
+          classification.
         </p>
         <img
           src={darkMode ? "method-dark.svg" : "method-light.svg"}
@@ -94,7 +94,7 @@ export default function Help() {
         />
         <ol className={styles.points}>
           <li>
-            Names and/or NCBI taxonomy identifiers (<code>taxIds</code>) of
+            Names and/or NCBI taxonomy identifiers (<span>taxIds</span>) of
             hosts are extracted from nucleotide/protein sequence records of
             viruses available in six source databases:
             <ul className={styles.dots}>
@@ -107,8 +107,8 @@ export default function Help() {
                 >
                   GenBank flat
                 </a>{" "}
-                files under the qualifiers <code>/host=</code> and{" "}
-                <code>/lab_host=</code>)
+                files under the qualifiers <span>/host=</span> and{" "}
+                <span>/lab_host=</span>)
               </li>
               <li>
                 Virus-Host DB (from{" "}
@@ -150,7 +150,7 @@ export default function Help() {
             </ul>
           </li>
           <li>
-            The extracted host names/<code>taxIds</code> are queried in{" "}
+            The extracted host names/<span>taxIds</span> are queried in{" "}
             <a target="_blank" href="https://github.com/shenwei356/taxonkit">
               TaxonKit
             </a>{" "}
@@ -178,25 +178,25 @@ export default function Help() {
             prokaryotic host species are collected from the source databases.
           </li>
           <li>
-            Virus <code>taxIds</code> provided in sequence records are used to
+            Virus <span>taxIds</span> provided in sequence records are used to
             retrieve virus taxonomic lineages from NCBI Taxonomy. The obtained
-            virus species <code>taxIds</code> or sequence accessions are used to
+            virus species <span>taxIds</span> or sequence accessions are used to
             retrieve virus taxonomic lineages (if available) in{" "}
             <a target="_blank" href="https://talk.ictvonline.org/taxonomy/vmr/">
               International Committee on Taxonomy of Viruses (ICTV)
             </a>
             . Sequence accessions are then assigned to the appropriate virus
-            species. For example, three genomic sequences (<code>MN125599</code>
-            , <code>MN125600</code>, and <code>NC_049813</code>) belong to the{" "}
+            species. For example, three genomic sequences (<span>MN125599</span>
+            , <span>MN125600</span>, and <span>NC_049813</span>) belong to the{" "}
             <i>Escherichia</i> virus 12210I species.
           </li>
           <li>
             Sequence accessions within virus species are grouped into genome
             assemblies based on metadata provided in the NCBI Assembly database.
-            For example, two sequence accessions - <code>MN125599</code>,{" "}
-            <code>MN125600</code> - are part of one genome assembly from GenBank
-            (assembly accession: <code>GCA_009903655</code>) while the third
-            sequence <code>NC_049813</code> is a separate genome assemble from
+            For example, two sequence accessions - <span>MN125599</span>,{" "}
+            <span>MN125600</span> - are part of one genome assembly from GenBank
+            (assembly accession: <span>GCA_009903655</span>) while the third
+            sequence <span>NC_049813</span> is a separate genome assemble from
             RefSeq (assembly accession: GCF_009671745). Assembly level category
             (i.e., <i>Complete</i> or <i>Scaffold</i> or <i>Contig</i> or{" "}
             <i>unknown</i>) is assigned to each virus assembly based on
