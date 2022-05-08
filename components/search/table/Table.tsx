@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./ListElement.module.css";
 import { Toaster } from "react-hot-toast";
 import { ThemeContext } from "../../../ThemeContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 export default function Table({ data, type }) {
   const theme = useContext(ThemeContext);
