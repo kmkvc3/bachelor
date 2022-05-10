@@ -45,6 +45,13 @@ export default function Navigation() {
               <p>Help</p>
             </Link>
           </li>
+          <li
+            className={router.pathname.includes("/blast") ? styles.active : ""}
+          >
+            <a target="_blank" href="http://afproject.org/phdaily/">
+              <p>Download</p>
+            </a>
+          </li>
         </ul>
         <div className={styles.sidebar}>
           <BookmarksIcon />

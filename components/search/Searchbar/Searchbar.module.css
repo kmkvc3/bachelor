@@ -12,7 +12,7 @@
 }
 @keyframes anim {
   from {
-    left: calc(50% - 330px)
+    left: calc(50% - 330px);
   }
   to {
     left: 0;
@@ -29,8 +29,18 @@
   flex-direction: row;
   height: 50px;
 }
-.left > .searchField { 
-    animation: anim 0.4s;
+.left .searchField {
+  animation: anim 0.4s;
+}
+.wrapperForSpinner {
+  display: flex;
+  flex-direction: row;
+  width: 740px;
+  margin: 0 auto;
+  padding-left: 2.2rem;
+}
+.left .wrapperForSpinner {
+  width: 100%;
 }
 .searchField.focused {
   border-radius: 28px 28px 0 0;
@@ -106,9 +116,16 @@
   border-top: 1px solid var(--button-border-color);
   border-radius: 0 0 28px 28px;
 }
+.hintList .didyou {
+  color: var(--secondary-text);
+  display: block;
+  margin: 0 2rem 0.2rem 2rem;
+  padding: 0.6rem 0 0.3rem 0;
+  border-bottom: 1px solid var(--button-border-color);
+}
 .hintElement {
   display: block;
-  padding: 0.7rem;
+  padding: 0.62rem;
   padding-left: 2rem;
   font-weight: bold;
   color: var(--primary-dark-text);

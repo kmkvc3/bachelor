@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 6rem var(--content-padding) 14rem var(--content-padding);
+  padding: 6rem var(--content-padding) 11rem var(--content-padding);
 }
 .welcome {
   justify-content: space-around;
@@ -48,6 +48,12 @@
   color: var(--secondary-text);
   font-weight: normal;
 }
+.contact .person .unit {
+  color: var(--secondary-text);
+  font-weight: normal;
+  font-size: 0.9rem;
+  margin: 0.53rem auto;
+}
 .contact .icons * {
   width: 29px;
   cursor: pointer;
@@ -57,4 +63,10 @@
 .contact .icons a:nth-of-type(2) {
   margin-left: 1rem;
   filter: brightness(0) saturate(100%) invert(60%) sepia(40%) saturate(4482%) hue-rotate(177deg) brightness(90%) contrast(102%);
+}
+.wrapper .uni {
+  color: var(--secondary-text);
+  margin: 4rem auto 0 auto;
+  font-size: 0.9rem;
+  text-align: center;
 }

@@ -52,7 +52,7 @@ export default function MostRepresentativeHost() {
               click: function () {
                 if (this.taxon_id !== null) {
                   window.open(
-                    `/search?type=virus&taxon_id=${this.taxon_id}`,
+                    `/search?type=host&taxon_id=${this.taxon_id}`,
                     "_blank"
                   );
                 }
