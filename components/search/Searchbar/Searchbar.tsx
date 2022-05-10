@@ -30,6 +30,17 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
     }
   }, []);
 
+  useEffect(() => {
+    if (searchHints.length === 0) return;
+    const hideListAfterClick = () => setSearchHints([]);
+    if (searchHints.length > 0) {
+      document.addEventListener("click", hideListAfterClick);
+    } else {
+      document.removeEventListener("click", hideListAfterClick);
+    }
+    return () => document.removeEventListener("click", hideListAfterClick);
+  }, [searchHints]);
+
   function clearSearch() {
     setSearchbarActive(false);
     setSearchContent("");

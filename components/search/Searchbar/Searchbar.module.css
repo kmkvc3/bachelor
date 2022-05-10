@@ -41,6 +41,7 @@
 }
 .left .wrapperForSpinner {
   width: 100%;
+  padding-left: 0;
 }
 .searchField.focused {
   border-radius: 28px 28px 0 0;
