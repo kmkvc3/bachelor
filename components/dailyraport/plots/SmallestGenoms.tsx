@@ -50,7 +50,11 @@ export default function SmallestGenoms() {
                           </a>
                         </td>
                       )}
-                      <td>{data.sequence_name}</td>
+                      <td>
+                        <a target="_blank" href={data.sequence_url}>
+                          {data.sequence_name}
+                        </a>
+                      </td>
                     </tr>
                   );
                 })}

@@ -8,7 +8,7 @@ import { getInteractions } from "../Api";
 import { useEffect } from "react";
 import { getDbDictonary } from "../Api";
 import TableBottom from "../components/search/TableBottom/TableBottom";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 export async function getServerSideProps(context) {
   const availableFilters = await getDbDictonary();
@@ -30,28 +30,20 @@ export default function Search({ availableFilters }) {
   const [data, setData] = useState(null);
   const [isDataLoaded, setDataLoaded] = useState(false);
   const [wasDataLoaded, setWasDataLoaded] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
   const { taxon_id } = router.query as any;
 
-  useEffect(()=>{
-    const { type } = router.query
-    if(type) {
-      setType(type as string)
+  useEffect(() => {
+    const { type } = router.query;
+    if (type) {
+      setType(type as string);
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (taxonId === "") return;
     requestData(taxonId);
-  }, [
-    taxonId,
-    evidence,
-    assembly_level,
-    molecule,
-    sort,
-    page,
-    offset,
-  ]);
+  }, [taxonId, evidence, assembly_level, molecule, sort, page, offset]);
 
   async function requestData(taxon_id) {
     setTaxonId(taxon_id);
@@ -73,7 +65,7 @@ export default function Search({ availableFilters }) {
       setMaxPage(Math.floor(results.count / offset) + 1);
       setDataLoaded(true);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
@@ -92,13 +84,9 @@ export default function Search({ availableFilters }) {
         setPage={setPage}
         availableFilters={availableFilters}
       />
-      {(wasDataLoaded && taxon_id) ? (
+      {wasDataLoaded && taxon_id ? (
         <>
-          <TableSection
-            type={type}
-            isDataLoaded={isDataLoaded}
-            data={data}
-          />
+          <TableSection isDataLoaded={isDataLoaded} data={data} />
           <TableBottom
             page={page}
             maxPage={maxPage}

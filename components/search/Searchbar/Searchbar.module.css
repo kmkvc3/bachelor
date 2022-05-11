@@ -29,6 +29,14 @@
   flex-direction: row;
   height: 50px;
 }
+.searchField .secondaryData {
+  margin: 0 auto;
+  color: var(--secondary-text);
+  font-weight: 400;
+}
+.searchField .secondaryData i {
+  font-size: 0.88rem;
+}
 .left .searchField {
   animation: anim 0.4s;
 }
@@ -125,11 +133,18 @@
   border-bottom: 1px solid var(--button-border-color);
 }
 .hintElement {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.62rem;
   padding-left: 2rem;
   font-weight: bold;
   color: var(--primary-dark-text);
+}
+.hintElement .flag {
+  margin-right: 1rem;
+  color: var(--secondary-text);
+  font-size: 0.9rem;
 }
 .hintElement:nth-last-of-type(1) {
   padding-bottom: 0.7rem;
@@ -147,12 +162,13 @@
   cursor: pointer;
   background-color: transparent;
   color: var(--secondary-text);
-  padding: 0rem 0.8rem;
+  padding: 0rem 0.3rem;
   margin-left: 2rem;
   border-radius: var(--buttons-border-radius);
   box-sizing: border-box;
   line-height: 34px;
   position: relative;
+  min-width: 90px;
 }
 .clearAll:hover {
   background-color: #ac5353;
@@ -160,7 +176,7 @@
   border: var(--button-border) solid #ac5353;
 }
 .clearAll svg {
-  margin-left: 0.2rem;
+  margin-left: 0.5rem;
 }
 .clearAll a {
   text-decoration: none;

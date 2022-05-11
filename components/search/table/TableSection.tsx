@@ -5,7 +5,6 @@ import "react-loading-skeleton/dist/skeleton.css";
 import NotFound from "../Ilustrations/NotFound";
 
 export default function TableSection({
-  type,
   data,
   isDataLoaded,
 }) {
@@ -20,7 +19,6 @@ export default function TableSection({
               <p>{data.count} virus-host interactions for <strong>{data.query.name}</strong></p>
             </div>
             <Table
-              type={type}
               data={data}
             />
           </>

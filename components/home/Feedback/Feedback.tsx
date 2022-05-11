@@ -18,6 +18,9 @@ export default function Feedback() {
             <p>Andrzej Zielezinski</p>
             <p className={styles.email}>andrzej.zielezinski@amu.edu.pl</p>
             <p className={styles.unit}>Department of Computational Biology</p>
+            <p className={styles.unit}>
+              Adam Mickiewicz University in Poznan, Poland
+            </p>
           </div>
           <div className={styles.icons}>
             <a target="_blank" href="https://twitter.com/a_zielezinski">
@@ -36,7 +39,10 @@ export default function Feedback() {
           <div>
             <p>Jakub Barylski </p>
             <p className={styles.email}>jakub.barylski@amu.edu.pl</p>
-            <p className={styles.unit}>Molecular Virology Research Unit</p>
+            <p className={styles.unit}>Molecular Virology Research Unit</p>{" "}
+            <p className={styles.unit}>
+              Adam Mickiewicz University in Poznan, Poland
+            </p>
           </div>
           <div className={styles.icons}>
             <a href="mailto:jakub.barylski@amu.edu.pl">
@@ -45,7 +51,6 @@ export default function Feedback() {
           </div>
         </div>
       </div>
-      <p className={styles.uni}>Adam Mickiewicz University in Poznan, Poland</p>
     </div>
   );
 }

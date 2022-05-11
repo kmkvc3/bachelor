@@ -65,7 +65,7 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
       timer = setTimeout(() => {
         setIsDelayed(false);
         setIsTimerOn(false);
-      }, 500);
+      }, 420);
       setIsTimerOn(true);
     }
     setSearchContent(searchContent);
@@ -74,6 +74,7 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
   async function requestSearchHints() {
     try {
       const hints: any = await getHints(searchContent, hintType);
+      console.log(hints);
       setIsExact(hints.is_exact);
       setSearchHints(hints.results);
     } catch (error) {
@@ -84,9 +85,9 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
   function HintList({ children }) {
     return (
       <div className={styles.hintList}>
-        <div>{isExact ? null : <i className={styles.didyou}>
-            Did you mean?
-          </i>}</div>
+        <div>
+          {isExact ? null : <i className={styles.didyou}>Did you mean?</i>}
+        </div>
         <>{children}</>
       </div>
     );
@@ -107,7 +108,15 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
         }}
         className={styles.hintElement}
       >
-        {item.name}
+        <div>
+          {item.name}
+          <div className={styles.secondaryData}>
+            <i> {item.taxid ? `(taxid: ${item.taxid})` : hintType === "host" ? "GTDB" : "ICTV"} </i>
+            <i> {item.ac ? `(ac: ${item.ac}) ` : null}</i>
+            <i> {item.assembly ? `(assembly: ${item.assembly}) ` : null} </i>
+          </div>
+        </div>
+        {/* <span className={styles.flag}>{item.taxid ? "NCBI" : type === "host" ? "GTDB" : "ICTV"} </span> */}
       </span>
     );
   }
@@ -141,11 +150,11 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
                 setSearchHints([]);
               }
             }}
-            onClick={(e)=>{
-              if(searchContent !== "") {
+            onClick={(e) => {
+              if (searchContent !== "") {
                 return;
               }
-              if(searchHints.length === 0) {
+              if (searchHints.length === 0) {
                 getSearchHints("");
               }
             }}
@@ -207,7 +216,8 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
         <button className={styles.clearAll}>
           <Link href={"/search"} shallow={true}>
             <p onClick={() => clearSearch()}>
-              Clear <FontAwesomeIcon icon={faTimes} />
+              Clear all
+              {/* <FontAwesomeIcon icon={faTimes} /> */}
             </p>
           </Link>
         </button>

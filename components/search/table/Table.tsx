@@ -2,14 +2,8 @@ import ListElement from "./ListElement";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./ListElement.module.css";
-import { Toaster } from "react-hot-toast";
-import { ThemeContext } from "../../../ThemeContext";
-import { useContext } from "react";
 
-export default function Table({ data, type }) {
-  const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
-
+export default function Table({ data }) {
   return (
     <>
       <div className={`${styles.element} ${styles.header}`}>
@@ -77,48 +71,6 @@ export default function Table({ data, type }) {
         <span>Virus genome type</span>
         <span>Virus assembly level</span>
       </div>
-
-      {darkMode ? (
-        <Toaster
-          toastOptions={{
-            className: "",
-            style: {
-              border: "1px solid #525a63",
-              backgroundColor: "#1c2128",
-              padding: "0.2rem 0.6rem",
-              color: "#adbac7",
-              borderRadius: "0.25rem",
-            },
-            success: {
-              iconTheme: {
-                primary: "#81b29a",
-                secondary: "black",
-              },
-            },
-          }}
-        />
-      ) : (
-        <Toaster
-          toastOptions={{
-            className: "",
-            style: {
-              border: "1px solid #d3d2d2",
-              backgroundColor: "white",
-              padding: "0.2rem 0.6rem",
-              color: "#505050",
-              borderRadius: "0.25rem",
-              boxShadow: "none",
-            },
-            success: {
-              iconTheme: {
-                primary: "#81b29a",
-                secondary: "#505050",
-              },
-            },
-            duration: 3400,
-          }}
-        />
-      )}
 
       <div>
         {data.results.map((data) => (

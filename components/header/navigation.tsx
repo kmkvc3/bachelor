@@ -39,15 +39,13 @@ export default function Navigation() {
             </Link>
           </li>
           <li
-            className={router.pathname.includes("/blast") ? styles.active : ""}
+            className={router.pathname.includes("/help") ? styles.active : ""}
           >
             <Link href="/help">
               <p>Help</p>
             </Link>
           </li>
-          <li
-            className={router.pathname.includes("/blast") ? styles.active : ""}
-          >
+          <li>
             <a target="_blank" href="http://afproject.org/phdaily/">
               <p>Download</p>
             </a>

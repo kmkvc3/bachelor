@@ -13,7 +13,7 @@
   font-size: 1rem;
 }
 .wrapper p {
-    margin: 0.8rem auto;
+    margin: 1rem auto;
 }
 .wrapper a {
   color: var(--main-blue);
@@ -27,8 +27,8 @@
 .dots {
     margin-left: 2rem;
 }
-.points li {
-    margin-top: 0.24rem;
+.points > li {
+    margin-top: 1.2rem;
 }
 .wrapper span {
     color: #d63384;

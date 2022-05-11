@@ -16,7 +16,7 @@ export default function NotFound() {
                 }
                 alt=""
             />
-            <h3>Nothing found</h3>
+            <h3>Nothing found with these filters applied</h3>
         </div>
     );
 }

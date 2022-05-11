@@ -20,6 +20,7 @@
   font-size: 0.94rem;
   color: var(--primary-text);
   line-height: 23px;
+  padding-right: 0.2rem;
 }
 .evidenceWrapper {
   display: flex;

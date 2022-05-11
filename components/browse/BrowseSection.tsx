@@ -25,18 +25,16 @@ export default function BrowseSection({ taxData }) {
     } else {
       setType("host");
     }
-    if (tax[1] === "ictv") {
-      setTaxon("ictv");
+    if (tax[1] === "alt") {
+      setTaxon("alt");
     } else if (tax[1] === "gtdb") {
-      setTaxon("gtdb");
+      setTaxon("alt");
     } else {
       setTaxon("ncbi");
     }
     setData(taxData);
     setPath(tax.join("/"));
   }, [taxData]);
-
-  useEffect(() => {});
 
   return (
     <div>
@@ -83,7 +81,7 @@ export default function BrowseSection({ taxData }) {
             </Link>
             <Link href={`/browse/${type}/alt`}>
               <a className={tax[1] === "alt" ? styles.active : null}>
-                {type === "host" ? "GtDB" : "ICTV"}
+                {type === "host" ? "GTDB" : "ICTV"}
               </a>
             </Link>
           </div>

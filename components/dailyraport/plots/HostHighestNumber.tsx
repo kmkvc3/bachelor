@@ -96,6 +96,9 @@ export default function HostHighestNumber() {
           }),
         },
       ],
+      credits: {
+        enabled: false, // If we want to remove credits.
+      },
     });
   }
   useEffect(() => {

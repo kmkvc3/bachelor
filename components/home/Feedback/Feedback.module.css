@@ -47,12 +47,13 @@
 .contact .person .email {
   color: var(--secondary-text);
   font-weight: normal;
+  margin-bottom: 0.6rem;
 }
 .contact .person .unit {
   color: var(--secondary-text);
   font-weight: normal;
-  font-size: 0.9rem;
-  margin: 0.53rem auto;
+  font-size: 0.82rem;
+  font-style: italic;
 }
 .contact .icons * {
   width: 29px;
