@@ -23,6 +23,7 @@ export default function Search({ recordData }) {
     <Layout>
       <Head>
         <title>Virus</title>
+        <link rel="shortcut icon" href="favicon.svg" />
       </Head>
       {darkMode ? (
         <Toaster

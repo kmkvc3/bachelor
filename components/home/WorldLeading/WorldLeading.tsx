@@ -1,12 +1,8 @@
-import Head from "next/head";
 import styles from "./WorldLeading.module.css";
 import Link from "next/dist/client/link";
-// import { ThemeContext } from "../../../ThemeContext";
-// import { useContext } from "react";
+import Image from "next/image";
 
 export default function WorldLeading() {
-  // const theme = useContext(ThemeContext);
-  // const darkMode = theme.state.darkMode;
   return (
     <div className={styles.wrapper}>
       <div className={styles.welcome}>
@@ -27,8 +23,7 @@ export default function WorldLeading() {
           </div>
         </div>
         <div className={styles.image}>
-          <img src={"cover.svg"} alt="" />
-          {/* <img src={darkMode ? "cover.svg" : "cover-light.svg"} alt="" /> */}
+          <Image layout='fill' src={"/cover.svg"} alt="host attacked by viruses" />
         </div>
       </div>
     </div>

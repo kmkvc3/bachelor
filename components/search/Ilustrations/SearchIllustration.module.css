@@ -1,6 +1,6 @@
 .wrapper {
-  margin: 4rem auto;
-  height: 33vh;
+  margin: 0rem auto 8rem auto;
+  height: 52vh;
   display: flex;
   flex-direction: row;
   align-items: center;

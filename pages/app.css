@@ -5,6 +5,10 @@
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
+h1 {
+  font-size: 2.3rem;
+  color: var(--primary-text);
+}
 html {
   scroll-behavior: smooth;
 }
@@ -28,7 +32,8 @@ body {
   --button-border-color: #bdbdbd;
   --main-blue: #1192e9;
   --searchbar-hover: #dee4eb;
-  --button-height: 34px
+  --button-height: 34px;
+  --mobile-media-width: 710px;
 }
 body.dark {
   background-color: #1c2128;

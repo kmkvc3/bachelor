@@ -42,3 +42,27 @@
 .footer .data span:nth-of-type(1) {
   margin-right: 1rem;
 }
+@media (max-width: 710px) {
+  .footer {
+    padding: 1.2rem var(--content-padding-mobile);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer .data {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer .combio {
+    margin: 0 auto 1rem auto;
+  }
+  .footer .combio div span {
+    margin-right: 0rem;
+  }
+  .footer a {
+    margin-right: 0rem;
+  }
+  .footer .data span {
+    margin: 0.2rem 0;
+  }
+}

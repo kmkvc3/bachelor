@@ -6,7 +6,8 @@ export default function Search() {
   return (
     <Layout>
       <Head>
-        <title>Daily report | PHD</title>
+        <title>Report | PHD</title>
+        <link rel="shortcut icon" href="./favicon.svg" />
       </Head>
       <DailyRaport />
     </Layout>

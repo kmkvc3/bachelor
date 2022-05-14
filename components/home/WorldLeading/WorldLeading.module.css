@@ -12,24 +12,23 @@
   max-width: 1180px;
   margin: 0 auto;
   border-radius: 0px 0px 50px 50px;
-  /* box-shadow: 1px 5px 6px 2px var(--main-light-dark); */
 }
 .text h1 {
   font-size: 2.5rem;
   color: rgb(248, 248, 248);
+  margin-bottom: 0.3rem;
 }
 .text p {
-  font-size: 1rem;
   color: rgb(248, 248, 248);
   opacity: 0.82;
   max-width: 460px;
   line-height: 1.3rem;
 }
 .text {
-    align-items: stretch;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .text span {
   display: inline-block;
@@ -39,14 +38,10 @@
   height: 2px;
 }
 .image {
+  max-width: 460px;
   width: 100%;
-  max-width: 432px;
   object-fit: cover;
-}
-.image img {
-  max-width: 432px;
-  min-width: 320px;
-  width: 100%;
+  position: relative;
 }
 .extras {
   display: flex;

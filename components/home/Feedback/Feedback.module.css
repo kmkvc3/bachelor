@@ -9,8 +9,6 @@
   margin-bottom: 3rem;
 }
 .welcome h1 {
-  font-size: 2.2rem;
-  color: var(--primary-text);
   margin-bottom: 0.2rem;
 }
 .welcome p {
@@ -25,18 +23,23 @@
   flex-direction: column;
   width: 320px;
   margin: 0 auto;
+  position: relative;
+}
+.picWrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.4rem;
+}
+.picWrapper img {
+  border-radius: 50%;
 }
 .contact .person {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 1.4rem;
-}
-.contact img {
-  border-radius: 100%;
-  width: 62px;
-  margin-bottom: 1.4rem;
+  margin-bottom: 3rem;
 }
 .contact .person p {
   margin-bottom: 0.1rem;
@@ -55,10 +58,15 @@
   font-size: 0.82rem;
   font-style: italic;
 }
-.contact .icons * {
+.contact .icons a {
+  position: relative;
+  display: inline-block;
   width: 29px;
+  margin-top: 0.9rem;
+  height: 29px;
+}
+.contact .icons * {
   cursor: pointer;
-  margin-top: 0.6rem;
   filter: brightness(0) saturate(100%) invert(60%) sepia(40%) saturate(4482%) hue-rotate(177deg) brightness(90%) contrast(102%);
 }
 .contact .icons a:nth-of-type(2) {

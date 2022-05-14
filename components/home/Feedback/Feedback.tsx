@@ -1,4 +1,5 @@
 import styles from "./Feedback.module.css";
+import Image from "next/image";
 
 export default function Feedback() {
   return (
@@ -11,8 +12,12 @@ export default function Feedback() {
       </div>
       <div className={styles.contact}>
         <div className={styles.person}>
-          <div>
-            <img src="andrzej_zielezinski.jpg" alt="" />
+          <div className={styles.picWrapper}>
+            <Image
+              layout="fill"
+              src="/andrzej_zielezinski.webp"
+              alt="Andrzej Zielezinski photo"
+            />
           </div>
           <div>
             <p>Andrzej Zielezinski</p>
@@ -24,17 +29,21 @@ export default function Feedback() {
           </div>
           <div className={styles.icons}>
             <a target="_blank" href="https://twitter.com/a_zielezinski">
-              <img src="twitter.svg" alt="" />
+              <Image layout="fill" src="/twitter.svg" alt="twitter icon" />
             </a>
             <a href="mailto:andrzej.zielezinski@amu.edu.pl">
-              <img src="email.svg" alt="" />
+              <Image layout="fill" src="/email.svg" alt="email icon" />
             </a>
           </div>
         </div>
 
         <div className={styles.person}>
-          <div>
-            <img src="jakub_barylski.jpg" alt="" />
+          <div className={styles.picWrapper}>
+            <Image
+              layout="fill"
+              src="/jakub_barylski.webp"
+              alt="Jakub Barylski photo"
+            />
           </div>
           <div>
             <p>Jakub Barylski </p>
@@ -46,7 +55,7 @@ export default function Feedback() {
           </div>
           <div className={styles.icons}>
             <a href="mailto:jakub.barylski@amu.edu.pl">
-              <img src="email.svg" alt="" />
+              <Image layout="fill" src="/email.svg" alt="email icon" />
             </a>
           </div>
         </div>

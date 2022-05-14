@@ -60,12 +60,12 @@ export default function Stats() {
           {inView ? (
             <CountUp
               useEasing={true}
-              duration={3}
+              duration={1.3}
               separator=","
               end={stats.interactions.count}
             ></CountUp>
           ) : (
-            <p>0</p>
+            0
           )}
         </p>
         <p>{stats.interactions.name}</p>
@@ -73,22 +73,13 @@ export default function Stats() {
       <span>...from various sources</span>
       <div className={styles.grid}>
         <div className={styles.patternLeft}>
-          <img
-            src={darkMode ? "p1-dark.svg" : "p1-light.svg"}
-            alt=""
-          />
+          <img src={darkMode ? "p1-dark.svg" : "p1-light.svg"} alt="" />
         </div>
         <div className={styles.patternRight}>
-          <img
-            src={darkMode ? "p1-dark.svg" : "p1-light.svg"}
-            alt=""
-          />
+          <img src={darkMode ? "p1-dark.svg" : "p1-light.svg"} alt="" />
         </div>
         <div className={styles.patternBottom}>
-          <img
-            src={darkMode ? "p3-dark.svg" : "p3-light.svg"}
-            alt=""
-          />
+          <img src={darkMode ? "p3-dark.svg" : "p3-light.svg"} alt="" />
         </div>
         <div>
           <p>{stats.virus_species.count.toLocaleString("en")}</p>

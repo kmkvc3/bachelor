@@ -5,6 +5,7 @@ import ThemeButton from "./ThemeButton";
 import BookmarksIcon from "./BookmarksIcon";
 import { ThemeContext } from "../../ThemeContext";
 import { useContext } from "react";
+import Image from "next/image";
 
 export default function Navigation() {
   const router = useRouter();
@@ -13,10 +14,20 @@ export default function Navigation() {
   return (
     <nav className={styles.navigation}>
       <div>
+        <input className={styles.checkbox} type="checkbox" name="" id="" />
+        <div className={styles.burger}>
+          <span className={styles.line1}></span>
+          <span className={styles.line2}></span>
+          <span className={styles.line3}></span>
+        </div>
         <ul>
           <li className={styles.logo}>
             <Link href="/">
-              <img src={darkMode ? "/logo-dark.svg" : "/logo-light.svg"} alt="" />
+              <Image
+                layout="fill"
+                src={darkMode ? "/logo-dark.svg" : "/logo-light.svg"}
+                alt=""
+              />
             </Link>
           </li>
           <li className={router.pathname == "/search" ? styles.active : ""}>

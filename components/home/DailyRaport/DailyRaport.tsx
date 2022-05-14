@@ -1,8 +1,8 @@
-import Head from "next/head";
 import styles from "./DailyRaport.module.css";
 import Link from "next/dist/client/link";
 import { ThemeContext } from "../../../ThemeContext";
 import { useContext } from "react";
+import Image from "next/image";
 
 export default function DailyRecord() {
   const theme = useContext(ThemeContext);
@@ -11,7 +11,7 @@ export default function DailyRecord() {
     <div className={styles.wrapper}>
       <div className={styles.welcome}>
         <div className={styles.image}>
-          <img src={darkMode ? "stats-dark.svg" : "stats-light.svg"} alt="" />
+          <Image layout='fill' src={darkMode ? "/stats-dark.svg" : "/stats-light.svg"} alt="phage looking at plots" />
         </div>
         <div className={styles.text}>
           <h1>Daily Report</h1>
