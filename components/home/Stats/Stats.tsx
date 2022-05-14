@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import { getBasicStats } from "../../../Api";
 import styles from "./Stats.module.css";
-import CountUp from "react-countup";
-import { useInView } from "react-intersection-observer";
+// import CountUp from "react-countup";
+// import { useInView } from "react-intersection-observer";
 import { ThemeContext } from "../../../ThemeContext";
 import { useContext } from "react";
 
 export default function Stats() {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
-  const { ref, inView } = useInView({
-    threshold: 0.02,
-    triggerOnce: true,
-  });
+  // const { ref, inView } = useInView({
+  //   threshold: 0.02,
+  //   triggerOnce: true,
+  // });
   const [stats, setStats] = useState({
     virus_species: {
       name: "Virus species",
@@ -54,10 +54,11 @@ export default function Stats() {
     setStats(res);
   }
   return (
-    <div ref={ref} className={styles.wrapper}>
+    // <div ref={ref} className={styles.wrapper}>
+    <div className={styles.wrapper}>
       <div className={styles.interactions}>
         <p>
-          {inView ? (
+          {/* {inView ? (
             <CountUp
               useEasing={true}
               duration={1.3}
@@ -66,20 +67,21 @@ export default function Stats() {
             ></CountUp>
           ) : (
             0
-          )}
+          )} */}
+          {stats.interactions.count.toLocaleString("en")}
         </p>
         <p>{stats.interactions.name}</p>
       </div>
       <span>...from various sources</span>
       <div className={styles.grid}>
         <div className={styles.patternLeft}>
-          <img src={darkMode ? "p1-dark.svg" : "p1-light.svg"} alt="" />
+          <img width={"80px"} height={"80px"} src={darkMode ? "p1-dark.svg" : "p1-light.svg"} alt="shapes" />
         </div>
         <div className={styles.patternRight}>
-          <img src={darkMode ? "p1-dark.svg" : "p1-light.svg"} alt="" />
+          <img width={"80px"} height={"80px"} src={darkMode ? "p1-dark.svg" : "p1-light.svg"} alt="shapes" />
         </div>
         <div className={styles.patternBottom}>
-          <img src={darkMode ? "p3-dark.svg" : "p3-light.svg"} alt="" />
+          <img width={"80px"} height={"80px"} src={darkMode ? "p3-dark.svg" : "p3-light.svg"} alt="shapes" />
         </div>
         <div>
           <p>{stats.virus_species.count.toLocaleString("en")}</p>
