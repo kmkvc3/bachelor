@@ -45,3 +45,18 @@
   cursor: pointer;
   border: 1px solid var(--main-light-dark);
 }
+@media (max-width: 710px) {
+  .wrapper {
+    padding: 2rem var(--content-padding-mobile) 2rem var(--content-padding-mobile);
+    margin: 0 auto;
+  }
+  .welcome {
+    flex-direction: column;
+  }
+  .image {
+    margin-bottom:  2rem;
+  }
+  .text {
+    text-align: center;
+  }
+}

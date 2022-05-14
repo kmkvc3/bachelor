@@ -9,6 +9,11 @@ h1 {
   font-size: 2.3rem;
   color: var(--primary-text);
 }
+@media (max-width: 710px) {
+  h1 {
+    font-size: 1.75rem;
+    color: var(--primary-text);
+  }}
 html {
   scroll-behavior: smooth;
 }
