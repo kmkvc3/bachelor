@@ -23,7 +23,7 @@ export default function WorldLeading() {
           </div>
         </div>
         <div className={styles.image}>
-          <Image layout='fill' src={"/cover.svg"} alt="host attacked by viruses" />
+          <Image loading="eager" layout='fill' src={"/cover.svg"} alt="host attacked by viruses" />
         </div>
       </div>
     </div>

@@ -24,6 +24,7 @@ export default function Navigation() {
           <li className={styles.logo}>
             <Link href="/">
               <Image
+                loading="eager"
                 layout="fill"
                 src={darkMode ? "/logo-dark.svg" : "/logo-light.svg"}
                 alt=""
