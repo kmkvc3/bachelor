@@ -95,6 +95,7 @@
   .wrapper .patternRight {
     right: -52px;
     bottom: -74px;
+    display: none;
   }
   .wrapper .patternBottom {
     left: -54px;
