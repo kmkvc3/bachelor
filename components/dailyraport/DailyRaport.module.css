@@ -59,3 +59,17 @@
   width: 100%;
   margin: 0.4rem 0rem 1rem 0;
 }
+@media (max-width: 710px) {
+  .wrapper {
+    padding: 0rem var(--content-padding-mobile);
+  }
+  .wrapper h1 {
+    padding-top: 1.4rem;
+  }
+  .wrapper .sidebar{
+    display: none;
+  }
+  .charts {
+    margin: 1rem 0 0 0;
+  }
+}
