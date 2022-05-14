@@ -4,7 +4,6 @@ import Filters from "./Filters/Filters";
 import { useRouter } from "next/router";
 
 export default function SearchSection({
-  setType,
   setTaxonId,
   setEvidence,
   setAssembly,
@@ -20,7 +19,6 @@ export default function SearchSection({
     <div className={styles.wrapper}>
       <div className={styles.content}>
         <Searchbar
-          setType={setType}
           setTaxonId={setTaxonId}
           setPage={setPage}
         />
