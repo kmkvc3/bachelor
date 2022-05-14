@@ -112,7 +112,7 @@ export default function Searchbar({ setTaxonId, setPage }) {
         className={styles.hintElement}
       >
         <div>
-          {splitted ? (
+          {splitted && searchContent ? (
             <>
               <span className={styles.highlighted}>{searchContent[0].toUpperCase() + searchContent.substring(1)}</span>
               {splitted}
