@@ -29,6 +29,18 @@
   flex-direction: row;
   height: 50px;
 }
+.example {
+  position: absolute;
+  top: 70px;
+  color: var(--secondary-text);
+  text-align: center;
+  width: 100%;
+  max-width: 660px;
+  font-size: 0.9rem;
+}
+.left .example {
+  display: none;
+}
 .searchField .secondaryData {
   margin: 0 auto;
   color: var(--secondary-text);
@@ -138,8 +150,7 @@
   align-items: center;
   padding: 0.62rem;
   padding-left: 2rem;
-  font-weight: bold;
-  color: var(--primary-dark-text);
+  color: var(--secondary-text);
 }
 .hintElement .flag {
   margin-right: 1rem;
@@ -153,8 +164,18 @@
 }
 .hintElement:hover {
   cursor: pointer;
+  color: var(--primary-text);
   background-color: var(--searchbar-hover);
-  color: var(--primary-dark-text);
+}
+.hintElement:nth-last-of-type(1):hover {
+  cursor: pointer;
+  color: var(--primary-text);
+  background-color: var(--searchbar-hover);
+  border-radius: 0 0 14px 14px;
+}
+.hintElement .highlighted {
+  color: var(--primary-text);
+  font-weight: bold;
 }
 .clearAll {
   height: var(--button-height);

@@ -10,7 +10,7 @@ export default function Table({ data }) {
         <span>Virus species</span>
         <span>Host species</span>
         <span>
-          Evidence
+          Source
           <span className={styles.helpIconWrapper}>
             <FontAwesomeIcon
               className={styles.helpIcon}
@@ -46,12 +46,6 @@ export default function Table({ data }) {
                   <p>US</p>
                 </span>
                 <p>UniProt - SwissProt</p>
-              </div>
-              <div>
-                <span className={`${styles.UniProtSwissProt} ${styles.evidence}`}>
-                  <p>UK</p>
-                </span>
-                <p>UniProtKB</p>
               </div>
               <div>
                 <span className={`${styles.VHDB} ${styles.evidence}`}>

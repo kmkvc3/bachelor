@@ -24,7 +24,6 @@ export default function Record({ data }) {
   const [open, setOpen] = useState(false);
   const [bookmark, setBookmark] = useState(null);
   useEffect(() => {
-      console.log(data)
     loadBookmark();
     EventBus.on("remove-bookmark", () => {
       if (!BookmarkHandler.getBookmark(accession)) {
@@ -32,7 +31,7 @@ export default function Record({ data }) {
         setBookmark(null);
       }
     });
-  });
+  }, []);
   function loadBookmark() {
     const localBookmark = BookmarkHandler.getBookmark(accession);
     if (localBookmark) setBookmark(localBookmark);

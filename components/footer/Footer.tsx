@@ -1,37 +1,37 @@
 import styles from "./Footer.module.css";
 import { useEffect, useState } from "react";
 import { getUpdateStats } from "../../Api";
+import Image from "next/image";
 
 export default function Footer() {
-  const [lastUpdatedDate, setLastUpdatedDate] = useState("")
-  const [version, setVersion] = useState("")
+  const [lastUpdatedDate, setLastUpdatedDate] = useState("");
+  const [version, setVersion] = useState("");
 
   async function getStats() {
     try {
       const data: any = await getUpdateStats();
-      setLastUpdatedDate(data.date.update_since)
-      setVersion(data.version)
+      setLastUpdatedDate(data.date.update_since);
+      setVersion(data.version);
     } catch (error) {
       console.log(error);
     }
   }
 
-  useEffect(()=>{
-    getStats()  
-  })
+  useEffect(() => {
+    getStats();
+  }, []);
   return (
     <footer className={styles.footer}>
       <div className={styles.combio}>
-        <span>
-          With <img src="heart.svg" alt="" /> from {" "}
-          <a target="_blank" href="http://www.combio.pl">
-            combio.pl
-          </a>
-        </span>
-        <div>
-          <span>Team</span>
-          <span>Citations</span>
+        With
+        <div className={styles.img}>
+          <Image layout="fill" src="/heart.svg" alt="heart" />
         </div>
+        from
+        <a target="_blank" href="http://www.combio.pl">
+          combio.pl
+        </a>
+        <div></div>
       </div>
       <div className={styles.data}>
         <span>

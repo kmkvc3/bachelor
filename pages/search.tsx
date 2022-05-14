@@ -10,7 +10,7 @@ import { getDbDictonary } from "../Api";
 import TableBottom from "../components/search/TableBottom/TableBottom";
 import { useRouter } from "next/router";
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const availableFilters = await getDbDictonary();
   return {
     props: { availableFilters },
@@ -19,7 +19,6 @@ export async function getServerSideProps(context) {
 
 export default function Search({ availableFilters }) {
   const [taxonId, setTaxonId] = useState("");
-  const [type, setType] = useState("");
   const [page, setPage] = useState(1);
   const [maxPage, setMaxPage] = useState(1);
   const [offset, setOffset] = useState(25);
@@ -32,13 +31,6 @@ export default function Search({ availableFilters }) {
   const [wasDataLoaded, setWasDataLoaded] = useState(false);
   const router = useRouter();
   const { taxon_id } = router.query as any;
-
-  useEffect(() => {
-    const { type } = router.query;
-    if (type) {
-      setType(type as string);
-    }
-  }, []);
 
   useEffect(() => {
     if (taxonId === "") return;
@@ -72,10 +64,9 @@ export default function Search({ availableFilters }) {
   return (
     <Layout>
       <Head>
-        <title>Search</title>
+        <title>Search | PHD</title>
       </Head>
       <SearchSection
-        setType={setType}
         setTaxonId={setTaxonId}
         setEvidence={setEvidence}
         setAssembly={setAssembly}

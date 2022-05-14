@@ -157,13 +157,6 @@ export default function Help() {
             against NCBI Taxonomy to retrieve full taxonomic lineages of hosts
             including their names, ranks, and taxIds. Only prokaryotic host
             species (from Bacteria or Archaea) are included in further steps.
-            For example:
-            <pre>
-              Escherichia coli species 562 Escherichia genus 561
-              Enterobacteriaceae family 543 Enterobacterales order 91347
-              Gammaproteobacteria class 1236 Proteobactertia phylum 1224
-              Bacteria superkingdom 2
-            </pre>
           </li>
           <li>
             An additional taxonomic information (if available) for each

@@ -39,7 +39,7 @@ export default function Feedback() {
           <div>
             <p>Jakub Barylski </p>
             <p className={styles.email}>jakub.barylski@amu.edu.pl</p>
-            <p className={styles.unit}>Molecular Virology Research Unit</p>{" "}
+            <p className={styles.unit}>Department of Molecular Virology</p>{" "}
             <p className={styles.unit}>
               Adam Mickiewicz University in Poznan, Poland
             </p>

@@ -50,7 +50,7 @@ export default function DailyRaport() {
         "#9a8faf",
         "#d5e0e7",
       ],
-    });
+    }, []);
 
     let observerOptions = {
       rootMargin: "0px",

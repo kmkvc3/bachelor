@@ -32,7 +32,7 @@ export default function Browse({ taxData }) {
   return (
     <Layout>
       <Head>
-        <title>Browse</title>
+        <title>Browse | PHD</title>
       </Head>
       <BrowseSection taxData={taxData} />
     </Layout>

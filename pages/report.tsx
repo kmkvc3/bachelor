@@ -6,7 +6,7 @@ export default function Search() {
   return (
     <Layout>
       <Head>
-        <title>Daily report</title>
+        <title>Daily report | PHD</title>
       </Head>
       <DailyRaport />
     </Layout>

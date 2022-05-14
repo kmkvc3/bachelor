@@ -64,6 +64,12 @@ export default function Filters({
         } catch (error) {
             console.log(error);
         }
+        return () => {
+            setEvidenceFilters([]);
+            setAssemblyFilters([]);
+            setGenomeFilters([]);
+            setFiltersToDisplay([]);
+        }
     }, []);
 
     function addEvidenceFilter(filterToAdd: string) {

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Searchbar.module.css";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,7 +8,7 @@ import { generateUrl } from "../../../urlGenerator";
 import Link from "next/link";
 import Spinner from "./Spinner";
 
-export default function Searchbar({ setType, setTaxonId, setPage }) {
+export default function Searchbar({ setTaxonId, setPage }) {
   const [hintType, setHintsType] = useState("virus");
   const [searchbarActive, setSearchbarActive] = useState(false);
   const [searchContent, setSearchContent] = useState("");
@@ -74,7 +74,6 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
   async function requestSearchHints() {
     try {
       const hints: any = await getHints(searchContent, hintType);
-      console.log(hints);
       setIsExact(hints.is_exact);
       setSearchHints(hints.results);
     } catch (error) {
@@ -94,6 +93,10 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
   }
 
   function HintElement({ item }) {
+    const name = item.name;
+    const splitted = searchContent
+      ? item.name.split(searchContent)[1]
+      : item.name;
     const newUrl = generateUrl({
       taxon_id: item.taxon_id,
     });
@@ -103,20 +106,35 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
           router.push(newUrl, undefined, { shallow: true });
           setSearchHints([]);
           setTaxonId(item.taxon_id);
-          setSearchContent(item.name);
+          setSearchContent(name);
           setPage(1);
         }}
         className={styles.hintElement}
       >
         <div>
-          {item.name}
+          {splitted ? (
+            <>
+              <span className={styles.highlighted}>{searchContent}</span>
+              {splitted}
+            </>
+          ) : name === searchContent ? (
+            <span className={styles.highlighted}>{searchContent}</span>
+          ) : (
+            name
+          )}
           <div className={styles.secondaryData}>
-            <i> {item.taxid ? `(taxid: ${item.taxid})` : hintType === "host" ? "GTDB" : "ICTV"} </i>
+            <i>
+              {" "}
+              {item.taxid
+                ? `(taxid: ${item.taxid})`
+                : hintType === "host"
+                ? "GTDB"
+                : "ICTV"}{" "}
+            </i>
             <i> {item.ac ? `(ac: ${item.ac}) ` : null}</i>
             <i> {item.assembly ? `(assembly: ${item.assembly}) ` : null} </i>
           </div>
         </div>
-        {/* <span className={styles.flag}>{item.taxid ? "NCBI" : type === "host" ? "GTDB" : "ICTV"} </span> */}
       </span>
     );
   }
@@ -162,8 +180,8 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
             value={searchContent}
             placeholder={
               hintType == "virus"
-                ? "Search viruses by taxonomic name"
-                : "Search hosts by taxonomic name"
+                ? "Start typing to look for viruses"
+                : "Start typing to look for hosts"
             }
           ></input>
 
@@ -186,7 +204,6 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
               className={hintType == "virus" ? styles.active : null}
               onClick={() => {
                 if (hintType == "virus") return;
-                setType("virus");
                 setHintsType("virus");
                 setSearchContent("");
                 setSearchbarActive(false);
@@ -199,7 +216,6 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
               className={hintType == "host" ? styles.active : null}
               onClick={() => {
                 if (hintType == "host") return;
-                setType("host");
                 setHintsType("host");
                 setSearchContent("");
                 setSearchbarActive(false);
@@ -211,14 +227,17 @@ export default function Searchbar({ setType, setTaxonId, setPage }) {
           </div>
         </div>
         {timerOn ? <Spinner></Spinner> : null}
+
+        <p className={styles.example}>
+          {hintType === "host"
+            ? "Example: Bacteria, Escherichia coli, Bacillales"
+            : "Example: Herelleviridae, Gequatrovirus G4, NC_001421, GCF_000837025"}
+        </p>
       </div>
       {taxon_id ? (
         <button className={styles.clearAll}>
-          <Link href={"/search"} shallow={true}>
-            <p onClick={() => clearSearch()}>
-              Clear all
-              {/* <FontAwesomeIcon icon={faTimes} /> */}
-            </p>
+          <Link href={"search"}>
+            <p onClick={() => clearSearch()}>Clear all</p>
           </Link>
         </button>
       ) : null}

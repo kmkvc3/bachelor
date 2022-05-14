@@ -43,7 +43,7 @@ export default function InteractionsEvidence() {
             this.point.color +
             '">\u25CF</span> <b>' +
             this.point.name +
-            `</b><br>virus count: ${
+            `</b><br>interactions: ${
               this.point.y
             } <b style="font-size: 13px"> (${
               Math.round(this.point.count_percent * 100) / 100
