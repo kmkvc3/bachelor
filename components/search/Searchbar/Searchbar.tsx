@@ -14,7 +14,7 @@ export default function Searchbar({ setTaxonId, setPage }) {
   const [isExact, setIsExact] = useState(false);
   const [isDelayed, setIsDelayed] = useState(true);
   const [timerOn, setIsTimerOn] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(true);
   const [searchHints, setSearchHints] = useState([]);
   const router = useRouter();
   const { taxon_id, type } = router.query;
