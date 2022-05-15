@@ -109,7 +109,7 @@
 .navigation .checkbox {
   position: absolute;
   display: none;
-  height: 26px;
+  height: 36px;
   width: 32px;
   top: 10px;
   left: var(--content-padding-mobile);

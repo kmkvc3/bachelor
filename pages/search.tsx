@@ -85,7 +85,6 @@ export default function Search({ availableFilters }) {
             setPage={setPage}
             offset={offset}
             setOffset={setOffset}
-            data={data}
           />
         </>
       ) : (

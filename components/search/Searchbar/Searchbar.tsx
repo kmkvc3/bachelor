@@ -14,6 +14,7 @@ export default function Searchbar({ setTaxonId, setPage }) {
   const [isExact, setIsExact] = useState(false);
   const [isDelayed, setIsDelayed] = useState(true);
   const [timerOn, setIsTimerOn] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [searchHints, setSearchHints] = useState([]);
   const router = useRouter();
   const { taxon_id, type } = router.query;
@@ -59,6 +60,7 @@ export default function Searchbar({ setTaxonId, setPage }) {
 
   async function getSearchHints(searchContent) {
     clearTimeout(timer);
+    setIsLoaded(false)
     setIsDelayed(true);
     if (!timerOn) {
       timer = setTimeout(() => {
@@ -75,6 +77,7 @@ export default function Searchbar({ setTaxonId, setPage }) {
       const hints: any = await getHints(searchContent, hintType);
       setIsExact(hints.is_exact);
       setSearchHints(hints.results);
+      setIsLoaded(true);
     } catch (error) {
       console.log(error);
     }
@@ -152,7 +155,7 @@ export default function Searchbar({ setTaxonId, setPage }) {
               : styles.searchField
           }
         >
-          {timerOn ? <Spinner></Spinner> : null}
+          {!isLoaded ? <Spinner></Spinner> : null}
 
           <FontAwesomeIcon
             icon={faSearch}
