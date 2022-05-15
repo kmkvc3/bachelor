@@ -244,4 +244,13 @@
   .tableHeader p {
     padding: 0.76rem;
   }
+  .lineage * {
+    font-size: 0.88rem;
+  }
+  .taxonTree {
+    width: 14px;
+    padding: 0.26rem 0;
+    margin-right: 0.3rem;
+    margin-left: 0.5rem;
+  }
 }
