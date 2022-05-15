@@ -1,35 +1,40 @@
 .header {
-    margin: 2.2rem 0 0.1rem 0;
-    display: flex;
-    flex-direction: row;
-    border-radius: var(--buttons-border-radius) var(--buttons-border-radius) 0 0;
-    color: var(--primary-text);
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
+  margin: 2.2rem 0 0.1rem 0;
+  display: flex;
+  flex-direction: row;
+  border-radius: var(--buttons-border-radius) var(--buttons-border-radius) 0 0;
+  color: var(--primary-text);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
 }
 .header .back {
-    margin-right: 1.25rem;
+  margin-right: 1.25rem;
 }
 .header a {
-    color: var(--main-blue);
-    text-decoration: none;
+  color: var(--main-blue);
+  text-decoration: none;
 }
 .header a:hover {
-    color: var(--main-blue);
-    font-weight: normal;
-    text-decoration: underline;
+  color: var(--main-blue);
+  font-weight: normal;
+  text-decoration: underline;
 }
 .header a:nth-last-child(1) {
-    color: var(--primary-text);
-    font-weight: normal;
+  color: var(--primary-text);
+  font-weight: normal;
 }
 .header a:nth-last-child(1):hover {
-    color: var(--primary-text);
-    font-weight: normal;
-    text-decoration: none;
+  color: var(--primary-text);
+  font-weight: normal;
+  text-decoration: none;
 }
 .header span {
-    margin: 0 0.2rem;
-    color: var(--secondary-text);
+  margin: 0 0.2rem;
+  color: var(--secondary-text);
+}
+@media (max-width: 710px) {
+  .header {
+    margin: 1.6rem 0 0.1rem 0;
+  }
 }

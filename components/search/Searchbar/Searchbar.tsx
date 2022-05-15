@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getHints } from "../../../Api";
 import { useRouter } from "next/router";
 import { generateUrl } from "../../../urlGenerator";
-import Link from "next/link";
 import Spinner from "./Spinner";
 
 export default function Searchbar({ setTaxonId, setPage }) {
@@ -94,12 +93,23 @@ export default function Searchbar({ setTaxonId, setPage }) {
 
   function HintElement({ item }) {
     const name = item.name;
-    const splitted = searchContent
-      ? item.name.split(searchContent)[1]
-      : item.name;
+
     const newUrl = generateUrl({
       taxon_id: item.taxon_id,
     });
+
+    const firstHintLetter = item.name[0] ? item.name[0] : "";
+    const firstSearchLetter = searchContent[0] ? searchContent[0] : "";
+
+    const isUpper =
+      firstHintLetter.toUpperCase() === firstSearchLetter.toUpperCase();
+    const firstLetter = isUpper ? firstHintLetter : firstSearchLetter;
+
+    const nname = item.name.replace(
+      firstLetter + searchContent.substring(1),
+      `<strong>${firstLetter + searchContent.substring(1)}</strong>`
+    );
+
     return (
       <span
         onClick={() => {
@@ -112,16 +122,7 @@ export default function Searchbar({ setTaxonId, setPage }) {
         className={styles.hintElement}
       >
         <div>
-          {splitted && searchContent ? (
-            <>
-              <span className={styles.highlighted}>{searchContent[0].toUpperCase() + searchContent.substring(1)}</span>
-              {splitted}
-            </>
-          ) : name === searchContent ? (
-            <span className={styles.highlighted}>{searchContent}</span>
-          ) : (
-            name
-          )}
+          <p dangerouslySetInnerHTML={{ __html: nname }}></p>
           <div className={styles.secondaryData}>
             <i>
               {" "}
@@ -151,6 +152,8 @@ export default function Searchbar({ setTaxonId, setPage }) {
               : styles.searchField
           }
         >
+          {timerOn ? <Spinner></Spinner> : null}
+
           <FontAwesomeIcon
             icon={faSearch}
             color={"#ffffff"}
@@ -226,7 +229,6 @@ export default function Searchbar({ setTaxonId, setPage }) {
             </div>
           </div>
         </div>
-        {timerOn ? <Spinner></Spinner> : null}
 
         <p className={styles.example}>
           {hintType === "host"
@@ -234,13 +236,13 @@ export default function Searchbar({ setTaxonId, setPage }) {
             : "Example: Herelleviridae, Gequatrovirus G4, NC_001421, GCF_000837025"}
         </p>
       </div>
-      {taxon_id ? (
+      {/* {taxon_id ? (
         <button className={styles.clearAll}>
           <Link href={"search"}>
             <p onClick={() => clearSearch()}>Clear all</p>
           </Link>
         </button>
-      ) : null}
+      ) : null} */}
     </div>
   );
 }

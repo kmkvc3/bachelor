@@ -22,16 +22,15 @@
   .wrapper {
     flex-direction: column;
     text-align: center;
-    padding: 1rem 0;
+    height: 50vh;
   }
-  .wrapper > h1 {
-    font-size: 26px;
-    margin-bottom: 0.6rem;
-    width: 100%;
+  .wrapper p {
+    margin-top: 2.4rem;
+    text-align: center;
   }
-  .wrapper > p {
-    max-width: 280px;
+  .wrapper img {
+    margin-top: 2rem;
     margin-right: 0rem;
-    margin-bottom: 1.5rem;
+    width: 210px;
   }
 }

@@ -82,7 +82,7 @@ export default function ListElement({ tableData }) {
                 className={styles.branch}
             >
                 <strong>{tableData.host.name}</strong>
-                <FontAwesomeIcon icon={faCodeBranch} />
+                <FontAwesomeIcon className={styles.icon} icon={faCodeBranch} />
             </span>
             <span className={styles.evidenceWrapper}>
                 {tableData.evidence.map((evidence) => (

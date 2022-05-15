@@ -142,37 +142,33 @@
 .virus_link:hover {
   cursor: pointer;
 }
-@media (max-width: 920px) {
+@media (max-width: 710px) {
   .element {
     grid-column-gap: 0.4rem;
-    grid-template-columns: 2.4fr 3.6fr 3.6fr 2fr 1.5fr 1.4fr 0.2fr;
-  }
-  .element .evidence {
-    border-radius: 100%;
-    color: white;
-    width: 20px;
-    height: 20px;
-    margin: 1px;
+    grid-template-columns: 3fr 3fr 3fr 3fr;
+    overflow-x: scroll;
   }
   .evidence p {
     line-height: 20px;
-    font-size: 11px;
   }
   .element span {
-    font-size: 13px;
+    display: block;
+    min-width: 150px;
     color: var(--secondary-text);
   }
-  .element strong {
-    font-size: 13px;
-    color: var(--primary-text);
+  .element .source {
+    display: none;
+  }
+  .element .icon {
+    display: none;
+  }
+  .element .evidence {
+    display: none;
+  }
+  .element .evidenceWrapper {
+    display: none;
   }
   .helpIcon {
     display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .element {
-    overflow-x: scroll;
   }
 }

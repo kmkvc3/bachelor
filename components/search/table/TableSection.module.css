@@ -16,7 +16,7 @@
 .results strong {
   margin-left: 0.1rem;
 }
-@media (max-width: 920px) {
+@media (max-width: 710px) {
   .content {
     padding: 1.2rem var(--content-padding-mobile);
     justify-content: center;

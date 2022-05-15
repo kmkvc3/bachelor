@@ -4,9 +4,9 @@
 .content {
   padding: 4.7rem var(--content-padding) 2.4rem var(--content-padding);
 }
-@media (max-width: 920px) {
+@media (max-width: 710px) {
   .content {
-    padding: 2.4rem var(--content-padding-mobile) 2.4rem var(--content-padding-mobile);
+    padding: 2.4rem var(--content-padding-mobile);
     justify-content: center;
   }
 }

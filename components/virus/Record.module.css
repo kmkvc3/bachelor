@@ -182,7 +182,6 @@
 .evidence p {
   line-height: 24px;
   color: white;
-
 }
 .RefSeq {
   background-color: #51b27e;
@@ -191,7 +190,7 @@
   color: white;
 }
 .MVP {
-  background-color: #67809F;
+  background-color: #67809f;
 }
 .MVP p {
   color: white;
@@ -206,13 +205,13 @@
   color: white;
 }
 .UniProtSwissProt {
-  background-color: #F3C200;
+  background-color: #f3c200;
 }
 .UniProtSwissProt p {
   color: white;
 }
 .UniProtKB {
-  background-color: #F3C200;
+  background-color: #f3c200;
 }
 .VHDB {
   background-color: #f23f6c;
@@ -221,5 +220,28 @@
   color: white;
 }
 .NCBI {
-  background-color: #2AB4C0;
+  background-color: #2ab4c0;
+}
+@media (max-width: 710px) {
+  .wrapper {
+    padding: 0rem var(--content-padding-mobile) 3rem
+      var(--content-padding-mobile);
+  }
+  .table {
+    overflow-x: scroll;
+    width: 100%;
+  }
+  .tableHeader {
+    padding: 0.1rem;
+    background-color: transparent;
+  }
+  .row {
+    border: none;
+  }
+  .table p {
+    min-width: 180px;
+  }
+  .tableHeader p {
+    padding: 0.76rem;
+  }
 }

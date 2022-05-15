@@ -106,7 +106,7 @@ export default function BrowseSection({ taxData }) {
                 )}
 
                 <span>{tax.rank}</span>
-                <span>{tax.interactions}</span>
+                <span className={styles.interactions}>{tax.interactions}</span>
                 <button className={styles.searchButton}>
                   <a
                     target="_blank"

@@ -40,7 +40,7 @@
   margin-top: 0.33rem;
   font-size: 0.9rem;
 }
-.wrapper > div.interactions p {
+.wrapper > div.interactions * {
   font-size: 1.54rem;
   margin-right: 1rem;
   font-weight: bold;
@@ -101,7 +101,7 @@
     left: -54px;
     bottom: -74px;
   }
-  .wrapper > div.interactions p {
+  .wrapper > div.interactions * {
     font-size: 1.3rem;
   }
   .wrapper > div.interactions p:nth-child(2) {

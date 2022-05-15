@@ -114,3 +114,34 @@
   margin: 8rem auto;
   color: var(--secondary-text);
 }
+@media (max-width: 710px) {
+  .wrapper {
+    padding: 0rem var(--content-padding-mobile) 3rem var(--content-padding-mobile);
+  }
+  .description img {
+    width: 100px;
+    margin-bottom: 2rem;
+  }
+  .description {
+    margin: 2rem auto;
+  }
+  .description div p {
+    max-width: 320px;
+  }
+  .element {
+    grid-template-columns: 3fr 1fr 0.6fr;
+    justify-content: center;
+  }
+  .welcome {
+    flex-direction: column;
+  }
+  .selection {
+    flex-direction: column;
+  }
+  .interactions {
+    display: none;
+  }
+  .selection div {
+    margin-bottom: 1.4rem;
+  }
+}

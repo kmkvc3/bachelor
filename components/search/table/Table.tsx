@@ -9,7 +9,7 @@ export default function Table({ data }) {
       <div className={`${styles.element} ${styles.header}`}>
         <span>Virus species</span>
         <span>Host species</span>
-        <span>
+        <span className={styles.source}>
           Source
           <span className={styles.helpIconWrapper}>
             <FontAwesomeIcon

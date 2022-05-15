@@ -1,29 +1,44 @@
 import styles from "./DailyRaport.module.css";
-import dynamic from "next/dynamic";
-const VirusTaxonomy = dynamic(() => import("./plots/VirusTaxonomy"));
-const MostRepresentativeVirus = dynamic(
-  () => import("./plots/MostRepresentativeVirus")
-);
-const VirusGenomeType = dynamic(() => import("./plots/VirusGenomeType"));
-const AssemblyLevel = dynamic(() => import("./plots/AssemblyLevel"));
-const VirusGenomeDistro = dynamic(() => import("./plots/VirusGenomeDistro"));
-const HostHighestNumber = dynamic(() => import("./plots/HostHighestNumber"));
-const VirusGenomeSource = dynamic(() => import("./plots/VirusGenomeSource"));
-const Summary = dynamic(() => import("./plots/Summary"));
-const MostRepresentativeHost = dynamic(
-  () => import("./plots/MostRepresentativeHost")
-);
-const HostPerVirus = dynamic(() => import("./plots/HostPerVirus"));
-const InteractionsEvidence = dynamic(
-  () => import("./plots/InteractionsEvidence")
-);
+// import dynamic from "next/dynamic";
+// const VirusTaxonomy = dynamic(() => import("./plots/VirusTaxonomy"));
+import VirusTaxonomy from "./plots/VirusTaxonomy";
+import MostRepresentativeVirus from "./plots/MostRepresentativeVirus";
+import VirusGenomeType from "./plots/VirusGenomeType";
+import AssemblyLevel from "./plots/AssemblyLevel";
+import VirusGenomeDistro from "./plots/VirusGenomeDistro";
+import HostHighestNumber from "./plots/HostHighestNumber";
+import VirusGenomeSource from "./plots/VirusGenomeSource";
+import Summary from "./plots/Summary";
+import HostPerVirus from "./plots/HostPerVirus";
+import InteractionsEvidence from "./plots/InteractionsEvidence";
+import Archea from "./plots/Archea";
+import Bacteria from "./plots/Bacteria";
+import SmallestGenoms from "./plots/SmallestGenoms";
+import LargestGenoms from "./plots/LargestGenoms";
+import MostRepresentativeHost from "./plots/MostRepresentativeHost";
+// const MostRepresentativeVirus = dynamic(
+//   () => import("./plots/MostRepresentativeVirus")
+// );
+// const VirusGenomeType = dynamic(() => import("./plots/VirusGenomeType"));
+// const AssemblyLevel = dynamic(() => import("./plots/AssemblyLevel"));
+// const VirusGenomeDistro = dynamic(() => import("./plots/VirusGenomeDistro"));
+// const HostHighestNumber = dynamic(() => import("./plots/HostHighestNumber"));
+// const VirusGenomeSource = dynamic(() => import("./plots/VirusGenomeSource"));
+// const Summary = dynamic(() => import("./plots/Summary"));
+// const MostRepresentativeHost = dynamic(
+//   () => import("./plots/MostRepresentativeHost")
+// );
+// const HostPerVirus = dynamic(() => import("./plots/HostPerVirus"));
+// const InteractionsEvidence = dynamic(
+//   () => import("./plots/InteractionsEvidence")
+// );
 import { useEffect } from "react";
 import { useState } from "react";
 import Highcharts from "highcharts";
-const Archea = dynamic(() => import("./plots/Archea"));
-const Bacteria = dynamic(() => import("./plots/Bacteria"));
-const SmallestGenoms = dynamic(() => import("./plots/SmallestGenoms"));
-const LargestGenoms = dynamic(() => import("./plots/LargestGenoms"));
+// const Archea = dynamic(() => import("./plots/Archea"));
+// const Bacteria = dynamic(() => import("./plots/Bacteria"));
+// const SmallestGenoms = dynamic(() => import("./plots/SmallestGenoms"));
+// const LargestGenoms = dynamic(() => import("./plots/LargestGenoms"));
 
 export default function DailyRaport() {
   const [id, setId] = useState("TaxDiversity");

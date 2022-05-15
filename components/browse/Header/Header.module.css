@@ -10,3 +10,12 @@
     position: sticky;
     top: 0px;
 }
+@media (max-width: 710px) {
+    .header {
+        grid-template-columns: 3fr 1fr 0.6fr;
+
+    }
+    .interactions {
+        display: none;
+    }
+}

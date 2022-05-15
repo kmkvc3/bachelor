@@ -55,9 +55,10 @@
 .wrapperForSpinner {
   display: flex;
   flex-direction: row;
+  position: relative;
   width: 740px;
   margin: 0 auto;
-  padding-left: 2.2rem;
+  /* padding-left: 2.2rem; */
 }
 .left .wrapperForSpinner {
   width: 100%;
@@ -173,7 +174,7 @@
   background-color: var(--searchbar-hover);
   border-radius: 0 0 14px 14px;
 }
-.hintElement .highlighted {
+.hintElement strong {
   color: var(--primary-text);
   font-weight: bold;
 }
@@ -202,4 +203,7 @@
 .clearAll a {
   text-decoration: none;
   color: var(--secondary-text);
+}
+@media (max-width: 710px) {
+  
 }

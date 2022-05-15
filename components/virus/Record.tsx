@@ -219,41 +219,46 @@ export default function Record({ data }) {
 
       <div className={styles.representative}>
         <h2 className={styles.genome}>Genome assemblies</h2>
-        <div className={styles.tableHeader}>
-          <p>Assembly accession</p>
-          <p>Assembly level</p>
-          <p>Genome length</p>
-          <p>Sequence accessions</p>
-          <p>Representative</p>
-        </div>
-        {data.genome_assemblies.map((other) => (
-          <div className={styles.row}>
-            <p>
-              <a target="_blank" href={other.url}>
-                {other.name}
-              </a>
-            </p>
-            <p>{other.assembly_level}</p>
-            <p>{other.length}</p>
-            <p>
-              {other.sequences.map((seq, i) => (
-                <p className={styles.sequence}>
-                  <a target="_blank" href={seq.url}>
-                   {seq.name}
-                  </a>
-                  {other.sequences.length > 1 && other.sequences.length-1 > i ? <span>, </span> : null}
-                </p>
-              ))}
-            </p>
-            {other.is_representative ? (
-              <div className={styles.representativeIcon}>
-                <FontAwesomeIcon icon={faCheckCircle} />
-              </div>
-            ) : (
-              <div className={styles.none}>-</div>
-            )}
+        <div className={styles.table}>
+          <div className={styles.tableHeader}>
+            <p>Assembly accession</p>
+            <p>Assembly level</p>
+            <p>Genome length</p>
+            <p>Sequence accessions</p>
+            <p>Representative</p>
           </div>
-        ))}
+          {data.genome_assemblies.map((other) => (
+            <div className={styles.row}>
+              <p>
+                <a target="_blank" href={other.url}>
+                  {other.name}
+                </a>
+              </p>
+              <p>{other.assembly_level}</p>
+              <p>{other.length}</p>
+              <p>
+                {other.sequences.map((seq, i) => (
+                  <p className={styles.sequence}>
+                    <a target="_blank" href={seq.url}>
+                      {seq.name}
+                    </a>
+                    {other.sequences.length > 1 &&
+                    other.sequences.length - 1 > i ? (
+                      <span>, </span>
+                    ) : null}
+                  </p>
+                ))}
+              </p>
+              {other.is_representative ? (
+                <div className={styles.representativeIcon}>
+                  <FontAwesomeIcon icon={faCheckCircle} />
+                </div>
+              ) : (
+                <div className={styles.none}>-</div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
       <div className={styles.representative}>
         <h2>Hosts </h2>
@@ -274,8 +279,8 @@ export default function Record({ data }) {
                 {host.name}
                 <FontAwesomeIcon icon={faCodeBranch} />
               </span>
-              {host.evidence.map(evidence=>{
-                  return <EvidenceIcon evidence_name={evidence} />
+              {host.evidence.map((evidence) => {
+                return <EvidenceIcon evidence_name={evidence} />;
               })}
             </p>
           </>

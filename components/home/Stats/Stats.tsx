@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getBasicStats } from "../../../Api";
 import styles from "./Stats.module.css";
-// import CountUp from "react-countup";
+import CountUp from "react-countup";
 // import { useInView } from "react-intersection-observer";
 import { ThemeContext } from "../../../ThemeContext";
 import { useContext } from "react";
@@ -54,34 +54,41 @@ export default function Stats() {
     setStats(res);
   }
   return (
-    // <div ref={ref} className={styles.wrapper}>
     <div className={styles.wrapper}>
       <div className={styles.interactions}>
-        <p>
-          {/* {inView ? (
-            <CountUp
-              useEasing={true}
-              duration={1.3}
-              separator=","
-              end={stats.interactions.count}
-            ></CountUp>
-          ) : (
-            0
-          )} */}
-          {stats.interactions.count.toLocaleString("en")}
-        </p>
+        <CountUp
+          useEasing={true}
+          duration={1.2}
+          separator=","
+          end={stats.interactions.count}
+        ></CountUp>
         <p>{stats.interactions.name}</p>
       </div>
       <span>...from various sources</span>
       <div className={styles.grid}>
         <div className={styles.patternLeft}>
-          <img width={"80px"} height={"80px"} src={darkMode ? "p1-dark.svg" : "p1-light.svg"} alt="shapes" />
+          <img
+            width={"80px"}
+            height={"80px"}
+            src={darkMode ? "p1-dark.svg" : "p1-light.svg"}
+            alt="shapes"
+          />
         </div>
         <div className={styles.patternRight}>
-          <img width={"80px"} height={"80px"} src={darkMode ? "p1-dark.svg" : "p1-light.svg"} alt="shapes" />
+          <img
+            width={"80px"}
+            height={"80px"}
+            src={darkMode ? "p1-dark.svg" : "p1-light.svg"}
+            alt="shapes"
+          />
         </div>
         <div className={styles.patternBottom}>
-          <img width={"80px"} height={"80px"} src={darkMode ? "p3-dark.svg" : "p3-light.svg"} alt="shapes" />
+          <img
+            width={"80px"}
+            height={"80px"}
+            src={darkMode ? "p3-dark.svg" : "p3-light.svg"}
+            alt="shapes"
+          />
         </div>
         <div>
           <p>{stats.virus_species.count.toLocaleString("en")}</p>
