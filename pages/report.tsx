@@ -7,7 +7,7 @@ export default function Search() {
     <Layout>
       <Head>
         <title>Report | PHD</title>
-        <link rel="shortcut icon" href="./favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
       </Head>
       <DailyRaport />
     </Layout>

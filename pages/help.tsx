@@ -11,7 +11,7 @@ export default function Help() {
     <Layout>
       <Head>
         <title>Help | PHD</title>
-        <link rel="shortcut icon" href="favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
       </Head>
       <div className={styles.wrapper}>
         <h1>About</h1>

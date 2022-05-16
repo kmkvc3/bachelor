@@ -65,7 +65,7 @@ export default function Search({ availableFilters }) {
     <Layout>
       <Head>
         <title>Search | PHD</title>
-        <link rel="shortcut icon" href="./favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
       </Head>
       <SearchSection
         setTaxonId={setTaxonId}

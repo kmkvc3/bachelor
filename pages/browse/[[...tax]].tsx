@@ -33,7 +33,7 @@ export default function Browse({ taxData }) {
     <Layout>
       <Head>
         <title>Browse | PHD</title>
-        <link rel="shortcut icon" href="favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
       </Head>
       <BrowseSection taxData={taxData} />
     </Layout>

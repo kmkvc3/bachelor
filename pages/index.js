@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <link rel="shortcut icon" href="./favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
         <title>
           Phage and Host Daily | PHD
         </title>
