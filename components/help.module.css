@@ -1,6 +1,7 @@
 .wrapper {
     margin: 4.4rem auto 10rem auto;
     padding: 0 var(--content-padding);
+    max-width: var(--content);
 }
 .wrapper h1 {
   color: var(--primary-text);
@@ -13,7 +14,7 @@
   font-size: 1rem;
 }
 .wrapper p {
-    margin: 1rem auto;
+  margin: 1rem auto;
 }
 .wrapper a {
   color: var(--main-blue);
@@ -29,6 +30,7 @@
 }
 .points > li {
     margin-top: 1.35rem;
+    margin-left: 1.1rem;
 }
 .wrapper span {
     color: #d63384;
