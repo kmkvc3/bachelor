@@ -32,9 +32,7 @@ export default function MostRepresentativeHost() {
             this.point.color +
             '">\u25CF</span> <b>' +
             this.point.name +
-            `</b><br>virus count: ${
-              this.point.y
-            } <b style="font-size: 13px"> (${
+            `</b><br>host count: ${this.point.y} <b style="font-size: 13px"> (${
               Math.round(this.point.percentage * 100) / 100
             }%) </b>`
           );
@@ -91,8 +89,8 @@ export default function MostRepresentativeHost() {
     <div className={styles.wrapper}>
       <h4> Most abundant host taxa</h4>
       <p>
-        Ten most abundant host classes (represented by the highest number of
-        known host species) at the class level.
+        Ten most abundant host taxonomic units (represented by the highest number
+        of known host species) at the {pickedOption} level.
       </p>
       <div className={styles.select}>
         <Select

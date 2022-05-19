@@ -32,7 +32,7 @@ export default function MostRepresentativeVirus() {
             this.point.color +
             '">\u25CF</span> <b>' +
             this.point.name +
-            `</b><br>host count: ${
+            `</b><br>virus count: ${
               this.point.y
             }<b style="font-size: 13px"> (${
               Math.round(this.point.percentage * 100) / 100

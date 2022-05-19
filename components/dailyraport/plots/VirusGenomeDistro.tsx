@@ -70,12 +70,12 @@ export default function VirusGenomeDistro() {
         formatter: function () {
           return (
             "Virus species: " +
-            "<b>" +
+            "<b style='font-size: 13px'>" +
             this.point.y +
             "</b>" +
             "<br/>" +
             "Genome size: " +
-            "<b>" +
+            "<b style='font-size: 13px'> " +
             this.point.x +
             " kb</b>" +
             "</b>"

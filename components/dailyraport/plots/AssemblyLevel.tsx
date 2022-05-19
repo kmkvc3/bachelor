@@ -38,7 +38,7 @@ export default function AssemblyLevel() {
           return (
             'Genomes count: <b style="font-size: 13px">' +
             Highcharts.numberFormat(this.point.y, 0) +
-            "</b> (<b style='font-size: 13px'>" +
+            "</b> (<b style='font-size: 13x'>" +
             Math.round(this.point.percent * 100) / 100 +
             "%</b>)"
           );

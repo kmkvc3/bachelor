@@ -56,8 +56,8 @@ export default function BrowseSection({ taxData }) {
             />
           )}
           <p>
-            All of our database records filtered by hosts and viruses. Discover
-            the taxonomy by clicking on <strong> Tax name</strong>.
+            Hierarchical exploration of virus-host interactions through virus or
+            host taxonomies based on NCBI or ICTV/GTDB Taxonomy.
           </p>
         </div>
       </div>
