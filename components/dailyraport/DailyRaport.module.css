@@ -3,6 +3,8 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 0rem var(--content-padding);
+  width: var(--content);
+  margin: 0 auto;
 }
 .sidebar {
   height: 100vh;
