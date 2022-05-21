@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 0rem var(--content-padding);
-  width: var(--content);
+  max-width: var(--content);
   margin: 0 auto;
 }
 .sidebar {
@@ -61,7 +61,7 @@
   width: 100%;
   margin: 0.4rem 0rem 1rem 0;
 }
-@media (max-width: 710px) {
+@media (max-width: 1010px) {
   .wrapper {
     padding: 0rem var(--content-padding-mobile);
   }
