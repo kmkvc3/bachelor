@@ -48,6 +48,42 @@ const getInteractions = (
   return data;
 };
 
+export const download = (
+  taxon_id,
+  evidence,
+  assembly_level,
+  molecule,
+  sort
+) => {
+  let body = {};
+  if (evidence) {
+    if (evidence.length) {
+      Object.assign(body, { evidence: evidence });
+    }
+  }
+  if (molecule) {
+    if (molecule.length) {
+      Object.assign(body, { genome_type: molecule });
+    }
+  }
+  if (assembly_level) {
+    if (assembly_level.length) {
+      Object.assign(body, { assembly_level: assembly_level });
+    }
+  }
+  if (sort) {
+    Object.assign(body, { sort: sort });
+  }
+  Object.assign(body, {
+    taxon_id: taxon_id,
+  });
+
+  return fetch(`${BASE_URL}/api/search/interactions/download/`, {
+    method: "POST",
+    body: JSON.stringify(body),
+  }).then((res) => res.blob());
+};
+
 const getHints = (query, type) => {
   const data = fetch(`${BASE_URL}/api/search/hints/${type}?query=${query}`, {
     method: "GET",
@@ -203,14 +239,14 @@ export const getHostPerVirus = () => {
 };
 
 export const getVirusHostDB = () => {
-  const data = fetch(`${BASE_URL}/api/stats/interaction/evidence/ `, {
+  const data = fetch(`${BASE_URL}/api/stats/interaction/evidence/`, {
     method: "GET",
   }).then((res) => res.json());
   return data;
 };
 
 export const getSummary = () => {
-  const data = fetch(`${BASE_URL}/api/stats/basic/ `, {
+  const data = fetch(`${BASE_URL}/api/stats/basic/`, {
     method: "GET",
   }).then((res) => res.json());
   return data;
@@ -241,9 +277,12 @@ export const getArchea = () => {
 };
 
 export const getTopSize = (param) => {
-  const data = fetch(`${BASE_URL}/api/stats/virus/genome/size/top/?reverse=${param}`, {
-    method: "GET",
-  }).then((res) => res.json());
+  const data = fetch(
+    `${BASE_URL}/api/stats/virus/genome/size/top/?reverse=${param}`,
+    {
+      method: "GET",
+    }
+  ).then((res) => res.json());
   return data;
 };
 export {

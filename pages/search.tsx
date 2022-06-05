@@ -78,7 +78,13 @@ export default function Search({ availableFilters }) {
       />
       {wasDataLoaded && taxon_id ? (
         <>
-          <TableSection isDataLoaded={isDataLoaded} data={data} />
+          <TableSection isDataLoaded={isDataLoaded} filters={{
+            taxon_id,
+            evidence,
+            assembly_level,
+            molecule,
+            sort,
+          }} data={data} />
           <TableBottom
             page={page}
             maxPage={maxPage}

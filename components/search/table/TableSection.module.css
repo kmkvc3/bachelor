@@ -6,11 +6,13 @@
   max-width: var(--content);
   margin: 0 auto;
 }
-.results span {
-  /* color: var(--primary-text) */
-}
 .results {
   padding-bottom: 1.06rem;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .results p {
   color: var(--secondary-text);

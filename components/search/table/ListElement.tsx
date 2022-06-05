@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Modal from "../../modal/Modal";
 import LineageContent from "./LineageContent";
 import { useState } from "react";
+import { useEffect } from "react";
 
 function EvidenceIcon({ evidence_name }) {
     switch (evidence_name) {
@@ -91,7 +92,7 @@ export default function ListElement({ tableData }) {
             </span>
             <span>{tableData.virus.genome_type}</span>
             <span>{tableData.virus.assembly_level}</span>
-            <span className={styles.bookmark}></span>
+            <span>{tableData.virus.genome_length.toLocaleString("en")} bp</span>
 
             {open ? (
                 <Modal title="Lineage" opened={open} setClose={setOpen}>

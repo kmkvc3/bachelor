@@ -1,8 +1,9 @@
 .element {
   width: 100%;
   display: grid;
-  grid-template-columns: 3.42fr 3.42fr 2.7fr 1.92fr 1.80fr;
+  grid-template-columns: 3.15fr 3.15fr 2fr 1.92fr 2.10fr 2fr;
   align-items: center;
+  column-gap: 0.2rem;
   padding: 0.94rem;
   border-bottom: var(--button-border) solid var(--main-light-dark);
   border-left: var(--button-border) solid var(--main-light-dark);
@@ -145,7 +146,7 @@
 @media (max-width: 710px) {
   .element {
     grid-column-gap: 0.4rem;
-    grid-template-columns: 3fr 3fr 3fr 3fr;
+    grid-template-columns: 3fr 3fr 3fr 3fr 3fr;
     overflow-x: scroll;
   }
   .evidence p {

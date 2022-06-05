@@ -25,8 +25,8 @@ export default function Filters({
         { value: "virus", label: "Viruses" },
         { value: "host", label: "Hosts" },
         { value: "assembly_level", label: "Assembly level" },
-        { value: "genome_length", label: "Length" },
-        { value: "molecule", label: "Molecule" },
+        { value: "genome_length", label: "Genome length" },
+        { value: "genome_type", label: "Genome type" },
     ]);
 
     const [evidenceFilters, setEvidenceFilters] = useState([]);

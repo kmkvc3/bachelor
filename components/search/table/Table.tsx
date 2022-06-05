@@ -64,6 +64,7 @@ export default function Table({ data }) {
         </span>
         <span>Virus genome type</span>
         <span>Virus assembly level</span>
+        <span>Virus genome length</span>
       </div>
 
       <div>

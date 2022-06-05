@@ -2,14 +2,31 @@
   cursor: pointer;
   height: 32px;
   border: none;
-  background-color: var(--main-blue);
-  color: rgb(236, 236, 236);
+  background-color: transparent;
+  color: var(--secondary-text);
   padding: 0rem var(--buttons-padding);
   border-radius: var(--buttons-border-radius);
+  margin-bottom: 1rem;
+  border: 1px solid var(--button-border-color);
+}
+.wrapper {
+  display: flex;
+}
+.spinner * {
+  position: unset;
+  margin-right: 1rem;
 }
 .button svg {
   margin-left: 0.3rem;
 }
+.button.active {
+  color: var(--primary-text);
+  background-color: var(--main-light-dark);
+  border: 1px solid var(--main-light-dark);
+  cursor: unset;
+}
 .button:hover {
-  color: white;
+  color: var(--primary-text);
+  background-color: var(--main-light-dark);
+  border: 1px solid var(--main-light-dark);
 }
