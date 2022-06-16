@@ -44,7 +44,7 @@ export default function Export({ filters }) {
           isDownloading ? `${styles.button} ${styles.active}` : styles.button 
         }
       >
-        Export <FontAwesomeIcon icon={faArrowDown} />
+        Export to CSV
       </button>
     </div>
   );

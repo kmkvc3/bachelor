@@ -120,6 +120,7 @@ export default function Searchbar({ setTaxonId, setPage }) {
           setSearchHints([]);
           setTaxonId(item.taxon_id);
           setSearchContent(name);
+          setSearchbarActive(true);
           setPage(1);
         }}
         className={styles.hintElement}
