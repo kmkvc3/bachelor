@@ -23,10 +23,12 @@ export default function Searchbar({ setTaxonId, setPage }) {
     if (taxon_id) {
       setTaxonId(taxon_id);
       setSearchContent("");
-      setSearchbarActive(true);
     }
     if (type) {
       setHintsType(type as string);
+    }
+    if(searchContent) {
+      setSearchbarActive(true);
     }
   }, []);
 

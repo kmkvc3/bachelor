@@ -1,9 +1,9 @@
 .element {
   width: 100%;
   display: grid;
-  grid-template-columns: 3.15fr 3.15fr 2fr 1.92fr 2.10fr 2fr;
+  grid-template-columns: 3.4fr 3.5fr 3.5fr 2fr 1.3fr 2.1fr 1.3fr;
   align-items: center;
-  column-gap: 0.2rem;
+  column-gap: 0.4rem;
   padding: 0.94rem;
   border-bottom: var(--button-border) solid var(--main-light-dark);
   border-left: var(--button-border) solid var(--main-light-dark);
@@ -32,16 +32,16 @@
 .element .evidence {
   border-radius: 100%;
   color: white;
-  width: 23px;
-  height: 23px;
-  margin-right: 7px;
+  width: 21px;
+  height: 21px;
+  margin-right: 6px;
   margin-top: 3px;
   margin-bottom: 3px;
 }
 .evidence p {
   text-align: center;
-  line-height: 23px;
-  font-size: 11px;
+  line-height: 21px;
+  font-size: 10px;
   font-weight: bold;
 }
 .RefSeq {
@@ -105,6 +105,17 @@
   padding: 0.3rem 0.6rem;
   border-radius: var(--buttons-border-radius);
 }
+.tooltip {
+  display: none;
+  position: absolute;
+  top: -40px;
+  left: -140px;
+  width: max-content;
+  background-color: var(--background-color);
+  border: 1px solid var(--button-border-color);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--buttons-border-radius);
+}
 .helpIconWrapper {
   position: relative;
 }
@@ -112,7 +123,16 @@
   display: flex;
   flex-direction: column;
 }
+.helpIconWrapper:hover .tooltip {
+  display: flex;
+  flex-direction: column;
+}
 .helpDialog div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.tooltip div {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -122,7 +142,7 @@
   margin: 0.4rem 1rem 0.4rem 0;
 }
 .branch svg {
-  margin-left: 0.7rem;
+  margin-left: 0.4rem;
   font-size: 1.04rem;
   cursor: pointer;
 }
@@ -131,8 +151,8 @@
 }
 .helpIcon {
   transform: translateY(1px);
-  margin-left: 5px;
-  font-size: 16px;
+  margin-left: 3px;
+  font-size: 15px;
   cursor: pointer;
 }
 .element .virus_link {

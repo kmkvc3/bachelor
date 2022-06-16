@@ -76,7 +76,7 @@ export default function VirusGenomeDistro() {
             "<br/>" +
             "Genome size: " +
             "<b style='font-size: 13px'> " +
-            this.point.x +
+            categories[this.point.x] +
             " kb</b>" +
             "</b>"
           );

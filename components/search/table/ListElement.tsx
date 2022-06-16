@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Modal from "../../modal/Modal";
 import LineageContent from "./LineageContent";
 import { useState } from "react";
-import { useEffect } from "react";
 
 function EvidenceIcon({ evidence_name }) {
     switch (evidence_name) {
@@ -66,6 +65,7 @@ function EvidenceIcon({ evidence_name }) {
 
 export default function ListElement({ tableData }) {
     const [open, setOpen] = useState(false);
+    const [type, setType] = useState("NCBI");
 
     return (
         <div className={styles.element}>
@@ -79,11 +79,23 @@ export default function ListElement({ tableData }) {
             <span
                 onClick={() => {
                     setOpen(true);
+                    setType("NCBI");
                 }}
                 className={styles.branch}
             >
-                <strong>{tableData.host.name}</strong>
+                <strong>{tableData.host.ncbi.name}</strong>
                 <FontAwesomeIcon className={styles.icon} icon={faCodeBranch} />
+            </span>
+            <span
+                onClick={() => {
+                    setOpen(true);
+                    setType("GTDB");
+                }}
+                className={styles.branch}
+            >
+                {tableData.host.gtdb.name ? <>                <strong>{tableData.host.gtdb.name ?? "-"}</strong>
+                <FontAwesomeIcon className={styles.icon} icon={faCodeBranch} /> </> : "-"}
+
             </span>
             <span className={styles.evidenceWrapper}>
                 {tableData.evidence.map((evidence) => (
@@ -96,7 +108,7 @@ export default function ListElement({ tableData }) {
 
             {open ? (
                 <Modal title="Lineage" opened={open} setClose={setOpen}>
-                    <LineageContent host_id={tableData.host.host_id} setClose={setOpen} />
+                    <LineageContent host_id={tableData.host.host_id} type={type} />
                 </Modal>
             ) : null}
         </div>
