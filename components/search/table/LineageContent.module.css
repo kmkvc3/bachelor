@@ -4,7 +4,8 @@
     padding: 1.6rem 2.4rem 2.4rem 2.4rem;
     overflow-x: hidden;
     overflow-y: scroll;
-    height: 430px;
+    min-height: 340px;
+    max-height: 430px;
     width: 520px;
 }
 .wrapper span {
@@ -24,11 +25,35 @@
     align-items: center;
     margin-top: 0.1rem;
 }
+.wrapper .lineage a {
+    color: var(--primary-text);
+    font-weight: normal;
+}
+.wrapper .lineage a:hover {
+    color: var(--main-blue);
+}
 .wrapper .lineage span:nth-of-type(3) {
     color: var(--primary-text);
     font-weight: bold;
     position: absolute;
     left: 230px;
+}
+.ncbi a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--secondary-text) !important;
+}
+.ncbi a svg {
+    margin-left: 4px;
+}
+.ncbi a:hover {
+    color: var(--main-blue);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--main-blue) !important;
+}
+.ncbi {
+    margin-left: 0.2rem;
 }
 .lineageICTV span:nth-of-type(3) {
     left: 270px;
@@ -56,6 +81,9 @@
 .representative p {
     color: var(--secondary-text);
     line-height: 1.7rem;
+}
+.ncbi {
+    font-weight: normal;
 }
 .wrapper .row {
     height: 24px;

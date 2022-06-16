@@ -125,6 +125,32 @@ const getHostRecord = (host_id: string) => {
   return data;
 };
 
+export const getHostTaxNCBI = (host_id: string) => {
+  const data = new Promise((resolve, reject) => {
+    fetch(`${BASE_URL}/api/taxonomy/host/ncbi/?host_id=${host_id}`, {
+      method: "GET",
+    }).then((res) => {
+      setTimeout(() => {
+        resolve(res.json());
+      }, 180);
+    });
+  });
+  return data;
+};
+
+export const getHostTaxGTDB = (host_id: string) => {
+  const data = new Promise((resolve, reject) => {
+    fetch(`${BASE_URL}/api/taxonomy/host/gtdb/?host_id=${host_id}`, {
+      method: "GET",
+    }).then((res) => {
+      setTimeout(() => {
+        resolve(res.json());
+      }, 180);
+    });
+  });
+  return data;
+};
+
 const getBrowseData = (
   taxon_id: string,
   db: "virus" | "host",

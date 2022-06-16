@@ -3,8 +3,10 @@ import Link from "next/dist/client/link";
 import { faCodeBranch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Modal from "../../modal/Modal";
-import LineageContent from "./LineageContent";
+import LineageContentGTDB from "./LineageContentGTDB";
+import LineageContentNCBI from "./LineageContentNCBI";
 import { useState } from "react";
+import { generateUrl } from "../../../urlGenerator";
 
 function EvidenceIcon({ evidence_name }) {
     switch (evidence_name) {
@@ -71,31 +73,56 @@ export default function ListElement({ tableData }) {
         <div className={styles.element}>
             <span>
                 <Link href={`/virus/${tableData.virus.virus_id}`}>
-                    <strong className={styles.virus_link}>
+                    <strong className={styles.link}>
                         {tableData.virus.name}
                     </strong>
                 </Link>
             </span>
-            <span
-                onClick={() => {
-                    setOpen(true);
-                    setType("NCBI");
-                }}
-                className={styles.branch}
-            >
-                <strong>{tableData.host.ncbi.name}</strong>
-                <FontAwesomeIcon className={styles.icon} icon={faCodeBranch} />
+            <span className={styles.branch}>
+                <Link
+                    href={`/search[key]`}
+                    as={generateUrl({
+                        taxon_id: tableData.host.ncbi.taxon_id,
+                    })}
+                >
+                    <strong className={styles.link}>
+                        {tableData.host.ncbi.name}
+                    </strong>
+                </Link>
+                <FontAwesomeIcon
+                    onClick={() => {
+                        setOpen(true);
+                        setType("NCBI");
+                    }}
+                    className={styles.icon}
+                    icon={faCodeBranch}
+                />
             </span>
-            <span
-                onClick={() => {
-                    setOpen(true);
-                    setType("GTDB");
-                }}
-                className={styles.branch}
-            >
-                {tableData.host.gtdb.name ? <>                <strong>{tableData.host.gtdb.name ?? "-"}</strong>
-                <FontAwesomeIcon className={styles.icon} icon={faCodeBranch} /> </> : "-"}
-
+            <span className={styles.branch}>
+                {tableData.host.gtdb.name ? (
+                    <>
+                        <Link
+                            href={`/search[key]`}
+                            as={generateUrl({
+                                taxon_id: tableData.host.gtdb.taxon_id,
+                            })}
+                        >
+                            <strong className={styles.link}>
+                                {tableData.host.gtdb.name}
+                            </strong>
+                        </Link>
+                        <FontAwesomeIcon
+                            onClick={() => {
+                                setOpen(true);
+                                setType("GTDB");
+                            }}
+                            className={styles.icon}
+                            icon={faCodeBranch}
+                        />
+                    </>
+                ) : (
+                    "-"
+                )}
             </span>
             <span className={styles.evidenceWrapper}>
                 {tableData.evidence.map((evidence) => (
@@ -107,9 +134,23 @@ export default function ListElement({ tableData }) {
             <span>{tableData.virus.genome_length.toLocaleString("en")} bp</span>
 
             {open ? (
-                <Modal title="Lineage" opened={open} setClose={setOpen}>
-                    <LineageContent host_id={tableData.host.host_id} type={type} />
-                </Modal>
+                type === "GTDB" ? (
+                    <Modal
+                        title="GTDB Lineage"
+                        opened={open}
+                        setClose={setOpen}
+                    >
+                        <LineageContentGTDB host_id={tableData.host.host_id} />
+                    </Modal>
+                ) : (
+                    <Modal
+                        title="NCBI Lineage"
+                        opened={open}
+                        setClose={setOpen}
+                    >
+                        <LineageContentNCBI host_id={tableData.host.host_id} />
+                    </Modal>
+                )
             ) : null}
         </div>
     );

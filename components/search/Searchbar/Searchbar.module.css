@@ -10,14 +10,14 @@
   transition: 2s;
   justify-content: space-between;
 }
-@keyframes anim {
+/* @keyframes anim {
   from {
     left: calc(50% - 330px);
   }
   to {
     left: 0;
   }
-}
+} */
 .searchField {
   border: var(--button-border) solid var(--main-light-dark);
   background-color: var(--main-light-dark);
@@ -50,8 +50,9 @@
   font-size: 0.88rem;
 }
 .left .searchField {
-  animation: anim 0.4s;
+  /* animation: anim 0.4s; */
 }
+
 .wrapperForSpinner {
   display: flex;
   flex-direction: row;
@@ -177,32 +178,6 @@
 .hintElement strong {
   color: var(--primary-text);
   font-weight: bold;
-}
-.clearAll {
-  height: var(--button-height);
-  border: var(--button-border) solid var(--button-border-color);
-  cursor: pointer;
-  background-color: transparent;
-  color: var(--secondary-text);
-  padding: 0rem 0.3rem;
-  margin-left: 2rem;
-  border-radius: var(--buttons-border-radius);
-  box-sizing: border-box;
-  line-height: 34px;
-  position: relative;
-  min-width: 90px;
-}
-.clearAll:hover {
-  background-color: #ac5353;
-  color: white;
-  border: var(--button-border) solid #ac5353;
-}
-.clearAll svg {
-  margin-left: 0.5rem;
-}
-.clearAll a {
-  text-decoration: none;
-  color: var(--secondary-text);
 }
 @media (max-width: 710px) {
   
