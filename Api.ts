@@ -5,6 +5,7 @@ const getInteractions = (
   evidence,
   assembly_level,
   molecule,
+  size,
   sort,
   page,
   offset
@@ -13,6 +14,11 @@ const getInteractions = (
   if (evidence) {
     if (evidence.length) {
       Object.assign(body, { evidence: evidence });
+    }
+  }
+  if (size) {
+    if (size.length) {
+      Object.assign(body, { genome_length: size });
     }
   }
   if (molecule) {

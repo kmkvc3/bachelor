@@ -8,6 +8,7 @@ export default function SearchSection({
   setEvidence,
   setAssembly,
   setMolecule,
+  setSize,
   setSort,
   setPage,
   availableFilters,
@@ -30,6 +31,7 @@ export default function SearchSection({
           setAssembly={setAssembly}
           setMolecule={setMolecule}
           setSort={setSort}
+          setSize={setSize}
           setPage={setPage}
         />
       ) : null}

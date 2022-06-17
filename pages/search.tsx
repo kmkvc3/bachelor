@@ -25,6 +25,7 @@ export default function Search({ availableFilters }) {
   const [evidence, setEvidence] = useState(null);
   const [assembly_level, setAssembly] = useState(null);
   const [molecule, setMolecule] = useState(null);
+  const [size, setSize] = useState(null);
   const [sort, setSort] = useState(null);
   const [data, setData] = useState(null);
   const [isDataLoaded, setDataLoaded] = useState(false);
@@ -35,7 +36,7 @@ export default function Search({ availableFilters }) {
   useEffect(() => {
     if (taxonId === "") return;
     requestData(taxonId);
-  }, [taxonId, evidence, assembly_level, molecule, sort, page, offset]);
+  }, [taxonId, evidence, assembly_level, molecule, size, sort, page, offset]);
 
   async function requestData(taxon_id) {
     setTaxonId(taxon_id);
@@ -49,6 +50,7 @@ export default function Search({ availableFilters }) {
         evidence,
         assembly_level,
         molecule,
+        size,
         sort,
         page,
         offset
@@ -73,6 +75,7 @@ export default function Search({ availableFilters }) {
         setAssembly={setAssembly}
         setMolecule={setMolecule}
         setSort={setSort}
+        setSize={setSize}
         setPage={setPage}
         availableFilters={availableFilters}
       />

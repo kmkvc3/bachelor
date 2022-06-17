@@ -12,15 +12,18 @@ export default function Filters({
     setEvidence,
     setAssembly,
     setMolecule,
+    setSize,
     setSort,
     setPage,
 }: FiltersProps) {
     const [evidenceOptions, setEvidenceOptions] = useState([]);
     const [assemblyOptions, setAssemblyOptions] = useState([]);
     const [genomeOptions, setGenomeOptions] = useState([]);
+    const [sizeOptions, setSizeOptions] = useState([]);
     const [evidenceName, setEvidenceName] = useState("");
     const [assemblyName, setAssemblyName] = useState("");
     const [genomeName, setGenomeName] = useState("");
+    const [genomeSize, setGenomeSize] = useState("");
     const [sortOptions, setSortOptions] = useState([
         { value: "virus", label: "Viruses" },
         { value: "host", label: "Hosts" },
@@ -32,6 +35,7 @@ export default function Filters({
     const [evidenceFilters, setEvidenceFilters] = useState([]);
     const [assemblyFilters, setAssemblyFilters] = useState([]);
     const [genomeFilters, setGenomeFilters] = useState([]);
+    const [sizeFilters, setSizeFilters] = useState([]);
     const [filtersToDisplay, setFiltersToDisplay] = useState([]);
 
     const router = useRouter();
@@ -68,8 +72,9 @@ export default function Filters({
             setEvidenceFilters([]);
             setAssemblyFilters([]);
             setGenomeFilters([]);
+            setSizeFilters([]);
             setFiltersToDisplay([]);
-        }
+        };
     }, []);
 
     function addEvidenceFilter(filterToAdd: string) {
@@ -87,6 +92,44 @@ export default function Filters({
 
         const url = generateUrl({
             evidence: evidenceFilters,
+        });
+        router.push(url, undefined, { shallow: true });
+    }
+
+    function addSizeFilter(filterToAdd: string) {
+        if (sizeFilters.includes(filterToAdd)) return;
+
+        sizeFilters.push(filterToAdd);
+        filtersToDisplay.push({
+            filter: filterToAdd,
+            type: "genome_length",
+        });
+
+        setSize([...sizeFilters]);
+        setSizeFilters([...sizeFilters]);
+        setFiltersToDisplay([...filtersToDisplay]);
+
+        const url = generateUrl({
+            genome_length: sizeFilters,
+        });
+        router.push(url, undefined, { shallow: true });
+    }
+
+    function removeSizeFilter(filterToRemove: string) {
+        setSize([...sizeFilters.filter((filter) => filter !== filterToRemove)]);
+        setSizeFilters([
+            ...sizeFilters.filter((filter) => filter !== filterToRemove),
+        ]);
+        setFiltersToDisplay([
+            ...filtersToDisplay.filter(
+                (displayFiler) => displayFiler.filter !== filterToRemove
+            ),
+        ]);
+
+        const url = generateUrl({
+            genome_length: sizeFilters.filter(
+                (filter) => filter !== filterToRemove
+            ),
         });
         router.push(url, undefined, { shallow: true });
     }
@@ -185,9 +228,7 @@ export default function Filters({
         ]);
 
         const url = generateUrl({
-            genome: genomeFilters.filter(
-                (filter) => filter !== filterToRemove
-            ),
+            genome: genomeFilters.filter((filter) => filter !== filterToRemove),
         });
         router.push(url, undefined, { shallow: true });
     }
@@ -200,6 +241,8 @@ export default function Filters({
                 return removeAssemblyFilter;
             case "genome":
                 return removeGenomeFilter;
+            case "genome_length":
+                return removeSizeFilter;
         }
     }
 
@@ -223,6 +266,13 @@ export default function Filters({
             });
         setGenomeName(availableFilters.genome_type.name);
         setGenomeOptions(genomeOptions);
+
+        setGenomeSize(availableFilters.genome_length.name);
+        let sizeOptions: Array<SelectOption> =
+            availableFilters.genome_length.values.map((filter) => {
+                return { value: filter, label: filter };
+            });
+        setSizeOptions(sizeOptions);
     }, []);
 
     return (
@@ -251,6 +301,14 @@ export default function Filters({
                             setPickedOption={addGenomeFilter}
                             setPage={setPage}
                             options={genomeOptions}
+                        />
+                    ) : null}
+                    {sizeOptions ? (
+                        <Select
+                            placeholder={genomeSize}
+                            setPickedOption={addSizeFilter}
+                            setPage={setPage}
+                            options={sizeOptions}
                         />
                     ) : null}
                 </div>
