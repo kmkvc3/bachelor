@@ -7,3 +7,8 @@
 .wrapper div {
   width: 160px;
 }
+@media (max-width: 710px) {
+  .wrapper {
+    padding: 2rem var(--content-padding-mobile) 4.5rem var(--content-padding-mobile);
+  } 
+}

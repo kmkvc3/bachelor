@@ -22,7 +22,8 @@ export default function Search({ recordData }) {
   return (
     <Layout>
       <Head>
-        <title>Virus</title>
+        <title>{recordData.name} | PHD</title>
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
       </Head>
       {darkMode ? (
         <Toaster

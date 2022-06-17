@@ -43,7 +43,7 @@ export default function InteractionsEvidence() {
             this.point.color +
             '">\u25CF</span> <b>' +
             this.point.name +
-            `</b><br>virus count: ${
+            `</b><br>interactions: ${
               this.point.y
             } <b style="font-size: 13px"> (${
               Math.round(this.point.count_percent * 100) / 100
@@ -90,7 +90,7 @@ export default function InteractionsEvidence() {
 
   return (
     <div className={styles.wrapper}>
-      <h4> Virus-host interactions in source databases</h4>
+      <h4> Source databases</h4>
       <p>
         Comparison of the number of pairwise interactions between virus and host
         species in different databases.

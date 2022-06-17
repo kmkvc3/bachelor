@@ -17,7 +17,7 @@ export default function AssemblyLevel() {
       chart: {
         backgroundColor: "transparent",
         borderColor: "transparent",
-        type: 'bar',
+        type: "bar",
       },
       plotOptions: {
         column: {
@@ -34,12 +34,26 @@ export default function AssemblyLevel() {
         text: "",
       },
       tooltip: {
-        formatter: function() {
-            return 'Genomes count: <b style="font-size: 13px">' + Highcharts.numberFormat(this.point.y, 0) +'</b>';
-        } 
-    },
+        formatter: function () {
+          return (
+            'Genomes count: <b style="font-size: 13px">' +
+            Highcharts.numberFormat(this.point.y, 0) +
+            "</b> (<b style='font-size: 13x'>" +
+            Math.round(this.point.percent * 100) / 100 +
+            "%</b>)"
+          );
+        },
+      },
       xAxis: {
-        visible: false,
+        categories: ["Complete Genome", "unknown", "Contig", "Scaffold"],
+        labels: {
+          style: {
+            color: darkMode ? "#7f8994" : "#818181",
+          },
+        },
+        title: {
+          text: null,
+        },
       },
       yAxis: {
         title: {
@@ -51,17 +65,10 @@ export default function AssemblyLevel() {
         },
       },
       legend: {
-        layout: "vertical",
-        align: "right",
-        verticalAlign: "top",
-        x: -40,
-        y: 200,
-        floating: true,
-        borderWidth: 1,
-        backgroundColor: '#fff',
+        enabled: false,
       },
-      series: res.map((data) => {
-        return {
+      series: [
+        {
           dataLabels: {
             enabled: true,
             color: darkMode ? "#7f8994" : "#818181",
@@ -69,11 +76,16 @@ export default function AssemblyLevel() {
               textOutline: false,
             },
           },
-          name: data.name,
-          data: [data.count],
-        };
-      }),
-
+          name: "",
+          data: res.map((data) => {
+            return {
+              name: data.name,
+              y: data.count,
+              percent: data.count_percent,
+            };
+          }),
+        },
+      ],
       credits: {
         enabled: false,
       },
@@ -90,7 +102,10 @@ export default function AssemblyLevel() {
   return (
     <div className={styles.wrapper}>
       <h4> Genome assembly level</h4>
-      <p>Number of viral genomes stratified by assembly level. Only representative genomes (for virus species) are shown.</p>
+      <p>
+        Number of viral genomes stratified by assembly level. Only
+        representative genomes (for virus species) are shown.
+      </p>
       <div>
         {options ? (
           <HighchartsReact highcharts={Highcharts} options={options} />

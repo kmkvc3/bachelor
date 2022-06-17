@@ -1,7 +1,6 @@
 import styles from "./TableBottom.module.css";
 import Pagination from "./Pagination";
 import PageSize from "./PageSize";
-import Export from "../table/Export";
 
 export default function TableBottom({
   page,
@@ -9,7 +8,6 @@ export default function TableBottom({
   setPage,
   offset,
   setOffset,
-  data
 }) {
   return (
     <div className={styles.wrapper}>
@@ -17,9 +15,6 @@ export default function TableBottom({
         <PageSize offset={offset} setOffset={setOffset} />
       )}
       <Pagination page={page} maxPage={maxPage} setPage={setPage} />
-      {/* {data ? (
-        data.results.length ? <Export /> : null
-      ): null} */}
     </div>
   );
 }

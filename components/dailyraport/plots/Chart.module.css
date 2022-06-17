@@ -13,6 +13,9 @@
     text-align: center;
     color: var(--secondary-text);
 }
+.table a {
+    color: var(--main-blue);
+}
 .wrapper h4 {
     color: var(--primary-text);
     font-size: 1.16rem;
@@ -45,3 +48,18 @@
 .wrapper span {
     font-size: 2rem;
 }
+@media (max-width: 710px) {
+    .table {
+        overflow-x: scroll;
+        max-width: 90vw;
+    }
+    .wrapper .highcharts-root {
+        height: 200px !important;
+      }
+    .table th {
+        border: 2px solid var(--main-light-dark);
+        padding: 0.28rem 1.4rem;
+        text-align: center;
+        color: var(--primary-text);
+    }
+  }

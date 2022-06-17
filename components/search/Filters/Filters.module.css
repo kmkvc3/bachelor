@@ -43,8 +43,11 @@
 .select .react-select__control {
   height: 20px;
 }
-@media (max-width: 920px) {
+@media (max-width: 710px) {
   .wrapper {
+    display: none;
+  }
+  .displayedFilters {
     display: none;
   }
 }

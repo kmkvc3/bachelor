@@ -1,8 +1,8 @@
-import Head from "next/head";
 import styles from "./DailyRaport.module.css";
 import Link from "next/dist/client/link";
 import { ThemeContext } from "../../../ThemeContext";
 import { useContext } from "react";
+import Image from "next/image";
 
 export default function DailyRecord() {
   const theme = useContext(ThemeContext);
@@ -11,20 +11,18 @@ export default function DailyRecord() {
     <div className={styles.wrapper}>
       <div className={styles.welcome}>
         <div className={styles.image}>
-          <img 
-            src={darkMode ? "stats-dark.svg" : "stats-light.svg"}
-            alt="" />
+          <Image layout='fill' src={darkMode ? "/stats-dark.svg" : "/stats-light.svg"} alt="phage looking at plots" />
         </div>
         <div className={styles.text}>
           <h1>Daily Report</h1>
           <p>
-            Top quality data, all in one place. <br /> Start discovery of
-            interactions between phage & hosts. <br />
-            Just for your research
+            PHD publishes daily reports on the current catalog of virus-host
+            interactions including taxonomic and genetic diversity of viruses
+            and their hosts, virus-host assignments, and host range.
           </p>
           <div className={styles.extras}>
             <button>
-              <Link href={"/dailyreport"}>Browse report</Link>
+              <Link href={"/report"}>See report</Link>
             </button>
           </div>
         </div>

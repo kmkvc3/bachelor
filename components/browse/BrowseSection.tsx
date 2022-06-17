@@ -25,18 +25,16 @@ export default function BrowseSection({ taxData }) {
     } else {
       setType("host");
     }
-    if (tax[1] === "ictv") {
-      setTaxon("ictv");
+    if (tax[1] === "alt") {
+      setTaxon("alt");
     } else if (tax[1] === "gtdb") {
-      setTaxon("gtdb");
+      setTaxon("alt");
     } else {
       setTaxon("ncbi");
     }
     setData(taxData);
     setPath(tax.join("/"));
   }, [taxData]);
-
-  useEffect(() => {});
 
   return (
     <div>
@@ -58,8 +56,8 @@ export default function BrowseSection({ taxData }) {
             />
           )}
           <p>
-            All of our database records filtered by hosts and viruses. Discover
-            the taxonomy by clicking on <strong> Tax name</strong>.
+            Hierarchical exploration of virus-host interactions through virus or
+            host taxonomies based on NCBI or ICTV/GTDB Taxonomy.
           </p>
         </div>
       </div>
@@ -83,12 +81,12 @@ export default function BrowseSection({ taxData }) {
             </Link>
             <Link href={`/browse/${type}/alt`}>
               <a className={tax[1] === "alt" ? styles.active : null}>
-                {type === "host" ? "GtDB" : "ICTV"}
+                {type === "host" ? "GTDB" : "ICTV"}
               </a>
             </Link>
           </div>
         </div>
-        {tax.length > 2 ? (
+        {tax.length > 1 ? (
           <Navigation taxData={tax} type={tax[0]} taxo={tax[1]} />
         ) : null}
         <Header />
@@ -108,7 +106,7 @@ export default function BrowseSection({ taxData }) {
                 )}
 
                 <span>{tax.rank}</span>
-                <span>{tax.interactions}</span>
+                <span className={styles.interactions}>{tax.interactions}</span>
                 <button className={styles.searchButton}>
                   <a
                     target="_blank"

@@ -12,6 +12,9 @@
   line-height: 34px;
   position: relative;
 }
+.wrapper.sort {
+  min-width: 138px;
+}
 .wrapper:nth-last-of-type(1) {
   margin-right: 0;
 }

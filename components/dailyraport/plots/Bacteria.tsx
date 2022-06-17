@@ -7,7 +7,7 @@ import { getUpdateStats } from "../../../Api";
 
 export default function Bacteria() {
   const [stats, setStats] = useState(null);
-  const [pickedOption, setPickedOption] = useState("NCBI Assembly");
+  const [pickedOption, setPickedOption] = useState("ncbi_assembly");
   const [updateData, setUpdateData] = useState(null);
 
   function set(option) {
@@ -42,7 +42,7 @@ export default function Bacteria() {
           <p>
             Number of different taxonomic units of bacterial hosts across six
             taxonomic ranks compared to the number of all bacterial taxa present
-            in NCBI Assembly and NCBI Taxonomy {updateData.date.update_since}
+            in NCBI Assembly and NCBI Taxonomy ({new Date(updateData.date.update).toLocaleDateString()}).
           </p>
           <div className={styles.select}>
             <Select
@@ -69,14 +69,14 @@ export default function Bacteria() {
                     <>
                       <td>{stats.phylum.ncbi_taxonomy.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.phylum.ncbi_taxonomy.count_percent.toFixed(3)}
+                        {stats.phylum.ncbi_taxonomy.count_percent.toFixed(2)}%
                       </td>
                     </>
                   ) : (
                     <>
                       <td>{stats.phylum.ncbi_assembly.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.phylum.ncbi_assembly.count_percent.toFixed(3)}
+                        {stats.phylum.ncbi_assembly.count_percent.toFixed(2)}%
                       </td>
                     </>
                   )}
@@ -88,14 +88,14 @@ export default function Bacteria() {
                     <>
                       <td>{stats.class.ncbi_taxonomy.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.class.ncbi_taxonomy.count_percent.toFixed(3)}
+                        {stats.class.ncbi_taxonomy.count_percent.toFixed(2)}%
                       </td>
                     </>
                   ) : (
                     <>
                       <td>{stats.class.ncbi_assembly.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.class.ncbi_assembly.count_percent.toFixed(3)}
+                        {stats.class.ncbi_assembly.count_percent.toFixed(2)}%
                       </td>
                     </>
                   )}
@@ -107,14 +107,14 @@ export default function Bacteria() {
                     <>
                       <td>{stats.order.ncbi_taxonomy.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.order.ncbi_taxonomy.count_percent.toFixed(3)}
+                        {stats.order.ncbi_taxonomy.count_percent.toFixed(2)}%
                       </td>
                     </>
                   ) : (
                     <>
                       <td>{stats.order.ncbi_assembly.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.order.ncbi_assembly.count_percent.toFixed(3)}
+                        {stats.order.ncbi_assembly.count_percent.toFixed(2)}%
                       </td>
                     </>
                   )}
@@ -126,14 +126,14 @@ export default function Bacteria() {
                     <>
                       <td>{stats.family.ncbi_taxonomy.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.family.ncbi_taxonomy.count_percent.toFixed(3)}
+                        {stats.family.ncbi_taxonomy.count_percent.toFixed(2)}%
                       </td>
                     </>
                   ) : (
                     <>
                       <td>{stats.family.ncbi_assembly.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.family.ncbi_assembly.count_percent.toFixed(3)}
+                        {stats.family.ncbi_assembly.count_percent.toFixed(2)}%
                       </td>
                     </>
                   )}
@@ -145,14 +145,14 @@ export default function Bacteria() {
                     <>
                       <td>{stats.genus.ncbi_taxonomy.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.genus.ncbi_taxonomy.count_percent.toFixed(3)}
+                        {stats.genus.ncbi_taxonomy.count_percent.toFixed(2)}%
                       </td>
                     </>
                   ) : (
                     <>
                       <td>{stats.genus.ncbi_assembly.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.genus.ncbi_assembly.count_percent.toFixed(3)}
+                        {stats.genus.ncbi_assembly.count_percent.toFixed(2)}%
                       </td>
                     </>
                   )}
@@ -164,14 +164,14 @@ export default function Bacteria() {
                     <>
                       <td>{stats.species.ncbi_taxonomy.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.species.ncbi_taxonomy.count_percent.toFixed(3)}
+                        {stats.species.ncbi_taxonomy.count_percent.toFixed(2)}%
                       </td>
                     </>
                   ) : (
                     <>
                       <td>{stats.species.ncbi_assembly.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.species.ncbi_assembly.count_percent.toFixed(3)}
+                        {stats.species.ncbi_assembly.count_percent.toFixed(2)}%
                       </td>
                     </>
                   )}

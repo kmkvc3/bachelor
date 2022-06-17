@@ -17,12 +17,18 @@ export interface AvailableFilters {
     name: string
     values: Array<string>
   }
+
+  genome_length: {
+    name: string
+    values: Array<string>
+  }
 }
 
 export interface FiltersProps {
   availableFilters: AvailableFilters;
   // setDatabase: Function;
   setEvidence: Function;
+  setSize: Function;
   setAssembly: Function;
   setMolecule: Function;
   setSort: Function;

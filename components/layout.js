@@ -1,19 +1,12 @@
-import Navigation from "./header/navigation";
-import Footer from "./footer/Footer";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import("./footer/Footer"));
+const Navigation = dynamic(() => import("./header/navigation"));
 
 export default function Layout({ children }) {
   return (
-    <div style={{}}>
+    <div>
       <Navigation />
-      <div
-        style={{
-          minHeight: "90vh",
-          maxWidth: 1500,
-          margin: "0 auto"
-        }}
-      >
-        {children}
-      </div>
+      {children}
       <Footer />
     </div>
   );

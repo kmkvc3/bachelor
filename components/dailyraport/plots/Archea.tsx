@@ -35,13 +35,13 @@ export default function Archea() {
 
   return (
     <div className={styles.wrapper}>
-      <h4>Archea</h4>
+      <h4>Archaea</h4>
       {stats && updateData ? (
         <>
           <p>
             Number of different taxonomic units of archaeal hosts across six
             taxonomic ranks compared to the number of all archaeal taxa present
-            in NCBI Assembly and NCBI Taxonomy {updateData.date.update_since}
+            in NCBI Assembly and NCBI Taxonomy ({new Date(updateData.date.update).toLocaleDateString()}).
           </p>
           <div className={styles.select}>
             <Select
@@ -68,14 +68,14 @@ export default function Archea() {
                     <>
                       <td>{stats.phylum.ncbi_taxonomy.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.phylum.ncbi_taxonomy.count_percent.toFixed(3)}
+                        {stats.phylum.ncbi_taxonomy.count_percent.toFixed(2)}%
                       </td>
                     </>
                   ) : (
                     <>
                       <td>{stats.phylum.ncbi_assembly.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.phylum.ncbi_assembly.count_percent.toFixed(3)}
+                        {stats.phylum.ncbi_assembly.count_percent.toFixed(2)}%
                       </td>
                     </>
                   )}
@@ -87,14 +87,14 @@ export default function Archea() {
                     <>
                       <td>{stats.class.ncbi_taxonomy.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.class.ncbi_taxonomy.count_percent.toFixed(3)}
+                        {stats.class.ncbi_taxonomy.count_percent.toFixed(2)}%
                       </td>
                     </>
                   ) : (
                     <>
                       <td>{stats.class.ncbi_assembly.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.class.ncbi_assembly.count_percent.toFixed(3)}
+                        {stats.class.ncbi_assembly.count_percent.toFixed(2)}%
                       </td>
                     </>
                   )}
@@ -106,14 +106,14 @@ export default function Archea() {
                     <>
                       <td>{stats.order.ncbi_taxonomy.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.order.ncbi_taxonomy.count_percent.toFixed(3)}
+                        {stats.order.ncbi_taxonomy.count_percent.toFixed(2)}%
                       </td>
                     </>
                   ) : (
                     <>
                       <td>{stats.order.ncbi_assembly.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.order.ncbi_assembly.count_percent.toFixed(3)}
+                        {stats.order.ncbi_assembly.count_percent.toFixed(2)}%
                       </td>
                     </>
                   )}
@@ -125,14 +125,14 @@ export default function Archea() {
                     <>
                       <td>{stats.family.ncbi_taxonomy.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.family.ncbi_taxonomy.count_percent.toFixed(3)}
+                        {stats.family.ncbi_taxonomy.count_percent.toFixed(2)}%
                       </td>
                     </>
                   ) : (
                     <>
                       <td>{stats.family.ncbi_assembly.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.family.ncbi_assembly.count_percent.toFixed(3)}
+                        {stats.family.ncbi_assembly.count_percent.toFixed(2)}%
                       </td>
                     </>
                   )}
@@ -144,14 +144,14 @@ export default function Archea() {
                     <>
                       <td>{stats.genus.ncbi_taxonomy.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.genus.ncbi_taxonomy.count_percent.toFixed(3)}
+                        {stats.genus.ncbi_taxonomy.count_percent.toFixed(2)}%
                       </td>
                     </>
                   ) : (
                     <>
                       <td>{stats.genus.ncbi_assembly.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.genus.ncbi_assembly.count_percent.toFixed(3)}
+                        {stats.genus.ncbi_assembly.count_percent.toFixed(2)}%
                       </td>
                     </>
                   )}
@@ -163,14 +163,14 @@ export default function Archea() {
                     <>
                       <td>{stats.species.ncbi_taxonomy.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.species.ncbi_taxonomy.count_percent.toFixed(3)}
+                        {stats.species.ncbi_taxonomy.count_percent.toFixed(2)}%
                       </td>
                     </>
                   ) : (
                     <>
                       <td>{stats.species.ncbi_assembly.count.toLocaleString("en")}</td>
                       <td>
-                        {stats.species.ncbi_assembly.count_percent.toFixed(3)}
+                        {stats.species.ncbi_assembly.count_percent.toFixed(2)}%
                       </td>
                     </>
                   )}

@@ -9,15 +9,9 @@
   flex-direction: row;
 }
 .text {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: flex-end;
+  text-align: right;
 }
 .text h1 {
-  font-size: 2.2rem;
-  color: var(--primary-text);
-  text-align: right;
   margin-bottom: 1.3rem;
 }
 .text p {
@@ -25,25 +19,12 @@
   color: var(--secondary-text);
   max-width: 460px;
   line-height: 1.3rem;
-  text-align: right;
-}
-.text span {
-  display: inline-block;
-  width: 100%;
-  background-color: var(--main-light-dark);
-  margin: 1.2rem 0 1.6rem;
-  height: 2px;
 }
 .image {
   width: 100%;
   max-width: 480px;
-  object-fit: cover;
-}
-.image img {
-  max-width: 480px;
-  min-width: 320px;
-  width: 100%;
-  border-radius: 30px;
+  position: relative;
+  height: 240px;
 }
 .extras a {
   display: block;
@@ -63,4 +44,19 @@
   color: var(--primary-text);
   cursor: pointer;
   border: 1px solid var(--main-light-dark);
+}
+@media (max-width: 710px) {
+  .wrapper {
+    padding: 2rem var(--content-padding-mobile) 2rem var(--content-padding-mobile);
+    margin: 0 auto;
+  }
+  .welcome {
+    flex-direction: column;
+  }
+  .image {
+    margin-bottom:  2rem;
+  }
+  .text {
+    text-align: center;
+  }
 }

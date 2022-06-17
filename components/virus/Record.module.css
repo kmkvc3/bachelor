@@ -1,225 +1,298 @@
 .wrapper {
-  width: 100%;
-  max-width: var(--content);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0rem var(--content-padding) 7rem var(--content-padding);
+    width: 100%;
+    max-width: var(--content);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0rem var(--content-padding) 7rem var(--content-padding);
 }
 .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 2.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2.2rem;
 }
 .bookmark {
-  color: var(--primary-text);
-  display: flex;
-  font-size: 22px;
-  align-items: center;
-  cursor: pointer;
+    color: var(--primary-text);
+    display: flex;
+    font-size: 22px;
+    align-items: center;
+    cursor: pointer;
 }
 .header img {
-  width: 96px;
-  background-size: contain;
-  height: 96px;
-  border-radius: 50%;
-  margin-right: 1rem;
+    width: 96px;
+    background-size: contain;
+    height: 96px;
+    border-radius: 50%;
+    margin-right: 1rem;
 }
 .header h1 {
-  color: var(--primary-dark-text);
-  font-size: 28px;
+    color: var(--primary-dark-text);
+    font-size: 28px;
 }
 .header h1 span {
-  margin-left: 0.4rem;
+    margin-left: 0.4rem;
 }
 .header .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .header .names {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 .header .names span {
-  color: var(--secondary-text);
-  margin-top: 0.5rem;
+    color: var(--secondary-text);
+    margin-top: 0.5rem;
 }
 .row .none {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--secondary-text);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-text);
 }
 .representative {
-  margin-top: 4.8rem;
+    margin-top: 4.8rem;
 }
 .representative h2 {
-  color: var(--primary-text);
-  font-size: 22px;
-  display: flex;
-  padding-bottom: 0.6rem;
-  flex-direction: row;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--secondary-text);
-  margin-bottom: 1rem;
+    color: var(--primary-text);
+    font-size: 22px;
+    display: flex;
+    padding-bottom: 0.6rem;
+    flex-direction: row;
+    border-bottom: 1px solid var(--secondary-text);
+    margin-bottom: 1rem;
+}
+.representative i {
+    color: var(--secondary-text);
+    font-size: 21px;
+    margin-left: 10px;
+    font-weight: normal;
+}
+.tooltip {
+    display: none;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: max-content;
+    background-color: var(--background-color);
+    border: 1px solid var(--button-border-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--buttons-border-radius);
+}
+.helpIconWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.helpIcon {
+    margin-left: 5px;
+}
+.helpIconWrapper:hover .helpDialog {
+    display: flex;
+    flex-direction: row;
+}
+.helpIconWrapper:hover .tooltip {
+    display: flex;
+    flex-direction: column;
+}
+.helpDialog div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.tooltip div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .representative h3 {
-  color: var(--primary-text);
-  font-size: 18px;
-  margin: 1.55rem 0 0.6rem 0;
+    color: var(--primary-text);
+    font-size: 18px;
+    margin: 1.55rem 0 0.6rem 0;
 }
 .representative p {
-  color: var(--secondary-text);
-  line-height: 1.7rem;
+    color: var(--secondary-text);
+    line-height: 1.7rem;
 }
 .url {
-  color: var(--main-blue);
+    color: var(--main-blue);
 }
 .sequence {
-  margin-bottom: 0.2rem;
-  margin-right: 0.2rem;
-  display: inline-block;
+    margin-bottom: 0.2rem;
+    margin-right: 0.2rem;
+    display: inline-block;
 }
 .taxonTree {
-  width: 18px;
-  display: inline-block;
-  border-left: 1px solid var(--third-text);
-  border-bottom: 1px solid var(--third-text);
-  padding: 0.34rem 0;
-  margin-right: 0.5rem;
-  margin-left: 0.8rem;
+    width: 18px;
+    display: inline-block;
+    border-left: 1px solid var(--third-text);
+    border-bottom: 1px solid var(--third-text);
+    padding: 0.34rem 0;
+    margin-right: 0.5rem;
+    margin-left: 0.8rem;
 }
 .lineage {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-top: 0.22rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 0.22rem;
 }
 .lineage span:nth-of-type(3) {
-  color: var(--primary-text);
-  /* font-weight: bold; */
-  position: absolute;
-  left: 230px;
+    color: var(--primary-text);
+    /* font-weight: bold; */
+    position: absolute;
+    left: 230px;
 }
 .lineage span:nth-of-type(3) a {
-  color: var(--primary-text);
-  display: block;
+    color: var(--primary-text);
+    display: block;
 }
 .lineage span:nth-of-type(3) a:hover {
-  color: var(--main-blue);
+    color: var(--main-blue);
 }
 .tableHeader {
-  display: grid;
-  grid-template-columns: repeat(4, 2fr) 0.8fr;
-  background-color: var(--main-light-dark);
-  padding: 0.76rem;
-  width: 100%;
-  border-radius: var(--buttons-border-radius) var(--buttons-border-radius) 0 0;
+    display: grid;
+    grid-template-columns: repeat(4, 2fr) 0.8fr;
+    background-color: var(--main-light-dark);
+    padding: 0.76rem;
+    width: 100%;
+    border-radius: var(--buttons-border-radius) var(--buttons-border-radius) 0 0;
 }
 .row {
-  display: grid;
-  border-top: unset;
-  grid-template-columns: repeat(4, 2fr) 0.8fr;
-  padding: 0.76rem;
-  border-bottom: var(--button-border) solid var(--main-light-dark);
-  border-left: var(--button-border) solid var(--main-light-dark);
-  border-right: var(--button-border) solid var(--main-light-dark);
+    display: grid;
+    border-top: unset;
+    grid-template-columns: repeat(4, 2fr) 0.8fr;
+    padding: 0.76rem;
+    border-bottom: var(--button-border) solid var(--main-light-dark);
+    border-left: var(--button-border) solid var(--main-light-dark);
+    border-right: var(--button-border) solid var(--main-light-dark);
 }
 .row a {
-  color: var(--main-blue);
+    color: var(--main-blue);
 }
 .row:hover {
-  background-color: var(--main-light-dark);
+    background-color: var(--main-light-dark);
 }
 .row svg {
-  color: #81b29a;
-  text-align: center;
-  margin-left: 0 auto;
+    color: #81b29a;
+    text-align: center;
+    margin-left: 0 auto;
 }
 .row .representativeIcon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .representative .genome {
-  border: unset;
-  margin-bottom: 0.4rem;
+    border: unset;
+    margin-bottom: 0.4rem;
 }
 .host svg {
-  color: var(--primary-text);
-  margin-left: 1rem;
-  cursor: pointer;
-  margin-right: 1rem;
+    color: var(--primary-text);
+    margin-left: 1rem;
+    cursor: pointer;
+    margin-right: 1rem;
 }
 .host > span {
-  color: var(--primary-text);
+    color: var(--primary-text);
 }
 .host svg:hover {
-  color: var(--main-blue);
+    color: var(--main-blue);
 }
 .notFoundICTV {
-  color: var(--secondary-text);
-  text-align: center;
-  margin: 2.4rem 0 1.8rem 0;
+    color: var(--secondary-text);
+    text-align: center;
+    margin: 2.4rem 0 1.8rem 0;
 }
 .notFoundICTV svg {
-  color: #ac5353;
-  margin-left: 0.5rem;
+    color: #ac5353;
+    margin-left: 0.5rem;
 }
 .evidence {
-  display: inline-block;
-  padding: 0.1rem 0.5rem;
-  margin-bottom: 0.6rem;
-  margin-right: 0.8rem;
-  border-radius: 0.5rem;
-  background-color: red;
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    margin-bottom: 0.6rem;
+    margin-right: 0.8rem;
+    border-radius: 0.5rem;
+    background-color: red;
 }
 .evidence p {
-  line-height: 24px;
-  color: white;
-
+    line-height: 24px;
+    color: white;
 }
 .RefSeq {
-  background-color: #51b27e;
+    background-color: #51b27e;
 }
 .RefSeq p {
-  color: white;
+    color: white;
 }
 .MVP {
-  background-color: #67809F;
+    background-color: #67809f;
 }
 .MVP p {
-  color: white;
+    color: white;
 }
 .GenBank {
-  background-color: #009ff7;
+    background-color: #009ff7;
 }
 .IntAct {
-  background-color: #7236eb;
+    background-color: #7236eb;
 }
 .IntAct p {
-  color: white;
+    color: white;
 }
 .UniProtSwissProt {
-  background-color: #F3C200;
+    background-color: #f3c200;
 }
 .UniProtSwissProt p {
-  color: white;
+    color: white;
 }
 .UniProtKB {
-  background-color: #F3C200;
+    background-color: #f3c200;
 }
 .VHDB {
-  background-color: #f23f6c;
+    background-color: #f23f6c;
 }
 .VHDB p {
-  color: white;
+    color: white;
 }
 .NCBI {
-  background-color: #2AB4C0;
+    background-color: #2ab4c0;
+}
+@media (max-width: 710px) {
+    .wrapper {
+        padding: 0rem var(--content-padding-mobile) 3rem
+            var(--content-padding-mobile);
+    }
+    .table {
+        overflow-x: scroll;
+        width: 100%;
+    }
+    .tableHeader {
+        padding: 0.1rem;
+        background-color: transparent;
+    }
+    .row {
+        border: none;
+    }
+    .table p {
+        min-width: 180px;
+    }
+    .tableHeader p {
+        padding: 0.76rem;
+    }
+    .lineage * {
+        font-size: 0.88rem;
+    }
+    .taxonTree {
+        width: 14px;
+        padding: 0.26rem 0;
+        margin-right: 0.3rem;
+        margin-left: 0.5rem;
+    }
 }

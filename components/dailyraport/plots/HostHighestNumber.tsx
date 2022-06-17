@@ -96,6 +96,9 @@ export default function HostHighestNumber() {
           }),
         },
       ],
+      credits: {
+        enabled: false, // If we want to remove credits.
+      },
     });
   }
   useEffect(() => {
@@ -108,7 +111,7 @@ export default function HostHighestNumber() {
 
   return (
     <div className={styles.wrapper}>
-      <h4> Host taxa with the highest number of interactions</h4>
+      <h4> Hosts with most interactions</h4>
       <p>
         Proportion of viruses isolated on the top 15 most abundant host genera
         <br />(i.e. host genera infected by the highest number of viruses).

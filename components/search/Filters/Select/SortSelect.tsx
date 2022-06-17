@@ -30,7 +30,7 @@ export default function SortSelect({
 
   return (
     <div
-      className={option ? `${styles.wrapper} ${styles.active}` : styles.wrapper}
+      className={option ? `${styles.wrapper} ${styles.active} ${styles.sort}` : `${styles.wrapper} ${styles.sort}`}
     >
       {option ? (
         <div

@@ -1,18 +1,18 @@
 .ldsRing {
   display: inline-block;
   position: relative;
-  width: 70px;
-  height: 70px;
+  width: 44px;
+  height: 44px;
   margin: 6rem auto;
 }
 .ldsRing div {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 64px;
-  height: 64px;
+  width: 34px;
+  height: 34px;
   margin: 8px;
-  border: 8px solid #fff;
+  border: 3px solid #fff;
   border-radius: 50%;
   animation: ldsRing 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: var(--main-blue) transparent transparent transparent;

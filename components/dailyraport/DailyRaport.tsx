@@ -1,4 +1,6 @@
 import styles from "./DailyRaport.module.css";
+// import dynamic from "next/dynamic";
+// const VirusTaxonomy = dynamic(() => import("./plots/VirusTaxonomy"));
 import VirusTaxonomy from "./plots/VirusTaxonomy";
 import MostRepresentativeVirus from "./plots/MostRepresentativeVirus";
 import VirusGenomeType from "./plots/VirusGenomeType";
@@ -7,14 +9,36 @@ import VirusGenomeDistro from "./plots/VirusGenomeDistro";
 import HostHighestNumber from "./plots/HostHighestNumber";
 import VirusGenomeSource from "./plots/VirusGenomeSource";
 import Summary from "./plots/Summary";
-import MostRepresentativeHost from "./plots/MostRepresentativeHost";
 import HostPerVirus from "./plots/HostPerVirus";
 import InteractionsEvidence from "./plots/InteractionsEvidence";
+import Archea from "./plots/Archea";
+import Bacteria from "./plots/Bacteria";
+import SmallestGenoms from "./plots/SmallestGenoms";
+import LargestGenoms from "./plots/LargestGenoms";
+import MostRepresentativeHost from "./plots/MostRepresentativeHost";
+// const MostRepresentativeVirus = dynamic(
+//   () => import("./plots/MostRepresentativeVirus")
+// );
+// const VirusGenomeType = dynamic(() => import("./plots/VirusGenomeType"));
+// const AssemblyLevel = dynamic(() => import("./plots/AssemblyLevel"));
+// const VirusGenomeDistro = dynamic(() => import("./plots/VirusGenomeDistro"));
+// const HostHighestNumber = dynamic(() => import("./plots/HostHighestNumber"));
+// const VirusGenomeSource = dynamic(() => import("./plots/VirusGenomeSource"));
+// const Summary = dynamic(() => import("./plots/Summary"));
+// const MostRepresentativeHost = dynamic(
+//   () => import("./plots/MostRepresentativeHost")
+// );
+// const HostPerVirus = dynamic(() => import("./plots/HostPerVirus"));
+// const InteractionsEvidence = dynamic(
+//   () => import("./plots/InteractionsEvidence")
+// );
 import { useEffect } from "react";
 import { useState } from "react";
 import Highcharts from "highcharts";
-import Archea from "./plots/Archea";
-import Bacteria from "./plots/Bacteria";
+// const Archea = dynamic(() => import("./plots/Archea"));
+// const Bacteria = dynamic(() => import("./plots/Bacteria"));
+// const SmallestGenoms = dynamic(() => import("./plots/SmallestGenoms"));
+// const LargestGenoms = dynamic(() => import("./plots/LargestGenoms"));
 
 export default function DailyRaport() {
   const [id, setId] = useState("TaxDiversity");
@@ -95,10 +119,17 @@ export default function DailyRaport() {
 
           <div id="VGS"></div>
           <VirusGenomeSource />
+
+          <div id="SCG"></div>
+          <SmallestGenoms />
+
+          <div id="LCG"></div>
+          <LargestGenoms />
         </div>
 
         <div className="targetSelector" id="TaxaInteractions">
           <h1>Taxonomic diversity of hosts</h1>
+          <span></span>
 
           <div id="B"></div>
           <Bacteria />
@@ -150,6 +181,8 @@ export default function DailyRaport() {
         <a href="#AL">Genome assembly level</a>
         <a href="#VG">Size of complete virus genomes</a>
         <a href="#VGS">Virus genome source</a>
+        <a href="#SCG">Smallest complete genomes</a>
+        <a href="#LCG">Largest complete genomes</a>
 
         <a
           href="#TaxaInteractions"
@@ -158,8 +191,8 @@ export default function DailyRaport() {
           Taxonomic diversity of hosts
         </a>
 
-        <a href="#B">Bateria</a>
-        <a href="#A">Archea</a>
+        <a href="#B">Bacteria</a>
+        <a href="#A">Archaea</a>
         <a href="#MRH"> Most abundant host taxa </a>
 
         <a
@@ -169,9 +202,9 @@ export default function DailyRaport() {
           Virus-host interactions
         </a>
 
-        <a href="#HHN">Host taxa with the highest number of interactions</a>
-        <a href="#HPV">Number of host species per virus species</a>
-        <a href="#IE">Virus-host interactions in source databases</a>
+        <a href="#HHN">Hosts with most interactions</a>
+        <a href="#HPV">Host species per virus species</a>
+        <a href="#IE">Source databases</a>
       </aside>
     </div>
   );

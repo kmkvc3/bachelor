@@ -1,8 +1,9 @@
 .element {
   width: 100%;
   display: grid;
-  grid-template-columns: 3.42fr 3.42fr 2.7fr 1.92fr 1.80fr;
+  grid-template-columns: 3.34fr 3.34fr 3.34fr 1.86fr 1.3fr 2.1fr 1.3fr;
   align-items: center;
+  column-gap: 0.4rem;
   padding: 0.94rem;
   border-bottom: var(--button-border) solid var(--main-light-dark);
   border-left: var(--button-border) solid var(--main-light-dark);
@@ -20,26 +21,28 @@
   font-size: 0.94rem;
   color: var(--primary-text);
   line-height: 23px;
+  padding-right: 0.2rem;
 }
 .evidenceWrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  max-width: 130px;
 }
 .element .evidence {
   border-radius: 100%;
   color: white;
-  width: 23px;
-  height: 23px;
-  margin-right: 7px;
+  width: 21px;
+  height: 21px;
+  margin-right: 6px;
   margin-top: 3px;
   margin-bottom: 3px;
 }
 .evidence p {
   text-align: center;
-  line-height: 23px;
-  font-size: 11px;
+  line-height: 21px;
+  font-size: 10px;
   font-weight: bold;
 }
 .RefSeq {
@@ -103,10 +106,26 @@
   padding: 0.3rem 0.6rem;
   border-radius: var(--buttons-border-radius);
 }
+.tooltip {
+  display: none;
+  position: absolute;
+  z-index: 10000000;
+  top: -40px;
+  left: -140px;
+  width: max-content;
+  background-color: var(--background-color);
+  border: 1px solid var(--button-border-color);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--buttons-border-radius);
+}
 .helpIconWrapper {
   position: relative;
 }
 .helpIconWrapper:hover .helpDialog {
+  display: flex;
+  flex-direction: column;
+}
+.helpIconWrapper:hover .tooltip {
   display: flex;
   flex-direction: column;
 }
@@ -115,12 +134,17 @@
   flex-direction: row;
   align-items: center;
 }
+.tooltip div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .helpIconWrapper:hover .helpDialog .evidence {
-  display: block;
+  /* display: block; */
   margin: 0.4rem 1rem 0.4rem 0;
 }
 .branch svg {
-  margin-left: 0.7rem;
+  margin-left: 0.4rem;
   font-size: 1.04rem;
   cursor: pointer;
 }
@@ -129,49 +153,47 @@
 }
 .helpIcon {
   transform: translateY(1px);
-  margin-left: 5px;
-  font-size: 16px;
+  margin-left: 3px;
+  font-size: 15px;
   cursor: pointer;
 }
-.element .virus_link {
+.element .link {
   border-bottom: 1px solid;
+  padding-bottom: 1px;
   font-weight: normal;
+  /* text-decoration: underline; */
+}
+.link:hover {
+  cursor: pointer;
   color: var(--main-blue);
 }
-.virus_link:hover {
-  cursor: pointer;
-}
-@media (max-width: 920px) {
+@media (max-width: 710px) {
   .element {
     grid-column-gap: 0.4rem;
-    grid-template-columns: 2.4fr 3.6fr 3.6fr 2fr 1.5fr 1.4fr 0.2fr;
-  }
-  .element .evidence {
-    border-radius: 100%;
-    color: white;
-    width: 20px;
-    height: 20px;
-    margin: 1px;
+    grid-template-columns: 3fr 3fr 3fr 3fr 3fr 3fr;
+    overflow-x: scroll;
   }
   .evidence p {
     line-height: 20px;
-    font-size: 11px;
   }
   .element span {
-    font-size: 13px;
+    display: block;
+    min-width: 150px;
     color: var(--secondary-text);
   }
-  .element strong {
-    font-size: 13px;
-    color: var(--primary-text);
+  .element .source {
+    display: none;
+  }
+  .element .icon {
+    display: none;
+  }
+  .element .evidence {
+    display: none;
+  }
+  .element .evidenceWrapper {
+    display: none;
   }
   .helpIcon {
     display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .element {
-    overflow-x: scroll;
   }
 }

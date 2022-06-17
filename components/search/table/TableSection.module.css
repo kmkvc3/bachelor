@@ -3,12 +3,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-.results span {
-  /* color: var(--primary-text) */
+  max-width: var(--content);
+  margin: 0 auto;
 }
 .results {
   padding-bottom: 1.06rem;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .results p {
   color: var(--secondary-text);
@@ -16,7 +20,7 @@
 .results strong {
   margin-left: 0.1rem;
 }
-@media (max-width: 920px) {
+@media (max-width: 710px) {
   .content {
     padding: 1.2rem var(--content-padding-mobile);
     justify-content: center;

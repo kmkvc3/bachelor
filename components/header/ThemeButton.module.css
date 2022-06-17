@@ -3,7 +3,7 @@
   height: 30px;
   padding: 6px;
   position: relative;
-  background-color: var(--main-light-dark);
+  background: var(--main-light-dark);
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -18,7 +18,7 @@
   transition: 0.15s;
   height: 22px;
   width: 22px;
-  background-color: var(--primary-text);
+  background: var(--primary-text);
   left: 5px;
   border-radius: 100%;
   top: 4px;

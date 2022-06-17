@@ -25,8 +25,8 @@ export default function HostTaxonomy() {
           <table className={styles.tg}>
             <thead>
               <tr>
-                <th rowspan="2">Taxon rank</th>
-                <th colspan="2">Virus tax(count)</th>
+                <th rowSpan={2 as any}>Taxon rank</th>
+                <th colSpan={2 as any}>Host taxa (count)</th>
               </tr>
               <tr>
                 <th>NCBI</th>

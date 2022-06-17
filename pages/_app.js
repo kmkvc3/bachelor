@@ -6,21 +6,21 @@ import { ThemeProvider } from "../ThemeContext";
 // import NProgress from 'nprogress'; //nprogress module
 // import 'nprogress/nprogress.css'; //styles of nprogress
 import NextNProgress from "nextjs-progressbar";
+import Head from "next/head";
 
 // NProgress.configure({ minimum: 0.1, showSpinner: true });
 // Router.events.on('routeChangeStart', () => NProgress.start()); Router.events.on('routeChangeComplete', () => NProgress.done()); Router.events.on('routeChangeError', () => NProgress.done());
 
 function MyApp({ Component, pageProps }) {
-    return (
-        <ThemeProvider>
-            <NextNProgress
-                color="#1192e9"
-                height={3}
-                showOnShallow={false}
-            />
-            <Component {...pageProps} />
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider>
+      <NextNProgress color="#1192e9" height={3} showOnShallow={false} />
+      <Head>
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+      </Head>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
 // Only uncomment this method if you have blocking data requirements for

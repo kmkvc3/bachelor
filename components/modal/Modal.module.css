@@ -64,3 +64,13 @@
   display: flex;
   justify-content: center;
 }
+@media (max-width: 710px) {
+  .modal {
+    position: absolute;
+    max-width: 360px;
+    z-index: 100;
+    border-radius: var(--buttons-border-radius);
+    background-color: var(--background-color);
+    animation: modalEntry .3s;
+  }
+}

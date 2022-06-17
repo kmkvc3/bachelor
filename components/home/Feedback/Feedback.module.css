@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 6rem var(--content-padding) 9rem var(--content-padding);
+  padding: 6rem var(--content-padding) 11rem var(--content-padding);
 }
 .welcome {
   justify-content: space-around;
@@ -9,8 +9,6 @@
   margin-bottom: 3rem;
 }
 .welcome h1 {
-  font-size: 2.2rem;
-  color: var(--primary-text);
   margin-bottom: 0.2rem;
 }
 .welcome p {
@@ -21,24 +19,80 @@
   text-align: center;
 }
 .contact {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  margin: 0 auto;
+  position: relative;
 }
-.contact > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.4rem;
+.picWrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.4rem;
 }
-.contact div div {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    background-color: var(--main-light-dark);
-    margin-right: 1rem;
+.picWrapper img {
+  border-radius: 50%;
 }
-.contact p {
-    color: var(--secondary-text);
+.contact .person {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.contact .person p {
+  margin-bottom: 0.1rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--primary-text);
+}
+.contact .person .email {
+  color: var(--secondary-text);
+  font-weight: normal;
+  margin-bottom: 0.6rem;
+}
+.contact .person .unit {
+  color: var(--secondary-text);
+  font-weight: normal;
+  font-size: 0.82rem;
+  font-style: italic;
+}
+.contact .icons a {
+  position: relative;
+  display: inline-block;
+  width: 29px;
+  margin-top: 0.9rem;
+  height: 29px;
+}
+.contact .icons * {
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(60%) sepia(40%) saturate(4482%) hue-rotate(177deg) brightness(90%) contrast(102%);
+}
+.contact .icons a:nth-of-type(2) {
+  margin-left: 1rem;
+  filter: brightness(0) saturate(100%) invert(60%) sepia(40%) saturate(4482%) hue-rotate(177deg) brightness(90%) contrast(102%);
+}
+.wrapper .uni {
+  color: var(--secondary-text);
+  margin: 4rem auto 0 auto;
+  font-size: 0.9rem;
+  text-align: center;
+}
+@media (max-width: 710px) {
+  .wrapper {
+    padding: 2rem var(--content-padding-mobile) 3rem var(--content-padding-mobile);
+  }
+  .welcome h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .welcome p {
+    max-width: 400px;
+    text-align: center;
+  }
+  .contact .icons a {
+    width: 36px;
+    height: 36px;
+  }
 }

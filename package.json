@@ -2,16 +2,18 @@
   "name": "learn-starter",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 80",
     "build": "next build",
+    "buildHTML": "next build && next export",
     "start": "next start"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
+    "file-saver": "^2.0.5",
     "highcharts": "^10.0.0",
     "highcharts-react": "^0.0.3",
     "highcharts-react-official": "^3.1.0",
@@ -22,13 +24,13 @@
     "react-countup": "^6.2.0",
     "react-dom": "17.0.2",
     "react-hot-toast": "^2.2.0",
-    "react-intersection-observer": "^8.34.0",
-    "react-loading-skeleton": "^3.0.1",
-    "react-table": "^7.7.0"
+    "react-loading-skeleton": "^3.0.1"
   },
   "devDependencies": {
     "@types/node": "^16.11.6",
     "@types/react": "^17.0.33",
-    "typescript": "^4.4.4"
+    "typescript": "^4.4.4",
+    "webpack": "^5.72.1",
+    "webpack-bundle-analyzer": "^4.5.0"
   }
 }

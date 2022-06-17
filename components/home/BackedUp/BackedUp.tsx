@@ -1,60 +1,114 @@
-import Head from "next/head";
 import styles from "./BackedUp.module.css";
+import { ThemeContext } from "../../../ThemeContext";
+import { useContext } from "react";
+import Image from "next/image";
 
 export default function DailyRecord() {
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
   return (
     <div className={styles.wrapper}>
       <div className={styles.welcome}>
-        <h1>Top quality data</h1>
-        <p>Everything in one place. We are backed up by the best providers.</p>
+        <h1>Credits</h1>
+        <p>
+          PHD combines the latest information on virus-host interactions from
+          seven source databases with current taxonomic classification retrieved
+          from NCBI Taxonomy, Genome Taxonomy Database (GTDB), and International
+          Committee on Taxonomy of Viruses (ICTV).
+        </p>
       </div>
       <div className={styles.logoHolder}>
-        <div className={styles.logoWrapper}>
-          <a target="_blank" href="https://www.uniprot.org/help/uniprotkb">
-            <img src="./logo/uniprot.svg" alt="" />
-          </a>
-        </div>
-        <div className={styles.logoWrapper}>
-          <a target="_blank" href="https://www.ncbi.nlm.nih.gov/refseq/">
-            <img src="./logo/refseq.svg" alt="" />
-          </a>
-        </div>
-        <div className={styles.logoWrapper}>
-          <a target="_blank" href="https://www.genome.jp/virushostdb/">
-            <img src="./logo/vhdb.svg" alt="" />
-          </a>
-        </div>
         <div className={styles.logoWrapper}>
           <a
             target="_blank"
             href="https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/"
           >
-            <img src="./logo/ncbi-virus.svg" alt="" />
+            <Image
+              layout="fill"
+              src={
+                darkMode ? "/logodark/ncbi-virus.svg" : "/logo/ncbi-virus.svg"
+              }
+              alt="ncbi virus logo"
+            />
           </a>
         </div>
         <div className={styles.logoWrapper}>
+          <a target="_blank" href="https://www.genome.jp/virushostdb/">
+            <Image
+              layout="fill"
+              src={darkMode ? "/logodark/vhdb.svg" : "/logo/vhdb.svg"}
+              alt="virus host database logo"
+            />
+          </a>
+        </div>
+        <div className={styles.logoWrapper}>
+          <a target="_blank" href="https://www.ncbi.nlm.nih.gov/refseq/">
+            <Image
+              layout="fill"
+              src={darkMode ? "/logodark/refseq.svg" : "/logo/refseq.svg"}
+              alt="refseq logo"
+            />
+          </a>
+        </div>
+
+        <div className={styles.logoWrapper}>
+          <a target="_blank" href="https://www.uniprot.org/help/uniprotkb">
+            <Image
+              layout="fill"
+              src={darkMode ? "/logodark/uniprot.svg" : "/logo/uniprot.svg"}
+              alt="uniprot logo"
+            />
+          </a>
+        </div>
+
+        <div className={styles.logoWrapper}>
           <a target="_blank" href="https://mvp.medgenius.info/home">
-            <img src="./logo/mvp.svg" alt="" />
+            <Image
+              layout="fill"
+              src={darkMode ? "/logodark/mvp.svg" : "/logo/mvp.svg"}
+              alt="mvp logo"
+            />
           </a>
         </div>
         <div className={styles.logoWrapper}>
           <a target="_blank" href="https://www.ebi.ac.uk/intact/home">
-            <img src="./logo/intact.svg" alt="" />
+            <Image
+              layout="fill"
+              src={darkMode ? "/logodark/intact.svg" : "/logo/intact.svg"}
+              alt="intact logo"
+            />
           </a>
         </div>
+
         <div className={styles.logoWrapper}>
           <a target="_blank" href="https://gtdb.ecogenomic.org/">
-            <img src="./logo/gtdb.svg" alt="" />
-          </a>
-        </div>
-        <div className={styles.logoWrapper}>
-          <a target="_blank" href="https://talk.ictvonline.org/">
-            <img src="./logo/ictv.svg" alt="" />
+            <Image
+              layout="fill"
+              src={darkMode ? "/logodark/gtdb.svg" : "/logo/gtdb.svg"}
+              alt="gtdb logo"
+            />
           </a>
         </div>
         <div className={styles.logoWrapper}>
           <a target="_blank" href="https://www.ncbi.nlm.nih.gov/taxonomy">
-            <img src="./logo/ncbi-taxonomy.svg" alt="" />
+            <Image
+              layout="fill"
+              src={
+                darkMode
+                  ? "/logodark/ncbi-taxonomy.svg"
+                  : "/logo/ncbi-taxonomy.svg"
+              }
+              alt="ncbi taxonomy logo"
+            />
+          </a>
+        </div>
+        <div className={styles.logoWrapper}>
+          <a target="_blank" href="https://talk.ictvonline.org/">
+            <Image
+              layout="fill"
+              src={darkMode ? "/logodark/ictv.svg" : "/logo/ictv.svg"}
+              alt="ictv logo"
+            />
           </a>
         </div>
       </div>
