@@ -305,7 +305,6 @@ export default function Record({ data }) {
                             >
                                 <LineageContent
                                     host_id={host.host_id}
-                                    setClose={setOpen}
                                 />
                             </Modal>
                         ) : null}
