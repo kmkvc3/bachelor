@@ -90,7 +90,27 @@
     flex-direction: row;
 }
 .helpIcon {
-    margin-left: 5px;
+    transform: translateX(4px);
+}
+.ncbiWrap {
+    display: flex;
+}
+.ncbi a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--secondary-text) !important;
+}
+.ncbi a svg {
+    margin-left: 4px;
+}
+.ncbi a:hover {
+    color: var(--main-blue);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--main-blue) !important;
+}
+.ncbi {
+    margin-left: 0.8rem;
 }
 .helpIconWrapper:hover .helpDialog {
     display: flex;
@@ -124,7 +144,7 @@
 }
 .sequence {
     margin-bottom: 0.2rem;
-    margin-right: 0.2rem;
+    /* margin-right: 0.2rem; */
     display: inline-block;
 }
 .taxonTree {

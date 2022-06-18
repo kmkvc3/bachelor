@@ -17,6 +17,7 @@ import LineageContent from "../search/table/LineageContent";
 import Modal from "../modal/Modal";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function Record({ data }) {
     const accession = data.virus_id;
@@ -177,12 +178,25 @@ export default function Record({ data }) {
                                         50
                                     }px`,
                                 }}
+                                className={styles.ncbiWrap}
                             >
                                 <Link
                                     href={`/search?taxon_id=${host.taxon_id}`}
                                 >
                                     {host.name}
                                 </Link>
+                                <span className={styles.ncbi}>
+                                        <a
+                                            target="_blank"
+                                            href={`https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=${host.ncbi_taxid}`}
+                                        >
+                                            {" "}
+                                            ({host.ncbi_taxid})
+                                            <FontAwesomeIcon
+                                                icon={faExternalLinkAlt}
+                                            />
+                                        </a>{" "}
+                                    </span>
                             </span>
                         </p>
                     ))}
@@ -239,7 +253,7 @@ export default function Record({ data }) {
             <div className={styles.representative}>
                 <h2 className={styles.genome}>
                     Genome assemblies{" "}
-                    <i>(n = {data.genome_assemblies.length})</i>
+                    <i>({data.genome_assemblies.length})</i>
                 </h2>
                 <div className={styles.table}>
                     <div className={styles.tableHeader}>

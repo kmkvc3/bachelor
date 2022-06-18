@@ -33,7 +33,7 @@ export default function Export({ host_id }) {
             {dataNCBI ? (
                 <>
                     <div className={styles.representative}>
-                        <h2>NCBI</h2>
+                        <h2>{dataNCBI.length ? 'NCBI' : null }</h2>
                         {dataNCBI.map((host, index) => (
                             <p className={styles.lineage}>
                                 <span
@@ -98,7 +98,7 @@ export default function Export({ host_id }) {
             {dataGTDB ? (
                 <>
                     <div className={styles.representative}>
-                        <h2>GTDB</h2>
+                        <h2>{dataGTDB.length ? 'GTDB' : null }</h2>
                         {dataGTDB.map((host, index) => (
                             <p className={styles.lineage}>
                                 <span
