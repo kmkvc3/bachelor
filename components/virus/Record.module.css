@@ -73,25 +73,6 @@
     margin-left: 10px;
     font-weight: normal;
 }
-.tooltip {
-    display: none;
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    width: max-content;
-    background-color: var(--background-color);
-    border: 1px solid var(--button-border-color);
-    padding: 0.3rem 0.6rem;
-    border-radius: var(--buttons-border-radius);
-}
-.helpIconWrapper {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-}
-.helpIcon {
-    transform: translateX(4px);
-}
 .ncbiWrap {
     display: flex;
 }
@@ -137,14 +118,13 @@
 }
 .representative p {
     color: var(--secondary-text);
-    line-height: 1.7rem;
+    padding: 0.35rem 0;
 }
 .url {
     color: var(--main-blue);
 }
 .sequence {
     margin-bottom: 0.2rem;
-    /* margin-right: 0.2rem; */
     display: inline-block;
 }
 .taxonTree {
@@ -171,9 +151,19 @@
 .lineage span:nth-of-type(3) a {
     color: var(--primary-text);
     display: block;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--primary-text);
+}
+.lineage span:nth-of-type(3) .ncbi a {
+    text-decoration: none;
+    border-bottom: 1px dotted transparent;
 }
 .lineage span:nth-of-type(3) a:hover {
     color: var(--main-blue);
+    border-bottom: 1px dotted var(--main-blue);
+}
+.lineage span:nth-of-type(3) .ncbi a:hover {
+    border-bottom: 1px dotted transparent;
 }
 .tableHeader {
     display: grid;

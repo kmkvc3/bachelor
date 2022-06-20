@@ -69,7 +69,7 @@ export default function Export({ host_id }) {
                                             href={`https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=${host.ncbi_taxid}`}
                                         >
                                             {" "}
-                                            ({host.ncbi_taxid})
+                                            (taxId: {host.ncbi_taxid})
                                             <FontAwesomeIcon
                                                 icon={faExternalLinkAlt}
                                             />

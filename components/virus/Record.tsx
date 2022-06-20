@@ -15,7 +15,6 @@ import { ThemeContext } from "../../ThemeContext";
 import { useContext } from "react";
 import LineageContent from "../search/table/LineageContent";
 import Modal from "../modal/Modal";
-import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
@@ -186,17 +185,17 @@ export default function Record({ data }) {
                                     {host.name}
                                 </Link>
                                 <span className={styles.ncbi}>
-                                        <a
-                                            target="_blank"
-                                            href={`https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=${host.ncbi_taxid}`}
-                                        >
-                                            {" "}
-                                            ({host.ncbi_taxid})
-                                            <FontAwesomeIcon
-                                                icon={faExternalLinkAlt}
-                                            />
-                                        </a>{" "}
-                                    </span>
+                                    <a
+                                        target="_blank"
+                                        href={`https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=${host.ncbi_taxid}`}
+                                    >
+                                        {" "}
+                                        (taxId: {host.ncbi_taxid})
+                                        <FontAwesomeIcon
+                                            icon={faExternalLinkAlt}
+                                        />
+                                    </a>{" "}
+                                </span>
                             </span>
                         </p>
                     ))}
@@ -252,8 +251,7 @@ export default function Record({ data }) {
 
             <div className={styles.representative}>
                 <h2 className={styles.genome}>
-                    Genome assemblies{" "}
-                    <i>({data.genome_assemblies.length})</i>
+                    Genome assemblies <i>({data.genome_assemblies.length})</i>
                 </h2>
                 <div className={styles.table}>
                     <div className={styles.tableHeader}>
@@ -261,18 +259,7 @@ export default function Record({ data }) {
                         <p>Assembly level</p>
                         <p>Genome length</p>
                         <p>Sequence accessions</p>
-                        <p  className={styles.helpIconWrapper}>
-                            Representative
-                            <span>
-                                <FontAwesomeIcon
-                                    className={styles.helpIcon}
-                                    icon={faQuestionCircle}
-                                ></FontAwesomeIcon>
-                                <div className={styles.tooltip}>
-                                    <p>...</p>
-                                </div>
-                            </span>
-                        </p>
+                        <p>Representative</p>
                     </div>
                     {data.genome_assemblies.map((other) => (
                         <div className={styles.row}>
@@ -317,9 +304,7 @@ export default function Record({ data }) {
                                 opened={open}
                                 setClose={setOpen}
                             >
-                                <LineageContent
-                                    host_id={host.host_id}
-                                />
+                                <LineageContent host_id={host.host_id} />
                             </Modal>
                         ) : null}
                         <p className={styles.host}>

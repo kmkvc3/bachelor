@@ -25,11 +25,20 @@
     margin-top: 0.1rem;
 }
 .wrapper .lineage a {
+    text-decoration: none;
+    border-bottom: 1px dotted var(--primary-text);
     color: var(--primary-text);
     font-weight: normal;
 }
+.wrapper .lineage .ncbi a {
+    border-bottom: 1px dotted transparent;
+}
 .wrapper .lineage a:hover {
     color: var(--main-blue);
+    border-bottom: 1px dotted var(--main-blue);
+}
+.wrapper .lineage .ncbi a:hover {
+    border-bottom: 1px dotted transparent;
 }
 .wrapper .lineage span:nth-of-type(3) {
     color: var(--primary-text);
