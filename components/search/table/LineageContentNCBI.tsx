@@ -35,7 +35,7 @@ export default function Export({ host_id }) {
                                 <span
                                     style={{
                                         marginLeft: `${
-                                            index > 1 ? (index - 1) * 16 : 0
+                                            index > 1 ? (index - 1) * 11 : 0
                                         }px`,
                                     }}
                                 >
@@ -49,7 +49,7 @@ export default function Export({ host_id }) {
                                 <span
                                     style={{
                                         left: `${
-                                            data.length * 16 +
+                                            data.length * 13 +
                                             data[data.length - 1].name.length +
                                             50
                                         }px`,
