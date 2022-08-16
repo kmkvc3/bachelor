@@ -33,7 +33,7 @@ export default function Footer() {
         </a>
         <div>
           <a className={styles.article} target="_blank" href="https://doi.org/10.3389/fmicb.2022.946070">
-            Article about PHD
+            Read about PHD
           </a>
         </div>
       </div>
