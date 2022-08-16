@@ -24,9 +24,11 @@
   color: var(--main-blue);
   cursor: pointer;
 }
-/* .footer span:nth-last-child(1) {
-  margin-right: 0;
-} */
+.footer .combio .article {
+  color: var(--main-blue);
+  font-size: 0.90rem;
+  font-style: italic;
+}
 .footer strong {
   color: var(--primary-text);
   font-weight: bold;

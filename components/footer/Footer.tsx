@@ -31,7 +31,11 @@ export default function Footer() {
         <a target="_blank" href="http://www.combio.pl">
           combio.pl
         </a>
-        <div></div>
+        <div>
+          <a className={styles.article} target="_blank" href="https://doi.org/10.3389/fmicb.2022.946070">
+            Article about PHD
+          </a>
+        </div>
       </div>
       <div className={styles.data}>
         <span>
