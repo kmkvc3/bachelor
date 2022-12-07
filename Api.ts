@@ -1,4 +1,4 @@
-const BASE_URL = "http://afproject.org:8002";
+const BASE_URL = "https://afproject.org/phd";
 
 const getInteractions = (
   taxon_id,
